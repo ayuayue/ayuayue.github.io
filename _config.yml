@@ -102,5 +102,5 @@ theme: landscape
 
 deploy:
   type: git
-  repo: https://github.com/ayuayue/ayuayue.github.io.git
+  repo: https://gh_token@github.com/ayuayue/ayuayue.github.io.git
   branch: master
