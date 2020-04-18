@@ -51,6 +51,6 @@ after_script:
 env:
  global:
    # Github Pages
-   - GH_REF: https://gh_token@github.com/ayuayue/ayuayue.github.io.git  
+   - GH_REF: github.com/ayuayue/ayuayue.github.io.git  
    # Coding Pages
-   - CO_REF: https://e.coding.net/caoayu/caoayu.git  
+   - CO_REF: e.coding.net/caoayu/caoayu.git  
