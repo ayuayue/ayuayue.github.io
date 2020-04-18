@@ -106,7 +106,7 @@ deploy:
   repo:
     #github: git@github.com:sunshine940326/sunshine940326.github.io.git
     github: https://gh_token@github.com/ayuayue/ayuayue.github.io.git
-    coding: git@e.coding.net:caoayu/caoayu.git
+    coding: https://cd_token@e.coding.net/caoayu/caoayu.git
     #coding: https://git.coding.net/cherry940326/cherry940326.git
 
 
