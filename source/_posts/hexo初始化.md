@@ -1,8 +1,9 @@
 ---
-title: hexo 简易指南(1)
-date: 2020-04-18 10:28:30
-layout: post
-type: "tags"
+title: hexo初始化
+comment: true
+date: 2020-04-19 19:11:42
+tags: hexo
+categoties: 前端
 ---
 1. 安装`hexo`
 ```
@@ -12,6 +13,7 @@ type: "tags"
 ```
 hexo init <folder>
 ```
+<!--more-->
 3. 新建一篇文章
 ```
 hexo new [布局文件] "文章标题" //布局文件默认使用 config.yml 中的 default_layout 参数代替

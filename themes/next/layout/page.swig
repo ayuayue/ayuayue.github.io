@@ -3,7 +3,7 @@
 
 {% block title %}
   {%- set page_title_suffix = ' | ' + title %}
-
+  
   {%- if page.type === 'categories' and not page.title %}
     {{- __('title.category') + page_title_suffix }}
   {%- elif page.type === 'tags' and not page.title %}

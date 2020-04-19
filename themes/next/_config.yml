@@ -51,14 +51,14 @@ language_switcher: true
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  since: 2020
+  since: "2020-04-19"
 
   # Icon between year and copyright info.
   icon:
     # Icon name in Font Awesome. See: https://fontawesome.com/icons
     name: fa fa-heart
     # If you want to animate the icon, set it to true.
-    animated: false
+    animated: true
     # Change the color of icon, using Hex Code.
     color: "#ff0000"
 
@@ -114,13 +114,16 @@ darkmode: true
 # External url should start with http:// or https://
 menu:
   home: /|| fa fa-home
-  about: /about/|| fa fa-user
+  # about: /about/|| fa fa-user
   tags: /tags/|| fa fa-tags
   categories: /categories/|| fa fa-th
   archives: /archives/|| fa fa-archive
   # schedule: /schedule/|| fa fa-calendar
   # sitemap: /sitemap.xml|| fa fa-sitemap
+  rss: /atom.xml|| fa fa-rss
   commonweal: /404/|| fa fa-heartbeat
+  # movies: /movies/|| fa fa-film
+  # books: /books/|| fa fa-book
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
@@ -228,7 +231,7 @@ chat:
 # ---------------------------------------------------------------
 
 # Automatically excerpt description in homepage as preamble text.
-excerpt_description: true
+excerpt_description: false
 
 # Read more button
 # If true, the read more button will be displayed in excerpt section.
@@ -281,17 +284,26 @@ wechat_subscriber:
   description: 欢迎您扫一扫上面的微信公众号，关注我的公众号！
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
-related_posts:
-  enable: false
-  title: # Custom header, leave empty to use the default one
-  display_in_home: false
-  params:
-    maxCount: 5
+# related_posts:
+#   enable: false
+#   title: # Custom header, leave empty to use the default one
+#   display_in_home: false
+#   params:
+#     maxCount: 5
     #PPMixingRate: 0.0
     #isDate: false
     #isImage: false
     #isExcerpt: false
-
+# related_posts:
+#   enable: true
+#   title: 推荐文章 # Custom header, leave empty to use the default one
+#   display_in_home: false
+#   params:
+#     maxCount: 5
+#     PPMixingRate: 0.25
+#     isDate: false
+#     isImage: false
+#     isExcerpt: false
 # Post edit
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
 post_edit:
@@ -366,7 +378,7 @@ back2top:
   # Back to top in sidebar.
   sidebar: false
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
 # Reading progress bar
 reading_progress:
@@ -561,11 +573,11 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
-  active:
+  active: 
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
-  lazyload: false
+  lazyload: true
   # Modify texts or order for any navs, here are some examples.
   nav:
     #disqus:
@@ -605,19 +617,19 @@ changyan:
 # Valine
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: false
+  enable: true
   appid: Fe7Klh8rC2zqIwAXM94CItOU-gzGzoHsz
   appkey: 4Tfph5jNJ06mTGFqcO1bhUPE
   notify: true # Mail notifier
   verify: true # Verification code
-  placeholder: Just go go # Comment box placeholder
+  placeholder: 欢迎交流评论 # Comment box placeholder
   avatar: mm # Gravatar style
   guest_info: nick,mail,link # Custom comment header
-  pageSize: 10 # Pagination size
-  language: # Language, available values: en, zh-cn
-  visitor: false # Article reading statistic
+  pageSize: 30 # Pagination size
+  language:  # Language, available values: en, zh-cn
+  visitor: true # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
-  recordIP: false # Whether to record the commenter IP
+  recordIP: true # Whether to record the commenter IP
   serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
   #post_meta_order: 0
 
@@ -638,7 +650,7 @@ gitalk:
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
-  language:
+  language: 
 
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
@@ -681,17 +693,23 @@ cnzz_siteid:
 # You can visit https://leancloud.cn to get AppID and AppKey.
 # AppID and AppKey are recommended to be the same as valine's for counter compatibility.
 # Do not enable both `valine.visitor` and `leancloud_visitors`.
-leancloud_visitors:
-  enable: true
-  app_id: Fe7Klh8rC2zqIwAXM94CItOU-gzGzoHsz
-  app_key: 4Tfph5jNJ06mTGFqcO1bhUPE
+# leancloud_visitors:
+#   enable: true
+#   app_id: Fe7Klh8rC2zqIwAXM94CItOU-gzGzoHsz
+#   app_key: 4Tfph5jNJ06mTGFqcO1bhUPE
   # Required for apps from CN region
-  server_url: # <your server url>
+  # server_url: # <your server url>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
-  security: ture
-
+  # security: true
+  # betterPerformance: false
+# leancloud_counter_security:
+#   enable_sync: true
+#   app_id: Fe7Klh8rC2zqIwAXM94CItOU-gzGzoHsz
+#   app_key: 4Tfph5jNJ06mTGFqcO1bhUPE
+#   username: 
+#   password:
 
 
 # Another tool to show number of visitors to each article.
@@ -712,7 +730,7 @@ busuanzi_count:
   total_views: true
   total_views_icon: fa fa-eye
   post_views: true
-  post_views_icon: fa fa-eye
+  post_views_icon: fa fa-eyevaline
 
 # ---------------------------------------------------------------
 # Search Services
@@ -835,7 +853,7 @@ motion:
 # Dependencies: https://github.com/theme-next/theme-next-pace
 # For more information: https://github.com/HubSpot/pace
 pace:
-  enable: false
+  enable: true
   # Themes list:
   # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
   # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
@@ -846,7 +864,7 @@ pace:
 three:
   enable: fales
   three_waves: false
-  canvas_lines: true
+  canvas_lines: false
   canvas_sphere: false
 
 # Canvas-ribbon
@@ -870,6 +888,7 @@ canvas_ribbon:
 vendors:
   # Internal path prefix.
   _internal: lib
+  # _internal: vendors
 
   # Internal version: 3.1.0
   # anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
@@ -879,6 +898,7 @@ vendors:
   # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css
   fontawesome:
+  # fontawesome: //maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css
 
   # MathJax
   # mathjax: //cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
@@ -901,9 +921,9 @@ vendors:
   # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
   # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
   # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
-  jquery:
-  fancybox:
-  fancybox_css:
+  jquery: 
+  # fancybox:
+  # fancybox_css:
 
   # Medium-zoom
   # mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
@@ -912,7 +932,7 @@ vendors:
   # Lazyload
   # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
   # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js
-  lazyload:
+  lazyload: 
 
   # Pangu
   # pangu: //cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js
@@ -960,12 +980,12 @@ vendors:
   velocity_ui:
 
   # Internal version: 1.0.2
-  # pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
+  pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
   # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
-  # pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
+  pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
   # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
-  pace:
-  pace_css:
+  # pace:
+  # pace_css:
 
   # Internal version: 1.0.0
   # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
@@ -985,3 +1005,5 @@ vendors:
 css: css
 js: js
 images: images
+
+

@@ -15,6 +15,8 @@ menu:
   schedule: 日程表
   sitemap: 站点地图
   commonweal: 公益 404
+  books: 读书
+  movies: 影视
 sidebar:
   overview: 站点概览
   toc: 文章目录
@@ -29,6 +31,7 @@ post:
   untitled: 未命名
   sticky: 置顶
   views: 阅读次数
+  valine: 评论次数
   related_posts: 相关文章
   copyright:
     author: 本文作者
