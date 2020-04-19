@@ -1,7 +1,8 @@
 ---
 title: hexo 简易指南(1)
 date: 2020-04-18 10:28:30
-tags: 文档,指南
+layout: post
+type: "tags"
 ---
 1. 安装`hexo`
 ```
