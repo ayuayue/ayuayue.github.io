@@ -3,7 +3,7 @@ title: hexo初始化
 comment: true
 date: 2020-04-19 19:11:42
 tags: hexo
-categoties: 前端
+categories: 前端
 ---
 1. 安装`hexo`
 ```
