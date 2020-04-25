@@ -10,3 +10,5 @@ categories: deepin,linux
 2. 使用安装包,如deb安装失败,看失败详情,一般都是依赖问题,终端运行 sudo apt install --fix-broken即可自动修复
 3. 命令忘记或不知道怎么用,使用帮助,linux man 或者 使用软件的-h --help查看参数详情及解释
 4. 系统配置完成后常备份系统,可以使用timeshift进行定时备份,系统崩溃可以进引导盘修复,或者能打开终端,在终端中恢复,恢复方法可参考第三条
+
+<!--more-->

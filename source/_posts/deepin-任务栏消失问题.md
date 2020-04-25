@@ -12,4 +12,6 @@ categories: deepin,linux
 安装dde-dock
 sudo apt install dde-dock
 即可恢复
+<!--more-->
+
 
