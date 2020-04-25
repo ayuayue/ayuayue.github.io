@@ -1,8 +1,8 @@
 ---
 title: hexo 图片显示问题及使用typora设置图片路径
 date: 2020-04-19 22:54:32
-tags: hexov
-categoties: 前端
+tags: hexo
+categories: 前端
 ---
 ### 	`hexo`本地图片显示问题
 
