@@ -2,7 +2,7 @@
 title: deepin 任务栏消失问题
 date: 2020-04-25 19:34:49
 tags: deepin
-categories: deepin,linux
+categories: deepin
 ---
 ### deepin dde-dock 任务栏消失问题
 在使用了任务栏的一些插件后,如果卸载的话,可能会把dde-dock的一些依赖也卸载掉,所以会导致dock栏出现问题,在查看了很多帖子后无果,也重新安装了几次还是不行,解决方案: 

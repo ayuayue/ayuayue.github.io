@@ -2,7 +2,7 @@
 title: deepin使用时的一些小问题
 date: 2020-04-25 19:45:33
 tags:
-categories: deepin,linux
+categories: linux
 ---
 
 ### 关于linux发行版使用的一些小问题
