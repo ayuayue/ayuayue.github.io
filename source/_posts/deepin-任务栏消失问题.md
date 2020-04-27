@@ -10,6 +10,7 @@ categories: deepin
 删除 ~/.config/dconf 下的缓存文件, 找到 /usr/lib/dde-dock/plugins/ 删除所有的插件 重启
 重启后只显示壁纸,使用快捷键 ctrl alt T 呼出终端
 安装dde-dock
+```
 sudo apt install dde-dock
 即可恢复
 <!--more-->
