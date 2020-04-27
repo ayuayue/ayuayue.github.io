@@ -14,3 +14,4 @@ categories:
 更新,编辑 /etc/default/google-chrome
 将第一行false改为true
 运行sudo apt update 即可自动更新
+
