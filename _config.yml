@@ -93,7 +93,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+# theme: next
+theme: pure
 search:
   path: search.xml
   field: post
@@ -138,3 +139,19 @@ feed:
     # title: '我的豆瓣游戏'
     # quote: '在玩'
   # timeout: 10000
+# hexo-neat
+neat_enable: true
+neat_html:
+  enable: true
+  exclude:  
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js' 

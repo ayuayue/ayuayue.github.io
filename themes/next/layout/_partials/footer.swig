@@ -32,7 +32,7 @@
 
   {%- if config.symbols_count_time.total_time %}
     <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
+    <span class="post-meta-item-icon"></span>
       <i class="fa fa-coffee"></i>
     </span>
     {%- if theme.symbols_count_time.item_text_total %}
