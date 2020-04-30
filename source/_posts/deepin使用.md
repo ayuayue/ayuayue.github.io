@@ -25,7 +25,6 @@ sudo vi /etc/apt/source.list
 deb [by-hash=force] https://mirrors.aliyun.com/deepin/ panda main contrib non-free
 
 ```
-<!--more-->
 更新软件仓库及安装的软件
 
 ```

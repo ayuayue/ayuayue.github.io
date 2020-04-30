@@ -2,5 +2,5 @@
 title: {{ title }}
 tags:
 tags:
-categoties: 
+categories: 
 ---

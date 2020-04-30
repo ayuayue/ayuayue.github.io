@@ -205,6 +205,11 @@
       {% else %}
         {{ post.content }}
       {%- endif %}
+        <div>
+        {% if not is_index %}
+        {% include 'post-end.swig' %}
+        {% endif %}
+      </div>
     </div>
 
     {#####################}
