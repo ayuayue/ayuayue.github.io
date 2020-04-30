@@ -130,7 +130,7 @@
           {{- next_inject('postMeta') }}
 
           {%- if config.symbols_count_time.symbols %}
-          {%- if theme.symbols_count_time.separated_meta %}<br>{%- endif %}
+          {%- if theme.symbols_count_time.separated_meta %}{%- endif %}
             <span class="post-meta-item" title="{{ __('symbols_count_time.count') }}">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -143,15 +143,15 @@
           {%- endif %}
 
           {%- if config.symbols_count_time.time %}
-            <span class="post-meta-item" title="{{ __('symbols_count_time.time') }}">
+            <!--<span class="post-meta-item" title="{{ __('symbols_count_time.time') }}">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
-              </span>
+              </span>-->
               {%- if theme.symbols_count_time.item_text_post %}
-                <span class="post-meta-item-text">{{ __('symbols_count_time.time') }} &asymp;</span>
+                <!--<span class="post-meta-item-text">{{ __('symbols_count_time.time') }} &asymp;</span>-->
               {%- endif %}
-              <span>{{ symbolsTime(post, config.symbols_count_time.awl, config.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>
-            </span>
+              <!--<span>{{ symbolsTime(post, config.symbols_count_time.awl, config.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>
+            </span>-->
           {%- endif %}
 
           {%- if post.description and (not theme.excerpt_description or not is_index) %}
@@ -252,7 +252,10 @@
       <footer class="post-footer">
         <div class="post-eof"></div>
       </footer>
+      <hr/>
+      <hr/>
     {%- endif %}
+    
   </article>
   {######################}
   {### END POST BLOCK ###}

@@ -120,8 +120,10 @@ menu:
   archives: /archives/|| fa fa-archive
   # schedule: /schedule/|| fa fa-calendar
   # sitemap: /sitemap.xml|| fa fa-sitemap
+  # others:
   rss: /atom.xml|| fa fa-rss
   commonweal: /404/|| fa fa-heartbeat
+  
   # movies: /movies/|| fa fa-film
   # books: /books/|| fa fa-book
 

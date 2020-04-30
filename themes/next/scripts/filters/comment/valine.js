@@ -10,7 +10,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   let theme = hexo.theme.config;
   if (!theme.valine.enable || !theme.valine.appid || !theme.valine.appkey) return;
 
-  injects.comment.raw('valine', '<div class="comments" id="valine-comments"></div>', {}, {cache: true});
+  injects.comment.raw('valine', '<div class="comments" id="valine-comments" style="background-color: rgba(0, 0, 0, 0.1);"></div>', {}, {cache: true});
 
   injects.bodyEnd.file('valine', path.join(hexo.theme_dir, 'layout/_third-party/comments/valine.swig'));
 
@@ -24,7 +24,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   injects.postMeta.raw('valine', `
   {% if post.comments and (is_post() or theme.valine.comment_count) %}
   <span class="post-meta-item">
-    ${iconText('far fa-comment', 'valine')}
+    ${iconText('far fa-comment', '评论数')}
     <a title="valine" href="{{ url_for(post.path) }}#valine-comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
     </a>
