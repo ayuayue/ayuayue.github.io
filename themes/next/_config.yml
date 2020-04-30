@@ -463,7 +463,7 @@ font:
 
 # Disable Baidu transformation on mobile devices.
 disable_baidu_transformation: false
-baidushare: true
+baidushare: false
 # If true, site-subtitle will be added to index page.
 # Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
 index_with_subtitle: false
