@@ -16,8 +16,8 @@ timezone: Asia/Shanghai
 url: http://blog.caoayu.xyz
 # url: http://localhsot
 root: /
-# permalink: :year/:month/:day/:title/
-permalink: :title.html
+permalink: :year/:month/:day/:title/
+# permalink: :title
 permalink_defaults:
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
