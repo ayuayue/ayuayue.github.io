@@ -6,9 +6,7 @@
 {% block class %}post posts-expand{% endblock %}
 
 {% block content %}
-<hr>
   {{ partial('_macro/post.swig', {post: page}) }}
-
 {% endblock %}
 
 {% block sidebar %}

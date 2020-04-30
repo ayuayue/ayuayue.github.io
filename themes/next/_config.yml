@@ -181,7 +181,7 @@ social:
   GitHub: https://github.com/ayuayue || fab fa-github
   E-Mail: mailto:1401262639@qq.com || fa fa-envelope
   QQ: http://wpa.qq.com/msgrd?v=3&uin=1401262639&site=qq&menu=yes ||fab fa-qq
-  #Weibo: https://weibo.com/yourname || fab fa-weibo
+  WeChat: /images/wechat.jpg || fab fa-weixin
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
   #FB Page: https://www.facebook.com/yourname || fab fa-facebook
@@ -277,11 +277,11 @@ reward:
 follow_me:
   #Twitter: https://twitter.com/username || fab fa-twitter
   #Telegram: https://t.me/channel_name || fab fa-telegram
-  WeChat: /images/wechat.jpg || fab fa-weixin
-  RSS: /atom.xml || fa fa-rss
+  # WeChat: /images/wechat.jpg || fab fa-weixin
+  # RSS: /atom.xml || fa fa-rss
 # Wechat Subscriber
 wechat_subscriber:
-  enabled: true
+  enabled: false
   qcode: /uploads/wechat-qcode.jpg
   description: 欢迎您扫一扫上面的微信公众号，关注我的公众号！
 # Related popular posts
@@ -662,8 +662,8 @@ gitalk:
 # Star rating support to each article.
 # To get your ID visit https://widgetpack.com
 rating:
-  enable: false
-  id: # <app_id>
+  enable: true
+  id: 24928 # <app_id>
   color: fc6423
 
 # AddThis Share. See: https://www.addthis.com

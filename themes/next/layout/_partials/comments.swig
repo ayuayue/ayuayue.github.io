@@ -1,4 +1,4 @@
-{%- if page.comments %}
+<!--{%- if page.comments %}
   {%- if theme.injects.comment.length == 1 %}
     {%- set inject_item = theme.injects.comment[0] %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
@@ -81,3 +81,19 @@
     });
   }
 </script>
+noindex-->
+      <div id="wpac-comment"></div>
+      <script type="text/javascript">
+      wpac_init = window.wpac_init || [];
+      wpac_init.push({widget: 'Comment', id: 24928});
+      (function() {
+          if ('WIDGETPACK_LOADED' in window) return;
+          WIDGETPACK_LOADED = true;
+          var mc = document.createElement('script');
+          mc.type = 'text/javascript';
+          mc.async = true;
+          mc.src = 'https://embed.widgetpack.com/widget.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+      })();
+      </script>
+      <a href="https://blog.caoayu.xyz" class="wpac-cr">看完打个分吧 >_<~</a>
