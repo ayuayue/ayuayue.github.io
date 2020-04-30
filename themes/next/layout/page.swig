@@ -43,6 +43,8 @@
                 end_color  : theme.tagcloud.end})
               }}
             </div>
+      {% include '_partials/tag-color.swig' %}
+
           </div>
         {% elif page.type === 'categories' %}
           <div class="category-all-page">
