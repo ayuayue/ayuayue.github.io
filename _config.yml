@@ -16,12 +16,12 @@ timezone: Asia/Shanghai
 url: http://blog.caoayu.xyz
 # url: http://localhsot
 root: /
-permalink: :year/:month/:day/:title/
-# permalink: :title
+# permalink: :year/:month/:day/:title/
+permalink: :title.html/
 permalink_defaults:
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -113,10 +113,10 @@ deploy:
   # branch: master
 
 symbols_count_time:
- #文章内是否显示
+  #文章内是否显示
   symbols: true
   time: true
- # 网页底部是否显示
+  # 网页底部是否显示
   total_symbols: true
   total_time: true
 # feed
@@ -128,24 +128,23 @@ feed:
   hub:
   content:
 # douban:
-  # user: 215476585
-  # builtin: false
-  # book:
-  #   title: '我的豆瓣读书'
-  #   quote: '在读'
-  # movie:
-  #   title: '我的豆瓣电影'
-  #   quote: '在看'
-  # game:
-    # title: '我的豆瓣游戏'
-    # quote: '在玩'
-  # timeout: 10000
+# user: 215476585
+# builtin: false
+# book:
+#   title: '我的豆瓣读书'
+#   quote: '在读'
+# movie:
+#   title: '我的豆瓣电影'
+#   quote: '在看'
+# game:
+# title: '我的豆瓣游戏'
+# quote: '在玩'
+# timeout: 10000
 
 post_copyright:
   enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
-
 
 sitemap:
   path: sitemap.xml
