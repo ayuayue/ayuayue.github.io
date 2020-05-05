@@ -23,7 +23,7 @@ categories: hexo
 
    ![1588671265242](hexo-gitalk/1588671265242.png)
 
-![1588671347611](hexo-gitalk\1588671347611.png)
+![1588671347611](hexo-gitalk/1588671347611.png)
 
 #### `new OAuth App`
 
