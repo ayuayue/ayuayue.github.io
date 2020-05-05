@@ -25,9 +25,10 @@
           {% include '_partials/header/sub-menu.swig' %}
           <div class="content {% block class %}{% endblock %}">
             {% block content %}{% endblock %}
+
           </div>
           {% include '_partials/comments.swig' %}
-        <div id="gitalk-container"></div>
+          <div id="gitalk-container"></div>
 
         </div>
         {%- if theme.sidebar.display !== 'remove' %}
