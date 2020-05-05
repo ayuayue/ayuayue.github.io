@@ -123,7 +123,7 @@ menu:
   # others:
   rss: /atom.xml|| fa fa-rss
   commonweal: /404/|| fa fa-heartbeat
-  
+
   # movies: /movies/|| fa fa-film
   # books: /books/|| fa fa-book
 
@@ -292,10 +292,10 @@ wechat_subscriber:
 #   display_in_home: false
 #   params:
 #     maxCount: 5
-    #PPMixingRate: 0.0
-    #isDate: false
-    #isImage: false
-    #isExcerpt: false
+#PPMixingRate: 0.0
+#isDate: false
+#isImage: false
+#isExcerpt: false
 # related_posts:
 #   enable: true
 #   title: 推荐文章 # Custom header, leave empty to use the default one
@@ -575,7 +575,7 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
-  active: 
+  active:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
@@ -585,8 +585,8 @@ comments:
     #disqus:
     #  text: Load Disqus
     #  order: -1
-    #gitalk:
-    #  order: -2
+    gitalk:
+      order: -2
 
 # Disqus
 disqus:
@@ -628,7 +628,7 @@ valine:
   avatar: mm # Gravatar style
   guest_info: nick,mail,link # Custom comment header
   pageSize: 30 # Pagination size
-  language:  # Language, available values: en, zh-cn
+  language: # Language, available values: en, zh-cn
   visitor: true # Article reading statistic
   comment_count: false # If false, comment count will only be displayed in post page, not in home page
   recordIP: true # Whether to record the commenter IP
@@ -642,17 +642,17 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
 gitalk:
-  enable: false
-  github_id: # GitHub repo owner
-  repo: # Repository name to store issues
-  client_id: # GitHub Application Client ID
-  client_secret: # GitHub Application Client Secret
-  admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  enable: true
+  github_id: ayuayue # GitHub repo owner
+  repo: blogtalk # Repository name to store issues
+  client_id: 6ee3637c7ff5074d8c25 # GitHub Application Client ID
+  client_secret: 9eaa4f1e2c85d82e12b81722472144d8aa0befe3 # GitHub Application Client Secret
+  admin_user: ayuayue # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
-  language: 
+  language:
 
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
@@ -699,20 +699,19 @@ cnzz_siteid:
 #   enable: true
 #   app_id: Fe7Klh8rC2zqIwAXM94CItOU-gzGzoHsz
 #   app_key: 4Tfph5jNJ06mTGFqcO1bhUPE
-  # Required for apps from CN region
-  # server_url: # <your server url>
-  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
-  # If you don't care about security in leancloud counter and just want to use it directly
-  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
-  # security: true
-  # betterPerformance: false
+# Required for apps from CN region
+# server_url: # <your server url>
+# Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+# If you don't care about security in leancloud counter and just want to use it directly
+# (without hexo-leancloud-counter-security plugin), set `security` to `false`.
+# security: true
+# betterPerformance: false
 # leancloud_counter_security:
 #   enable_sync: true
 #   app_id: Fe7Klh8rC2zqIwAXM94CItOU-gzGzoHsz
 #   app_key: 4Tfph5jNJ06mTGFqcO1bhUPE
-#   username: 
+#   username:
 #   password:
-
 
 # Another tool to show number of visitors to each article.
 # Visit https://console.firebase.google.com/u/0/ to get apiKey and projectId.
@@ -923,7 +922,7 @@ vendors:
   # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
   # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
   # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
-  jquery: 
+  jquery:
   # fancybox:
   # fancybox_css:
 
@@ -934,7 +933,7 @@ vendors:
   # Lazyload
   # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
   # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js
-  lazyload: 
+  lazyload:
 
   # Pangu
   # pangu: //cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js
@@ -957,10 +956,10 @@ vendors:
   valine:
 
   # Gitalk
-  # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
-  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css
-  gitalk_js:
-  gitalk_css:
+  gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
+  gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css
+  # gitalk_js: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
+  # gitalk_css: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.csshttps://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
 
   # Algolia Search
   # algolia_search: //cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js
@@ -1011,5 +1010,3 @@ images: images
 # 文章末尾添加“本文结束”标记
 passage_end_tag:
   enabled: true
-
-

@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ gitalk_css_uri }}">
 
 {%- set gitalk_js_uri = theme.vendors.gitalk_js or '//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js' %}
-
+<div id="gitalk-container"></div>
 <script>
 NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   NexT.utils.getScript('{{ gitalk_js_uri }}', () => {
