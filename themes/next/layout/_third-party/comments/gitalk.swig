@@ -1,7 +1,6 @@
 {%- if page.comments %}
-<link rel="stylesheet" href="{{ gitalk_css_uri }}">
 <link rel="stylesheet" href="/css/gitalk.min.css" />
-<script src="/js/gitalk.min.js"></script>
+<script type="text/javascript" src="/js/gitalk.min.js"></script>
 <script>
 NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   NexT.utils.getScript('{{ gitalk_js_uri }}', () => {
