@@ -27,6 +27,8 @@
             {% block content %}{% endblock %}
           </div>
           {% include '_partials/comments.swig' %}
+        <div id="gitalk-container"></div>
+
         </div>
         {%- if theme.sidebar.display !== 'remove' %}
           {% block sidebar %}{% endblock %}

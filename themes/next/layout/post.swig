@@ -8,7 +8,6 @@
 {% block content %}
   {{ partial('_macro/post.swig', {post: page}) }}
 {% endblock %}
-
 {% block sidebar %}
   {{ sidebar_template.render(true) }}
 {% endblock %}
