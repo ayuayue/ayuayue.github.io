@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "server": "hexo clean && hexo g && hexo s"
+    "server": "hexo clean && hexo g && hexo s && node ./comment.js"
   },
   "hexo": {
     "version": "4.2.0"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "hexo": "^4.2.0",
     "hexo-asset-image": "git+https://github.com/CodeFalling/hexo-asset-image.git",
     "hexo-cli": "^3.1.0",
@@ -25,6 +26,9 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
-    "hexo-symbols-count-time": "^0.7.1"
+    "hexo-symbols-count-time": "^0.7.1",
+    "request": "^2.88.2",
+    "xml-parser": "^1.2.1",
+    "yamljs": "^0.3.0"
   }
 }
