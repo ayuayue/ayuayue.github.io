@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "deploy": "hexo clean && hexo generate && hexo s && node ./comment.js"
+    "deploy": "hexo clean && hexo generate && hexo s"
   },
   "hexo": {
     "version": "4.2.0"
