@@ -109,7 +109,7 @@ deploy:
   type: git
   repo:
     # github: https://gh_token@github.com/ayuayue/ayuayue.github.io.git
-    # github: git@github.com:ayuayue/ayuayue.github.io.git
+    github: git@github.com:ayuayue/ayuayue.github.io.git
     # coding: https://18737001259:cd_token@e.coding.net/caoayu/caoayu.git
     # coding: git@e.coding.net:caoayu/caoayu.git
   # branch: master
@@ -150,6 +150,6 @@ post_copyright:
 
 sitemap:
   path: sitemap.xml
-  
+
 baidusitemap:
   path: baidusitemap.xml
