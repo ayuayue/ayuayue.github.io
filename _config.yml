@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://caoayu.xyz
+url: http://www.caoayu.xyz
 # url: http://localhsot
 root: /
 # permalink: :year/:month/:day/:title/
@@ -108,8 +108,7 @@ search:
 deploy:
   type: git
   repo:
-    # github: https://gh_token@github.com/ayuayue/ayuayue.github.io.git
-    github: git@github.com:ayuayue/ayuayue.github.io.git
+    github: https://gh_token@github.com/ayuayue/ayuayue.github.io.git
     # coding: https://18737001259:cd_token@e.coding.net/caoayu/caoayu.git
     # coding: git@e.coding.net:caoayu/caoayu.git
   # branch: master
