@@ -6,7 +6,8 @@ const xmlParser = require("xml-parser");
 const YAML = require("yamljs");
 const cheerio = require("cheerio");
 const crypto = require('crypto');
-var token = gitalk_token
+
+var token = `gitalk_token`
 // 根据自己的情况进行配置
 const config = {
     username: "ayuayue", // GitHub 用户名
