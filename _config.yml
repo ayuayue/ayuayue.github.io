@@ -107,6 +107,7 @@ deploy:
   type: git
   repo:
     github: https://gh_token@github.com/ayuayue/ayuayue.github.io.git
+    coding: https://18737001259:cd_token@e.coding.net/caoayu/caoayu.git
   branch: master
 
 symbols_count_time:
