@@ -14,9 +14,7 @@ timezone: Asia/Shanghai
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://www.caoayu.xyz
-# url: http://localhsot
 root: /
-# permalink: :year/:month/:day/:title/
 permalink: :title/
 permalink_defaults:
 pretty_urls:
@@ -109,9 +107,7 @@ deploy:
   type: git
   repo:
     github: https://gh_token@github.com/ayuayue/ayuayue.github.io.git
-    # coding: https://18737001259:cd_token@e.coding.net/caoayu/caoayu.git
-    # coding: git@e.coding.net:caoayu/caoayu.git
-  # branch: master
+  branch: master
 
 symbols_count_time:
   #文章内是否显示
@@ -128,19 +124,6 @@ feed:
   limit: 20
   hub:
   content:
-# douban:
-# user: 215476585
-# builtin: false
-# book:
-#   title: '我的豆瓣读书'
-#   quote: '在读'
-# movie:
-#   title: '我的豆瓣电影'
-#   quote: '在看'
-# game:
-# title: '我的豆瓣游戏'
-# quote: '在玩'
-# timeout: 10000
 
 post_copyright:
   enable: true
