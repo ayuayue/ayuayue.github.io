@@ -38,6 +38,3 @@ after_script:
   - hexo deploy
   - node ./gitalk.init.js
 # End: Build LifeCycle
-branches:
-  only:
-    - master
