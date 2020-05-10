@@ -13,21 +13,15 @@ categories: hexo
 
 1. 先去添加一个网站,将需要绑定的域名都设置进去
 
-![1589110823812](F:\Github\ayuayue.github.io\source\_posts\hexo-https\1589110823812.png)
+![1589110823812](hexo-https/1589110823812.png)
 
 2. 进入设置页面,我绑定的是两个域名
 
-![1589110880204](F:\Github\ayuayue.github.io\source\_posts\hexo-https\1589110880204.png)
+![1589110880204](hexo-https/1589110880204.png)
 
 3. 选择`ssl`并使用` Let's Encrypt `进行申请,将所有的域名都勾选上,选择文件校验,点击申请后会在项目下生成一系列的文件,用来验证证书,也会自动在`nginx`的配置文件里添加`vhost`,不用在手动去修改`nginx`的配置添加规则,然后可以选择开启强制`https`
 
-![1589111072228](F:\Github\ayuayue.github.io\source\_posts\hexo-https\1589111072228.png)
+![1589111072228](hexo-https/1589111072228.png)
 
-**注意**
 
-因为我前面用了`webhook`,所以每次都会`pull`项目,而`hexo`会每次把`public`目录删除重新生成,所以如果我们不进行设置的话,当下一次`push`的时候可能就会失效
-
-**解决方案**
-
-我们可以将生成的`.well-known`文件放到`hexo`源码的`source/_post/`或者主题下的同样的文件夹里,这样每次`hexo generate`的时候都会将`.well-known`文件生成进去
 

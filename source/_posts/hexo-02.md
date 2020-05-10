@@ -48,6 +48,9 @@ if [ -d "$gitPath" ]; then
 		
 		echo "克隆完成回到/www/wwwroot/"
 		cd /www/wwwroot/
+		echo "先删除原项目可能生成的.user.ini文件,不然导致文件夹删除不了"
+		cd  $gitPath/
+		chattr -i .user.ini
 		echo "删除原仓库"
         sudo rm -r ./$1
 		echo "替换为hexo仓库"
