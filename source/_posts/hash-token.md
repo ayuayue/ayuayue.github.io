@@ -1,5 +1,5 @@
 ---
-title: hash-token
+title: 小思考
 date: 2020-05-11 21:47:33
 tags: 思考
 categories: 前端
