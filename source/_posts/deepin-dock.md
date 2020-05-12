@@ -11,8 +11,9 @@ categories: deepin
 重启后只显示壁纸,使用快捷键 ctrl alt T 呼出终端
 安装dde-dock
 ```
+<!--more-->
 sudo apt install dde-dock
 即可恢复
-<!--more-->
+
 
 
