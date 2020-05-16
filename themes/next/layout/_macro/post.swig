@@ -259,8 +259,6 @@
       <footer class="post-footer">
         <div class="post-eof"></div>
       </footer>
-      <hr/>
-      <hr/>
     {%- endif %}
     
   </article>

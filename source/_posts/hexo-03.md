@@ -1,5 +1,5 @@
 ---
-title: 真-最终部署
+title: 自动部署hexo到自己的服务器并使用webhooks
 date: 2020-05-10 23:41:50
 tags: hexo
 categories: hexo

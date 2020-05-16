@@ -96,8 +96,8 @@ creative_commons:
 
 # Schemes
 # scheme: Muse
-scheme: Mist
-# scheme: Pisces
+# scheme: Mist
+scheme: Pisces
 # scheme: Gemini
 
 # Dark Mode
@@ -264,7 +264,8 @@ reward_settings:
   # If true, reward will be displayed in every article by default.
   enable: true
   animation: false
-  comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+  # comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+  comment: 可以,但沒必要.
 
 reward:
   wechatpay: /images/wechat_pay.png

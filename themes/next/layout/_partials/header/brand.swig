@@ -24,6 +24,7 @@
     {%- if subtitle %}
       <p class="site-subtitle" itemprop="description">{{ subtitle }}</p>
     {%- endif %}
+   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=573093480&auto=1&height=32"></iframe>
     {%- if theme.custom_logo and (theme.scheme === 'Gemini' or theme.scheme === 'Pisces') %}
       <a>
         <img class="custom-logo-image" src="{{ theme.custom_logo }}" alt="{{ title }}">

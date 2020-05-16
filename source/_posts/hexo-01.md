@@ -1,5 +1,5 @@
 ---
-title: 推翻重来-hexo部署
+title: 重新部署hexo
 date: 2020-05-10 10:50:21
 tags: hexo
 categories: hexo

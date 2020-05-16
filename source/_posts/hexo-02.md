@@ -16,6 +16,7 @@ categories: heox
 ```sh
 #!/bin/bash
 
+
 echo ""
 #输出当前时间
 date --date='0 days ago' "+%Y-%m-%d %H:%M:%S"
@@ -46,7 +47,7 @@ else
         echo "新建项目目录"
         cd /www/wwwroot/
         echo "克隆最新的项目文件"
-		git clone coding地址 ./项目目录
+		git clone 仓库地址 ./项目目录
 		echo "设置目录组合拥有者"
         sudo chown -R www:www $gitPath
         echo "设置目录权限"
@@ -56,6 +57,7 @@ else
         echo "End"
         exit
 fi
+
 
 ```
 
