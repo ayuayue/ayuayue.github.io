@@ -203,7 +203,7 @@ links_settings:
   layout: block
 
 links:
-  MYBLOG: http://blog.caoayu.xyz
+  # MYBLOG: http://blog.caoayu.xyz
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
