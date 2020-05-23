@@ -176,10 +176,10 @@ site_state: true
 # Social Links
 # Usage: `Key: permalink || icon`
 # Key is the link label showing to end users.
-# Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
+# Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.z`
 social:
   GitHub: https://github.com/ayuayue || fab fa-github
-  E-Mail: mailto:1401262639@qq.com || fa fa-envelope
+  E-Mail: http://www.caoayu.xyz:3001 || fa fa-envelope
   QQ: http://wpa.qq.com/msgrd?v=3&uin=1401262639&site=qq&menu=yes ||fab fa-qq
   WeChat: /images/wechat.jpg || fab fa-weixin
   #Google: https://plus.google.com/yourname || fab fa-google
@@ -486,7 +486,7 @@ yandex_site_verification:
 
 # Baidu Webmaster tools verification.
 # See: https://ziyuan.baidu.com/site
-baidu_site_verification: 
+baidu_site_verification:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
 baidu_push: true
@@ -643,7 +643,7 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
 gitalk:
-  enable: true
+  enable: false
   github_id: ayuayue # GitHub repo owner
   repo: blogtalk # Repository name to store issues
   client_id: 6ee3637c7ff5074d8c25 # GitHub Application Client ID
