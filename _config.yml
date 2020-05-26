@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 曹阿宇的博客
+title: 曹阿宇
 subtitle: "不怕万人阻挡,只怕自己投降."
 description: "开始记录吧"
-keywords: 技术,博客,分享,前端,后端,数据库,Linux,PHP,Go
+keywords: 技术,博客,分享,前端,后端,数据库,Linux,PHP,Go,Hexo,工具
 author: 曹阿宇
 language: zh-CN
 timezone: Asia/Shanghai
@@ -133,6 +133,8 @@ post_copyright:
 
 sitemap:
   path: sitemap.xml
-
 baidusitemap:
   path: baidusitemap.xml
+nofollow:
+    enable: true
+    exclude:
