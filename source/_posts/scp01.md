@@ -14,7 +14,7 @@ categories: linux
 1. 下载文件
 
    ```shell
-   scp -r name@ip folder local_folder 
+   scp -r name@ip:folder local_folder 
    //参数说明:
    -r : 操作文件夹,如果是单个文件可以不加
    name : 服务器用户名
@@ -28,7 +28,7 @@ categories: linux
 2. 上传文件
 
    ```shell
-   scp -r local_folder name@ip folder
+   scp -r local_folder name@ip:folder
    //参数同上,可以发现,互换路径就可以实现上传和下载,就是将第一个路径的文件放到第二个目录里
    ```
 
