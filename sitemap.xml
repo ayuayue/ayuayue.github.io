@@ -1,0 +1,1578 @@
+<?xml-stylesheet type="text/xsl" href="https://www.caoayu.xyz/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://www.caoayu.xyz/search/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/</loc>
+    <lastmod>2021-03-29T17:49:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/php/</loc>
+    <lastmod>2021-03-29T17:49:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/php/</loc>
+    <lastmod>2021-03-29T17:49:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-pear/</loc>
+    <lastmod>2021-03-29T17:49:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/</loc>
+    <lastmod>2021-03-29T17:49:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/</loc>
+    <lastmod>2021-03-29T17:49:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/</loc>
+    <lastmod>2021-03-29T17:49:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/supervisor/</loc>
+    <lastmod>2021-03-21T18:30:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/chrome/</loc>
+    <lastmod>2021-03-15T19:01:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/chrome/</loc>
+    <lastmod>2021-03-15T19:01:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/chrome-screen/</loc>
+    <lastmod>2021-03-15T19:01:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/linux/</loc>
+    <lastmod>2021-03-08T17:55:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/linux/</loc>
+    <lastmod>2021-03-08T17:55:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/scrcpy/</loc>
+    <lastmod>2021-03-08T17:55:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/jetbrains/</loc>
+    <lastmod>2021-03-03T14:23:12+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/jetbrains/</loc>
+    <lastmod>2021-03-03T14:23:12+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/jetbrains-license/</loc>
+    <lastmod>2021-03-03T14:23:12+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-frame10/</loc>
+    <lastmod>2021-02-28T14:15:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-frame09/</loc>
+    <lastmod>2021-02-25T18:01:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/go/</loc>
+    <lastmod>2021-02-24T14:08:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/go/</loc>
+    <lastmod>2021-02-24T14:08:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/kugou/</loc>
+    <lastmod>2021-02-24T14:08:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-frame08/</loc>
+    <lastmod>2021-02-24T08:24:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-frame07/</loc>
+    <lastmod>2021-02-23T11:07:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-frame06/</loc>
+    <lastmod>2021-02-22T09:30:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-frame05/</loc>
+    <lastmod>2021-02-22T08:56:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-frame04/</loc>
+    <lastmod>2021-02-21T15:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-frame03/</loc>
+    <lastmod>2021-02-21T15:36:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-frame02/</loc>
+    <lastmod>2021-02-21T08:44:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/github/</loc>
+    <lastmod>2021-02-20T15:25:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/github/</loc>
+    <lastmod>2021-02-20T15:25:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/github-skill/</loc>
+    <lastmod>2021-02-20T15:25:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-frame01/</loc>
+    <lastmod>2021-02-20T10:45:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/deepin/</loc>
+    <lastmod>2021-02-09T10:58:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/deepin/</loc>
+    <lastmod>2021-02-09T10:58:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-dwm/</loc>
+    <lastmod>2021-02-09T10:58:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/unistall-refind/</loc>
+    <lastmod>2021-02-08T11:14:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/deepin-%E5%8D%87%E7%BA%A7%E5%90%8E%E8%93%9D%E7%89%99%E6%B6%88%E5%A4%B1%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2021-02-07T17:06:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/deepin-%E5%8D%87%E7%BA%A7%E5%90%8E%E8%93%9D%E7%89%99%E6%B6%88%E5%A4%B1%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2021-02-07T17:06:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-bluetooth/</loc>
+    <lastmod>2021-02-07T17:06:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/linux-picgo/</loc>
+    <lastmod>2021-02-07T14:51:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/composer/</loc>
+    <lastmod>2021-02-03T21:19:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/composer/</loc>
+    <lastmod>2021-02-03T21:19:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/composer-other-autoload/</loc>
+    <lastmod>2021-02-03T21:19:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/pandora/</loc>
+    <lastmod>2021-01-22T19:05:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/</loc>
+    <lastmod>2021-01-22T19:05:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/</loc>
+    <lastmod>2021-01-22T19:05:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/composer-autoload/</loc>
+    <lastmod>2021-01-22T12:44:19+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/composer-use-class/</loc>
+    <lastmod>2021-01-19T17:44:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/st/</loc>
+    <lastmod>2021-01-06T20:53:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/composer/</loc>
+    <lastmod>2021-01-02T22:18:17+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/windows/</loc>
+    <lastmod>2021-01-01T12:19:21+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/windows/</loc>
+    <lastmod>2021-01-01T12:19:21+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/switcher-z/</loc>
+    <lastmod>2021-01-01T12:19:21+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/wsl2/</loc>
+    <lastmod>2020-12-30T17:54:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/homestead/</loc>
+    <lastmod>2020-12-27T17:44:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/homestead/</loc>
+    <lastmod>2020-12-27T17:44:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/homestead/</loc>
+    <lastmod>2020-12-27T17:44:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/linux-edit-map/</loc>
+    <lastmod>2020-12-11T20:37:12+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-lnmp/</loc>
+    <lastmod>2020-12-05T11:26:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-rime/</loc>
+    <lastmod>2020-12-04T19:42:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-qv2ray/</loc>
+    <lastmod>2020-11-29T18:46:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/docker-install-postgres/</loc>
+    <lastmod>2020-11-24T23:44:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/docker/</loc>
+    <lastmod>2020-11-24T23:44:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/docker/</loc>
+    <lastmod>2020-11-24T23:44:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-install-docker/</loc>
+    <lastmod>2020-11-24T17:34:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/store-net-error/</loc>
+    <lastmod>2020-11-18T19:54:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/cygwin/</loc>
+    <lastmod>2020-11-07T14:37:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-8/</loc>
+    <lastmod>2020-11-04T21:32:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/git/</loc>
+    <lastmod>2020-10-19T17:40:53+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/git%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86/</loc>
+    <lastmod>2020-10-19T17:40:53+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/git-proxy/</loc>
+    <lastmod>2020-10-19T17:40:53+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/add-screego/</loc>
+    <lastmod>2020-10-16T15:06:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/go-version-management/</loc>
+    <lastmod>2020-10-13T20:34:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/use-csdn/</loc>
+    <lastmod>2020-10-10T17:50:24+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/chrome-%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2020-09-15T23:49:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/chrome-%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2020-09-15T23:49:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/chrome-skill/</loc>
+    <lastmod>2020-09-15T23:49:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/windows-install-docker/</loc>
+    <lastmod>2020-09-13T15:42:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/windows-kill/</loc>
+    <lastmod>2020-09-09T23:06:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/goland/</loc>
+    <lastmod>2020-09-06T00:43:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/goland/</loc>
+    <lastmod>2020-09-06T00:43:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/goland-golint/</loc>
+    <lastmod>2020-09-06T00:43:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/preview/</loc>
+    <lastmod>2020-11-05T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/syntax-highlighting/</loc>
+    <lastmod>2020-11-05T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/syntax-highlighting/</loc>
+    <lastmod>2020-11-05T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/syntax-highlighting/</loc>
+    <lastmod>2020-11-05T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/tag-5/</loc>
+    <lastmod>2020-11-05T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/github-fast/</loc>
+    <lastmod>2020-08-23T15:57:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/win-disk-manage/</loc>
+    <lastmod>2020-08-19T21:43:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/disk-dilation/</loc>
+    <lastmod>2020-08-19T21:16:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/vscode/</loc>
+    <lastmod>2020-08-09T18:04:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/vscode/</loc>
+    <lastmod>2020-08-09T18:04:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/vscode-keys/</loc>
+    <lastmod>2020-08-09T18:04:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/https/</loc>
+    <lastmod>2020-08-09T17:23:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/web/</loc>
+    <lastmod>2020-08-09T17:23:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/acme/</loc>
+    <lastmod>2020-08-09T17:23:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/hugo/</loc>
+    <lastmod>2020-08-06T22:54:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/hugo/</loc>
+    <lastmod>2020-08-06T22:54:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/style-change/</loc>
+    <lastmod>2020-08-06T22:54:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/about/</loc>
+    <lastmod>2020-08-01T13:40:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/about/</loc>
+    <lastmod>2020-08-01T13:40:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/about-change/</loc>
+    <lastmod>2020-08-01T13:40:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/about/</loc>
+    <lastmod>2020-07-30T20:50:19+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/about/call-me/</loc>
+    <lastmod>2020-07-30T20:50:19+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/about/services/</loc>
+    <lastmod>2020-07-30T20:49:19+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/about/links/</loc>
+    <lastmod>2020-07-30T20:48:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/chrome-engine/</loc>
+    <lastmod>2020-07-24T21:19:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/go-parse-time/</loc>
+    <lastmod>2020-07-21T10:02:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/use-windowns-touch/</loc>
+    <lastmod>2020-07-18T14:31:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/vm-centos-config/</loc>
+    <lastmod>2020-07-15T21:35:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/frp/</loc>
+    <lastmod>2020-07-15T20:10:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/custom-shortcode/</loc>
+    <lastmod>2020-07-14T22:23:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/cdn/</loc>
+    <lastmod>2020-07-14T19:22:40+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/cdn/</loc>
+    <lastmod>2020-07-14T19:22:40+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/cdn-jsdelivr/</loc>
+    <lastmod>2020-07-14T19:22:40+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2020-07-14T13:38:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2020-07-14T13:38:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/add-wordcloud/</loc>
+    <lastmod>2020-07-14T13:38:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/lnmp/</loc>
+    <lastmod>2020-07-13T21:13:21+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/docker-compose-lnmp/</loc>
+    <lastmod>2020-07-13T21:13:21+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/category-2/</loc>
+    <lastmod>2020-07-10T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/category-3/</loc>
+    <lastmod>2020-07-10T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/tag-3/</loc>
+    <lastmod>2020-07-10T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/theme-preview/</loc>
+    <lastmod>2020-07-10T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/theme-preview/</loc>
+    <lastmod>2020-07-10T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/even-preview/</loc>
+    <lastmod>2020-07-10T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/linux-attr/</loc>
+    <lastmod>2020-07-05T20:43:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/golang/</loc>
+    <lastmod>2020-07-04T21:47:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/golang/</loc>
+    <lastmod>2020-07-04T21:47:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/golang-struct-method/</loc>
+    <lastmod>2020-07-04T21:47:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/golang-flag/</loc>
+    <lastmod>2020-07-04T21:15:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/add-right-menu/</loc>
+    <lastmod>2020-06-25T19:10:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/add-search/</loc>
+    <lastmod>2020-06-25T13:20:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/manjaro/</loc>
+    <lastmod>2020-06-21T20:54:40+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/picgo/</loc>
+    <lastmod>2020-06-21T20:54:40+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/typora/</loc>
+    <lastmod>2020-06-21T20:54:40+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/typora-picgo/</loc>
+    <lastmod>2020-06-21T20:54:40+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/linux-zsh/</loc>
+    <lastmod>2020-06-21T10:24:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/zsh/</loc>
+    <lastmod>2020-06-21T10:24:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hugo-travis-finish/</loc>
+    <lastmod>2020-06-20T13:19:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hugo-travis/</loc>
+    <lastmod>2020-06-20T12:06:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-install-picgo/</loc>
+    <lastmod>2020-06-19T22:14:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/sunloginclent/</loc>
+    <lastmod>2020-06-19T19:28:10+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/%E5%90%91%E6%97%A5%E8%91%B5/</loc>
+    <lastmod>2020-06-19T19:28:10+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/dde-dock/</loc>
+    <lastmod>2020-06-18T21:44:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/hexo/</loc>
+    <lastmod>2020-06-07T20:34:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/hexo/</loc>
+    <lastmod>2020-06-07T20:34:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hexo2hugo/</loc>
+    <lastmod>2020-06-07T20:34:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/jetbrains-plugins/</loc>
+    <lastmod>2020-06-05T22:01:13+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hugo-page-variables/</loc>
+    <lastmod>2020-06-03T21:55:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hugo-site-variables/</loc>
+    <lastmod>2020-06-02T21:39:13+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/baidu-push/</loc>
+    <lastmod>2020-05-25T18:36:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-list/</loc>
+    <lastmod>2020-05-25T18:34:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/%E5%89%91%E6%8C%87offer-php/</loc>
+    <lastmod>2020-05-23T18:51:12+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/php-offer-01/</loc>
+    <lastmod>2020-05-23T18:51:12+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/scp/</loc>
+    <lastmod>2020-05-22T19:33:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/scp01/</loc>
+    <lastmod>2020-05-22T19:33:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/ssh/</loc>
+    <lastmod>2020-05-22T19:33:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/ssh-auth/</loc>
+    <lastmod>2020-05-22T19:33:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/cmder/</loc>
+    <lastmod>2020-05-22T18:35:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/cmder01/</loc>
+    <lastmod>2020-05-22T18:35:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2020-05-22T18:35:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/markdown/</loc>
+    <lastmod>2020-05-16T22:24:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/markdown/</loc>
+    <lastmod>2020-05-16T22:24:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/markdown-simple/</loc>
+    <lastmod>2020-05-16T22:24:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hash-token/</loc>
+    <lastmod>2020-05-11T21:47:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/%E6%80%9D%E8%80%83/</loc>
+    <lastmod>2020-05-11T21:47:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hexo-03/</loc>
+    <lastmod>2020-05-10T23:41:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hexo-04/</loc>
+    <lastmod>2020-05-10T19:31:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/git/</loc>
+    <lastmod>2020-05-10T15:41:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/git-sshkey/</loc>
+    <lastmod>2020-05-10T15:41:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/hooks/</loc>
+    <lastmod>2020-05-10T11:38:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hexo-02/</loc>
+    <lastmod>2020-05-10T11:38:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hexo-01/</loc>
+    <lastmod>2020-05-10T10:50:21+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/gitalk/</loc>
+    <lastmod>2020-05-07T11:08:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/gitalk/</loc>
+    <lastmod>2020-05-07T11:08:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hexo-gitalk-init/</loc>
+    <lastmod>2020-05-07T11:08:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hexo-ali/</loc>
+    <lastmod>2020-05-07T10:49:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/curl/</loc>
+    <lastmod>2020-05-07T10:40:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/curl/</loc>
+    <lastmod>2020-05-07T10:40:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/curl/</loc>
+    <lastmod>2020-05-07T10:40:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/buffalo/</loc>
+    <lastmod>2020-05-07T10:40:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/buffalo/</loc>
+    <lastmod>2020-05-07T10:40:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/buffalo-validate/</loc>
+    <lastmod>2020-05-07T10:40:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/buffalo-command/</loc>
+    <lastmod>2020-05-07T10:39:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/buffalo-help/</loc>
+    <lastmod>2020-05-07T10:39:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/buffalo/</loc>
+    <lastmod>2020-05-07T10:39:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hexo-gitalk/</loc>
+    <lastmod>2020-05-05T17:26:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/edit-hexo-url/</loc>
+    <lastmod>2020-05-04T21:00:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/travisci/</loc>
+    <lastmod>2020-05-01T17:17:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hexo-travisci/</loc>
+    <lastmod>2020-05-01T17:17:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2020-05-01T17:17:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/composer-source/</loc>
+    <lastmod>2020-04-28T22:32:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/sqlite3/</loc>
+    <lastmod>2020-04-28T08:16:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/sqlite3/</loc>
+    <lastmod>2020-04-28T08:16:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-sqlite3/</loc>
+    <lastmod>2020-04-28T08:16:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-install-golang/</loc>
+    <lastmod>2020-04-27T19:16:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-install-googel-chrome/</loc>
+    <lastmod>2020-04-26T11:05:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-problem/</loc>
+    <lastmod>2020-04-25T19:45:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-dock/</loc>
+    <lastmod>2020-04-25T19:34:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/deepin-use/</loc>
+    <lastmod>2020-04-25T18:49:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hexo/</loc>
+    <lastmod>2020-04-19T22:54:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/npm/</loc>
+    <lastmod>2020-04-19T20:50:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/npm-network/</loc>
+    <lastmod>2020-04-19T20:50:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hexo-init/</loc>
+    <lastmod>2020-04-19T19:11:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/english-preview/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/chinese-preview/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/japanese-preview/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/english/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/english/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/shortcodes/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/shortcodes/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/shortcodes/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/tag-1/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/tag-2/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/tag-4/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/%E4%B8%AD%E6%96%87/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/%E4%B8%AD%E6%96%87/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/categories/%E6%97%A5%E6%9C%AC%E8%AA%9E/</loc>
+    <lastmod>2020-03-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/hidden-post/</loc>
+    <lastmod>2020-03-08T22:01:19+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/js-flowchart-diagrams/</loc>
+    <lastmod>2020-03-04T21:57:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.caoayu.xyz/post/js-sequence-diagrams/</loc>
+    <lastmod>2020-03-04T21:57:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>

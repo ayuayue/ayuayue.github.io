@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>曹阿宇-个人博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="分享知识，分享生活，个人博客，程序，人生，哲学" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://www.caoayu.xyz/" />
+  <link href="https://www.caoayu.xyz/index.xml" rel="alternate" type="application/rss+xml" title="曹阿宇-个人博客" />
+  <link href="https://www.caoayu.xyz/index.xml" rel="feed" type="application/rss+xml" title="曹阿宇-个人博客" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="曹阿宇-个人博客" />
+<meta property="og:description" content="分享知识，分享生活，个人博客，程序，人生，哲学" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.caoayu.xyz/" />
+<meta property="og:updated_time" content="2021-03-29T17:49:22+08:00" />
+<meta itemprop="name" content="曹阿宇-个人博客">
+<meta itemprop="description" content="分享知识，分享生活，个人博客，程序，人生，哲学"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="曹阿宇-个人博客"/>
+<meta name="twitter:description" content="分享知识，分享生活，个人博客，程序，人生，哲学"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Caoayu</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    Caoayu</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/github-skill/">Github 小技巧</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-02-20 </span>
+      <div class="post-category">
+          <a href="/categories/github/"> github </a>
+          </div>
+        <span class="more-meta"> 约 465 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      用 vscode 的风格来查看 github 上的代码。 这个方法只能用来查看代码，无法编辑，适合用来看源码。不需要安装额外的插件。 使用方法： 在 GitHub 的顶级域名后加入 1s，寓
+    </div>
+    <div class="read-more">
+      <a href="/post/github-skill/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/php-frame01/">制作一个PHP简易框架（一）--准备工作</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-02-20 </span>
+      <div class="post-category">
+          <a href="/categories/php/"> php </a>
+          </div>
+        <span class="more-meta"> 约 792 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      前言 制作一个极简版的 php 框架。串联一下 web 开发中需要注意的核心关键点，从零开始构建一个完整的系统，通过创建系统框架的过程，理解 web 开发中做核心的内
+    </div>
+    <div class="read-more">
+      <a href="/post/php-frame01/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/deepin-dwm/">Deepin 极简主义 -- dwm</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-02-09 </span>
+      <div class="post-category">
+          <a href="/categories/deepin/"> deepin </a>
+          </div>
+        <span class="more-meta"> 约 1314 字 </span>
+        <span class="more-meta"> 预计阅读 3 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      dwm dwm 是X的动态窗口管理器。它管理平铺、单镜头和浮动布局的窗口。所有的布局都可以动态应用，优化了使用中的应用程序和执行的任务的环境。官网：ht
+    </div>
+    <div class="read-more">
+      <a href="/post/deepin-dwm/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/unistall-refind/">deepin use Refind</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-02-08 </span>
+      <div class="post-category">
+          <a href="/categories/deepin/"> deepin </a>
+          </div>
+        <span class="more-meta"> 约 56 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      安装 refind 1 sudo apt install refind 使用 refind 1 sudo refind-install 卸载 refind 1 2 3 4 5 6 7 8 9 10 sudo apt remove refind --purge cd /boot/efi/EFI sudo rm -r refind cd /boot/efi/EFI sudo apt autoremove refind cd /boot sudo rm -f refind_linux.conf cd /etc sudo rm -rf refind.d
+    </div>
+    <div class="read-more">
+      <a href="/post/unistall-refind/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/deepin-bluetooth/">Deepin 升级后蓝牙消失问题</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-02-07 </span>
+      <div class="post-category">
+          <a href="/categories/deepin-%E5%8D%87%E7%BA%A7%E5%90%8E%E8%93%9D%E7%89%99%E6%B6%88%E5%A4%B1%E9%97%AE%E9%A2%98/"> Deepin 升级后蓝牙消失问题 </a>
+          </div>
+        <span class="more-meta"> 约 376 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      在一开始使用 deepin 时确认过蓝牙是正常的，但是在最近的更新后却发现设置中找不到了蓝牙，任务栏也没了这个图标，版本是 20.01，内核为 5.10.5。
+    </div>
+    <div class="read-more">
+      <a href="/post/deepin-bluetooth/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/linux-picgo/">deepin Picgo 配置并配合 Typora 使用</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-02-07 </span>
+      <div class="post-category">
+          <a href="/categories/deepin/"> deepin </a>
+          </div>
+        <span class="more-meta"> 约 924 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      deepin 下使用 picgo ，在 deepin 下，有 picgo 的 AppImage 程序，用了一段时间不太理想，而且本来就是个小工具，只需要配置一次就可以了，就放弃了 AppImage 这种可视化的操作。改用 node 做的
+    </div>
+    <div class="read-more">
+      <a href="/post/linux-picgo/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/composer-other-autoload/">Composer (四) -- 其他自动加载方法</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-02-03 </span>
+      <div class="post-category">
+          <a href="/categories/composer/"> Composer </a>
+          </div>
+        <span class="more-meta"> 约 969 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      composer 自动加载 这篇写了自动加载及自定义类使用 psr4 加载。下面介绍下另两种自动加载的方式。1. classmap. 2 files classmap 方式 同样先创建一个 classmap 的目录结构 1 2 3 4 5 6 7 Classmap ├
+    </div>
+    <div class="read-more">
+      <a href="/post/composer-other-autoload/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/pandora/">斐讯k2刷第三方固件</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-01-22 </span>
+      <div class="post-category">
+          <a href="/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/"> 路由器 </a>
+          </div>
+        <span class="more-meta"> 约 2466 字 </span>
+        <span class="more-meta"> 预计阅读 5 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      斐讯k2 玩过路由器的大多都直到斐讯这个牌子，把老罗的理念贯彻的淋漓尽致。 我们不赚钱，只为了交个朋友 众所周知，老罗能有什么坏心思呢。😁 虽然老罗
+    </div>
+    <div class="read-more">
+      <a href="/post/pandora/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/composer-autoload/">Composer (三) -- Psr 自动加载</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-01-22 </span>
+      <div class="post-category">
+          <a href="/categories/composer/"> Composer </a>
+          </div>
+        <span class="more-meta"> 约 926 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      自动加载 composer (一) &ndash; 依赖管理 前面这篇文章介绍了 composer 对依赖的安装及更新。 composer (二) &ndash; 第三方包使用 这篇文章记录了如何使用一个第三方类。 这次介绍下 composer 的自
+    </div>
+    <div class="read-more">
+      <a href="/post/composer-autoload/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/composer-use-class/">Composer （二） -- 使用第三方包</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-01-19 </span>
+      <div class="post-category">
+          <a href="/categories/composer/"> Composer </a>
+          </div>
+        <span class="more-meta"> 约 297 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      composer 依赖管理 这篇文章写了对于第三方包的安装及使用，以及 composer 项目配置文件的说明，接下来说说 composer 安装第三方包后的使用。 首先，以 monolog 这个包为例。githu
+    </div>
+    <div class="read-more">
+      <a href="/post/composer-use-class/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/st/">Linux Simple Terminal</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-01-06 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          </div>
+        <span class="more-meta"> 约 1087 字 </span>
+        <span class="more-meta"> 预计阅读 3 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Terminal linux 下有许多优秀的 Termainl，我在用的有deepin-terminal,alacritty,&lsquo;simple terminal&rsquo;.alacritty 是一款使用显卡
+    </div>
+    <div class="read-more">
+      <a href="/post/st/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/composer/">composer (一) -- 依赖管理</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-01-02 </span>
+      <div class="post-category">
+          <a href="/categories/composer/"> Composer </a>
+          </div>
+        <span class="more-meta"> 约 1579 字 </span>
+        <span class="more-meta"> 预计阅读 4 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      composer composer 是 PHP 用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会
+    </div>
+    <div class="read-more">
+      <a href="/post/composer/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/switcher-z/">Windows 切换同窗口应用及git-bash的一些小工具</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-01-01 </span>
+      <div class="post-category">
+          <a href="/categories/windows/"> Windows </a>
+          </div>
+        <span class="more-meta"> 约 904 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      窗口切换 Windows 上切换窗口以及任务桌面的快捷键非常多，而且触摸板支持手势切换最近应用，但是缺少一个像 Linux 上面的那种切换同一个应用的不同窗口快捷键，在
+    </div>
+    <div class="read-more">
+      <a href="/post/switcher-z/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/wsl2/">Windows 下 wsl2 的使用及问题记录</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-12-30 </span>
+      <div class="post-category">
+          <a href="/categories/windows/"> Windows </a>
+          </div>
+        <span class="more-meta"> 约 3534 字 </span>
+        <span class="more-meta"> 预计阅读 8 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      什么是适用于 Linux 的 Windows 子系统？ 适用于 Linux 的 Windows 子系统可让开发人员按原样运行 GNU/Linux 环境 - 包括大多数命令行工具、实用工具和应用程序 - 且不会产生传统虚拟机或双
+    </div>
+    <div class="read-more">
+      <a href="/post/wsl2/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/homestead/">Windows 安装使用Homestead 遇到的问题总结</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-12-27 </span>
+      <div class="post-category">
+          <a href="/categories/homestead/"> Homestead </a>
+          </div>
+        <span class="more-meta"> 约 1438 字 </span>
+        <span class="more-meta"> 预计阅读 3 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      安装 本环境使用 VirtualBox6.1 Vagrant2.2 首先下载并安装这两个应用. 添加 homestead 1 vagrant box add laravel/homestead 根据提示,选择 VirtualBox 的选项,由于国内的大多网络环境,无法进行快速的下载.我们可以根据
+    </div>
+    <div class="read-more">
+      <a href="/post/homestead/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    </section>
+  
+  <nav class="pagination">
+    <a class="prev" href="/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    <a class="next" href="/page/3/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+  </nav>
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://www.caoayu.xyz/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">豫ICP备19012822号-2</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

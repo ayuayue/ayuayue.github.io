@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Deepin 安装Postgresql - 曹阿宇-个人博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="Docker 安装Postgresql" /><meta name="keywords" content="Docker 安装Postgresql" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://www.caoayu.xyz/post/docker-install-postgres/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Deepin 安装Postgresql" />
+<meta property="og:description" content="Docker 安装Postgresql" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.caoayu.xyz/post/docker-install-postgres/" />
+<meta property="article:published_time" content="2020-11-24T23:44:35+08:00" />
+<meta property="article:modified_time" content="2020-11-24T23:44:35+08:00" />
+<meta itemprop="name" content="Deepin 安装Postgresql">
+<meta itemprop="description" content="Docker 安装Postgresql">
+<meta itemprop="datePublished" content="2020-11-24T23:44:35&#43;08:00" />
+<meta itemprop="dateModified" content="2020-11-24T23:44:35&#43;08:00" />
+<meta itemprop="wordCount" content="2419">
+
+
+
+<meta itemprop="keywords" content="Docker," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deepin 安装Postgresql"/>
+<meta name="twitter:description" content="Docker 安装Postgresql"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Caoayu</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    Caoayu</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Deepin 安装Postgresql</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-11-24 </span>
+        <div class="post-category">
+            <a href="/categories/docker/"> Docker </a>
+            </div>
+          <span class="more-meta"> 约 2419 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#postgres"><code>Postgres</code></a></li>
+            <li><a href="#使用-deepin-本机安装">使用 <code>Deepin</code> 本机安装</a></li>
+            <li><a href="#使用-postgres-官方源安装-postgres12">使用 <code>postgres</code> 官方源安装 <code>postgres12</code></a></li>
+            <li><a href="#使用docker安装">使用<code>Docker</code>安装</a></li>
+            <li><a href="#实验-docker-容器的非持久化">实验 <code>docker</code> 容器的非持久化</a></li>
+            <li><a href="#进行持久化">进行持久化</a>
+              <ul>
+                <li><a href="#删除持久化文件">删除持久化文件</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-11-24T23:44:35" title="November 24, 2020">November 24, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h3 id="postgres"><code>Postgres</code></h3>
+<p><code>PostgreSQL: The World's Most Advanced Open Source Relational Database</code></p>
+<h3 id="使用-deepin-本机安装">使用 <code>Deepin</code> 本机安装</h3>
+<p><code>deepin20</code> 官方仓库中默认的是 <code>postgres11</code> 版本</p>
+<ol>
+<li>安装 <code>postgres</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 首先卸载旧版本或配置错误的版本</span>
+sudo apt remove postgresql --purge <span class="c1"># purge 连同配置文件一起删除</span>
+sudo apt install postgresql
+<span class="c1"># psql version 检查安装是否成功</span> 
+<span class="c1"># service psotgresql status 检查 postgres 状态</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>连接</li>
+</ol>
+<p><code>postgres</code> 安装完成默认存在一个 <code>postgres</code> 数据库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">psql -U postgres -h 127.0.0.1 -p <span class="m">5432</span> -d postgres
+<span class="c1"># -U 用户名 -h 连接地址 -p 端口 -d 数据库名</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果连接失败或者说用户不存在则使用 <code>postgres</code> 用户登录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo su - postgres <span class="c1"># 切换到 postgres 用户</span>
+psql <span class="c1"># 登录</span>
+<span class="se">\p</span>assword postgres <span class="c1"># 更改 postgres 用户的密码，然后输入两次密码</span>
+<span class="se">\q</span> <span class="c1"># 退出控制台</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>再次连接</li>
+</ol>
+<p>这时，我们再通过上面的命令或者使用 <code>dbeaver</code> 进行连接都可以连接成功了。</p>
+<ol start="4">
+<li>新建用户</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">adduser dbuser <span class="c1"># 系统中新建一个用户</span>
+psql -U postgres -h 127.0.0.1 -p <span class="m">5432</span> -d postgres <span class="c1"># 登录进控制台</span>
+CREATE USER dbuser WITH PASSWORD <span class="s1">&#39;dbuser&#39;</span><span class="p">;</span> <span class="c1"># 创建数据库用户 dbuser 为密码</span>
+CREATE DATABASE mydb OWNER dbuser<span class="p">;</span> <span class="c1"># 创建数据库，并指定所有者为 dbuser</span>
+GRANT ALL PRIVILEGES ON DATABASE mydb TO dbuser <span class="c1"># 将 mydb 的所有权限赋予 dbuser 用户</span>
+<span class="se">\q</span> <span class="c1"># 退出</span>
+psql -U dbuser -h 127.0.0.1 -p <span class="m">5432</span> -d mydb <span class="c1"># 登录验证</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>此时我们可以使用 <code>dbeaver</code> 连接，使用 <code>dbuser</code> 用户名 <code>mydb</code> 数据库。</p>
+<ol start="5">
+<li>
+<p>导入 <code>sql</code> 文件</p>
+<ol>
+<li>导出 <code>sql</code> 文件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pd_dump -U postgres -h 127.0.0.1 -p <span class="m">5432</span> -d postgres &gt; ./postgres.sql
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>导入 <code>sql</code> 文件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">psql -U postgres -d postgres -h 127.0.0.1 -p <span class="m">5432</span> &lt; ./postgres.sql
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="使用-postgres-官方源安装-postgres12">使用 <code>postgres</code> 官方源安装 <code>postgres12</code></h3>
+<p><a href="https://www.postgresql.org/download/">官方所有linux安装方式</a></p>
+<p>首先卸载旧版本或配置错误的版本</p>
+<p><code>sudo apt remove postgresql --purge # purge 连同配置文件一起删除</code></p>
+<ol>
+<li>创建官方源配置文件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo sh -c <span class="s1">&#39;echo &#34;deb http://apt.postgresql.org/pub/repos/apt buster-pgdg main&#34; &gt; /etc/apt/sources.list.d/pgdg.list&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>导入签名</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc <span class="p">|</span> sudo apt-key add -
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>更新本地软件仓库</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt update
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>安装</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"> apt-get install postgresql-12
+</code></pre></td></tr></table>
+</div>
+</div><p><code>postgres</code> 官方的仓库包含下面的一些软件</p>
+<ul>
+<li><code>postgresql-client-12</code></li>
+<li><code>postgresql-12</code></li>
+<li><code>postgresql-contrib-9.x</code></li>
+<li><code>libpq-dev</code></li>
+<li><code>postgresql-server-dev-12</code></li>
+<li><code>pgadmin4</code></li>
+</ul>
+<p><code>pgadmin</code> 是 <code>postgres</code> 的一个客户端，可以在 <code>deepin</code> 中使用。不过推荐一个 <code>linux</code> 上更好用的数据库管理软件 <code>dbeaver</code> ，可以连接大多数关系型数据库跟非关系型数据库，但是对于导入导出自我感觉没有 <code>navicat</code> 好用，不过可以使用命令行的导入导出来代替是一样的。</p>
+<h3 id="使用docker安装">使用<code>Docker</code>安装</h3>
+<ol>
+<li>拉取 <code>postgres</code> 镜像</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker pull postgres
+<span class="c1"># 检查镜像是否拉取</span>
+docker images <span class="c1"># 或者 docker image ls</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>运行</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker run -d --name postgres-server -p 5432:5432 -e <span class="s2">&#34;POSTGRES_PASSWORD=progres&#34;</span>  postgres
+<span class="c1"># --name 容器运行的名称 -p 端口映射 -e 环境变量 postgres 镜像名</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>停止 | 重启</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker stop postgres-server
+docker restart postgres-server
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>持久化</li>
+</ol>
+<p>如果容器被删除，那么容器中 <code>postgres</code> 的数据也会一并被删除，所以我们要将数据保存到本机中，方便数据的备份与恢复。</p>
+<p>验证如果不开启持久化是否会丢失数据</p>
+<p>4.1 首先以交互模式进入 <code>docker</code> 中的 <code>postgres</code> ，以上文运行的容器为依据。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it postgres-server bash
+</code></pre></td></tr></table>
+</div>
+</div><p>此时已经进入了容器中的  <code>postgres</code> ，使用的是 <code>bash</code> 这个<code>shell</code> ，接下来我们使用命令行进入数据库中，并添加几条数据，然后将容器停止运行，查看数据是否还在，如果数据还在，那么删除掉这个镜像再查看数据是否还在，如果不在则恰恰说明了容器中的数据并没有被持久化，所以我们需要配置本地的文件对应到容器中的数据存放文件，来实现持久化，保护我们的数据。</p>
+<h3 id="实验-docker-容器的非持久化">实验 <code>docker</code> 容器的非持久化</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 我们进入 docker 中的 bash， 登录到 postgres数据库</span>
+psql  <span class="c1"># 输入这个命令会报错，说没有 root 用户，跟上面在本机上安装是一样的。我们直接切换到 postgres 用户，然后登录，密码是 镜像 -e配置的那个环境变量。</span>
+su - postgres
+psql <span class="c1"># 此时可以进入到数据库,此时会提醒我们使用 help 查看帮助命令</span>
+<span class="se">\l</span> <span class="c1"># 查看当前的所有数据库</span>
+<span class="se">\c</span> postgres <span class="c1"># 进入到 postgres 数据库中</span>
+<span class="se">\d</span>t <span class="c1"># 查看所有的表，第一次查询为空</span>
+CREATE TABLE first <span class="o">(</span>id int,name char<span class="o">(</span>50<span class="o">))</span><span class="p">;</span> <span class="c1"># 创建一张表</span>
+<span class="se">\d</span>t <span class="c1"># 现在可以查询到存在一张 first 表</span>
+<span class="k">select</span> tabelname form pg_tables where <span class="nv">schemaname</span><span class="o">=</span><span class="s1">&#39;public&#39;</span> <span class="c1"># 同样查询 public 下的表，更加直观</span>
+insert into first <span class="o">(</span>id,name<span class="o">)</span> values <span class="o">(</span>1,<span class="s1">&#39;lili&#39;</span><span class="o">)</span><span class="p">;</span> <span class="c1"># 插入一条记录</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>现在镜像中已经存在了一个表，其中有一条数据，我们可以在宿主机使用命令登录进去查询，也可以使用可视化工具，如 <code>dbeaver,pgadmin</code> 等。</p>
+<p>现在停止掉运行的容器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker stop postgres-server 
+docker ps -a <span class="c1"># 检查所有的容器，	exited说明已经停止，通过命令或者可视化工具也会连接失败。</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>现在重新启动容器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker start postgres-server
+</code></pre></td></tr></table>
+</div>
+</div><p>此时发现，数据跟表都还在。所以容器的停止并不会丢失数据，现在我们将容器删除掉试试，因为当前容器被创建后有自己的存储位置，而这些文件的生命周期是与 <code>docker</code> 容器相同的，即时被停止也依旧报存在容器中，当容器被销毁则数据也被删除。所以对于临时的应用使用默认的存储方式即可，对于要求数据的完整及稳定性的应用，应当使用持久化的方式进行报存。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 删除运行的容器会报错，首先将容器停止</span>
+docker stop postgres-server
+docker rm postgres-server <span class="c1"># 删除容器</span>
+docker ps -a <span class="c1"># 发现 postgres-server 没有了，说明删除成功。</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这次我们重新运行一个新容器，再次查看容器內数据，进而验证标题。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker run -d --name postgres-server -p 5432:5432 -e <span class="s2">&#34;POSTGRES_PASSWORD=progres&#34;</span>  postgres <span class="c1"># 返回一串 id 说明运行成功</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>此时，我们使用可视化工具或者命令行，又或者进入 <code>docker</code> 的交互 <code>bash</code> ，都可以看到创建的数据不在了，因为容器已经改变了。是一个新的容器。</p>
+<h3 id="进行持久化">进行持久化</h3>
+<p>持久化数据也就是使用本地的一个目录来存放容器中的数据，因为数据在本地，所以容器的删除不会影响本地的数据，但是如果本地文件删除掉那就没办法了，所以对于重要数据要定时进行备份。</p>
+<ol>
+<li>创建本地卷</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker volume create pgdata
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>启动容器</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker run -d --name postgres-server -v pgdata:/var/lib/postgresql/data -p 5432:5432 -e <span class="s2">&#34;POSTGRES_PASSWORD=root&#34;</span> postgres
+<span class="c1"># -v 指定本地卷，用容器中的 /var/lib/postgresql/data 目录来盛放数据，因为这是 postgres 的数据存放文件，我们需要将这个文件映射到我们的主机上，实现持久化。</span>
+docker volume inspect pgdata <span class="c1"># 使用这个命令我们可以查看 pgdata 卷的详细信息</span>
+<span class="c1"># 一下是输出</span>
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">&#34;CreatedAt&#34;</span>: <span class="s2">&#34;2020-11-26T22:03:19+08:00&#34;</span>,
+        <span class="s2">&#34;Driver&#34;</span>: <span class="s2">&#34;local&#34;</span>,
+        <span class="s2">&#34;Labels&#34;</span>: null,
+        <span class="s2">&#34;Mountpoint&#34;</span>: <span class="s2">&#34;/var/lib/docker/volumes/pgdata/_data&#34;</span>,
+        <span class="s2">&#34;Name&#34;</span>: <span class="s2">&#34;pgdata&#34;</span>,
+        <span class="s2">&#34;Options&#34;</span>: null,
+        <span class="s2">&#34;Scope&#34;</span>: <span class="s2">&#34;local&#34;</span>
+    <span class="o">}</span>
+<span class="o">]</span>
+<span class="c1"># Mountpoint 就是我们主机上的目录，与 docker 容器共享，并且当容器被删除，主机上的数据依旧存在，我们可以在主机中查看 /var/lib/docker/volumes/pgdata/_data 文件中的内容，我们对此目录內进行文件的操作在容器中是会同步更新的。所以可以实现容器內数据库操作，删除容器数据保留。</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>测试持久化</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it postgres-server bash
+su - postgres
+<span class="se">\c</span> postgres
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># create table test1(id int,name char(50));</span>
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># insert into test1 (id,name) values (1,&#39;lisa&#39;);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>现在跟上面测试一样，添加了数据。然后继续删除容器。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 删除运行的容器会报错，首先将容器停止</span>
+docker stop postgres-server
+docker rm postgres-server <span class="c1"># 删除容器</span>
+docker ps -a <span class="c1"># 发现 postgres-server 没有了，说明删除成功。</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这时容器已经被删除了，但是我们发现主机上的文件依旧是存在的，所以我们运行新容器时指定这个卷就可以使用以前的数据了。</p>
+<p>然后使用指定卷持久化的方式进行运行容器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker run -d --name postgres-server -v pgdata:/www/docker/volumes/pgdata -p 5432:5432 -e <span class="s2">&#34;POSTGRES_PASSWORD=root&#34;</span> postgres
+</code></pre></td></tr></table>
+</div>
+</div><p>哇塞，数据库跟文件又回来了 😄。 it &rsquo;s 😎</p>
+<h4 id="删除持久化文件">删除持久化文件</h4>
+<p>对数据进行持久化后，我们可能已经备份了数据，想要删除到主机上的文件，可以执行下面的命令</p>
+<p>在 <code>docker</code> 中 卷 <code>volume</code> 是一等公民，可以直接使用命令操作。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker volume rm pgdata
+</code></pre></td></tr></table>
+</div>
+</div><p>这个时候主机上的目录也没有了，数据就被删除了。 😓</p>
+<p><strong>我们如果需要使用持久化的方式复原一个容器是可以实现的，但是不要删除卷 <code>volume</code> 否则持久化的数据就会丢失。</strong></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-11-24</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/docker/">Docker</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/deepin-qv2ray/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Deepin Qv2ray</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/deepin-install-docker/">
+            <span class="next-text nav-default">Deepin20安装docker</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+  <script src="https://utteranc.es/client.js"
+    repo="ayuayue/blogtalk" issue-term="pathname"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by
+      utterances.</a></noscript>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://www.caoayu.xyz/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">豫ICP备19012822号-2</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

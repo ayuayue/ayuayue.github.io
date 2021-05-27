@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on 曹阿宇-个人博客</title>
+    <link>https://www.caoayu.xyz/categories/hugo/</link>
+    <description>Recent content in hugo on 曹阿宇-个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>豫ICP备19012822号-2</copyright>
+    <lastBuildDate>Thu, 06 Aug 2020 22:54:55 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.caoayu.xyz/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>博客整体风格更改</title>
+      <link>https://www.caoayu.xyz/post/style-change/</link>
+      <pubDate>Thu, 06 Aug 2020 22:54:55 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/style-change/</guid>
+      <description>原主题问题 使用even的github最新主题,发现更改主题样式无法生效,很多样式的更改都无法失效 😭 ,最终查阅issuse得知更改src目录后</description>
+    </item>
+    
+    <item>
+      <title>自定义短标签</title>
+      <link>https://www.caoayu.xyz/post/custom-shortcode/</link>
+      <pubDate>Tue, 14 Jul 2020 22:23:23 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/custom-shortcode/</guid>
+      <description>Hugo无法渲染video标签 在markdown文件中可以使用video标签,来完成视频的内嵌,但是hugo无法将该标签渲染成为正常的h5的</description>
+    </item>
+    
+    <item>
+      <title>新增搜索功能</title>
+      <link>https://www.caoayu.xyz/post/add-search/</link>
+      <pubDate>Thu, 25 Jun 2020 13:20:25 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/add-search/</guid>
+      <description>给hugo添加搜索功能 当文章数量太多了以后,寻找文章如果只靠标签,分类,和归档是不太容易的,尤其是对标签和分类有哪些标签,划分是否合理不清楚</description>
+    </item>
+    
+    <item>
+      <title>Hugo Travis 完结!</title>
+      <link>https://www.caoayu.xyz/post/hugo-travis-finish/</link>
+      <pubDate>Sat, 20 Jun 2020 13:19:56 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hugo-travis-finish/</guid>
+      <description>hexo-hugo平台的转移完成！ 今天完成了博客遗留下来的一些问题，并配置好了自动推送及webhooks，有着hexo的基础，配置起来并不难</description>
+    </item>
+    
+    <item>
+      <title>Hugo Travis</title>
+      <link>https://www.caoayu.xyz/post/hugo-travis/</link>
+      <pubDate>Sat, 20 Jun 2020 12:06:36 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hugo-travis/</guid>
+      <description>博客更换计划 自从打算把博客换到hugo到现在已经过去两个星期了，今天才开始往服务器上面部署，之所以没有直接部署还是有很多原因限制，时间是一个</description>
+    </item>
+    
+    <item>
+      <title>hugo-页面变量</title>
+      <link>https://www.caoayu.xyz/post/hugo-page-variables/</link>
+      <pubDate>Wed, 03 Jun 2020 21:55:59 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hugo-page-variables/</guid>
+      <description>页面变量 页面级变量在内容文件的首页中定义，从内容的文件位置派生或从内容主体本身提取. .Aliases : 当前页面的别名 .Content : 当前页面的内容 .Data : 当前页面的Dat</description>
+    </item>
+    
+    <item>
+      <title>hugo-站点变量</title>
+      <link>https://www.caoayu.xyz/post/hugo-site-variables/</link>
+      <pubDate>Tue, 02 Jun 2020 21:39:13 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hugo-site-variables/</guid>
+      <description>站点变量 在站点的配置中定义了许多（但不是全部）站点范围的变量. 但是，Hugo 提供了许多内置变量，可方便地访问模板中的全局值. .Site.AllPages : 获取所有页面</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssh on 曹阿宇-个人博客</title>
+    <link>https://www.caoayu.xyz/tags/ssh/</link>
+    <description>Recent content in ssh on 曹阿宇-个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>豫ICP备19012822号-2</copyright>
+    <lastBuildDate>Fri, 22 May 2020 19:33:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.caoayu.xyz/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>配置ssh免密登陆,并使用命令行与服务器交互</title>
+      <link>https://www.caoayu.xyz/post/ssh-auth/</link>
+      <pubDate>Fri, 22 May 2020 19:33:42 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/ssh-auth/</guid>
+      <description>&lt;p&gt;对于经常要连接服务器进行交互的人来说,有很多种方式,最多的就是使用一些比较成熟的应用,如&lt;code&gt;xshell,finalshell,xftp&lt;/code&gt;等.在上一篇文章中我们搭建了一个新的终端,这次来使用终端来进行服务器的交互,包括访问以及文件的上传和下载.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

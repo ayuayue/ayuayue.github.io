@@ -1,0 +1,1369 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 曹阿宇-个人博客</title>
+    <link>https://www.caoayu.xyz/post/</link>
+    <description>Recent content in Posts on 曹阿宇-个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>豫ICP备19012822号-2</copyright>
+    <lastBuildDate>Mon, 29 Mar 2021 17:49:22 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.caoayu.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PHP 扩展管理</title>
+      <link>https://www.caoayu.xyz/post/php-pear/</link>
+      <pubDate>Mon, 29 Mar 2021 17:49:22 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-pear/</guid>
+      <description>扩展安装方式 一般为 PHP 安装扩展有很多方式，比如直接编译安装，或者下载编译好的扩展库。但是还可以使用一些扩展管理的工具来管理，比如 pear，pe</description>
+    </item>
+    
+    <item>
+      <title>使用 Supervisor 管理进程</title>
+      <link>https://www.caoayu.xyz/post/supervisor/</link>
+      <pubDate>Sun, 21 Mar 2021 18:30:31 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/supervisor/</guid>
+      <description>Linux 的后台程序运行有很多中方法，例如 nohub、screen 、tmux 等，但是有些业务对进程的要求比较严格，要成为守护进程，并且可以监控运行状</description>
+    </item>
+    
+    <item>
+      <title>Chrome 原生截长图</title>
+      <link>https://www.caoayu.xyz/post/chrome-screen/</link>
+      <pubDate>Mon, 15 Mar 2021 19:01:31 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/chrome-screen/</guid>
+      <description>有时候有在网页上截长图的需求，有很多的浏览器扩展和第三方软件提供了这个功能，今天介绍下使用 Chrome 自带的功能，理论所有 Chrome 内核的浏览器都能使用。 打开</description>
+    </item>
+    
+    <item>
+      <title>使用Scrcpy在Linux操控安卓</title>
+      <link>https://www.caoayu.xyz/post/scrcpy/</link>
+      <pubDate>Mon, 08 Mar 2021 17:55:06 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/scrcpy/</guid>
+      <description>在 Windows 上系统自带了投屏功能，然而 deepin 也有 深度演示助手 ，不过我并没有在系统中找到。论坛中的反响都是在 15 版本，现在已经是 20.2 了。 寻找到了一个叫 QTScrcpy 的应用</description>
+    </item>
+    
+    <item>
+      <title>Jetbrains 开源许可证</title>
+      <link>https://www.caoayu.xyz/post/jetbrains-license/</link>
+      <pubDate>Wed, 03 Mar 2021 14:23:12 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/jetbrains-license/</guid>
+      <description>Jetbrains开源许可证 是对开源项目的核心贡献者提供的福利，可以免费给开发者提供一年的 jetbrains 产品的使用授权。 准备 github 开源项目。 github 邮箱设置为公开</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（十）-- Session and Cookie</title>
+      <link>https://www.caoayu.xyz/post/php-frame10/</link>
+      <pubDate>Sun, 28 Feb 2021 14:15:18 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-frame10/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（九）-- ORM</title>
+      <link>https://www.caoayu.xyz/post/php-frame09/</link>
+      <pubDate>Thu, 25 Feb 2021 18:01:32 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-frame09/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>酷狗音乐爬虫</title>
+      <link>https://www.caoayu.xyz/post/kugou/</link>
+      <pubDate>Wed, 24 Feb 2021 14:08:30 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/kugou/</guid>
+      <description>music 最近很少用 deepin 在线或者使用客户段听音乐了，喜欢下载到本地听那些熟悉的歌曲。 很多歌不是这个平台没版权就是那个要付费。也是顾虑到网易云9级用户的</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（八）-- 配置中心</title>
+      <link>https://www.caoayu.xyz/post/php-frame08/</link>
+      <pubDate>Wed, 24 Feb 2021 08:24:44 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-frame08/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（七）-- 路由及路径优化</title>
+      <link>https://www.caoayu.xyz/post/php-frame07/</link>
+      <pubDate>Tue, 23 Feb 2021 11:07:36 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-frame07/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（六）-- 视图模板</title>
+      <link>https://www.caoayu.xyz/post/php-frame06/</link>
+      <pubDate>Mon, 22 Feb 2021 09:30:09 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-frame06/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（五）-- 响应</title>
+      <link>https://www.caoayu.xyz/post/php-frame05/</link>
+      <pubDate>Mon, 22 Feb 2021 08:56:18 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-frame05/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（四）-- 路由系统</title>
+      <link>https://www.caoayu.xyz/post/php-frame04/</link>
+      <pubDate>Sun, 21 Feb 2021 15:47:56 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-frame04/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（三）-- 信息调试</title>
+      <link>https://www.caoayu.xyz/post/php-frame03/</link>
+      <pubDate>Sun, 21 Feb 2021 15:36:48 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-frame03/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（二）-- 引入容器</title>
+      <link>https://www.caoayu.xyz/post/php-frame02/</link>
+      <pubDate>Sun, 21 Feb 2021 08:44:20 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-frame02/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>Github 小技巧</title>
+      <link>https://www.caoayu.xyz/post/github-skill/</link>
+      <pubDate>Sat, 20 Feb 2021 15:25:05 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/github-skill/</guid>
+      <description>用 vscode 的风格来查看 github 上的代码。 这个方法只能用来查看代码，无法编辑，适合用来看源码。不需要安装额外的插件。 使用方法： 在 GitHub 的顶级域名后加入 1s，寓</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（一）--准备工作</title>
+      <link>https://www.caoayu.xyz/post/php-frame01/</link>
+      <pubDate>Sat, 20 Feb 2021 10:45:32 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-frame01/</guid>
+      <description>前言 制作一个极简版的 php 框架。串联一下 web 开发中需要注意的核心关键点，从零开始构建一个完整的系统，通过创建系统框架的过程，理解 web 开发中做核心的内</description>
+    </item>
+    
+    <item>
+      <title>Deepin 极简主义 -- dwm</title>
+      <link>https://www.caoayu.xyz/post/deepin-dwm/</link>
+      <pubDate>Tue, 09 Feb 2021 10:58:52 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-dwm/</guid>
+      <description>dwm dwm 是X的动态窗口管理器。它管理平铺、单镜头和浮动布局的窗口。所有的布局都可以动态应用，优化了使用中的应用程序和执行的任务的环境。官网：ht</description>
+    </item>
+    
+    <item>
+      <title>deepin use Refind</title>
+      <link>https://www.caoayu.xyz/post/unistall-refind/</link>
+      <pubDate>Mon, 08 Feb 2021 11:14:51 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/unistall-refind/</guid>
+      <description>安装 refind 1 sudo apt install refind 使用 refind 1 sudo refind-install 卸载 refind 1 2 3 4 5 6 7 8 9 10 sudo apt remove refind --purge cd /boot/efi/EFI sudo rm -r refind cd /boot/efi/EFI sudo apt autoremove refind cd /boot sudo rm -f refind_linux.conf cd /etc sudo rm -rf refind.d</description>
+    </item>
+    
+    <item>
+      <title>Deepin 升级后蓝牙消失问题</title>
+      <link>https://www.caoayu.xyz/post/deepin-bluetooth/</link>
+      <pubDate>Sun, 07 Feb 2021 17:06:38 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-bluetooth/</guid>
+      <description>在一开始使用 deepin 时确认过蓝牙是正常的，但是在最近的更新后却发现设置中找不到了蓝牙，任务栏也没了这个图标，版本是 20.01，内核为 5.10.5。</description>
+    </item>
+    
+    <item>
+      <title>deepin Picgo 配置并配合 Typora 使用</title>
+      <link>https://www.caoayu.xyz/post/linux-picgo/</link>
+      <pubDate>Sun, 07 Feb 2021 14:51:25 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/linux-picgo/</guid>
+      <description>deepin 下使用 picgo ，在 deepin 下，有 picgo 的 AppImage 程序，用了一段时间不太理想，而且本来就是个小工具，只需要配置一次就可以了，就放弃了 AppImage 这种可视化的操作。改用 node 做的</description>
+    </item>
+    
+    <item>
+      <title>Composer (四) -- 其他自动加载方法</title>
+      <link>https://www.caoayu.xyz/post/composer-other-autoload/</link>
+      <pubDate>Wed, 03 Feb 2021 21:19:51 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/composer-other-autoload/</guid>
+      <description>composer 自动加载 这篇写了自动加载及自定义类使用 psr4 加载。下面介绍下另两种自动加载的方式。1. classmap. 2 files classmap 方式 同样先创建一个 classmap 的目录结构 1 2 3 4 5 6 7 Classmap ├</description>
+    </item>
+    
+    <item>
+      <title>斐讯k2刷第三方固件</title>
+      <link>https://www.caoayu.xyz/post/pandora/</link>
+      <pubDate>Fri, 22 Jan 2021 19:05:20 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/pandora/</guid>
+      <description>斐讯k2 玩过路由器的大多都直到斐讯这个牌子，把老罗的理念贯彻的淋漓尽致。 我们不赚钱，只为了交个朋友 众所周知，老罗能有什么坏心思呢。😁 虽然老罗</description>
+    </item>
+    
+    <item>
+      <title>Composer (三) -- Psr 自动加载</title>
+      <link>https://www.caoayu.xyz/post/composer-autoload/</link>
+      <pubDate>Fri, 22 Jan 2021 12:44:19 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/composer-autoload/</guid>
+      <description>自动加载 composer (一) &amp;ndash; 依赖管理 前面这篇文章介绍了 composer 对依赖的安装及更新。 composer (二) &amp;ndash; 第三方包使用 这篇文章记录了如何使用一个第三方类。 这次介绍下 composer 的自</description>
+    </item>
+    
+    <item>
+      <title>Composer （二） -- 使用第三方包</title>
+      <link>https://www.caoayu.xyz/post/composer-use-class/</link>
+      <pubDate>Tue, 19 Jan 2021 17:44:58 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/composer-use-class/</guid>
+      <description>composer 依赖管理 这篇文章写了对于第三方包的安装及使用，以及 composer 项目配置文件的说明，接下来说说 composer 安装第三方包后的使用。 首先，以 monolog 这个包为例。githu</description>
+    </item>
+    
+    <item>
+      <title>Linux Simple Terminal</title>
+      <link>https://www.caoayu.xyz/post/st/</link>
+      <pubDate>Wed, 06 Jan 2021 20:53:11 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/st/</guid>
+      <description>Terminal linux 下有许多优秀的 Termainl，我在用的有deepin-terminal,alacritty,&amp;lsquo;simple terminal&amp;rsquo;.alacritty 是一款使用显卡</description>
+    </item>
+    
+    <item>
+      <title>composer (一) -- 依赖管理</title>
+      <link>https://www.caoayu.xyz/post/composer/</link>
+      <pubDate>Sat, 02 Jan 2021 22:18:17 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/composer/</guid>
+      <description>composer composer 是 PHP 用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会</description>
+    </item>
+    
+    <item>
+      <title>Windows 切换同窗口应用及git-bash的一些小工具</title>
+      <link>https://www.caoayu.xyz/post/switcher-z/</link>
+      <pubDate>Fri, 01 Jan 2021 12:19:21 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/switcher-z/</guid>
+      <description>窗口切换 Windows 上切换窗口以及任务桌面的快捷键非常多，而且触摸板支持手势切换最近应用，但是缺少一个像 Linux 上面的那种切换同一个应用的不同窗口快捷键，在</description>
+    </item>
+    
+    <item>
+      <title>Windows 下 wsl2 的使用及问题记录</title>
+      <link>https://www.caoayu.xyz/post/wsl2/</link>
+      <pubDate>Wed, 30 Dec 2020 17:54:43 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/wsl2/</guid>
+      <description>什么是适用于 Linux 的 Windows 子系统？ 适用于 Linux 的 Windows 子系统可让开发人员按原样运行 GNU/Linux 环境 - 包括大多数命令行工具、实用工具和应用程序 - 且不会产生传统虚拟机或双</description>
+    </item>
+    
+    <item>
+      <title>Windows 安装使用Homestead 遇到的问题总结</title>
+      <link>https://www.caoayu.xyz/post/homestead/</link>
+      <pubDate>Sun, 27 Dec 2020 17:44:18 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/homestead/</guid>
+      <description>安装 本环境使用 VirtualBox6.1 Vagrant2.2 首先下载并安装这两个应用. 添加 homestead 1 vagrant box add laravel/homestead 根据提示,选择 VirtualBox 的选项,由于国内的大多网络环境,无法进行快速的下载.我们可以根据</description>
+    </item>
+    
+    <item>
+      <title>Linux 下更改大写锁定键为ESC</title>
+      <link>https://www.caoayu.xyz/post/linux-edit-map/</link>
+      <pubDate>Fri, 11 Dec 2020 20:37:12 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/linux-edit-map/</guid>
+      <description>Caps_Lock 大写锁定键，一般用的很少。但是它的位置又十分容易按到，而 esc 用的频率比较高，但是，位置却很尴尬。尤其在 vim 或一些终端之中，所以我们可以将键位进</description>
+    </item>
+    
+    <item>
+      <title>Deepin LNMP环境搭建</title>
+      <link>https://www.caoayu.xyz/post/deepin-lnmp/</link>
+      <pubDate>Sat, 05 Dec 2020 11:26:37 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-lnmp/</guid>
+      <description>LNMP lnmp 是一个常见的web开发的环境，尤其对于 phper 来说，基本是必须要使用的一套环境。但是在 Linux 下的安装和配置并不是那么容易，所以近些年涌现了不少的一</description>
+    </item>
+    
+    <item>
+      <title>Deepin 安装及使用Rime输入法--中州韵输入法</title>
+      <link>https://www.caoayu.xyz/post/deepin-rime/</link>
+      <pubDate>Fri, 04 Dec 2020 19:42:43 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-rime/</guid>
+      <description>中州韵 聪明的输入法 &amp;ndash; 中州韵 三个平台有三个不同的名字，但使用跟配置都相同。 Windows &amp;ndash; 小狼毫 Mac &amp;ndash; 鼠鬚管 Linux &amp;ndash; 中州韵 鬼知道为什么起这么多名字 「手动滑稽」😅</description>
+    </item>
+    
+    <item>
+      <title>Deepin Qv2ray</title>
+      <link>https://www.caoayu.xyz/post/deepin-qv2ray/</link>
+      <pubDate>Sun, 29 Nov 2020 18:46:45 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-qv2ray/</guid>
+      <description>下载 Qv2ray 从 release 发布页下载适合自己电脑架构的可执行文件 从 deepin 的星火应用商店下载 星火应用商店 ​ 配置 v2ray 核心 Qv2ray 并没有包含 v2ray 的核心软件包，所以需要自行下载，</description>
+    </item>
+    
+    <item>
+      <title>Deepin 安装Postgresql</title>
+      <link>https://www.caoayu.xyz/post/docker-install-postgres/</link>
+      <pubDate>Tue, 24 Nov 2020 23:44:35 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/docker-install-postgres/</guid>
+      <description>Postgres PostgreSQL: The World&#39;s Most Advanced Open Source Relational Database 使用 Deepin 本机安装 deepin20 官方仓库中默认的是 postgres11 版本 安装 postgres 1 2 3 4 5 # 首先卸载旧版本或配置错误的版本 sudo apt remove postgresql --purge # purge 连同配置文件一起删</description>
+    </item>
+    
+    <item>
+      <title>Deepin20安装docker</title>
+      <link>https://www.caoayu.xyz/post/deepin-install-docker/</link>
+      <pubDate>Tue, 24 Nov 2020 17:34:56 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-install-docker/</guid>
+      <description>深度操作系统 Deepin deepin 属于 debain 系，跟 Ubuntu 相似，由国人开发。现在作为我的主力开发环境，使用下来还不错，虽不如 windows， mac 的整体流畅度，但是已经满足</description>
+    </item>
+    
+    <item>
+      <title>解决开启代理无法访问微软商店的问题</title>
+      <link>https://www.caoayu.xyz/post/store-net-error/</link>
+      <pubDate>Wed, 18 Nov 2020 19:54:05 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/store-net-error/</guid>
+      <description>以前对于 Windows store 使用的不多,没发现这个问题,最近使用商店后发现无法进行网络连接.原因是开启了代理.将代理关闭之后久可以正常的使用了.但是每次都手</description>
+    </item>
+    
+    <item>
+      <title>使用Cygwin在windows下运行linux的一些工具</title>
+      <link>https://www.caoayu.xyz/post/cygwin/</link>
+      <pubDate>Sat, 07 Nov 2020 14:37:16 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/cygwin/</guid>
+      <description>windows 终端 对于开发者而言,windwos下的终端实在是不如linux,macos下的效率更高,速度更快.虽然Windows下也有一些不错的第三方</description>
+    </item>
+    
+    <item>
+      <title>PHP8.0 新特性</title>
+      <link>https://www.caoayu.xyz/post/php-8/</link>
+      <pubDate>Wed, 04 Nov 2020 21:32:52 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-8/</guid>
+      <description>PHP8.0 目前php8.0还在测试阶段.正式版大概12月份出来.先来看一下新版本的改进或新特性. 1. 更方便的获取类名 之前的版本 1 2 3 4 5 6 7 8 class User { }</description>
+    </item>
+    
+    <item>
+      <title>Git配置代理</title>
+      <link>https://www.caoayu.xyz/post/git-proxy/</link>
+      <pubDate>Mon, 19 Oct 2020 17:40:53 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/git-proxy/</guid>
+      <description>Git clone 太慢 国内大部分的git速度还是挺慢的,前面也提到过使用 镜像或下载站的方式来加速. 这次通过配置git 的代理方式来加速 http 方式 git clone 的方法分为 https</description>
+    </item>
+    
+    <item>
+      <title>加入在线服务--在线多人共享屏幕</title>
+      <link>https://www.caoayu.xyz/post/add-screego/</link>
+      <pubDate>Fri, 16 Oct 2020 15:06:59 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/add-screego/</guid>
+      <description>Screego Screego 是一个共享屏幕的应用.使用golang进行开发,在readme中作者吐槽了微软等公司的延迟问题,然后就开源了这个项目.👍 这个支持多人共享</description>
+    </item>
+    
+    <item>
+      <title>Go 多版本管理</title>
+      <link>https://www.caoayu.xyz/post/go-version-management/</link>
+      <pubDate>Tue, 13 Oct 2020 20:34:06 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/go-version-management/</guid>
+      <description>Go版本 跟其他编程语言一样,go的项目也会有对版本的要求.所以这个时候我们就需要进行对go的版本进行管理. 管理go版本的方式比较多,这里介绍</description>
+    </item>
+    
+    <item>
+      <title>将博客搬至CSDN</title>
+      <link>https://www.caoayu.xyz/post/use-csdn/</link>
+      <pubDate>Sat, 10 Oct 2020 17:50:24 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/use-csdn/</guid>
+      <description>使用 csdn 的博客搬家功能更,将博客同步到 csdn 中.</description>
+    </item>
+    
+    <item>
+      <title>Chrome 小技巧</title>
+      <link>https://www.caoayu.xyz/post/chrome-skill/</link>
+      <pubDate>Tue, 15 Sep 2020 23:49:15 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/chrome-skill/</guid>
+      <description>记录log中的值到一个临时变量中 通常我们在chrome的devtools的工具中使用console.log来打印一些值,有时候是一个对象.但</description>
+    </item>
+    
+    <item>
+      <title>Windows家庭版安装Docker</title>
+      <link>https://www.caoayu.xyz/post/windows-install-docker/</link>
+      <pubDate>Sun, 13 Sep 2020 15:42:09 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/windows-install-docker/</guid>
+      <description>Docker在Windows上使用 目前,docker还只能在专业版或者企业版的windows中安装使用.在家庭版中进行安装的过程中会提示 我们</description>
+    </item>
+    
+    <item>
+      <title>Windows 查找被占用端口并结束程序</title>
+      <link>https://www.caoayu.xyz/post/windows-kill/</link>
+      <pubDate>Wed, 09 Sep 2020 23:06:26 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/windows-kill/</guid>
+      <description>Windows!!! 常常由于开启某项服务而端口已经被其他服务或者同服务的应用所占用,导致我们无法再成功开启一个应用服务.在linux中对进程的查找以及&amp;quo</description>
+    </item>
+    
+    <item>
+      <title>Goland 中配置 go-lint 代码检查</title>
+      <link>https://www.caoayu.xyz/post/goland-golint/</link>
+      <pubDate>Sun, 06 Sep 2020 00:43:11 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/goland-golint/</guid>
+      <description>Go-lint go-lint 是由go官方提供的一个代码审查及问题提示的工具.在vscode 中,如果安装了go-lint 则会在终端的问题中显示所有的代码不规范的地方及</description>
+    </item>
+    
+    <item>
+      <title>Syntax Highlighting</title>
+      <link>https://www.caoayu.xyz/post/syntax-highlighting/</link>
+      <pubDate>Sun, 30 Aug 2020 16:01:23 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/syntax-highlighting/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;helloWorld&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;alert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>加速Github的访问及下载速度</title>
+      <link>https://www.caoayu.xyz/post/github-fast/</link>
+      <pubDate>Sun, 23 Aug 2020 15:57:54 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/github-fast/</guid>
+      <description>Github的痛 国内访问github的速度一直被广大网友及开发者所诟病,为了缓解这一现象,本文介绍几种方式加速,由于中国开发者人群越来越大,</description>
+    </item>
+    
+    <item>
+      <title>Windows下新建和更改分区</title>
+      <link>https://www.caoayu.xyz/post/win-disk-manage/</link>
+      <pubDate>Wed, 19 Aug 2020 21:43:56 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/win-disk-manage/</guid>
+      <description>分区 分区只是逻辑上的概念,实际都是在一块硬盘上.分区可以使文件存放更规范也可以分离一些系统级别的概念,防止用户操作系统分区导致系统出现问题 如</description>
+    </item>
+    
+    <item>
+      <title>Windows下给磁盘扩容</title>
+      <link>https://www.caoayu.xyz/post/disk-dilation/</link>
+      <pubDate>Wed, 19 Aug 2020 21:16:14 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/disk-dilation/</guid>
+      <description>磁盘分区太小? 当我们新买的电脑或者硬盘进行分区安装系统后发现 c盘或者其他盘的空间太小,不够我们使用,或者有强迫症,那么这个时候我们就要考虑给</description>
+    </item>
+    
+    <item>
+      <title>Vscode进阶使用</title>
+      <link>https://www.caoayu.xyz/post/vscode-keys/</link>
+      <pubDate>Sun, 09 Aug 2020 18:04:23 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/vscode-keys/</guid>
+      <description>Vscode基础配置及插件 基础介绍 这篇文章是对vscode的一些基础介绍跟推荐的插件 使用注意事项 有些快捷键不起作用,可能是跟某些软件冲突,可</description>
+    </item>
+    
+    <item>
+      <title>使用 Acme 脚本申请 let&#39;s encrypt 证书配置 HTTPs</title>
+      <link>https://www.caoayu.xyz/post/acme/</link>
+      <pubDate>Sun, 09 Aug 2020 17:23:42 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/acme/</guid>
+      <description>宝塔申请let&#39;s encrypt 给hexo申请证书并设置https 在上面这篇文章中介绍了使用宝塔快速给网站申请https证书并布置到网站上面,但是证书只</description>
+    </item>
+    
+    <item>
+      <title>博客整体风格更改</title>
+      <link>https://www.caoayu.xyz/post/style-change/</link>
+      <pubDate>Thu, 06 Aug 2020 22:54:55 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/style-change/</guid>
+      <description>原主题问题 使用even的github最新主题,发现更改主题样式无法生效,很多样式的更改都无法失效 😭 ,最终查阅issuse得知更改src目录后</description>
+    </item>
+    
+    <item>
+      <title>关于页更改并加入一些在线服务</title>
+      <link>https://www.caoayu.xyz/post/about-change/</link>
+      <pubDate>Sat, 01 Aug 2020 13:40:02 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/about-change/</guid>
+      <description>更改关于页面 先前的关于页面比较单一,本打算用hugo做一个下拉的子菜单显示一些更多的信息,但是无奈查询了文档和谷歌都没查到很好的先例,因此就</description>
+    </item>
+    
+    <item>
+      <title>自定义Chrome等浏览器搜索引擎</title>
+      <link>https://www.caoayu.xyz/post/chrome-engine/</link>
+      <pubDate>Fri, 24 Jul 2020 21:19:33 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/chrome-engine/</guid>
+      <description>自定义搜索引擎 如图: 经常想打开一个使用频率不高不低的网站时,如果没有加入书签,或者浏览器的扩展和一些设置页面,每次都要去手动的一个选项的去找</description>
+    </item>
+    
+    <item>
+      <title>Go各时间字符串的解析</title>
+      <link>https://www.caoayu.xyz/post/go-parse-time/</link>
+      <pubDate>Tue, 21 Jul 2020 10:02:01 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/go-parse-time/</guid>
+      <description>Go 中时间格式化的模板 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 const ( ANSIC = &amp;#34;Mon Jan _2 15:04:05 2006&amp;#34; UnixDate = &amp;#34;Mon Jan _2 15:04:05 MST 2006&amp;#34; RubyDate = &amp;#34;Mon Jan 02 15:04:05 -0700 2006&amp;#34; RFC822 = &amp;#34;02 Jan 06 15:04 MST&amp;#34; RFC822Z = &amp;#34;02 Jan 06 15:04 -0700&amp;#34; // RFC822 with</description>
+    </item>
+    
+    <item>
+      <title>把笔记本触摸板用起来</title>
+      <link>https://www.caoayu.xyz/post/use-windowns-touch/</link>
+      <pubDate>Sat, 18 Jul 2020 14:31:51 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/use-windowns-touch/</guid>
+      <description>还在让你的触摸板吃土? 大部分的笔记本用户对于触摸板都是当作没有鼠标时的一个替代品，但是现在的windows触摸板內置了不少的快捷功能，比自己</description>
+    </item>
+    
+    <item>
+      <title>虚拟机安装Centos后的一些配置</title>
+      <link>https://www.caoayu.xyz/post/vm-centos-config/</link>
+      <pubDate>Wed, 15 Jul 2020 21:35:42 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/vm-centos-config/</guid>
+      <description>VMware 安装 Centos 使用vmware安装了centos7，并去除了不必要的硬件，只保留了比用的几个，安装的是server with gui 安装完成后，又上角链接网络 更</description>
+    </item>
+    
+    <item>
+      <title>使用frp搭建内网穿透</title>
+      <link>https://www.caoayu.xyz/post/frp/</link>
+      <pubDate>Wed, 15 Jul 2020 20:10:54 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/frp/</guid>
+      <description>什么是Frp frp 是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 tcp, http, https 等协议类型，并且 web 服务支持根据域名进行路由</description>
+    </item>
+    
+    <item>
+      <title>自定义短标签</title>
+      <link>https://www.caoayu.xyz/post/custom-shortcode/</link>
+      <pubDate>Tue, 14 Jul 2020 22:23:23 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/custom-shortcode/</guid>
+      <description>Hugo无法渲染video标签 在markdown文件中可以使用video标签,来完成视频的内嵌,但是hugo无法将该标签渲染成为正常的h5的</description>
+    </item>
+    
+    <item>
+      <title>使用 JsDelivr作为CDN 加速服务</title>
+      <link>https://www.caoayu.xyz/post/cdn-jsdelivr/</link>
+      <pubDate>Tue, 14 Jul 2020 19:22:40 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/cdn-jsdelivr/</guid>
+      <description>什么是JSDelivr jsdelivr 是一个免费的开源的快速的 cdn, 官方地址 为什么使用 jsdelivr 对于个人用户而言,使用cdn的场景的场景和需求并不多,图床,web端的</description>
+    </item>
+    
+    <item>
+      <title>增加标签云代替原有标签和分类效果</title>
+      <link>https://www.caoayu.xyz/post/add-wordcloud/</link>
+      <pubDate>Tue, 14 Jul 2020 13:38:22 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/add-wordcloud/</guid>
+      <description>更换hugo博客主题的原有标签 更换标签显示以及分类显示,使用 highcharts 的 wordcloud 来实现一个更好看的标签云,并增加点击事件,实现原来的点击效果.官方案例.英</description>
+    </item>
+    
+    <item>
+      <title>使用docker-compose 搭建 lnmp</title>
+      <link>https://www.caoayu.xyz/post/docker-compose-lnmp/</link>
+      <pubDate>Mon, 13 Jul 2020 21:13:21 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/docker-compose-lnmp/</guid>
+      <description>Docker compose 简介 Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可</description>
+    </item>
+    
+    <item>
+      <title>Theme preview</title>
+      <link>https://www.caoayu.xyz/post/even-preview/</link>
+      <pubDate>Fri, 10 Jul 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/even-preview/</guid>
+      <description>Based on MarkdownPreview test.md. Markdown 1 2 3 4 5 6 7 8 # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6 ### Duplicate Header ### Duplicate Header H1 H2 H3 H4 H5 H6 Duplicate Header Duplicate Header Paragraphs 1 2 3 4 This is a paragraph. I am still part of the paragraph. New paragraph. This is a paragraph. I am still part of the paragraph.</description>
+    </item>
+    
+    <item>
+      <title>Linux 文件隐藏权限</title>
+      <link>https://www.caoayu.xyz/post/linux-attr/</link>
+      <pubDate>Sun, 05 Jul 2020 20:43:00 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/linux-attr/</guid>
+      <description>文件的隐藏权限 除了文件的读写,执行权限外,linux还有一种隐藏权限,设置隐藏权限可以防止一些其他用户的误操作或者恶意操作,当我们配置了ng</description>
+    </item>
+    
+    <item>
+      <title>Go使用工厂方法实例结构体</title>
+      <link>https://www.caoayu.xyz/post/golang-struct-method/</link>
+      <pubDate>Sat, 04 Jul 2020 21:47:30 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/golang-struct-method/</guid>
+      <description>像面向对象一样 Go 语言不支持面向对象编程语言中那样的构造子方法,但很容易实现工厂模式来构建子工厂 使用New来定义实例规范 首先定义一个结构体 1 2</description>
+    </item>
+    
+    <item>
+      <title>Golang Flag包的参数格式问题</title>
+      <link>https://www.caoayu.xyz/post/golang-flag/</link>
+      <pubDate>Sat, 04 Jul 2020 21:15:52 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/golang-flag/</guid>
+      <description>问题 使用golang flag包开发命令行程序或者读取命令行参数时,有时候参数为bool值会读取不到后面的参数 原因 golang flag 包对于命令行的参数格式有</description>
+    </item>
+    
+    <item>
+      <title>windows 右键菜单的添加和移除</title>
+      <link>https://www.caoayu.xyz/post/add-right-menu/</link>
+      <pubDate>Thu, 25 Jun 2020 19:10:22 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/add-right-menu/</guid>
+      <description>关于注册表 windows下所有系统及部分软件的配置都在注册表中,注册表相当于是一个windows系统的数据库.我们想要增加或更改一些功能可以</description>
+    </item>
+    
+    <item>
+      <title>新增搜索功能</title>
+      <link>https://www.caoayu.xyz/post/add-search/</link>
+      <pubDate>Thu, 25 Jun 2020 13:20:25 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/add-search/</guid>
+      <description>给hugo添加搜索功能 当文章数量太多了以后,寻找文章如果只靠标签,分类,和归档是不太容易的,尤其是对标签和分类有哪些标签,划分是否合理不清楚</description>
+    </item>
+    
+    <item>
+      <title>Typora Picgo自动使用图床上传图片</title>
+      <link>https://www.caoayu.xyz/post/typora-picgo/</link>
+      <pubDate>Sun, 21 Jun 2020 20:54:40 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/typora-picgo/</guid>
+      <description>博客图片改为图床 随着图片的增加，以及博客平台的不固定性，开始改用图床来保存图片，但是每个图片都要上传和替换链接就把使用图床的快捷优势全都丢掉</description>
+    </item>
+    
+    <item>
+      <title>linux 安装并配置zsh</title>
+      <link>https://www.caoayu.xyz/post/linux-zsh/</link>
+      <pubDate>Sun, 21 Jun 2020 10:24:08 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/linux-zsh/</guid>
+      <description>linux 下 zsh 的安装及配置 安装 1 sudo apt-get install -y zsh 安装 oh-my-zsh 三种方式 1 2 3 4 5 sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;#34; sh -c &amp;#34;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&amp;#34; wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh 如果因为网络问题安装失败,可以使用代理,或者直接</description>
+    </item>
+    
+    <item>
+      <title>Hugo Travis 完结!</title>
+      <link>https://www.caoayu.xyz/post/hugo-travis-finish/</link>
+      <pubDate>Sat, 20 Jun 2020 13:19:56 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hugo-travis-finish/</guid>
+      <description>hexo-hugo平台的转移完成！ 今天完成了博客遗留下来的一些问题，并配置好了自动推送及webhooks，有着hexo的基础，配置起来并不难</description>
+    </item>
+    
+    <item>
+      <title>Hugo Travis</title>
+      <link>https://www.caoayu.xyz/post/hugo-travis/</link>
+      <pubDate>Sat, 20 Jun 2020 12:06:36 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hugo-travis/</guid>
+      <description>博客更换计划 自从打算把博客换到hugo到现在已经过去两个星期了，今天才开始往服务器上面部署，之所以没有直接部署还是有很多原因限制，时间是一个</description>
+    </item>
+    
+    <item>
+      <title>Linux 安装PicGo问题</title>
+      <link>https://www.caoayu.xyz/post/deepin-install-picgo/</link>
+      <pubDate>Fri, 19 Jun 2020 22:14:22 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-install-picgo/</guid>
+      <description>使用deepin安装PicGo时，由于时制作的AppImage包,我们可以直接在终端加上执行权限后运行，但是运行的时候报错 1 2 3 4 [1827:0619/220927.597934:FATAL: setuid_sandbox_host.cc(157)] The SUID sandbox</description>
+    </item>
+    
+    <item>
+      <title>deepin下安装向日葵依赖问题</title>
+      <link>https://www.caoayu.xyz/post/sunloginclent/</link>
+      <pubDate>Fri, 19 Jun 2020 19:28:10 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/sunloginclent/</guid>
+      <description>在deepin系统上安装linux的向日葵时，会提示依赖缺失，在官方网站上下载ubuntu|deepin的 向日葵 deb包，双击会显示依赖缺失</description>
+    </item>
+    
+    <item>
+      <title>deepin下状态栏无法显示问题</title>
+      <link>https://www.caoayu.xyz/post/dde-dock/</link>
+      <pubDate>Thu, 18 Jun 2020 21:44:58 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/dde-dock/</guid>
+      <description>在deepin的使用中，如果使用了一些插件改变了状态栏，可能会使状态栏因配置更改而无法正常显示 自己设置了dde-dock栏为一直隐藏 解决方法</description>
+    </item>
+    
+    <item>
+      <title>将hexo文章头转为hugo格式</title>
+      <link>https://www.caoayu.xyz/post/hexo2hugo/</link>
+      <pubDate>Sun, 07 Jun 2020 20:34:48 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hexo2hugo/</guid>
+      <description>&lt;p&gt;由于&lt;code&gt;hexo&lt;/code&gt;的语言限制,在博客文章数量达到一定的数量后,生成静态内容的速度比较的缓慢,最近打算转到&lt;code&gt;hugo&lt;/code&gt;的框架上,&lt;code&gt;hugo&lt;/code&gt;使用的是&lt;code&gt;golang&lt;/code&gt;编写的,号称是世界上最快的静态页面生成器&lt;/p&gt;
+&lt;p&gt;但是由于 &lt;code&gt;golang&lt;/code&gt; 语言的一些语法及特性,在一些变量的表现上跟&lt;code&gt;hexo&lt;/code&gt;有所不同,&lt;code&gt;markdown&lt;/code&gt;文件虽然可以复用,但是文章内容的&lt;code&gt;front matter&lt;/code&gt;,即文章头定义的那些标签会有所不同,首先是时间的格式会不同&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;go&lt;/code&gt;默认的格式是&lt;code&gt;xxxx-xx-xxTxx-xx-xx+08:00&lt;/code&gt; [&lt;code&gt;+08:00&lt;/code&gt;代表的是时区.还有就是&lt;code&gt;tags,categories&lt;/code&gt;等标签的定义,在&lt;code&gt;go&lt;/code&gt;里定义多个要用数组,长度不确定需要使用切片,切片的形式为 &lt;code&gt;[]type{}&lt;/code&gt;,所以在&lt;code&gt;hugo&lt;/code&gt;中定义多个&lt;code&gt;tags&lt;/code&gt;跟&lt;code&gt;hexo&lt;/code&gt;会有不同]&lt;/p&gt;
+&lt;p&gt;hexo中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[tags: ]
+    - hexo
+    - blog
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;hugo 中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[tags: [hexo,blog]]
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>JetBrains 集成开发环境常用插件-快捷键-内存优化</title>
+      <link>https://www.caoayu.xyz/post/jetbrains-plugins/</link>
+      <pubDate>Fri, 05 Jun 2020 22:01:13 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/jetbrains-plugins/</guid>
+      <description>&lt;h4 id=&#34;jetbrains-集成开发环境常用插件-快捷键-内存优化&#34;&gt;JetBrains 集成开发环境常用插件-快捷键-内存优化&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;工欲善其事必先利其器.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在开发过程中,一个称手的工具对我们开发的提高是非常大的,用的好帮助可以早下班,减少我们的手部磨损及眼睛的疲劳.&lt;/p&gt;
+&lt;p&gt;每个人的习惯不同,对插件的使用体验也是不尽相同,这里推荐一些普遍被接受并排名比较靠前的插件,效率满满&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hugo-页面变量</title>
+      <link>https://www.caoayu.xyz/post/hugo-page-variables/</link>
+      <pubDate>Wed, 03 Jun 2020 21:55:59 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hugo-page-variables/</guid>
+      <description>页面变量 页面级变量在内容文件的首页中定义，从内容的文件位置派生或从内容主体本身提取. .Aliases : 当前页面的别名 .Content : 当前页面的内容 .Data : 当前页面的Dat</description>
+    </item>
+    
+    <item>
+      <title>hugo-站点变量</title>
+      <link>https://www.caoayu.xyz/post/hugo-site-variables/</link>
+      <pubDate>Tue, 02 Jun 2020 21:39:13 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hugo-site-variables/</guid>
+      <description>站点变量 在站点的配置中定义了许多（但不是全部）站点范围的变量. 但是，Hugo 提供了许多内置变量，可方便地访问模板中的全局值. .Site.AllPages : 获取所有页面</description>
+    </item>
+    
+    <item>
+      <title>百度站点收录 - 什么叫他妈的自动推送</title>
+      <link>https://www.caoayu.xyz/post/baidu-push/</link>
+      <pubDate>Mon, 25 May 2020 18:36:07 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/baidu-push/</guid>
+      <description>&lt;h5 id=&#34;百度收录问题&#34;&gt;百度收录问题&lt;/h5&gt;
+&lt;p&gt;当自己搭建了一个个人网站或者是商业性质的网站时,我们通常希望在百度等搜索引擎上可以直接搜索到,提高网站的曝光率和流量.&lt;/p&gt;
+&lt;p&gt;但是百度对个人网站的收录十分的缓慢,步骤繁多,不像谷歌,提交完后几天就可以搜索到,无论怎么花式搜索都可以搜索到,而百度就有意思了,怎么都搜不到,快则半个月,慢则后年马月.&lt;/p&gt;
+&lt;p&gt;虽然百度会根据网址的流量及内容来判断审核,对原创内容的支持还是不错的,但是搜索引擎的算法上还是不如谷歌.&lt;/p&gt;
+&lt;p&gt;那就我们自己动手来加速一下收录的时长吧.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>php List()函数及json_encode时无法转为数组的问题</title>
+      <link>https://www.caoayu.xyz/post/php-list/</link>
+      <pubDate>Mon, 25 May 2020 18:34:42 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-list/</guid>
+      <description>&lt;p&gt;​&lt;/p&gt;
+&lt;h5 id=&#34;list-函数实现-php中返回多个值list并不是一个真正的函数而是一种语言结构&#34;&gt;&lt;code&gt;list&lt;/code&gt; 函数实现 &lt;code&gt;PHP&lt;/code&gt;中返回多个值(list并不是一个真正的函数,而是一种语言结构)&lt;/h5&gt;
+&lt;p&gt;在众多的编程语言中,有很多都可以在函数中返回多个值,如 &lt;code&gt;java,golang&lt;/code&gt;, 但是&lt;code&gt;php&lt;/code&gt;却是不支持,虽然在 7.0 版本之后可以设置返回值的类型,但还是无法返回多个值,估计后面 &lt;code&gt;php&lt;/code&gt; 的升级中会考虑这个问题. 既然无法原生支持,那我们就自己实现,&lt;code&gt;php&lt;/code&gt;内置了大量的函数可以使用,这也是&lt;code&gt;php&lt;/code&gt;开发速度快的一个原因.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>用两个栈实现队列</title>
+      <link>https://www.caoayu.xyz/post/php-offer-01/</link>
+      <pubDate>Sat, 23 May 2020 18:51:12 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/php-offer-01/</guid>
+      <description>&lt;h5 id=&#34;题目描述&#34;&gt;题目描述&lt;/h5&gt;
+&lt;p&gt;用连个栈来实现一个队列,完成队列的 &lt;code&gt;push&lt;/code&gt; 和 &lt;code&gt;pop&lt;/code&gt; 操作,队列中元素为 &lt;code&gt;int&lt;/code&gt; 类型&lt;/p&gt;
+&lt;p&gt;要用栈来实现对列首先要知道 什么是栈 和 队列, 栈和队列在数据结构上都是数组的表现, 只是有不同的特性,对于栈来说,站内的元素先进后出 (FILO),而队列的元素为先进先出 (FIFO)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用scp进行与服务器的文件交互(上传和下载)</title>
+      <link>https://www.caoayu.xyz/post/scp01/</link>
+      <pubDate>Fri, 22 May 2020 19:33:59 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/scp01/</guid>
+      <description>&lt;p&gt;​	通常我们上传或下载文件会使用一些软件,如&lt;code&gt;xftp,winscp, finalshell&lt;/code&gt;,前面几篇文章已经介绍了如何搭一个命令行环境以及使用命令行去连接服务器,进行交互,这次我们使用命令行来进行文件的上传和下载,通常当我们想要上传文件到服务器时,不是通过软件就是&lt;code&gt;ftp&lt;/code&gt;,比较的繁琐,而且底层使用的原理都是一样的,这次介绍使用&lt;code&gt;scp&lt;/code&gt;命令进行命令行端的文件操作,无需再打开软件,找到文件,拖进去或者其他比较费时的操作&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>配置ssh免密登陆,并使用命令行与服务器交互</title>
+      <link>https://www.caoayu.xyz/post/ssh-auth/</link>
+      <pubDate>Fri, 22 May 2020 19:33:42 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/ssh-auth/</guid>
+      <description>&lt;p&gt;对于经常要连接服务器进行交互的人来说,有很多种方式,最多的就是使用一些比较成熟的应用,如&lt;code&gt;xshell,finalshell,xftp&lt;/code&gt;等.在上一篇文章中我们搭建了一个新的终端,这次来使用终端来进行服务器的交互,包括访问以及文件的上传和下载.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>从0打造属于自己的windows开发命令终端</title>
+      <link>https://www.caoayu.xyz/post/cmder01/</link>
+      <pubDate>Fri, 22 May 2020 18:35:25 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/cmder01/</guid>
+      <description>&lt;h5 id=&#34;抛出问题&#34;&gt;抛出问题&lt;/h5&gt;
+&lt;p&gt;无论是&lt;code&gt;web&lt;/code&gt;开发还是做系统运维,都离不开命令行,然而对于大多数人来说还是在使用&lt;code&gt;windows&lt;/code&gt;进行开发,但是&lt;code&gt;windows&lt;/code&gt;的终端一直被人们诟病,从开始的&lt;code&gt;cmd&lt;/code&gt;,许多命令无法执行,或者是必须使用管理员权限,在这里不得不提一下&lt;code&gt;windows&lt;/code&gt;的权限做的挺糟糕的,虽然微软有陆续推出了&lt;code&gt;powershell&lt;/code&gt;以及现在的&lt;code&gt;terminal&lt;/code&gt;还有后面要推出的&lt;code&gt;wls2&lt;/code&gt;,可以看到微软也在努力的去解决这个问题,也希望微软可以早日解决这个问题,造福广大开发者.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Markdown简易教程</title>
+      <link>https://www.caoayu.xyz/post/markdown-simple/</link>
+      <pubDate>Sat, 16 May 2020 22:24:08 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/markdown-simple/</guid>
+      <description>&lt;h4 id=&#34;什么是markdown为什么用markdown&#34;&gt;什么是&lt;code&gt;Markdown&lt;/code&gt;,为什么用&lt;code&gt;Markdown&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;Markdown&lt;/code&gt;是一种标记语法,通过标记字符,给文章的内容增加样式,使用&lt;code&gt;Markdown&lt;/code&gt;可以更方便的控制格式的同时专注于文章内容的编写,可以支持导出为&lt;code&gt;pdf,html&lt;/code&gt;格式,排版内容可预见,避免写完文章后再去查看样式,修改样式,&lt;code&gt;Markdown&lt;/code&gt;文件都是以&lt;code&gt;.md&lt;/code&gt;为后缀,可以使用&lt;code&gt;typora&lt;/code&gt;这款软件来编写,多个平台都有支持.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>关于前端哈希加密密码的思考</title>
+      <link>https://www.caoayu.xyz/post/hash-token/</link>
+      <pubDate>Mon, 11 May 2020 21:47:33 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hash-token/</guid>
+      <description>&lt;h4 id=&#34;在前端哈希密码是否是个不错的方案&#34;&gt;在前端哈希密码是否是个不错的方案?&lt;/h4&gt;
+&lt;p&gt;为了防止用户或者管理员的密码泄漏或者数据库信息泄漏出去,web应用普遍采用了在后端将密码哈希以后存储在数据库中,前端提供密码,由后端进行哈希后与数据库进行对比,既然最终需要对比的是哈希过得密码,那么为什么不直接在前端将密码哈希直接交给后端存储在数据库呢?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>自动部署hexo到自己的服务器并使用webhooks</title>
+      <link>https://www.caoayu.xyz/post/hexo-03/</link>
+      <pubDate>Sun, 10 May 2020 23:41:50 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hexo-03/</guid>
+      <description>&lt;p&gt;​	前面使用了&lt;code&gt;webhooks&lt;/code&gt;,以及&lt;code&gt;travisci&lt;/code&gt;和自己的服务器,但是现在我的&lt;code&gt;github&lt;/code&gt;有两个分支,当提交到除&lt;code&gt;master&lt;/code&gt;分支以外的分支时也会发起回调,而且使用了&lt;code&gt;travis&lt;/code&gt;,导致,刚刚手动&lt;code&gt;push&lt;/code&gt;完成&lt;code&gt;travis&lt;/code&gt;又自动&lt;code&gt;push&lt;/code&gt;了一次,两次的时间间隔很短,而阿里云的服务器从&lt;code&gt;github clone or pull&lt;/code&gt;等操作有时十分缓慢,这就导致一个回调还没完成,另一个回调就开始了,会出现最终的版本与远程仓库不一致的情况.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>给hexo申请证书并设置https</title>
+      <link>https://www.caoayu.xyz/post/hexo-04/</link>
+      <pubDate>Sun, 10 May 2020 19:31:54 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hexo-04/</guid>
+      <description>&lt;p&gt;​ 前面可以说是完成了整个项目的迁移及重新部署,重新设置自动化以及初始化一些操作,现在已经可以正常的进行使用了,但是因为在做&lt;code&gt;webhooks&lt;/code&gt;时使用的是&lt;code&gt;bash&lt;/code&gt;命令,无法判断提交的是那个分支,所以每次仓库只要有提交记录服务器端就会&lt;code&gt;pull&lt;/code&gt;下来,可以使用其他语言写一个脚本来监测某一个分支的提交事件,减少资源的浪费.过程就不在实现,具体可以百度看看实现的步骤.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>杜绝重复-ssh-key</title>
+      <link>https://www.caoayu.xyz/post/git-sshkey/</link>
+      <pubDate>Sun, 10 May 2020 15:41:43 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/git-sshkey/</guid>
+      <description>&lt;h3 id=&#34;复用ssh生成的公钥&#34;&gt;复用ssh生成的公钥&lt;/h3&gt;
+&lt;p&gt;每次换换进或者跟换系统的时候,如果要使用&lt;code&gt;git&lt;/code&gt;就要下载然后每次都要生成公钥并添加进&lt;code&gt;coding&lt;/code&gt;或者&lt;code&gt;github&lt;/code&gt;这样的代码托管平台.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用hooks自动监测git仓库更改并拉取</title>
+      <link>https://www.caoayu.xyz/post/hexo-02/</link>
+      <pubDate>Sun, 10 May 2020 11:38:45 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hexo-02/</guid>
+      <description>&lt;p&gt;我们在务器上使用宝塔进行操作,使用宝塔比较直接,可视化,各种操作和安装东西很方便(如果只是想安装一些东西,快速搭建),后面也会继续使用宝塔为网站安装&lt;code&gt;https&lt;/code&gt;证书,使用&lt;code&gt;Let&#39;s Encrypt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;申请免费的证书并配置&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>重新部署hexo</title>
+      <link>https://www.caoayu.xyz/post/hexo-01/</link>
+      <pubDate>Sun, 10 May 2020 10:50:21 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hexo-01/</guid>
+      <description>&lt;p&gt;​	问题所在:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;改用了自己服务器搭建hexo后,也实现了gitalk的初始化,但是要git同步以及每次都要重新部署,制作很多定时任务,有时还会执行失败,导致还要手动的去修改和部署,并没有实现自动的部署,还是比较鸡肋,所以使用新的解决方案,来实现真正的自动化.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>gitalk 自动初始化</title>
+      <link>https://www.caoayu.xyz/post/hexo-gitalk-init/</link>
+      <pubDate>Thu, 07 May 2020 11:08:34 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hexo-gitalk-init/</guid>
+      <description>&lt;p&gt;​	前面有篇文章介绍了使用&lt;code&gt;hexo&lt;/code&gt;的评论系统&lt;code&gt;gitalk&lt;/code&gt;,但是使用过程中有一些小问题,每一篇文章都需要初始化一下&lt;code&gt;issues&lt;/code&gt;,不然是无法评论的,如果文章太多,一个一个初始化就太浪费时间和精力,所以借鉴了网上的一些资料完成一个自动化初始评论的需求&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hexo部署到阿里云服务器</title>
+      <link>https://www.caoayu.xyz/post/hexo-ali/</link>
+      <pubDate>Thu, 07 May 2020 10:49:01 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hexo-ali/</guid>
+      <description>&lt;p&gt;前面几篇文章说过将&lt;code&gt;hexo&lt;/code&gt;部署到&lt;code&gt;github&lt;/code&gt;及&lt;code&gt;coding&lt;/code&gt;,但是使用过程中发现&lt;code&gt;github&lt;/code&gt;国内访问速度慢,不允许百度爬虫爬取,&lt;code&gt;coding&lt;/code&gt;的&lt;code&gt;page&lt;/code&gt;服务也是部署在国外,虽然做了&lt;code&gt;cdn&lt;/code&gt;速度还不错,但有时会挂掉,时间有短有长,不稳定这一因素也驱使这我放弃这个方式.最终打算部署到自己的服务器上,阿里云还是很稳定的,自己不乱操作也不回出什么问题&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>curl常用命令</title>
+      <link>https://www.caoayu.xyz/post/curl/</link>
+      <pubDate>Thu, 07 May 2020 10:40:26 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/curl/</guid>
+      <description>&lt;h3 id=&#34;curl常用命令行&#34;&gt;curl常用命令行&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;发送请求,默认&lt;code&gt;get&lt;/code&gt;方式&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;url&amp;#34;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//网页或json,string会打印到标准输出中,-o 参数可以制定输出位置
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>buffalo-验证规则</title>
+      <link>https://www.caoayu.xyz/post/buffalo-validate/</link>
+      <pubDate>Thu, 07 May 2020 10:40:03 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/buffalo-validate/</guid>
+      <description>&lt;h3 id=&#34;validate包&#34;&gt;validate包&lt;/h3&gt;
+&lt;p&gt;使用了&lt;code&gt;validate&lt;/code&gt;进行验证后会调用&lt;code&gt;validator&lt;/code&gt;验证器,无论&lt;code&gt;validataAndCreate&lt;/code&gt;还是 &lt;code&gt;validateAndUpdate&lt;/code&gt; 都会调用这两个方法后继续调用&lt;code&gt;validate&lt;/code&gt;方法,如果使用了&lt;code&gt;validateAndSave&lt;/code&gt;方法则会判断&lt;code&gt;id&lt;/code&gt;是否存在,如果存在则调用&lt;code&gt;validateAndUpdate&lt;/code&gt;,不存在则调用&lt;code&gt;validateAndCreate&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://godoc.org/github.com/gobuffalo/validate/validators&#34;&gt;validator doc文档&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>buffalo-命令</title>
+      <link>https://www.caoayu.xyz/post/buffalo-command/</link>
+      <pubDate>Thu, 07 May 2020 10:39:51 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/buffalo-command/</guid>
+      <description>&lt;p&gt;生成fizz文件命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;buffalo db g fizz table_name field_name:field_type(default string)
+eg: soda g fizz devops_controller name code desc:text deleted_at:nulls.Time
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>buffalo助手函数</title>
+      <link>https://www.caoayu.xyz/post/buffalo-help/</link>
+      <pubDate>Thu, 07 May 2020 10:39:22 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/buffalo-help/</guid>
+      <description>&lt;h2 id=&#34;buffalo助手函数&#34;&gt;buffalo助手函数&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;t()&lt;/code&gt;: 翻译函数&lt;/p&gt;
+&lt;p&gt;locales目录下翻译文件中定义:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang-buffalo框架</title>
+      <link>https://www.caoayu.xyz/post/buffalo/</link>
+      <pubDate>Thu, 07 May 2020 10:39:08 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/buffalo/</guid>
+      <description>&lt;h3 id=&#34;关于cvaluetxpopconnection&#34;&gt;关于&lt;code&gt;c.value(&amp;quot;tx&amp;quot;).(*pop.connection)&lt;/code&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//语法为golang的类型断言, 如果x不为nil,且可以转换为T类型,则断言成功,返回一个T类型的变量 s, 如果T为接口,则要求x实现T,如果断言失败 panic
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;valule&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//获取context中的值,关于tx在下面 buffalo.context返回值中说明
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>为hexo增加gitalk评论系统</title>
+      <link>https://www.caoayu.xyz/post/hexo-gitalk/</link>
+      <pubDate>Tue, 05 May 2020 17:26:06 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hexo-gitalk/</guid>
+      <description>&lt;p&gt;​	&lt;em&gt;所有操作再&lt;code&gt;hexo next&lt;/code&gt;主题的基础上完成&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;准备工作:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;新建一个&lt;code&gt;github&lt;/code&gt;仓库,使用&lt;code&gt;issues&lt;/code&gt;作为评论容器&lt;/li&gt;
+&lt;li&gt;注册&lt;code&gt;gitalk&lt;/code&gt;,获取&lt;code&gt;id&lt;/code&gt;,&lt;code&gt;secret&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;给页面增加&lt;code&gt;gitalk&lt;/code&gt;元素及引入&lt;code&gt;gitalk&lt;/code&gt;样式表及&lt;code&gt;js&lt;/code&gt;文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>修改hexo生成的文件链接及图片资源链接</title>
+      <link>https://www.caoayu.xyz/post/edit-hexo-url/</link>
+      <pubDate>Mon, 04 May 2020 21:00:28 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/edit-hexo-url/</guid>
+      <description>&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hexo&lt;/code&gt; 默认配置里的文章链接是 &lt;code&gt;:year/:month/:day/:title&lt;/code&gt; 这种&lt;code&gt;url&lt;/code&gt;看起来很乱,对搜索引擎的爬取或者收录非常不友好,现在开始更改配置文件,优化链接为正常的,易于收录的形式.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用travisCI自动部署hexo博客并使用国内外不同dns</title>
+      <link>https://www.caoayu.xyz/post/hexo-travisci/</link>
+      <pubDate>Fri, 01 May 2020 17:17:42 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hexo-travisci/</guid>
+      <description>&lt;h3 id=&#34;自动化部署博客到github和coding&#34;&gt;自动化部署博客到github和coding&lt;/h3&gt;
+&lt;h4 id=&#34;准备工作&#34;&gt;准备工作&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;需要环境:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;可正常使用域名一个&lt;/li&gt;
+&lt;li&gt;github新建一个与自己账号名同名的仓库,如 ayuayue.github.io,最好除master分支外新建一个hexo分支用来保存hexo的源码,因为源码配置文件会上传到github,所以才会使用下面的变量的方式配置,不然的话token暴露出来很危险&lt;/li&gt;
+&lt;li&gt;coding 中创建一个团队,继续创建一个devops仓库,仓库民跟自己的账号名相同,如 caoayu&lt;/li&gt;
+&lt;li&gt;进行coding管理员的认证, 在右上角团队管理中,进行团队管理员的认证&lt;/li&gt;
+&lt;li&gt;获取github和coding的token
+&lt;ol&gt;
+&lt;li&gt;coding中去个人账号,访问令牌中,新建一个令牌,名字为travis,只给第一个权限,然后生成一个token,记录下来,只有第一次可以看,刷新后就只能重新生成了,所以第一次最好保存一下token,github的token也是一样&lt;/li&gt;
+&lt;li&gt;github的token获取,右上角头像,settings,devoper setting /persional access token,生成一个token,gengrate new token,名字也设置为travis,生成后记得保存一下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>composer改源</title>
+      <link>https://www.caoayu.xyz/post/composer-source/</link>
+      <pubDate>Tue, 28 Apr 2020 22:32:54 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/composer-source/</guid>
+      <description>1 composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/</description>
+    </item>
+    
+    <item>
+      <title>解决deepin下安装sqlite3依赖过新的问题</title>
+      <link>https://www.caoayu.xyz/post/deepin-sqlite3/</link>
+      <pubDate>Tue, 28 Apr 2020 08:16:48 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-sqlite3/</guid>
+      <description>&lt;h3 id=&#34;安装sqlite3依赖过新的问题&#34;&gt;安装sqlite3依赖过新的问题&lt;/h3&gt;
+&lt;p&gt;在安装sqlite3时提示需要安装其他依赖,当手动安装依赖时显示当前依赖安装过了,而且版本太新导致无法安装
+解决方法:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;sudo dpkg --purge --force-depends libsqlite3-0
+sudo apt-get install libsqlite3-0
+sudo apt-get install -f
+sudo apt-get install libsqlite3-dev
+sudo apt-get install sqlite3
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>deepin安装golang</title>
+      <link>https://www.caoayu.xyz/post/deepin-install-golang/</link>
+      <pubDate>Mon, 27 Apr 2020 19:16:50 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-install-golang/</guid>
+      <description>&lt;h3 id=&#34;deepin-二进制文件安装golang&#34;&gt;deepin 二进制文件安装golang&lt;/h3&gt;
+&lt;p&gt;先下载二进制文件&lt;a href=&#34;https://studygolang.com/dl/golang/go1.14.2.linux-amd64.tar.gz&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>deepin安装googel-chrome</title>
+      <link>https://www.caoayu.xyz/post/deepin-install-googel-chrome/</link>
+      <pubDate>Sun, 26 Apr 2020 11:05:54 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-install-googel-chrome/</guid>
+      <description>deepin自带的是开源的chromium,更换为谷歌chrmoe 下载 地址 双击安装,等待安装完成即可使用 更新,编辑 /etc/default/google-chrome 将第一行false改为t</description>
+    </item>
+    
+    <item>
+      <title>deepin使用时的一些小问题</title>
+      <link>https://www.caoayu.xyz/post/deepin-problem/</link>
+      <pubDate>Sat, 25 Apr 2020 19:45:33 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-problem/</guid>
+      <description>&lt;h3 id=&#34;关于linux发行版使用的一些小问题&#34;&gt;关于linux发行版使用的一些小问题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;安装软件时报错,大部分是需要依赖,而依赖并没有安装,看终端输出进行手动安装\&lt;/li&gt;
+&lt;li&gt;使用安装包,如deb安装失败,看失败详情,一般都是依赖问题,终端运行 sudo apt install &amp;ndash;fix-broken即可自动修复&lt;/li&gt;
+&lt;li&gt;命令忘记或不知道怎么用,使用帮助,linux man 或者 使用软件的-h &amp;ndash;help查看参数详情及解释&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>deepin 任务栏消失问题</title>
+      <link>https://www.caoayu.xyz/post/deepin-dock/</link>
+      <pubDate>Sat, 25 Apr 2020 19:34:49 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-dock/</guid>
+      <description>&lt;h3 id=&#34;deepin-dde-dock-任务栏消失问题&#34;&gt;deepin dde-dock 任务栏消失问题&lt;/h3&gt;
+&lt;p&gt;在使用了任务栏的一些插件后,如果卸载的话,可能会把dde-dock的一些依赖也卸载掉,所以会导致dock栏出现问题,在查看了很多帖子后无果,也重新安装了几次还是不行,解决方案:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;删除 ~/.config/dconf 下的缓存文件, 找到 /usr/lib/dde-dock/plugins/ 删除所有的插件 重启
+重启后只显示壁纸,使用快捷键 ctrl alt T 呼出终端
+安装dde-dock
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>deepin使用</title>
+      <link>https://www.caoayu.xyz/post/deepin-use/</link>
+      <pubDate>Sat, 25 Apr 2020 18:49:45 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/deepin-use/</guid>
+      <description>&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;p&gt;下载官方镜像,使用官方镜像软件或者使用rufus,以dd的方式刻录,分区,主要分/,以及efi,其他分区可自定义,如 &lt;code&gt;home&lt;/code&gt; ,&lt;code&gt;opt&lt;/code&gt;,和交换分区,设置时区,键盘,用户,密码,等待安装&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hexo 图片显示问题及使用typora设置图片路径</title>
+      <link>https://www.caoayu.xyz/post/hexo/</link>
+      <pubDate>Sun, 19 Apr 2020 22:54:32 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hexo/</guid>
+      <description>&lt;h3 id=&#34;hexo本地图片显示问题&#34;&gt;&lt;code&gt;hexo&lt;/code&gt;本地图片显示问题&lt;/h3&gt;
+&lt;p&gt;使用&lt;code&gt;hexo&lt;/code&gt;生成静态资源后,由于&lt;code&gt;url&lt;/code&gt;的问题会出现图片加载的问题,现在网上的文章及官方的解决方案大概分为三种:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将图片放入&lt;code&gt;source/images&lt;/code&gt;目录下,每次&lt;code&gt;generate&lt;/code&gt;都会生成图片,在使用相对或绝对路径进行引用&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>npm 使用问题</title>
+      <link>https://www.caoayu.xyz/post/npm-network/</link>
+      <pubDate>Sun, 19 Apr 2020 20:50:59 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/npm-network/</guid>
+      <description>node npm 安装 linux 可以使用二进制安装或者源码安装,还可以使用包管理器,我的安装方式 1 sudo apt install npm //会同时安装npm node 安装完成后可能使用的时候因为版本太</description>
+    </item>
+    
+    <item>
+      <title>hexo初始化</title>
+      <link>https://www.caoayu.xyz/post/hexo-init/</link>
+      <pubDate>Sun, 19 Apr 2020 19:11:42 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hexo-init/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;安装&lt;code&gt;hexo&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;需要先安装npm,git,配置好npm的淘宝镜像
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;生成&lt;code&gt;hexo&lt;/code&gt;项目&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;hexo init &amp;lt;folder&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>[English] Creating a New Theme</title>
+      <link>https://www.caoayu.xyz/post/english-preview/</link>
+      <pubDate>Tue, 31 Mar 2020 15:43:48 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/english-preview/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>[中文] 《长恨歌》</title>
+      <link>https://www.caoayu.xyz/post/chinese-preview/</link>
+      <pubDate>Tue, 31 Mar 2020 15:43:48 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/chinese-preview/</guid>
+      <description>《长恨歌》是中国唐朝诗人白居易的一首长篇叙事诗。 第一段：贵妃受宠爱 汉皇重色思倾国，御宇多年求不得。杨家有女初长成，养在深闺人未识。 天生丽质难</description>
+    </item>
+    
+    <item>
+      <title>[日本語] 敬語体系</title>
+      <link>https://www.caoayu.xyz/post/japanese-preview/</link>
+      <pubDate>Tue, 31 Mar 2020 15:43:48 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/japanese-preview/</guid>
+      <description>日本語の敬語体系は、一般に、大きく尊敬語・謙譲語・丁寧語に分類される。文化審議会国語分科会は、2007年2月に「敬語の指針」を答申し、これに</description>
+    </item>
+    
+    <item>
+      <title>Shortcodes</title>
+      <link>https://www.caoayu.xyz/post/shortcodes/</link>
+      <pubDate>Tue, 31 Mar 2020 15:43:48 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/shortcodes/</guid>
+      <description>&lt;h1 id=&#34;admonition&#34;&gt;Admonition&lt;/h1&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;biu biu biu.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;{{% admonition note &amp;#34;I&amp;#39;m title!&amp;#34; false %}}
+biu biu biu.
+
+{{% admonition type=&amp;#34;note&amp;#34; title=&amp;#34;note&amp;#34; details=&amp;#34;true&amp;#34; %}}
+biu biu biu.
+{{% /admonition %}}
+
+{{% admonition example %}}
+Without title.
+{{% /admonition %}}
+
+{{% /admonition %}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>This is a hidden post.</title>
+      <link>https://www.caoayu.xyz/post/hidden-post/</link>
+      <pubDate>Sun, 08 Mar 2020 17:40:19 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/hidden-post/</guid>
+      <description>&lt;p&gt;This post is hidden from the home page.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JS Flowchart Diagrams</title>
+      <link>https://www.caoayu.xyz/post/js-flowchart-diagrams/</link>
+      <pubDate>Wed, 04 Mar 2020 21:57:50 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/js-flowchart-diagrams/</guid>
+      <description>&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;st=&amp;gt;start: Start|past:&amp;gt;http://www.google.com[blank]
+e=&amp;gt;end: End:&amp;gt;http://www.google.com
+op1=&amp;gt;operation: My Operation|past
+op2=&amp;gt;operation: Stuff|current
+sub1=&amp;gt;subroutine: My Subroutine|invalid
+cond=&amp;gt;condition: Yes
+or No?|approved:&amp;gt;http://www.google.com
+c2=&amp;gt;condition: Good idea|rejected
+io=&amp;gt;inputoutput: catch something...|request
+
+st-&amp;gt;op1(right)-&amp;gt;cond
+cond(yes, right)-&amp;gt;c2
+cond(no)-&amp;gt;sub1(left)-&amp;gt;op1
+c2(yes)-&amp;gt;io-&amp;gt;e
+c2(no)-&amp;gt;op2-&amp;gt;e
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>JS Sequence Diagrams</title>
+      <link>https://www.caoayu.xyz/post/js-sequence-diagrams/</link>
+      <pubDate>Wed, 04 Mar 2020 21:57:45 +0800</pubDate>
+      
+      <guid>https://www.caoayu.xyz/post/js-sequence-diagrams/</guid>
+      <description>&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;Andrew-&amp;gt;China: Says Hello
+Note right of China: China thinks\nabout it
+China--&amp;gt;Andrew: How are you?
+Andrew-&amp;gt;&amp;gt;China: I am good thanks!
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
