@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用frp搭建内网穿透 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="什么是Frp frp 是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 tcp, http, https 等协议类型，并且 web 服务支持根据域名进行路由" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/frp/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="使用frp搭建内网穿透" />
+<meta property="og:description" content="什么是Frp frp 是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 tcp, http, https 等协议类型，并且 web 服务支持根据域名进行路由" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/frp/" />
+<meta property="article:published_time" content="2020-07-15T20:10:54+08:00" />
+<meta property="article:modified_time" content="2020-07-15T20:10:54+08:00" />
+<meta itemprop="name" content="使用frp搭建内网穿透">
+<meta itemprop="description" content="什么是Frp frp 是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 tcp, http, https 等协议类型，并且 web 服务支持根据域名进行路由">
+<meta itemprop="datePublished" content="2020-07-15T20:10:54&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-15T20:10:54&#43;08:00" />
+<meta itemprop="wordCount" content="638">
+
+
+
+<meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用frp搭建内网穿透"/>
+<meta name="twitter:description" content="什么是Frp frp 是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 tcp, http, https 等协议类型，并且 web 服务支持根据域名进行路由"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用frp搭建内网穿透</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-07-15 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 约 638 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#什么是frp">什么是<code>Frp</code></a></li>
+            <li><a href="#如何搭建">如何搭建</a>
+              <ul>
+                <li><a href="#流程">流程</a></li>
+              </ul>
+            </li>
+            <li><a href="#客户端使用">客户端使用</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-07-15T20:10:54" title="July 15, 2020">July 15, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h3 id="什么是frp">什么是<code>Frp</code></h3>
+<p><code>frp </code>是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 <code>tcp, http, https</code> 等协议类型，并且 <code>web</code> 服务支持根据域名进行路由转发</p>
+<p><code>frp</code>的用途很多，本文只做基础的内网穿透应用</p>
+<h3 id="如何搭建">如何搭建</h3>
+<p>要搭建一个<code>frp</code>服务，需要服务器端和客户端安装<code>frp</code>应用，通过<code>frp</code>应用进行通信，安装在服务器的叫做<code>frps</code>，安装在客户端的叫<code>frpc</code>，<strong>注意，客户端和服务端的版本要一致，因为同一个包中同时包含客户端和服务端，如果客户端和服务端的系统 一样，可以用同一个包，不然就要用同一个版本的包</strong></p>
+<p>如果宝塔安装报错可以将包上传到服务器，解压，添加进环境变量，更改配置文件，并加入开机服务，启动即可</p>
+<h4 id="流程">流程</h4>
+<ol>
+<li>
+<p>在服务器安装<code>frpc</code>，本文使用宝塔进行安装和配置，更加快捷直观。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715202503.png" alt="20200715202503"></p>
+</li>
+<li>
+<p>安装后进入设置，去<code>github</code>按照自己服务器的架构下载离线包，导入进去，如果导入后发现无法执行，可以点击在线安装，如果没反应就多点几次</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715205427.png" alt="image-20200715204242513"></p>
+</li>
+<li>
+<p>安装完成后进行配置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715233325.png" alt="image-20200715233324355"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715233507.png" alt="image-20200715233505096"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715233604.png" alt=""></p>
+</li>
+<li>
+<p>如果配置保存出现错误，直接修改配置文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715234954.png" alt="image-20200715234953623"></p>
+</li>
+<li>
+<p>配置完成后，需要放行对应的端口才可以正常的使用，可以使用宝塔进行端口放行，如果是阿里云的服务器，还需要进入服务商的控制台进行再次放行</p>
+<p>放行端口为： <code>7000，7001，7500，808，909</code></p>
+</li>
+</ol>
+<h3 id="客户端使用">客户端使用</h3>
+<p>客户端下载好对应的版本解压后在命令行中进行启动，可以指定配置文件，默认是有一个配置文件<code>frpc.ini</code>，<code>local_port</code> 一般设置为 80</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715235436.png" alt="image-20200715235434365"></p>
+<p>登录服务器的<code>frp web</code>面板，可以看到连接者的信息</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715235645.png" alt="image-20200715235643609"></p>
+<p>本地跑一个80端口的服务，在服务器上就可以进行端口映射的访问了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200716001536.png" alt="image-20200716001413919"></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-07-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/vm-centos-config/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">虚拟机安装Centos后的一些配置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/custom-shortcode/">
+            <span class="next-text nav-default">自定义短标签</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

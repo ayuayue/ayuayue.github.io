@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vscode on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/vscode/</link>
+    <description>Recent content in vscode on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 09 Aug 2020 18:04:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vscode进阶使用</title>
+      <link>https://blog.caoayu.top/post/vscode-keys/</link>
+      <pubDate>Sun, 09 Aug 2020 18:04:23 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/vscode-keys/</guid>
+      <description>Vscode基础配置及插件 基础介绍 这篇文章是对vscode的一些基础介绍跟推荐的插件 使用注意事项 有些快捷键不起作用,可能是跟某些软件冲突,可</description>
+    </item>
+    
+  </channel>
+</rss>

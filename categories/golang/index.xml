@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on 个人内容记录</title>
+    <link>https://blog.caoayu.top/categories/golang/</link>
+    <description>Recent content in golang on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 04 Jul 2020 21:47:30 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go使用工厂方法实例结构体</title>
+      <link>https://blog.caoayu.top/post/golang-struct-method/</link>
+      <pubDate>Sat, 04 Jul 2020 21:47:30 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/golang-struct-method/</guid>
+      <description>像面向对象一样 Go 语言不支持面向对象编程语言中那样的构造子方法,但很容易实现工厂模式来构建子工厂 使用New来定义实例规范 首先定义一个结构体 1 2</description>
+    </item>
+    
+    <item>
+      <title>Golang Flag包的参数格式问题</title>
+      <link>https://blog.caoayu.top/post/golang-flag/</link>
+      <pubDate>Sat, 04 Jul 2020 21:15:52 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/golang-flag/</guid>
+      <description>问题 使用golang flag包开发命令行程序或者读取命令行参数时,有时候参数为bool值会读取不到后面的参数 原因 golang flag 包对于命令行的参数格式有</description>
+    </item>
+    
+    <item>
+      <title>deepin安装golang</title>
+      <link>https://blog.caoayu.top/post/deepin-install-golang/</link>
+      <pubDate>Mon, 27 Apr 2020 19:16:50 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-install-golang/</guid>
+      <description>&lt;h3 id=&#34;deepin-二进制文件安装golang&#34;&gt;deepin 二进制文件安装golang&lt;/h3&gt;
+&lt;p&gt;先下载二进制文件&lt;a href=&#34;https://studygolang.com/dl/golang/go1.14.2.linux-amd64.tar.gz&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

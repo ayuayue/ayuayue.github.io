@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Composer on 个人内容记录</title>
+    <link>https://blog.caoayu.top/categories/composer/</link>
+    <description>Recent content in Composer on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 03 Feb 2021 21:19:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/categories/composer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Composer (四) -- 其他自动加载方法</title>
+      <link>https://blog.caoayu.top/post/composer-other-autoload/</link>
+      <pubDate>Wed, 03 Feb 2021 21:19:51 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/composer-other-autoload/</guid>
+      <description>composer 自动加载 这篇写了自动加载及自定义类使用 psr4 加载。下面介绍下另两种自动加载的方式。1. classmap. 2 files classmap 方式 同样先创建一个 classmap 的目录结构 1 2 3 4 5 6 7 Classmap ├</description>
+    </item>
+    
+    <item>
+      <title>Composer (三) -- Psr 自动加载</title>
+      <link>https://blog.caoayu.top/post/composer-autoload/</link>
+      <pubDate>Fri, 22 Jan 2021 12:44:19 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/composer-autoload/</guid>
+      <description>自动加载 composer (一) &amp;ndash; 依赖管理 前面这篇文章介绍了 composer 对依赖的安装及更新。 composer (二) &amp;ndash; 第三方包使用 这篇文章记录了如何使用一个第三方类。 这次介绍下 composer 的自</description>
+    </item>
+    
+    <item>
+      <title>Composer （二） -- 使用第三方包</title>
+      <link>https://blog.caoayu.top/post/composer-use-class/</link>
+      <pubDate>Tue, 19 Jan 2021 17:44:58 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/composer-use-class/</guid>
+      <description>composer 依赖管理 这篇文章写了对于第三方包的安装及使用，以及 composer 项目配置文件的说明，接下来说说 composer 安装第三方包后的使用。 首先，以 monolog 这个包为例。githu</description>
+    </item>
+    
+    <item>
+      <title>composer (一) -- 依赖管理</title>
+      <link>https://blog.caoayu.top/post/composer/</link>
+      <pubDate>Sat, 02 Jan 2021 22:18:17 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/composer/</guid>
+      <description>composer composer 是 PHP 用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会</description>
+    </item>
+    
+    <item>
+      <title>composer改源</title>
+      <link>https://blog.caoayu.top/post/composer-source/</link>
+      <pubDate>Tue, 28 Apr 2020 22:32:54 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/composer-source/</guid>
+      <description>1 composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/</description>
+    </item>
+    
+  </channel>
+</rss>

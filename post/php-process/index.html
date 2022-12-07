@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PHP 进程知识 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="php 操作进程知识 linux 手册 man7.org php pcntl ，posix扩展。封装了 linux 系统 api 可以操作进程。 php 内置函数 getmypid 获取当前进程的pid getmygid 获取当前进程组的id getmyuid 获取当前用户" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/php-process/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="PHP 进程知识" />
+<meta property="og:description" content="php 操作进程知识 linux 手册 man7.org php pcntl ，posix扩展。封装了 linux 系统 api 可以操作进程。 php 内置函数 getmypid 获取当前进程的pid getmygid 获取当前进程组的id getmyuid 获取当前用户" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/php-process/" />
+<meta property="article:published_time" content="2021-09-01T22:48:50+08:00" />
+<meta property="article:modified_time" content="2021-09-01T22:48:50+08:00" />
+<meta itemprop="name" content="PHP 进程知识">
+<meta itemprop="description" content="php 操作进程知识 linux 手册 man7.org php pcntl ，posix扩展。封装了 linux 系统 api 可以操作进程。 php 内置函数 getmypid 获取当前进程的pid getmygid 获取当前进程组的id getmyuid 获取当前用户">
+<meta itemprop="datePublished" content="2021-09-01T22:48:50&#43;08:00" />
+<meta itemprop="dateModified" content="2021-09-01T22:48:50&#43;08:00" />
+<meta itemprop="wordCount" content="2128">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP 进程知识"/>
+<meta name="twitter:description" content="php 操作进程知识 linux 手册 man7.org php pcntl ，posix扩展。封装了 linux 系统 api 可以操作进程。 php 内置函数 getmypid 获取当前进程的pid getmygid 获取当前进程组的id getmyuid 获取当前用户"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">PHP 进程知识</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-01 </span>
+        <div class="post-category">
+            <a href="/categories/php/"> php </a>
+            </div>
+          <span class="more-meta"> 约 2128 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#php-操作进程知识">php 操作进程知识</a>
+              <ul>
+                <li><a href="#php-内置函数">php 内置函数</a></li>
+                <li><a href="#php-常量">php 常量</a></li>
+              </ul>
+            </li>
+            <li><a href="#创建子进程">创建子进程</a></li>
+            <li><a href="#进程退出">进程退出</a>
+              <ul>
+                <li><a href="#进程的回收">进程的回收</a></li>
+              </ul>
+            </li>
+            <li><a href="#进程退出-1">进程退出</a>
+              <ul>
+                <li><a href="#追踪阻塞与非阻塞方式退出">追踪阻塞与非阻塞方式退出</a></li>
+                <li><a href="#使用-kill-命令终止程序">使用 kill 命令终止程序</a></li>
+                <li><a href="#进程的停止">进程的停止</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2021-09-01T22:48:50" title="September 1, 2021">September 1, 2021</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h3 id="php-操作进程知识">php 操作进程知识</h3>
+<p>linux 手册  <a href="https://man7.org/linux/man-pages/">man7.org</a></p>
+<p>php pcntl ，posix扩展。封装了 linux 系统 api 可以操作进程。</p>
+<h4 id="php-内置函数">php 内置函数</h4>
+<ol>
+<li>getmypid 获取当前进程的pid</li>
+<li>getmygid 获取当前进程组的id</li>
+<li>getmyuid 获取当前用户的id</li>
+</ol>
+<h4 id="php-常量">php 常量</h4>
+<p>STDOUT 标准输出
+STDIN 标准输入</p>
+<p>posix 接口 意义同内置函数</p>
+<ol>
+<li>posix_getpid(); 获取当前进程的pid</li>
+<li>posix_getppid(); 获取父进程id</li>
+<li>posix_getgrp(); 获取进程组长进程id</li>
+<li>posix_getuid(); 获取实际用户id</li>
+<li>posix_getsid(posix_getpid()); 获取进程会话id</li>
+<li>posix_geteuid(); 获取有效用户id</li>
+<li>posix_getegid();</li>
+</ol>
+<p>查看进程</p>
+<ol>
+<li>
+<p>pstree 
+参数：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20210830230247.png" alt="image-20210829233507050"></p>
+<ol>
+<li>a 显示完整指令</li>
+<li>p 显示进程号和进程id</li>
+<li>u 显示用户名称
+常用参数 pstree -ap, pstree -p pid</li>
+</ol>
+</li>
+<li>
+<p>ps</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20210830230320.png" alt="image-20210829233546714"></p>
+<p>参数：</p>
+<ol>
+<li>a 显示终端下所有执行的程序</li>
+<li>u 以用户为主的格式显示</li>
+<li>x 显示所有程序</li>
+<li>e 显示环境变量</li>
+<li>j 采用工作控制的格式显示
+常用参数 ps aux, ps exj</li>
+</ol>
+</li>
+</ol>
+<p>进程的状态</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210829233734687.png" alt="image-20210829233734687"></p>
+<ol>
+<li>R 运行中</li>
+<li>Z zomdie 僵尸进程</li>
+<li>S sleeping 可被唤醒</li>
+<li>T stop</li>
+<li>D 无法唤醒</li>
+<li>I 闲置</li>
+</ol>
+<p>会话进程
+一般指命令执行的终端进程，一般默认是 bash 进程，可以是用 echo $$ 来输出 bash 的进程id，也可以使用 posix_getsid(pid) 获取;</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210829233424797.png" alt="image-20210829233424797"></p>
+<p>用户 id 和组 id</p>
+<p>是在用户创建的时候分配的，可以在 /etc/passwd 文件中看到用户对应的信息，以及用户对应的默认终端</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210829233352076.png" alt="image-20210829233352076"></p>
+<h3 id="创建子进程">创建子进程</h3>
+<p>函数 pcntl_fork</p>
+<p>fork 后，子进程会 copy 父进程的数据段和代码段，由操作系统随机先执行其中一个，如果父进程被杀掉，子进程仍然运行，此时进程属于孤儿进程，由 1 号进程（系统进程）接管。所以一般先结束子进程，父进程来回收子进程的资源。</p>
+<p>孤儿进程的危害：进程进入后台，占用系统资源。</p>
+<p>当返回小于 0 ，创建失败</p>
+<p>等于0 ， 此时进入子进程的逻辑</p>
+<p>大于0，进入父进程的逻辑</p>
+<h3 id="进程退出">进程退出</h3>
+<p>退出的情况</p>
+<ol>
+<li>运行到最后一句</li>
+<li>运行时遇到 return</li>
+<li>运行时遇到 exit 函数</li>
+<li>异常产生</li>
+<li>进程接受到中断信号</li>
+</ol>
+<p>一个进程，要么是正常退出，要么是异常退出，但是不管哪种方式都会有一个终止状态码，但此时进程并不会完全退出，而是驻留在内存中，父进程可以使用 pcntl_wait 函数来获取子进程的状态信息，并会释放子进程的内存空间，此时才是完全退出。否则会产生大量僵尸进程</p>
+<p>僵尸进程：子进程已经结束，但是父进程还没使用 wait/wait_pid 来回收</p>
+<p>程序示例</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="nv">$pid</span> <span class="o">=</span> <span class="nx">pcntl_fork</span><span class="p">();</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$pid</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
+    <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s1">&#39;我是子进程：%d&#39;</span><span class="p">,</span> <span class="nx">posix_getppid</span><span class="p">());</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s1">&#39;我是父进程：%d&#39;</span><span class="p">,</span><span class="nx">posix_getpid</span><span class="p">());</span>
+    <span class="nx">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+        <span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>子进程运行后结束，父进程不结束。使用 pstree 先查看父子进程的信息，在使用 ps 命令查看进程状态</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="nv">$$</span> // 获取当前 bash 的进程
+pstree -ap pid // pid 为上一步输出的id
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210901231939794.png" alt="image-20210901231939794"></p>
+<p>可以看到下面 子进程 使用 （） 包裹，这就是一个僵尸进程</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210901232030620.png" alt="image-20210901232030620"></p>
+<p>可以看到父进程的状态为 S，子进程为 Z （僵尸进程）</p>
+<p>而对于一个运行中的进程，会在系统的 /proc/pid 目录下保留进程的相关信息</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210901232310218.png" alt="image-20210901232310218"></p>
+<p>这里面存储关于进程的一些信心，僵尸进程虽然退出，但是仍然保留有系统文件，如果僵尸文件过多，会导致系统的内存不足。</p>
+<h4 id="进程的回收">进程的回收</h4>
+<p>pcntl_wait 函数</p>
+<p>使用 pcntl_wait 的情况</p>
+<ol>
+<li>没有子进程，可能返回错误</li>
+<li>子进程没有退出，会阻塞</li>
+<li>传递第三个参数，可以不阻塞</li>
+</ol>
+<p>阻塞方式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="nv">$pid</span> <span class="o">=</span> <span class="nx">pcntl_fork</span><span class="p">();</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$pid</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
+    <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;我是子进程：%d</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="nx">posix_getpid</span><span class="p">());</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;我是父进程：%d</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">posix_getpid</span><span class="p">());</span>
+
+    <span class="nv">$exitPid</span> <span class="o">=</span> <span class="nx">pcntl_wait</span><span class="p">(</span><span class="nv">$status</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$exitPid</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;child process pid %d, exit code: %d</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="nv">$pid</span><span class="p">,</span><span class="nv">$status</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;wait error</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+        <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;i am father</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">);</span>
+        <span class="nx">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;process exit %d</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">getmypid</span><span class="p">());</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>此时运行该脚本，子进程退出后会被父进程回收，可以使用上面的 pstree ps 命令查看，只有父进程一个，并且子进程的进程目录也是不存在的。</p>
+<h3 id="进程退出-1">进程退出</h3>
+<p>使用 pcntl_wait() 获取进程退出的状态码，一般 0-255，,0 为正常退出，可以使用 exit(10) 自定以退出状态码。</p>
+<p>pcntl_wait() 还可以释放退出的子进程的资源</p>
+<p>非阻塞式退出：</p>
+<p>加入第二个参数 WNOHANG</p>
+<p><code>pcntl_wait($status,WNOHANG);</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$pid</span> <span class="o">=</span> <span class="nx">pcntl_fork</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$pid</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+    <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s1">&#39;fork failed &#39;</span><span class="p">);</span>
+    <span class="k">exit</span><span class="p">(</span><span class="nv">$pid</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$pid</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
+<span class="c1">//    while (1){
+</span><span class="c1"></span>        <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;i am child %d </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">getmypid</span><span class="p">());</span>
+        <span class="nx">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="c1">//    }
+</span><span class="c1"></span>    <span class="k">exit</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+    <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;i am father %d </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">getmypid</span><span class="p">());</span>
+    <span class="nv">$exitCode</span> <span class="o">=</span> <span class="nx">pcntl_wait</span><span class="p">(</span><span class="nv">$status</span><span class="p">,</span><span class="nx">WNOHANG</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$exitCode</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">){</span>
+        <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;child %d exit status %d </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nv">$pid</span><span class="p">,</span><span class="nx">pcntl_wexitstatus</span><span class="p">(</span><span class="nv">$status</span><span class="p">));</span>
+        <span class="k">exit</span><span class="p">(</span><span class="nv">$status</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$exitCode</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="nx">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+        <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;father pid %d </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">getmypid</span><span class="p">());</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;child exit failed </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>使用 pcntl_wexitstatus 函数来获取子进程的退出状态码。</p>
+<p>如果阻塞，子进程会一直运行，父进程运行到 wait 函数时阻塞，直到子进程运行结束。</p>
+<p>如果非阻塞，父进程不会等待子进程执行结束，而是同时运行，如果捕捉到进程退出，退出状态码 大于0</p>
+<h4 id="追踪阻塞与非阻塞方式退出">追踪阻塞与非阻塞方式退出</h4>
+<p>使用 strace 命令进程系统调用的追踪</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">strace -f -s <span class="m">65500</span> -i -T php process_exit.php	
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="使用-kill-命令终止程序">使用 kill 命令终止程序</h4>
+<p>kill 命令会发送一个信号给程序，每个信号都有一个名字和编号。使用 kill -l 可以查看所有的信号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">caoayu@caoayu:~/Desktop/code/php/muti-process$ <span class="nb">kill</span> -l
+ 1<span class="o">)</span> SIGHUP       2<span class="o">)</span> SIGINT       3<span class="o">)</span> SIGQUIT      4<span class="o">)</span> SIGILL       5<span class="o">)</span> SIGTRAP
+ 6<span class="o">)</span> SIGABRT      7<span class="o">)</span> SIGBUS       8<span class="o">)</span> SIGFPE       9<span class="o">)</span> SIGKILL     10<span class="o">)</span> SIGUSR1
+11<span class="o">)</span> SIGSEGV     12<span class="o">)</span> SIGUSR2     13<span class="o">)</span> SIGPIPE     14<span class="o">)</span> SIGALRM     15<span class="o">)</span> SIGTERM
+16<span class="o">)</span> SIGSTKFLT   17<span class="o">)</span> SIGCHLD     18<span class="o">)</span> SIGCONT     19<span class="o">)</span> SIGSTOP     20<span class="o">)</span> SIGTSTP
+21<span class="o">)</span> SIGTTIN     22<span class="o">)</span> SIGTTOU     23<span class="o">)</span> SIGURG      24<span class="o">)</span> SIGXCPU     25<span class="o">)</span> SIGXFSZ
+26<span class="o">)</span> SIGVTALRM   27<span class="o">)</span> SIGPROF     28<span class="o">)</span> SIGWINCH    29<span class="o">)</span> SIGIO       30<span class="o">)</span> SIGPWR
+31<span class="o">)</span> SIGSYS      34<span class="o">)</span> SIGRTMIN    35<span class="o">)</span> SIGRTMIN+1  36<span class="o">)</span> SIGRTMIN+2  37<span class="o">)</span> SIGRTMIN+3
+38<span class="o">)</span> SIGRTMIN+4  39<span class="o">)</span> SIGRTMIN+5  40<span class="o">)</span> SIGRTMIN+6  41<span class="o">)</span> SIGRTMIN+7  42<span class="o">)</span> SIGRTMIN+8
+43<span class="o">)</span> SIGRTMIN+9  44<span class="o">)</span> SIGRTMIN+10 45<span class="o">)</span> SIGRTMIN+11 46<span class="o">)</span> SIGRTMIN+12 47<span class="o">)</span> SIGRTMIN+13
+48<span class="o">)</span> SIGRTMIN+14 49<span class="o">)</span> SIGRTMIN+15 50<span class="o">)</span> SIGRTMAX-14 51<span class="o">)</span> SIGRTMAX-13 52<span class="o">)</span> SIGRTMAX-12
+53<span class="o">)</span> SIGRTMAX-11 54<span class="o">)</span> SIGRTMAX-10 55<span class="o">)</span> SIGRTMAX-9  56<span class="o">)</span> SIGRTMAX-8  57<span class="o">)</span> SIGRTMAX-7
+58<span class="o">)</span> SIGRTMAX-6  59<span class="o">)</span> SIGRTMAX-5  60<span class="o">)</span> SIGRTMAX-4  61<span class="o">)</span> SIGRTMAX-3  62<span class="o">)</span> SIGRTMAX-2
+63<span class="o">)</span> SIGRTMAX-1  64<span class="o">)</span> SIGRTMAX
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$pid</span> <span class="o">=</span> <span class="nx">pcntl_fork</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$pid</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+    <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s1">&#39;fork failed &#39;</span><span class="p">);</span>
+    <span class="k">exit</span><span class="p">(</span><span class="nv">$pid</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$pid</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
+    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+        <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;i am child %d </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">getmypid</span><span class="p">());</span>
+        <span class="nx">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+    <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;i am father %d </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">getmypid</span><span class="p">());</span>
+    <span class="nv">$exitPID</span> <span class="o">=</span> <span class="nx">pcntl_wait</span><span class="p">(</span><span class="nv">$status</span><span class="p">,</span><span class="nx">WNOHANG</span><span class="p">);</span>
+    <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;exit process pid  %d</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nv">$exitPID</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$exitPID</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">pcntl_wifsignaled</span><span class="p">(</span><span class="nv">$status</span><span class="p">)){</span>
+            <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;rec exit  sign %d </span><span class="se">\n</span><span class="s2"> &#34;</span><span class="p">,</span><span class="nx">pcntl_wtermsig</span><span class="p">(</span><span class="nv">$status</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">pcntl_wexitstatus</span><span class="p">(</span><span class="nv">$status</span><span class="p">)){</span>
+            <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;child %d exit status %d </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nv">$pid</span><span class="p">,</span><span class="nx">pcntl_wexitstatus</span><span class="p">(</span><span class="nv">$status</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$exitPID</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="nx">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+        <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span><span class="s2">&#34;father pid %d </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">getmypid</span><span class="p">());</span>
+    <span class="p">}</span>
+        <span class="nx">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>不退出子进程和父进程，使用 kill 命令结束子进程，查看程序运行状况。</p>
+<p>使用 中断信号结束后，需要使用 pcntl_wtermsig 函数来获取终端信号的值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">kill</span> -10 <span class="m">1002</span>
+<span class="nb">kill</span> -9 <span class="m">1003</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以看到子进程被终止，父进程仍然在运行，并且获取到了信号的类型</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210905215243703.png" alt="image-20210905215243703"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210905215358036.png" alt="image-20210905215358036"></p>
+<h4 id="进程的停止">进程的停止</h4>
+<p>pcntl_wstopsig 函数捕获进程的停止信号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">pcntl_wstopsig($status)
+</code></pre></td></tr></table>
+</div>
+</div><p>pcntl_wifstopped 函数可以获取到进程停止信号</p>
+<p>一般接收 SIGSTOP, SIGSTP 这几个信号，其他信号无法使用 pcntl_wifstopped 函数捕获到。</p>
+<p>进程停止后，仍然可以使用 pstree,ps 等命令查询到，进程并没有终止，只是暂时停止，可以发送 继续  中断信号来将进程重新唤醒。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210905220223336.png" alt="image-20210905220223336"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210905220244428.png" alt="image-20210905220244428"></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2021-09-01</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/php-program/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">PHP 程序</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/make-php-and-extension/">
+            <span class="next-text nav-default">编译安装php及扩展，多版本切换</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

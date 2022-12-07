@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/小米 on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/%E5%B0%8F%E7%B1%B3/</link>
+    <description>Recent content in IT/小米 on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/%E5%B0%8F%E7%B1%B3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>小米电视4a ADB</title>
+      <link>https://blog.caoayu.top/post/%E5%B0%8F%E7%B1%B3%E7%94%B5%E8%A7%864a-adb/</link>
+      <pubDate>Mon, 03 Oct 2022 20:46:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E5%B0%8F%E7%B1%B3%E7%94%B5%E8%A7%864a-adb/</guid>
+      <description>小米电视4a ADB adb命令 adb connect ip:port adb disconnect adb devices adb push adb shell adb shell am monitor 监听启动的软件 adb shell pm uninstall &amp;ndash;user 0 com.catchingnow.icebox 删除软件 删除升级 adb shell pm uninstall &amp;ndash;user 0 com.xiaomi.mitv.upgrade 删除广告 adb shell pm uninstall &amp;ndash;user 0 com.miui.systemAdSolution adb shell pm</description>
+    </item>
+    
+  </channel>
+</rss>

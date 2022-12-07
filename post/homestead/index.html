@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Windows 安装使用Homestead 遇到的问题总结 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="Windows 安装使用Homestead" /><meta name="keywords" content="Homestead" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/homestead/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Windows 安装使用Homestead 遇到的问题总结" />
+<meta property="og:description" content="Windows 安装使用Homestead" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/homestead/" />
+<meta property="article:published_time" content="2020-12-27T17:44:18+08:00" />
+<meta property="article:modified_time" content="2020-12-27T17:44:18+08:00" />
+<meta itemprop="name" content="Windows 安装使用Homestead 遇到的问题总结">
+<meta itemprop="description" content="Windows 安装使用Homestead">
+<meta itemprop="datePublished" content="2020-12-27T17:44:18&#43;08:00" />
+<meta itemprop="dateModified" content="2020-12-27T17:44:18&#43;08:00" />
+<meta itemprop="wordCount" content="1438">
+
+
+
+<meta itemprop="keywords" content="Homestead," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Windows 安装使用Homestead 遇到的问题总结"/>
+<meta name="twitter:description" content="Windows 安装使用Homestead"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Windows 安装使用Homestead 遇到的问题总结</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-12-27 </span>
+        <div class="post-category">
+            <a href="/categories/homestead/"> Homestead </a>
+            </div>
+          <span class="more-meta"> 约 1438 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#安装">安装</a>
+              <ul>
+                <li><a href="#添加-homestead">添加 <code>homestead</code></a></li>
+                <li><a href="#拉取-homestead">拉取 <code>homestead</code></a></li>
+                <li><a href="#配置信息">配置信息</a></li>
+                <li><a href="#启动-vagrant">启动 vagrant</a></li>
+              </ul>
+            </li>
+            <li><a href="#php-版本的替换">php 版本的替换</a></li>
+            <li><a href="#外部工具链接">外部工具链接</a>
+              <ul>
+                <li><a href="#关闭销毁重载">关闭销毁重载</a></li>
+              </ul>
+            </li>
+            <li><a href="#优化-git-bash-使用">优化 <code>git-bash</code> 使用</a>
+              <ul>
+                <li><a href="#host-同步系统">host 同步系统</a></li>
+                <li><a href="#修改-git-bash-的-vim-配置">修改 <code>git-bash</code> 的 <code>vim</code> 配置</a></li>
+                <li><a href="#profile">profile</a></li>
+                <li><a href="#composer-问题">composer 问题</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-12-27T17:44:18" title="December 27, 2020">December 27, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h3 id="安装">安装</h3>
+<p>本环境使用 <code>VirtualBox6.1</code> <code>Vagrant2.2</code> 首先下载并安装这两个应用.</p>
+<h4 id="添加-homestead">添加 <code>homestead</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vagrant box add laravel/homestead
+</code></pre></td></tr></table>
+</div>
+</div><p>根据提示,选择 <code>VirtualBox</code> 的选项,由于国内的大多网络环境,无法进行快速的下载.我们可以根据输出的 <code>box</code> 地址来手动下载,通过使用浏览器访问输出的 <code>https</code> 链接来下载到本地的其他位置.</p>
+<p>下载完成后,我们手动进行添加 <code>box</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vagrant box add laravel/homestead ~/Download/cdb...<span class="o">(</span>下载的文件<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后使用命令 <code>vagrant box list</code> 检查安装的 <code>box</code>
+输出如下: <code>laravel/homestead (virtualbox, 0)</code> 后面的 <code>0</code> 为版本,可能是手动导入的缘故,没有正常的读取版本信息.</p>
+<h4 id="拉取-homestead">拉取 <code>homestead</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/laravel/homestead.git ~/Desktop/Homestead
+<span class="nb">cd</span> Homestead
+git checkout v7.16.1
+<span class="c1"># Mac / Linux... / git-bash</span>
+bash init.sh
+
+<span class="c1"># Windows...</span>
+init.bat
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="配置信息">配置信息</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">folders:    <span class="c1"># 目录映射</span>
+    - map: ~/Desktop/code
+      to: /home/vagrant/code  <span class="c1"># 将本地的桌面code目录映射到虚拟机的 /home/vagrant/code中</span>
+
+sites:     <span class="c1"># 虚拟主机配置</span>
+    - map: homestead.test   <span class="c1">#  配置虚拟主机名</span>
+      to: /home/vagrant/code/Laravel/public   <span class="c1"># 主机映射地址</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="启动-vagrant">启动 vagrant</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vagrant up
+</code></pre></td></tr></table>
+</div>
+</div><p>可能会报错,或者发现没有启动,而是又去那个地址下载 <code>box</code> 去了,这就是因为版本没有读取到的原因,这里我们去更改一个文件.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vim ~/Desktop/Homestead/scripts/homestead.rb   <span class="c1"># 拉取的homestead的仓库中的文件</span>
+<span class="c1"># 查找到下面的一句进行更改</span>
+config.vm.box_version <span class="o">=</span> settings<span class="o">[</span><span class="s1">&#39;version&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="s1">&#39;&gt;= 0&#39;</span> <span class="c1"># 0是更改后的内容,因为输出的版本是0.</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>更改后再次使用 <code>vagrant up</code> 即可启动</p>
+<h3 id="php-版本的替换">php 版本的替换</h3>
+<p><code>homestead</code> 中安装了几个不同的 <code>php</code> 版本,如果需要替换执行下面的操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo passwd root <span class="c1"># 重设 root 密码</span>
+update-alternatives --display php 查看所有 php 版本和当前版本
+sudo update-alternatives --config php <span class="c1"># 根据输出提示,输入对应版本的序号即可替换</span>
+php -v <span class="c1"># 验证版本信息</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="外部工具链接">外部工具链接</h3>
+<ol>
+<li>xshell</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ip : 192.168.10.10
+port : <span class="m">22</span>
+name : vagrant
+passwd : vagrant
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>xftp 通过 xshell 上的快捷按钮即可自动添加并打开</li>
+<li>navicat</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ip : 192.168.10.10
+port : <span class="m">3306</span>
+name : homestead
+passwd : secret
+dbname : homestead
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>命令行 <code>ssh</code> 连接</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vagrant ssh
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="关闭销毁重载">关闭销毁重载</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vagrant halt <span class="c1"># 关闭</span>
+vagrant reload --provision <span class="c1"># 重载配置,修改过配置后需要重载生效</span>
+vagrant destory <span class="c1"># 销毁一个 box</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="优化-git-bash-使用">优化 <code>git-bash</code> 使用</h3>
+<p>注意:<strong>由于权限的原因,一些操作在 <code>git-bash</code> 中无法使用.所以,我们在配置之前需要先将 <code>git-bash.exe 和 bash.exe</code> 以管理员的身份打开.在 <code>git</code> 的安装路径下,<code>bash.exe</code> 在安装目录的 <code>bin</code> 下.</strong>
+** git-bash 下的配置文件都相对于 git 的安装目录来说的.**</p>
+<h4 id="host-同步系统">host 同步系统</h4>
+<p>创建虚拟主机后,需要同步更改系统中的 <code>hosts</code> 文件,如果不行,需要清除 <code>dns,浏览器缓存</code>.
+这里通过修改 <code>/etc/hosts</code> 文件并设置别名来覆盖系统 <code>hosts</code> 文件,<code>linux</code> 系统中<code>hosts</code> 就是在 <code>/etc/hosts</code>,保持一个统一.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vim /etc/hosts
+<span class="c1"># 加入需要配置的虚拟主机地址域名映射</span>
+192.168.10.10 coco.test
+<span class="c1"># 退出vim</span>
+<span class="nb">alias</span> <span class="nv">host</span><span class="o">=</span><span class="s2">&#34;cp /etc/hosts /c/Windows/System32/drivers/etc/hosts&#34;</span>
+<span class="c1"># 此时设置了一个别名,使用host就会同步修改系统 hosts文件</span>
+host
+</code></pre></td></tr></table>
+</div>
+</div><p>跟 <code>linux</code> 相同,这只是临时的修改,如果想要持久化,需要更改 <code>git-bash</code> 的配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vim /etc/profile
+<span class="nb">alias</span> <span class="nv">host</span><span class="o">=</span><span class="s2">&#34;cp /etc/hosts /c/Windows/System32/drivers/etc/hosts&#34;</span>
+<span class="c1"># 关闭vim</span>
+<span class="nb">source</span> /etc/profile <span class="c1"># 刷新配置</span>
+host <span class="c1"># 此时在别的会话中也可以使用这个别名了,同理可以根据自己的需要设置更多的别名.</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="修改-git-bash-的-vim-配置">修改 <code>git-bash</code> 的 <code>vim</code> 配置</h4>
+<p><code>vim</code> 的原始配置还是比较难用的,<code>git-bash</code> 中无法使用扩展,所以简单设置一些快捷键跟操作就行了.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vim /etc/vimrc
+<span class="c1"># 加入下面内容</span>
+<span class="nb">set</span> nocompatible <span class="s2">&#34; 不兼容 vi
+</span><span class="s2">syntax on &#34;</span> 高亮解析
+
+<span class="nb">set</span> number <span class="s2">&#34; 设置行号
+</span><span class="s2">set wildmenu &#34;</span> 下部菜单
+<span class="nb">set</span> hlsearch <span class="s2">&#34; 高亮搜索
+</span><span class="s2">set incsearch
+</span><span class="s2">set ignorecase
+</span><span class="s2">set smartcase
+</span><span class="s2">set cursorline &#34;</span> 行光标
+<span class="nb">set</span> <span class="nv">backspace</span><span class="o">=</span><span class="m">2</span>
+<span class="nb">set</span> <span class="nv">nrformats</span><span class="o">=</span>
+<span class="nb">set</span> autoindent
+<span class="nb">set</span> <span class="nv">scrolloff</span><span class="o">=</span><span class="m">15</span> <span class="s2">&#34; 距离屏幕底部行数
+</span><span class="s2">let mapleader=&#39;,&#39; &#34;</span> leader 键
+<span class="nv">noremap</span> <span class="o">=</span> nzz
+noremap - Nzz
+inoremap jj &lt;Esc&gt;<span class="sb">`</span>^
+map Q :q&lt;CR&gt; <span class="s2">&#34; Q 退出
+</span><span class="s2">map S :w&lt;CR&gt; &#34;</span> S 保存
+map R :source <span class="nv">$MYNVIMRC</span>&lt;CR&gt; <span class="s2">&#34; R 重载 vim 配置文件,需要在 profile 中设置该变量
+</span><span class="s2">inoremap &lt;Leader&gt;&lt;CR&gt; :nohls&lt;CR&gt;
+</span><span class="s2">nnoremap &lt;Leader&gt;&lt;CR&gt; :nohls&lt;CR&gt;
+</span><span class="s2">noremap &lt;C-f&gt; &lt;C-f&gt;zz &#34;</span> 翻页
+noremap &lt;C-u&gt; &lt;C-u&gt;zz
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="profile">profile</h4>
+<p>我目前的 <code>/etc/profile</code> 文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 新增内容</span>
+<span class="nb">export</span> <span class="nv">MYNVIMRC</span><span class="o">=</span>/etc/vimrc
+
+<span class="c1"># 通过 homestead up 等命令来启动 vagrant</span>
+<span class="k">function</span> homestead<span class="o">()</span> <span class="o">{</span>
+    <span class="o">(</span> <span class="nb">cd</span> ~/Desktop/Homestead <span class="o">&amp;&amp;</span> vagrant <span class="nv">$*</span> <span class="o">)</span>
+<span class="o">}</span>
+
+<span class="nb">alias</span> <span class="nv">host</span><span class="o">=</span><span class="s2">&#34;cp /etc/hosts /c/Windows/System32/drivers/etc/hosts&#34;</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="composer-问题">composer 问题</h4>
+<p><strong><code>laravel</code> 安装器好像是安装的最新版的 <code>laravel</code> ,并且我没有找到自定义版本的方法,目前使用 <code>composer</code> 进行 <code>laravel</code> 的项目新建即可</strong></p>
+<ol>
+<li>镜像源问题</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>创建 laravel 项目时 <code> composer create-project laravel/laravel coco --prefer-dist &quot;5.6.*&quot;</code> :</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>RuntimeException<span class="o">]</span>                                                                            
+  Could not delete /home/vagrant/code/coco/vendor/kylekatarnls/update-helper/src/UpdateHelper:
+
+  <span class="c1"># 进入项目不使用插件安装</span>
+  <span class="nb">cd</span> coco 
+  composer install --no-plugins
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>App key</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">php artisan key:gen
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-12-27</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/homestead/">Homestead</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/switcher-z/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Windows 切换同窗口应用及git-bash的一些小工具</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/linux-edit-map/">
+            <span class="next-text nav-default">Linux 下更改大写锁定键为ESC</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

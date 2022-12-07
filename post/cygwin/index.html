@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用Cygwin在windows下运行linux的一些工具 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="使用Cygwin在windows下运行linux" /><meta name="keywords" content="cygwin, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/cygwin/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="使用Cygwin在windows下运行linux的一些工具" />
+<meta property="og:description" content="使用Cygwin在windows下运行linux" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/cygwin/" />
+<meta property="article:published_time" content="2020-11-07T14:37:16+08:00" />
+<meta property="article:modified_time" content="2020-11-07T14:37:16+08:00" />
+<meta itemprop="name" content="使用Cygwin在windows下运行linux的一些工具">
+<meta itemprop="description" content="使用Cygwin在windows下运行linux">
+<meta itemprop="datePublished" content="2020-11-07T14:37:16&#43;08:00" />
+<meta itemprop="dateModified" content="2020-11-07T14:37:16&#43;08:00" />
+<meta itemprop="wordCount" content="900">
+
+
+
+<meta itemprop="keywords" content="windows," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Cygwin在windows下运行linux的一些工具"/>
+<meta name="twitter:description" content="使用Cygwin在windows下运行linux"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用Cygwin在windows下运行linux的一些工具</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-11-07 </span>
+        <div class="post-category">
+            <a href="/categories/windows/"> windows </a>
+            </div>
+          <span class="more-meta"> 约 900 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#windows-终端">windows 终端</a></li>
+            <li><a href="#安装cygwin64">安装<code>cygwin64</code></a></li>
+            <li><a href="#安装目录">安装目录</a></li>
+            <li><a href="#fish替换其他shell"><code>fish</code>替换其他<code>shell</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-11-07T14:37:16" title="November 7, 2020">November 7, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h3 id="windows-终端">windows 终端</h3>
+<p>对于开发者而言,<code>windwos</code>下的终端实在是不如<code>linux,macos</code>下的效率更高,速度更快.虽然<code>Windows</code>下也有一些不错的第三方终端.如 <code>cmder,windows terminal,powshell</code>, 甚至还有子系统的终端.但是对于终端命令的提示还是不尽人意.</p>
+<p>对于子系统<code>Ubuntu</code>,家庭版的功能是阉割了的.暂时也无法升级到2.0,而且子系统我们一般用来跑一些项目.配置太多太乱会让本就不稳定的系统更加危险.对于子系统的维护更是我们不想去经常自己操作.所以我们就可以使用 <code>cygwin</code>来跑一些<code>Linux</code>下的小工具来提升我们的效率.如 <code>fish,gcc,python</code></p>
+<h3 id="安装cygwin64">安装<code>cygwin64</code></h3>
+<p>进入官网,找到对应版本进行下载 <a href="http://www.cygwin.com/">官网</a></p>
+<ol>
+<li>install  from internet  从网络上安装</li>
+<li>配置安装的目录以及使用的用户.默认即可</li>
+<li>配置本地包目录.默认即可</li>
+<li>代理.默认即可</li>
+<li>use URL 使用镜像.可以选择阿里云的那个 <code>https://mirrors.aliyu.com</code></li>
+</ol>
+<p>安装<code>linux</code>工具跟库</p>
+<ol>
+<li>view 根据分类查看目录.一般使用 <code>category</code></li>
+<li>搜索我们需要安装的软件或者库,比如 <code>fish</code>
+<ol>
+<li><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20201107152223.png" alt="image-20201107152214882"></li>
+<li>下一步就可以安装了</li>
+<li>安装完成后会生成一个<code>cygwin</code>的工具.打开就是一个<code>linux</code>的系统命令终端,可以执行一些<code>Linux</code>命令.</li>
+<li>如果命令报错可能是没有依赖.比如<code>python</code>.那就重新安装一次<code>cygwin</code>,再选择包的时候添加进<code>python</code>,原来的不用改变.即可</li>
+</ol>
+</li>
+</ol>
+<p><strong>注意事项</strong> : 如果<code>windows</code>中安装了软件并设置了环境变量.会跟<code>cygwin</code>里的命令冲突.优先使用<code>windows</code>里的软件执行.所以如果冲突.我们可以把<code>windows</code>下的改下名字.或者取消环境变量(如果不用的话).</p>
+<h3 id="安装目录">安装目录</h3>
+<p>安装后,安装目录里就是一个<code>linux</code>的目录解构了.我们通过<code>cygwin</code>安装的应用都在 <code>bin</code>目录下.所以如果想再<code>windows</code>中使用这些工具.我们可以给这个 <code>bin</code> 目录添加一个环境变量.这样就可以在外部调用了.</p>
+<h3 id="fish替换其他shell"><code>fish</code>替换其他<code>shell</code></h3>
+<ol>
+<li>
+<p><code>vscode</code> 中 : 使用 <code>ctrl+,</code>打开设置.右上角找到设置文件<code>setting.json</code>打开.将 <code>temianl</code>的终端路径改为 <code>cygwin/bin/fish.exe</code> 即可启动一个<code>fsih</code>当作终端</p>
+</li>
+<li>
+<p><code>jetbrains</code> ide : 在设置中找到 <code>terminal</code>既可以通过目录查找到<code>fish</code>的路径.应用即可</p>
+</li>
+<li>
+<p><code>Windows terminal</code>中 : 打开设置文件,配置一个新的终端列表.设置为默认即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s2">&#34;defaultProfile&#34;</span>: <span class="s2">&#34;{1caa0dad-35be-5f56-a8ff-afceeeaa6101}&#34;</span>,
+<span class="o">{</span>
+        // Make changes here to the cmd.exe profile.
+        <span class="s2">&#34;guid&#34;</span>: <span class="s2">&#34;{1caa0dad-35be-5f56-a8ff-afceeeaa6101}&#34;</span>,
+        <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;fish&#34;</span>,
+        <span class="s2">&#34;commandline&#34;</span>: <span class="s2">&#34;fish&#34;</span>,
+        <span class="s2">&#34;hidden&#34;</span>: <span class="nb">false</span>
+      <span class="o">}</span>,
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-11-07</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/windows/">windows</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/store-net-error/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">解决开启代理无法访问微软商店的问题</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/php-8/">
+            <span class="next-text nav-default">PHP8.0 新特性</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zsh on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/zsh/</link>
+    <description>Recent content in zsh on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 21 Jun 2020 10:24:08 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>linux 安装并配置zsh</title>
+      <link>https://blog.caoayu.top/post/linux-zsh/</link>
+      <pubDate>Sun, 21 Jun 2020 10:24:08 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/linux-zsh/</guid>
+      <description>linux 下 zsh 的安装及配置 安装 1 sudo apt-get install -y zsh 安装 oh-my-zsh 三种方式 1 2 3 4 5 sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;#34; sh -c &amp;#34;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&amp;#34; wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh 如果因为网络问题安装失败,可以使用代理,或者直接</description>
+    </item>
+    
+  </channel>
+</rss>

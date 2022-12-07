@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on 个人内容记录</title>
+    <link>https://blog.caoayu.top/categories/markdown/</link>
+    <description>Recent content in Markdown on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 16 May 2020 22:24:08 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/categories/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Markdown简易教程</title>
+      <link>https://blog.caoayu.top/post/markdown-simple/</link>
+      <pubDate>Sat, 16 May 2020 22:24:08 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/markdown-simple/</guid>
+      <description>&lt;h4 id=&#34;什么是markdown为什么用markdown&#34;&gt;什么是&lt;code&gt;Markdown&lt;/code&gt;,为什么用&lt;code&gt;Markdown&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;Markdown&lt;/code&gt;是一种标记语法,通过标记字符,给文章的内容增加样式,使用&lt;code&gt;Markdown&lt;/code&gt;可以更方便的控制格式的同时专注于文章内容的编写,可以支持导出为&lt;code&gt;pdf,html&lt;/code&gt;格式,排版内容可预见,避免写完文章后再去查看样式,修改样式,&lt;code&gt;Markdown&lt;/code&gt;文件都是以&lt;code&gt;.md&lt;/code&gt;为后缀,可以使用&lt;code&gt;typora&lt;/code&gt;这款软件来编写,多个平台都有支持.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

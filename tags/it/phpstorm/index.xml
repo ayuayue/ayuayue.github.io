@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/PHPStorm on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/phpstorm/</link>
+    <description>Recent content in IT/PHPStorm on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/phpstorm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PHPstorm常用配置及插件</title>
+      <link>https://blog.caoayu.top/post/phpstorm%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E5%8F%8A%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Mon, 03 Oct 2022 20:36:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/phpstorm%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E5%8F%8A%E6%8F%92%E4%BB%B6/</guid>
+      <description>PHPstorm常用配置及插件 常用扩展 chinese PHP Document GitToolBox Ideolog PHP Annotations8.0.0 PHP Toolbox Tabnine Docker FTP/SFTP PHP Docker PHP Remote Interperter HTTP Client Grazie PHP ArrayConverter 快捷键 ctrl+shift+u 大小写 alt+insert 生成代码菜单 ctrl+d 复制当前行 ctrl+y 删除当前行 shift+F6 重命</description>
+    </item>
+    
+    <item>
+      <title>PHPstorm等Jetbrains工具许可</title>
+      <link>https://blog.caoayu.top/post/phpstorm%E7%AD%89jetbrains%E5%B7%A5%E5%85%B7%E8%AE%B8%E5%8F%AF/</link>
+      <pubDate>Mon, 03 Oct 2022 20:23:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/phpstorm%E7%AD%89jetbrains%E5%B7%A5%E5%85%B7%E8%AE%B8%E5%8F%AF/</guid>
+      <description>PHPstorm等Jetbrains工具许可 最新 许可证代码：JETBRA.IN CHECKER | IPFS 许可证服务器: Just a moment&amp;hellip; 许可服务器 首先打开这个网站：http</description>
+    </item>
+    
+    <item>
+      <title>IDEA 连接远程 docker 容器,管理镜象</title>
+      <link>https://blog.caoayu.top/post/idea-%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B-docker-%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86%E9%95%9C%E8%B1%A1/</link>
+      <pubDate>Mon, 03 Oct 2022 20:21:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/idea-%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B-docker-%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86%E9%95%9C%E8%B1%A1/</guid>
+      <description>IDEA 连接远程 docker 容器,管理镜象 首先安装并启用 docker 插件 启用 docker 的 tcp 监听 ,在 ExecStart 后追加 1 2 3 vim /lib/systemd/system/docker.service ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -H tcp://0.0.0.0:2375 重载配置 1 systemctl daemon-reload 重启docker 1 systemctl restart docker 查看监听</description>
+    </item>
+    
+    <item>
+      <title>IDEA debug 远程调试 Docker容器中的 PHP</title>
+      <link>https://blog.caoayu.top/post/idea-debug-%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95-docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84-php/</link>
+      <pubDate>Mon, 03 Oct 2022 20:12:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/idea-debug-%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95-docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84-php/</guid>
+      <description>IDEA debug 远程调试 Docker容器中的 PHP 安装 debug 扩展并配置 php.ini, 重启 php-fpm 使配置生效 kill -s USR2 1 1 2 3 4 5 6 7 8 9 10 11 [XDebug] xdebug.remote_enable = 1 xdebug.remote_handler = &amp;#34;dbgp&amp;#34; ; Set to host.docker.internal on Mac and Windows, otherwise, set to host real ip</description>
+    </item>
+    
+  </channel>
+</rss>

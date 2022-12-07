@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/PHP/多进程 on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/php/%E5%A4%9A%E8%BF%9B%E7%A8%8B/</link>
+    <description>Recent content in IT/PHP/多进程 on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/php/%E5%A4%9A%E8%BF%9B%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GCC编译过程</title>
+      <link>https://blog.caoayu.top/post/gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Mon, 03 Oct 2022 20:59:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</guid>
+      <description>GCC编译过程 参考 https://www.runoob.com/w3cnote/gcc-parameter-detail.html gcc 与 g++ 分别是 gnu 的 c &amp;amp; c++ 编译器 gcc/g++ 在执行编译工作的时候，总共需要4步： 1、预处理,生成 .i 的文件[预处理器cpp] 2、将预处理</description>
+    </item>
+    
+    <item>
+      <title>3-2进程退出</title>
+      <link>https://blog.caoayu.top/post/3-2%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA/</link>
+      <pubDate>Mon, 03 Oct 2022 20:58:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/3-2%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA/</guid>
+      <description>3-2进程退出 进程退出 一个程序启动之后,变成了一个进程,在以下情况会退出 运行到最后一行语句 运行时遇到 return 运行时遇到 exit 函数 程序异常 进程接收到中断</description>
+    </item>
+    
+    <item>
+      <title>3-6进程查看</title>
+      <link>https://blog.caoayu.top/post/3-6%E8%BF%9B%E7%A8%8B%E6%9F%A5%E7%9C%8B/</link>
+      <pubDate>Mon, 03 Oct 2022 20:58:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/3-6%E8%BF%9B%E7%A8%8B%E6%9F%A5%E7%9C%8B/</guid>
+      <description>3-6进程查看 进程查看 linux系统中一般会把进程/线程 称为一个任务 进程查看一般使用 pstree 和ps命令 TTY 是一个物理终端 ? 指没有终端 伪终端 pst/0 ssh/telnet 进程生</description>
+    </item>
+    
+    <item>
+      <title>IPC消息队列</title>
+      <link>https://blog.caoayu.top/post/ipc%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</link>
+      <pubDate>Mon, 03 Oct 2022 20:58:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/ipc%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</guid>
+      <description>IPC消息队列 sysvmsg 扩展 /proc/sysvipc/ 消息队列: 实际就是一个队列,由操作系统维护, 使用msgget来创建一个消息队列,创建成功返回队列的ID 键key [对应内</description>
+    </item>
+    
+    <item>
+      <title>PHP网络编程</title>
+      <link>https://blog.caoayu.top/post/php%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Mon, 03 Oct 2022 20:58:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</guid>
+      <description>PHP网络编程 [[../../计算机基础【字节序，内存，补码】]] [[../../监听socket，连接socket]] [[../../粘包</description>
+    </item>
+    
+    <item>
+      <title>2-1程序与进程</title>
+      <link>https://blog.caoayu.top/post/2-1%E7%A8%8B%E5%BA%8F%E4%B8%8E%E8%BF%9B%E7%A8%8B/</link>
+      <pubDate>Mon, 03 Oct 2022 20:53:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/2-1%E7%A8%8B%E5%BA%8F%E4%B8%8E%E8%BF%9B%E7%A8%8B/</guid>
+      <description>2-1程序与进程 [[GCC 编译过程]] 程序 一般指可执行文件，可以使用 file 命令查看文件类型, 在 Linux 中，按 ELF 格式进行存储，并没有后缀 而对于 PHP/c/python/go 等源代码，都只是</description>
+    </item>
+    
+    <item>
+      <title>2-3解释器文件</title>
+      <link>https://blog.caoayu.top/post/2-3%E8%A7%A3%E9%87%8A%E5%99%A8%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Mon, 03 Oct 2022 20:53:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/2-3%E8%A7%A3%E9%87%8A%E5%99%A8%E6%96%87%E4%BB%B6/</guid>
+      <description>2-3解释器文件 解释器文件 是一种文本文件, 如 php写的解释器文件,python/shell解释器文件 解释器 是可执行文件ELF 如PHP解释器文</description>
+    </item>
+    
+    <item>
+      <title>3-3 进程调度</title>
+      <link>https://blog.caoayu.top/post/3-3-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6/</link>
+      <pubDate>Mon, 03 Oct 2022 20:53:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/3-3-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6/</guid>
+      <description>3-3 进程调度 进程调度 pcntl_fork创建一个子进程,此时会存在两个进程,此时cpu先执行那个进程由操作系统决定,一般父进程先运行几率高 在P</description>
+    </item>
+    
+    <item>
+      <title>3-4多进程编写</title>
+      <link>https://blog.caoayu.top/post/3-4%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%BC%96%E5%86%99/</link>
+      <pubDate>Mon, 03 Oct 2022 20:53:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/3-4%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%BC%96%E5%86%99/</guid>
+      <description>3-4多进程编写 多进程编写</description>
+    </item>
+    
+    <item>
+      <title>进程关系与守护进程</title>
+      <link>https://blog.caoayu.top/post/%E8%BF%9B%E7%A8%8B%E5%85%B3%E7%B3%BB%E4%B8%8E%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/</link>
+      <pubDate>Mon, 03 Oct 2022 20:51:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E8%BF%9B%E7%A8%8B%E5%85%B3%E7%B3%BB%E4%B8%8E%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/</guid>
+      <description>进程关系与守护进程 [[进程组]] [[Bash会话]] [[守护进程]] [[作业控制]] 什么是终端 输入单元(键盘),主机[cpu,内存] ,输出单</description>
+    </item>
+    
+    <item>
+      <title>3-2进程exec</title>
+      <link>https://blog.caoayu.top/post/3-2%E8%BF%9B%E7%A8%8Bexec/</link>
+      <pubDate>Mon, 03 Oct 2022 20:50:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/3-2%E8%BF%9B%E7%A8%8Bexec/</guid>
+      <description>3-2进程exec 进程exec exec函数的功能 : 用来执行一个程序,PHP中使用 pcntl_exec https://www.php.net/manual/zh/function.pcntl-exec.php, 内部调用时 execve https://man7.org/linux/man-pages/man2/execve.2.html 一般的用法: 父进程先创建一个子进程,然后子</description>
+    </item>
+    
+    <item>
+      <title>umask 系统屏蔽字</title>
+      <link>https://blog.caoayu.top/post/umask%E7%B3%BB%E7%BB%9F%E5%B1%8F%E8%94%BD%E5%AD%97/</link>
+      <pubDate>Mon, 03 Oct 2022 20:47:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/umask%E7%B3%BB%E7%BB%9F%E5%B1%8F%E8%94%BD%E5%AD%97/</guid>
+      <description>umask 系统屏蔽字 文件|目录的默认权限与隐藏权限 当我们创建一个文件或者目录时即使我们未对其非配权限，其也会存在默认权限 [root@localhost tmp]# mkdir newdir [root@localhost tmp]# ls -dl newdir drwxr-xr-x 2 root root 4096</description>
+    </item>
+    
+    <item>
+      <title>非血缘进程间管道通信</title>
+      <link>https://blog.caoayu.top/post/%E9%9D%9E%E8%A1%80%E7%BC%98%E8%BF%9B%E7%A8%8B%E9%97%B4%E7%AE%A1%E9%81%93%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Mon, 03 Oct 2022 20:47:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E9%9D%9E%E8%A1%80%E7%BC%98%E8%BF%9B%E7%A8%8B%E9%97%B4%E7%AE%A1%E9%81%93%E9%80%9A%E4%BF%A1/</guid>
+      <description>非血缘进程间管道通信 非血缘进程间管道通信 读端(要设置为非阻塞模式,不然会阻塞住) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 &amp;lt;?php // 非血缘关系间 // 接</description>
+    </item>
+    
+    <item>
+      <title>3-5SUID特权进程</title>
+      <link>https://blog.caoayu.top/post/3-5suid%E7%89%B9%E6%9D%83%E8%BF%9B%E7%A8%8B/</link>
+      <pubDate>Mon, 03 Oct 2022 20:44:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/3-5suid%E7%89%B9%E6%9D%83%E8%BF%9B%E7%A8%8B/</guid>
+      <description>3-5SUID特权进程 SUID特权进程 SUID SGID SUID : set user id 设置用户id SGID : set group id 设置组id 当特殊标志 &amp;rsquo;s&amp;rsquo; 出现在 文件拥有者x权限位的时候就叫 set uid,</description>
+    </item>
+    
+    <item>
+      <title>strace系统调用</title>
+      <link>https://blog.caoayu.top/post/strace_%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</link>
+      <pubDate>Mon, 03 Oct 2022 20:44:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/strace_%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</guid>
+      <description>strace系统调用 https://strace.io/ linux strace 在线手册 https://man7.org/linux/man-pages/man1/strace.1.html 应用程序调用操作系统提供的函数库或函数 system call -s strsize &amp;ndash;string-limit=_strsize_ Specify the maximum string size to print (the default is 32). Note that filenames are not considered strings and are always printed in full. -f &amp;ndash;follow-forks Trace child</description>
+    </item>
+    
+    <item>
+      <title>2-2命令行参数与环境表</title>
+      <link>https://blog.caoayu.top/post/2-2%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E4%B8%8E%E7%8E%AF%E5%A2%83%E8%A1%A8/</link>
+      <pubDate>Mon, 03 Oct 2022 20:42:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/2-2%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E4%B8%8E%E7%8E%AF%E5%A2%83%E8%A1%A8/</guid>
+      <description>2-2命令行参数与环境表 命令行参数与环境表 查看可执行文件所依赖的动态库,函数 使用 ldd命令即可查看 使用nm命令查看elf中的函数以及变量的虚</description>
+    </item>
+    
+    <item>
+      <title>3-1进程标识与fork</title>
+      <link>https://blog.caoayu.top/post/3-1%E8%BF%9B%E7%A8%8B%E6%A0%87%E8%AF%86%E4%B8%8Efork/</link>
+      <pubDate>Mon, 03 Oct 2022 20:42:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/3-1%E8%BF%9B%E7%A8%8B%E6%A0%87%E8%AF%86%E4%B8%8Efork/</guid>
+      <description>3-1进程标识与fork 进程标识与fork 一个程序被加载到内存中运行,系统会为这个进程分配相应的标识信息,比如 pid,ppid,uid,euid,pgid,sid,gid,egid&amp;hellip; php对应的获取进程标识信息</description>
+    </item>
+    
+    <item>
+      <title>Unix 域套接字进程间通信</title>
+      <link>https://blog.caoayu.top/post/unix%E5%9F%9F%E5%A5%97%E6%8E%A5%E5%AD%97%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Mon, 03 Oct 2022 20:39:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/unix%E5%9F%9F%E5%A5%97%E6%8E%A5%E5%AD%97%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</guid>
+      <description>Unix 域套接字进程间通信 [[../../../管道通信]] [[../../../信号量]] [[IPC 消息队列]] [[../../../SystemV IPC 共享存储]] [[Unix 域套接字进程间通信]]</description>
+    </item>
+    
+    <item>
+      <title>粘包【封包-拆包】pack函数</title>
+      <link>https://blog.caoayu.top/post/%E7%B2%98%E5%8C%85%E5%B0%81%E5%8C%85-%E6%8B%86%E5%8C%85pack%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Mon, 03 Oct 2022 20:36:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E7%B2%98%E5%8C%85%E5%B0%81%E5%8C%85-%E6%8B%86%E5%8C%85pack%E5%87%BD%E6%95%B0/</guid>
+      <description>粘包【封包-拆包】pack函数 多个数据包粘在一起，无法确定数据的边界 tcp在调用 send/fwrite/stream_socket_sendto 在接收时： 第一个数据包未接收完全，剩下部分与其他数据包粘在</description>
+    </item>
+    
+    <item>
+      <title>进程池实例（使用消息队列通信）</title>
+      <link>https://blog.caoayu.top/post/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%AE%9E%E4%BE%8B%E4%BD%BF%E7%94%A8%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Mon, 03 Oct 2022 20:36:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%AE%9E%E4%BE%8B%E4%BD%BF%E7%94%A8%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E9%80%9A%E4%BF%A1/</guid>
+      <description>进程池实例（使用消息队列通信） 主要是解决动态创建进程时的效率问题，动态创建进程的消息很大 fork一个进程，就要复制正文段【代码】+数据段 初始</description>
+    </item>
+    
+    <item>
+      <title>SystemV IPC 共享存储</title>
+      <link>https://blog.caoayu.top/post/systemv-ipc-%E5%85%B1%E4%BA%AB%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Mon, 03 Oct 2022 20:34:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/systemv-ipc-%E5%85%B1%E4%BA%AB%E5%AD%98%E5%82%A8/</guid>
+      <description>SystemV IPC 共享存储 sysvshm 扩展 shmget shmat shmdt shmctl /proc/sysvipc/ 共享存储实际上就是系统会开辟一块存储空间,进程会使用相关函数 shmget 来映射(连接)到进程的地址空间 virtual space address 内存 : 内存分配</description>
+    </item>
+    
+    <item>
+      <title>计算机基础【字节序，内存，补码】</title>
+      <link>https://blog.caoayu.top/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E5%AD%97%E8%8A%82%E5%BA%8F%E5%86%85%E5%AD%98%E8%A1%A5%E7%A0%81/</link>
+      <pubDate>Mon, 03 Oct 2022 20:34:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E5%AD%97%E8%8A%82%E5%BA%8F%E5%86%85%E5%AD%98%E8%A1%A5%E7%A0%81/</guid>
+      <description>计算机基础【字节序，内存，补码】 http://c.biancheng.net/view/3299.html 数据的存储 我们的程序和数据都是存储在内存中的，存储的区域是线性的。 数据存储的单元是一个二进制位【bit 0、</description>
+    </item>
+    
+    <item>
+      <title>监听socket，连接socket</title>
+      <link>https://blog.caoayu.top/post/%E7%9B%91%E5%90%ACsocket%E8%BF%9E%E6%8E%A5socket/</link>
+      <pubDate>Mon, 03 Oct 2022 20:32:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E7%9B%91%E5%90%ACsocket%E8%BF%9E%E6%8E%A5socket/</guid>
+      <description>监听socket，连接socket 监听 socket 是指已经 【socket，bind，listen】 listen 会创建一个监听队列 连接 socket 是 accept 函数从监听队列中获取一</description>
+    </item>
+    
+    <item>
+      <title>Bash会话</title>
+      <link>https://blog.caoayu.top/post/bash%E4%BC%9A%E8%AF%9D/</link>
+      <pubDate>Mon, 03 Oct 2022 20:18:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/bash%E4%BC%9A%E8%AF%9D/</guid>
+      <description>Bash会话 会话就是一个进程组,或是多个进程组的集合 一个会话至少可以有一个控制终端(物理终端/伪终端) 一个会话至少有一个前台进程组(前台就是</description>
+    </item>
+    
+    <item>
+      <title>信号</title>
+      <link>https://blog.caoayu.top/post/%E4%BF%A1%E5%8F%B7/</link>
+      <pubDate>Mon, 03 Oct 2022 20:18:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E4%BF%A1%E5%8F%B7/</guid>
+      <description>信号 我们知道信号是进程间通信的其中一种方法，当然也可以是内核给进程发送的消息，注意信息只是告诉进程发生了什么事件，而不会传递任何数据。 这是进</description>
+    </item>
+    
+    <item>
+      <title>信号量</title>
+      <link>https://blog.caoayu.top/post/%E4%BF%A1%E5%8F%B7%E9%87%8F/</link>
+      <pubDate>Mon, 03 Oct 2022 20:14:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E4%BF%A1%E5%8F%B7%E9%87%8F/</guid>
+      <description>信号量 sysvsem 扩展 /proc/sysvipc/ 一条高级语言指令在底层对应多条机器指令,所有对于一条高级指令来说,并不是原子态的运行,当多个进程/线程对同一资源进行读写时,如</description>
+    </item>
+    
+    <item>
+      <title>信号集</title>
+      <link>https://blog.caoayu.top/post/%E4%BF%A1%E5%8F%B7%E9%9B%86/</link>
+      <pubDate>Mon, 03 Oct 2022 20:14:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E4%BF%A1%E5%8F%B7%E9%9B%86/</guid>
+      <description>信号集 信号集是指信号的集合 主程序可以选择阻塞某些信号,被阻塞的信号集体成为阻塞信号集(信号屏蔽字bolck) 当进程阻塞了某个信号,如果在运行</description>
+    </item>
+    
+    <item>
+      <title>进程组</title>
+      <link>https://blog.caoayu.top/post/%E8%BF%9B%E7%A8%8B%E7%BB%84/</link>
+      <pubDate>Mon, 03 Oct 2022 20:14:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E8%BF%9B%E7%A8%8B%E7%BB%84/</guid>
+      <description>进程组 bash进程拥有一个终端,这种终端叫做控制终端 进程组: 一个或多个进程的集合,一个进程都有一个进程组id,表示该进程属于那个进程组 bas</description>
+    </item>
+    
+    <item>
+      <title>孤儿进程</title>
+      <link>https://blog.caoayu.top/post/%E5%AD%A4%E5%84%BF%E8%BF%9B%E7%A8%8B/</link>
+      <pubDate>Mon, 03 Oct 2022 20:13:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E5%AD%A4%E5%84%BF%E8%BF%9B%E7%A8%8B/</guid>
+      <description>孤儿进程 孤儿进程概念 我们经常听别人说到孤儿进程(Orphan Process)，究竟是什么呢，现在我们一次理解透。 根据维基百科的解释，孤儿进程</description>
+    </item>
+    
+    <item>
+      <title>僵尸进程</title>
+      <link>https://blog.caoayu.top/post/%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B/</link>
+      <pubDate>Mon, 03 Oct 2022 20:09:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B/</guid>
+      <description>僵尸进程 僵尸进程 当一个进程完成它的工作终止之后，它的父进程需要调用 wait()或者 waitpid()系统调用取得子进程的终止状态。 一个进程使</description>
+    </item>
+    
+    <item>
+      <title>守护进程</title>
+      <link>https://blog.caoayu.top/post/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/</link>
+      <pubDate>Mon, 03 Oct 2022 20:09:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/</guid>
+      <description>守护进程 一般运行在后台,并且没有控制终端,同时是一直运行,并随操作系统启动 进程启动之后,进程的内存数据会写入到 /proc目录中 编写守护进程的</description>
+    </item>
+    
+    <item>
+      <title>系统调用</title>
+      <link>https://blog.caoayu.top/post/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</link>
+      <pubDate>Mon, 03 Oct 2022 20:09:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</guid>
+      <description>系统调用 我们要想启动一个进程，需要操作系统的调用(system call)。实际上操作系统和普通进程是运行在不同空间上的，操作系统进程运行在内</description>
+    </item>
+    
+    <item>
+      <title>进程状态</title>
+      <link>https://blog.caoayu.top/post/%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81/</link>
+      <pubDate>Mon, 03 Oct 2022 20:09:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81/</guid>
+      <description>进程状态 根据进程的定义，我们知道进程是代码运行的实体，而进程有可能是正在运行的，也可能是已经停止的，这就是进程的状态。 网上有人总结进程一共5</description>
+    </item>
+    
+    <item>
+      <title>中断信号</title>
+      <link>https://blog.caoayu.top/post/%E4%B8%AD%E6%96%AD%E4%BF%A1%E5%8F%B7/</link>
+      <pubDate>Mon, 03 Oct 2022 20:08:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E4%B8%AD%E6%96%AD%E4%BF%A1%E5%8F%B7/</guid>
+      <description>中断信号 [[../../../信号集]] 信号 是指软件中断信号,简称软中断,中断信号处理过程 中断信号处理程序(信号处理函数,信号捕捉函数] 完以</description>
+    </item>
+    
+    <item>
+      <title>作业控制</title>
+      <link>https://blog.caoayu.top/post/%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6/</link>
+      <pubDate>Mon, 03 Oct 2022 20:08:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6/</guid>
+      <description>作业控制 在 bin/bash进程下启动的命令一般称为作业 | 任务 前台|前景 : 一般不受ctrl+c等指令影响 背景|后台: 不受终端输入影响 使用 &amp;amp; 可以</description>
+    </item>
+    
+    <item>
+      <title>管道通信</title>
+      <link>https://blog.caoayu.top/post/%E7%AE%A1%E9%81%93%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Mon, 03 Oct 2022 20:08:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E7%AE%A1%E9%81%93%E9%80%9A%E4%BF%A1/</guid>
+      <description>管道通信 https://zhuanlan.zhihu.com/p/58489873 问题： 使用read读取匿名管道时，写端不关闭，读端读取完成后会阻塞等待写端继续写入，以便于继续接受写端的数据 管道本质上就是一个文件</description>
+    </item>
+    
+    <item>
+      <title>并发与并行</title>
+      <link>https://blog.caoayu.top/post/%E5%B9%B6%E5%8F%91%E4%B8%8E%E5%B9%B6%E8%A1%8C/</link>
+      <pubDate>Mon, 03 Oct 2022 20:04:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E5%B9%B6%E5%8F%91%E4%B8%8E%E5%B9%B6%E8%A1%8C/</guid>
+      <description>并发与并行 并发与并行 并发(Concurrently)和并行(Parallel)是两个不同的概念。借用Go创始人Rob Pike的说法，并发不是</description>
+    </item>
+    
+    <item>
+      <title>文件描述符</title>
+      <link>https://blog.caoayu.top/post/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6/</link>
+      <pubDate>Mon, 03 Oct 2022 20:04:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6/</guid>
+      <description>文件描述符 Linux很重要的设计思想就是一切皆文件，网络是文件，键盘等外设也是文件，很神奇吧？于是所有资源都有了统一的接口，开发者可以像写文</description>
+    </item>
+    
+    <item>
+      <title>进程间通信</title>
+      <link>https://blog.caoayu.top/post/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Mon, 03 Oct 2022 20:03:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</guid>
+      <description>进程间通信 背景: 之前的程序是直接操作物理内存的,但这样会有几个问题 物理内存有限,如果内存不够用了,操作系统会把程序暂时写入到硬盘中,硬盘和内</description>
+    </item>
+    
+    <item>
+      <title>守护进程 1</title>
+      <link>https://blog.caoayu.top/post/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B-1/</link>
+      <pubDate>Mon, 03 Oct 2022 20:00:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B-1/</guid>
+      <description>守护进程 1 我们可以认为守护进程就是后台服务进程，因为它会有一个很长的生命周期提供服务，关闭终端不会影响服务，也就是说可以忽略某些信号。 实现守</description>
+    </item>
+    
+  </channel>
+</rss>

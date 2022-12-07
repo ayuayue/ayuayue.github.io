@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/Rust on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/rust/</link>
+    <description>Recent content in IT/Rust on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>rust</title>
+      <link>https://blog.caoayu.top/post/rust/</link>
+      <pubDate>Mon, 03 Oct 2022 20:09:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/rust/</guid>
+      <description>rust 官网 https://www.rust-lang.org/zh-CN 教程 https://kaisery.github.io/trpl-zh-cn/ch02-00-guessing-game-tutorial.html https://course.rs/first-try/sth-you-should-not-do.html https://rusty.rs/about.html vscode插件 1 2 3 4 5 Error Lens Even Better TOML Native Debug rust-analyzer 配置下载源 1 2 3 4 5 6 7 8 code ~/.cargo/config.toml [source.crates-io] replace-with = &amp;#39;ustc&amp;#39; [source.ustc] registry = &amp;#34;git://mirrors.ustc.edu.cn/crates.io-index&amp;#34;</description>
+    </item>
+    
+  </channel>
+</rss>

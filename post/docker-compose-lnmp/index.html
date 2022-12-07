@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用docker-compose 搭建 lnmp - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="Docker compose 简介 Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/docker-compose-lnmp/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="使用docker-compose 搭建 lnmp" />
+<meta property="og:description" content="Docker compose 简介 Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/docker-compose-lnmp/" />
+<meta property="article:published_time" content="2020-07-13T21:13:21+08:00" />
+<meta property="article:modified_time" content="2020-07-13T21:13:21+08:00" />
+<meta itemprop="name" content="使用docker-compose 搭建 lnmp">
+<meta itemprop="description" content="Docker compose 简介 Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可">
+<meta itemprop="datePublished" content="2020-07-13T21:13:21&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-13T21:13:21&#43;08:00" />
+<meta itemprop="wordCount" content="770">
+
+
+
+<meta itemprop="keywords" content="docker,linux,lnmp," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用docker-compose 搭建 lnmp"/>
+<meta name="twitter:description" content="Docker compose 简介 Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用docker-compose 搭建 lnmp</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-07-13 </span>
+        <div class="post-category">
+            <a href="/categories/docker/"> docker </a>
+            </div>
+          <span class="more-meta"> 约 770 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#docker-compose-简介"><code>Docker compose</code> 简介</a></li>
+            <li><a href="#使用docker-compose-搭建一个-lnmp">使用<code>docker compose</code> 搭建一个 <code>lnmp</code></a></li>
+            <li><a href="#创建配置文件夹">创建配置文件夹</a></li>
+            <li><a href="#创建测试-html页面">创建测试 <code>html</code>页面</a></li>
+            <li><a href="#启动-docker">启动<code> docker</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-07-13T21:13:21" title="July 13, 2020">July 13, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h3 id="docker-compose-简介"><code>Docker compose</code> 简介</h3>
+<p><code>Compose</code> 是用于定义和运行多容器 Docker 应用程序的工具。通过 <code>Compose</code>，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。</p>
+<h3 id="使用docker-compose-搭建一个-lnmp">使用<code>docker compose</code> 搭建一个 <code>lnmp</code></h3>
+<p>准备工作:</p>
+<pre><code>1. 	选择一个系统,本文章使用系统为`win10 商店里的 Ubuntu`, 也可以使用虚拟机等其他方案
+2. 	安装`docker`
+</code></pre>
+<h3 id="创建配置文件夹">创建配置文件夹</h3>
+<p>创建一个配置文件夹,存放<code>docker lnmp</code>的配置文件,本文放在当前用户下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~
+<span class="c1">#创建配置文件夹</span>
+mkdir config
+<span class="c1">#创建 html 文件夹</span>
+mkdir html
+</code></pre></td></tr></table>
+</div>
+</div><p>创建 <code>nginx</code> 配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/config
+vim nginx.conf
+<span class="c1"># 添加内容</span>
+<span class="c1"># Default server configuration</span>
+#
+worker_processes 1<span class="p">;</span>
+events <span class="o">{</span>
+  worker_connections 1024<span class="p">;</span>
+<span class="o">}</span>
+http <span class="o">{</span>
+  include mime.types<span class="p">;</span>
+  default_type application/octet-stream<span class="p">;</span>
+  sendfile on<span class="p">;</span>
+  keepalive_timeout 65<span class="p">;</span>
+  
+  server <span class="o">{</span>
+        listen <span class="m">80</span> default_server<span class="p">;</span>
+        listen <span class="o">[</span>::<span class="o">]</span>:80 default_server<span class="p">;</span>
+
+        <span class="c1"># SSL configuration</span>
+        #
+        <span class="c1"># listen 443 ssl default_server;</span>
+        <span class="c1"># listen [::]:443 ssl default_server;</span>
+        #
+        <span class="c1"># Note: You should disable gzip for SSL traffic.</span>
+        <span class="c1"># See: https://bugs.debian.org/773332</span>
+        #
+        <span class="c1"># Read up on ssl_ciphers to ensure a secure configuration.</span>
+        <span class="c1"># See: https://bugs.debian.org/765782</span>
+        #
+        <span class="c1"># Self signed certs generated by the ssl-cert package</span>
+        <span class="c1"># Don&#39;t use them in a production server!</span>
+        #
+        <span class="c1"># include snippets/snakeoil.conf;</span>
+
+        root /usr/share/nginx/html<span class="p">;</span>
+
+        <span class="c1"># Add index.php to the list if you are using PHP</span>
+        index index.html index.htm index.nginx-debian.html index.php<span class="p">;</span>
+
+        server_name localhost<span class="p">;</span>
+
+        location / <span class="o">{</span>
+                <span class="c1"># First attempt to serve request as file, then</span>
+                <span class="c1"># as directory, then fall back to displaying a 404.</span>
+                try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ <span class="o">=</span>404<span class="p">;</span>
+        <span class="o">}</span>
+
+        <span class="c1"># pass PHP scripts to FastCGI server</span>
+        #
+        location ~ <span class="se">\.</span>php$ <span class="o">{</span>
+               <span class="c1"># With php-fpm (or other unix sockets):</span>
+               fastcgi_pass   php:9000<span class="p">;</span>
+               fastcgi_index  index.php<span class="p">;</span>
+               fastcgi_param  SCRIPT_FILENAME  /var/www/html/<span class="nv">$fastcgi_script_name</span><span class="p">;</span>
+               include        fastcgi_params<span class="p">;</span>
+        <span class="o">}</span>
+
+        <span class="c1"># deny access to .htaccess files, if Apache&#39;s document root</span>
+        <span class="c1"># concurs with nginx&#39;s one</span>
+        #
+        <span class="c1">#location ~ /\.ht {</span>
+        <span class="c1">#       deny all;</span>
+        <span class="c1">#}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>创建 <code>docker-compose</code> 配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~
+vim docker-compose.yml
+<span class="c1"># 输入一下内容</span>
+version: <span class="s2">&#34;3&#34;</span>
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+     - 80:80
+    volumes:
+     - ~/html:/usr/share/nginx/html
+     - ~/conf/nginx.conf:/etc/nginx/nginx.conf
+  php:
+    image: devilbox/php-fpm:5.2-work-0.89
+    volumes:
+     - ~/html:/var/www/html
+  mysql:
+    image: mysql:5.6
+    environment:
+     - <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="m">123456</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="创建测试-html页面">创建测试 <code>html</code>页面</h3>
+<p>在 <code>html</code> 文件夹中创建各类文件,用来测试,主要有 <code>index.html,info.php,sql_conn.php</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/html
+<span class="c1">#创建 index.html 用来测试 nginx</span>
+<span class="nb">echo</span> <span class="s2">&#34;hello word&#34;</span> &gt; index.html
+<span class="c1">#创建 info.php 用来测试 php -e 代表转义换行符</span>
+<span class="nb">echo</span> -e <span class="s2">&#34;&lt;?php \n\r echo phpinfo();\n?&gt;&#34;</span> &gt; info.php
+</code></pre></td></tr></table>
+</div>
+</div><p>创建 <code>sql_conn.php</code> ,测试<code>php</code> 连接<code>mysql</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">vim sql_conn.php
+# 输入一下测试代码
+<span class="cp">&lt;?php</span> 
+    <span class="nv">$host</span> <span class="o">=</span> <span class="s2">&#34;mysql&#34;</span><span class="p">;</span>
+	<span class="nv">$user</span> <span class="o">=</span> <span class="s2">&#34;root&#34;</span><span class="p">;</span>
+	<span class="nv">$password</span> <span class="o">=</span> <span class="s2">&#34;123456&#34;</span><span class="p">;</span>
+
+<span class="nv">$conn</span> <span class="o">=</span> <span class="nx">mysqli_connect</span><span class="p">(</span><span class="nv">$host</span><span class="p">,</span><span class="nv">$user</span><span class="p">,</span><span class="nv">$password</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">die</span><span class="p">(</span><span class="s2">&#34;Connection failed: &#34;</span><span class="o">.</span><span class="nx">mysqli_connect_error</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="k">echo</span> <span class="s2">&#34;Connection success!&#34;</span>
+<span class="cp">?&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="启动-docker">启动<code> docker</code></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~
+<span class="c1"># 启动docker</span>
+docker-compose up -d
+<span class="c1"># 停止docker</span>
+docker-compose down
+
+</code></pre></td></tr></table>
+</div>
+</div><p>参考视频:</p>
+
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1Wt411w72h&page=1" scrolling="no" border="0"
+    frameborder="no" framespacing="0" allowfullscreen="true" id="bilibili"> </iframe>
+
+<script>
+    var main = document.getElementById("main")
+    console.log(main)
+    var width = main.offsetWidth
+    var ifm = document.getElementById("bilibili")
+    console.log(ifm)
+    ifm.width = width
+    ifm.height = 500
+</script>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-07-13</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/docker/">docker</a>
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/lnmp/">lnmp</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/add-wordcloud/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">增加标签云代替原有标签和分类效果</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/even-preview/">
+            <span class="next-text nav-default">Theme preview</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Obsidian使用及标准 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="Obsidian使用及标准 标准 目录前缀 0x 只是为了方便排序。 目录外层结构遵循 IARP，但具体使用按实际个人情况来定。 尽可能少的使用插件，尽可能" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/obsidian%E4%BD%BF%E7%94%A8%E5%8F%8A%E6%A0%87%E5%87%86/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Obsidian使用及标准" />
+<meta property="og:description" content="Obsidian使用及标准 标准 目录前缀 0x 只是为了方便排序。 目录外层结构遵循 IARP，但具体使用按实际个人情况来定。 尽可能少的使用插件，尽可能" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/obsidian%E4%BD%BF%E7%94%A8%E5%8F%8A%E6%A0%87%E5%87%86/" />
+<meta property="article:published_time" content="2022-09-23T20:55:45+00:00" />
+<meta property="article:modified_time" content="2022-10-25T00:55:40+00:00" />
+<meta itemprop="name" content="Obsidian使用及标准">
+<meta itemprop="description" content="Obsidian使用及标准 标准 目录前缀 0x 只是为了方便排序。 目录外层结构遵循 IARP，但具体使用按实际个人情况来定。 尽可能少的使用插件，尽可能">
+<meta itemprop="datePublished" content="2022-09-23T20:55:45&#43;00:00" />
+<meta itemprop="dateModified" content="2022-10-25T00:55:40&#43;00:00" />
+<meta itemprop="wordCount" content="1015">
+
+
+
+<meta itemprop="keywords" content="Resource/Ob," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Obsidian使用及标准"/>
+<meta name="twitter:description" content="Obsidian使用及标准 标准 目录前缀 0x 只是为了方便排序。 目录外层结构遵循 IARP，但具体使用按实际个人情况来定。 尽可能少的使用插件，尽可能"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Obsidian使用及标准</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-09-23 </span>
+        
+          <span class="more-meta"> 约 1015 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#obsidian使用及标准">Obsidian使用及标准</a>
+      <ul>
+        <li><a href="#标准">标准</a></li>
+        <li><a href="#使用">使用</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#同步问题">同步问题</a></li>
+                <li><a href="#预览编辑切换">预览编辑切换</a></li>
+                <li><a href="#注释功能">注释功能</a></li>
+                <li><a href="#embed-嵌入">Embed 嵌入</a></li>
+                <li><a href="#脱字符-">脱字符 ^^</a></li>
+                <li><a href="#onedrive-同步">OneDrive 同步：</a></li>
+                <li><a href="#快速转-todolist">快速转 todolist</a></li>
+                <li><a href="#纯文本粘贴">纯文本粘贴</a></li>
+                <li><a href="#标注">标注</a></li>
+                <li><a href="#字体样式">字体样式</a></li>
+                <li><a href="#图片">图片</a></li>
+                <li><a href="#任务">任务</a></li>
+                <li><a href="#表格">表格</a></li>
+                <li><a href="#数学公式">数学公式</a></li>
+                <li><a href="#画">画</a></li>
+                <li><a href="#添加脚注">添加脚注</a></li>
+                <li><a href="#query-查询">query 查询</a></li>
+                <li><a href="#chart-图表">chart 图表</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2022-10-25T00:55:40" title="October 25, 2022">October 25, 2022</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="obsidian使用及标准">Obsidian使用及标准</h1>
+<h2 id="标准">标准</h2>
+<ul>
+<li>目录前缀 0x 只是为了方便排序。</li>
+<li>目录外层结构遵循 IARP，但具体使用按实际个人情况来定。</li>
+<li>尽可能少的使用插件，尽可能少的使用特殊的 markdown 语法。保持简单、整洁。</li>
+<li>文章加入元信息，即 Front Matter，要表明文章的标签，方便归类及查找。</li>
+<li>文件或标签等命名规则，大驼峰命名，使用 _ 隔开</li>
+<li>目录层级最多不要超过三层，使用标签 + 双向链接代替多层级目录。多使用链接功能。</li>
+<li>目录上添加一些概览，比如目录下的笔记，或者对一些标签的展示，可以使用 query 语法，或者 dataview 来创建。
+<del>- 卡片放置在 Memos 目录中</del></li>
+<li>图片尽量使用图床，不重要的可以使用 b 站图床，重要的使用 github 图床，配置 picgo 插件。</li>
+</ul>
+<hr>
+<h2 id="使用">使用</h2>
+<h4 id="同步问题">同步问题</h4>
+<p>放弃插件同步，使用 git 同步，同步前生成 zip 包，同步后解压即可。
+手机端使用 termux 作为 git 客户端 [[../0x01_Area/IT/termux安卓]]</p>
+<p><del>暂时放弃 remote-save 使用 onedrive 的方式，因为文件或结构修改会不同步。</del>
+<del>使用 syncing 代替。手机端仅接受，并忽略 .obsidian 目录。</del>
+<del>回归 onedrive ，插件及配置只在一台电脑上设置，配合 shell 命令压缩配置文件，其他设备解压覆盖。</del>
+<del>并且不自动更新，手动更新，或者更新时间拉长。
+同步不要开启 proxy 插件，否则会同步失败</del></p>
+<h4 id="预览编辑切换">预览编辑切换</h4>
+<p>快捷键 ctrl + e</p>
+<h4 id="注释功能">注释功能</h4>
+<p>Here is some inline comments: %%You can&rsquo;t see this text%% (Can&rsquo;t see it)</p>
+<p>Here is a block comment:
+%%
+It can span
+multiple lines
+%%</p>
+<h4 id="embed-嵌入">Embed 嵌入</h4>
+<p>[[]]
+如果要嵌入当前文档， 前面加 ！ 即![[]]
+链接到标题：[[##]]
+链接到文本块 ：[[^]]
+链接指定文本：[[xx##|说明]]
+全局选择文本块：[[^^]]</p>
+<h4 id="脱字符-">脱字符 ^^</h4>
+<p>示例：![[^^ 文 章 内 容]] 空格为多搜索条件与 相当于 sql 中 and</p>
+<h4 id="onedrive-同步">OneDrive 同步：</h4>
+<p>只同步一个设备的配置,其他设备拷贝.obsidian 目录即可</p>
+<h4 id="快速转-todolist">快速转 todolist</h4>
+<p>ctrl+enter</p>
+<h4 id="纯文本粘贴">纯文本粘贴</h4>
+<p>ctrl+shift+v</p>
+<h4 id="标注">标注</h4>
+<p>类型</p>
+<ul>
+<li>note</li>
+<li>abstract, summary, tldr</li>
+<li>info, todo</li>
+<li>tip, hint, important</li>
+<li>success, check, done</li>
+<li>question, help, faq</li>
+<li>warning, caution, attention</li>
+<li>failure, fail, missing</li>
+<li>danger, error</li>
+<li>bug</li>
+<li>example</li>
+<li>quote, cite</li>
+</ul>
+<blockquote>
+<p>[!INFO]
+Here&rsquo;s a callout block.
+It supports <strong>markdown</strong> and [[Internal link|wikilinks]].</p>
+</blockquote>
+<p>折叠展开
++ 或者 -</p>
+<blockquote>
+<p>[!FAQ]- Are callouts foldable?
+Yes! In a foldable callout, the contents are hidden until it is expanded.</p>
+</blockquote>
+<h4 id="字体样式">字体样式</h4>
+<p><em>This text will be italic</em>
+<em>This will also be italic</em>
+<strong>This text will be bold</strong>
+<strong>This will also be bold</strong>
+<em>You <strong>can</strong> combine them</em></p>
+<h4 id="图片">图片</h4>
+<p><img src="https://obsidian.md/images/banner.png" alt="Obsidian">
+自定义大小
+<img src="https://obsidian.md/images/banner.png" alt="Obsidian|200"></p>
+<h4 id="任务">任务</h4>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> ##ob/示例, <a href="">links</a> , <strong>formatting</strong> supported</li>
+<li><input checked="" disabled="" type="checkbox"> list syntax required (any unordered or ordered list supported)</li>
+<li><input checked="" disabled="" type="checkbox"> this is a complete item</li>
+<li><input checked="" disabled="" type="checkbox"> this is also a complete item (works with every character)</li>
+<li><input disabled="" type="checkbox"> this is an incomplete item</li>
+<li><input disabled="" type="checkbox"> tasks can be clicked in Preview to be checked off</li>
+</ul>
+<h4 id="表格">表格</h4>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content from cell 1</td>
+<td>Content from cell 2</td>
+</tr>
+<tr>
+<td>Content in the first column</td>
+<td>Content in the second column</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">Tables can be justified with a colon</th>
+<th align="right">Another example with a long title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">because of the <code>: </code></td>
+<td align="right">these will be justified</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[[Format your notes|Formatting]]</td>
+<td>[[Callouts|Callouts]]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="数学公式">数学公式</h4>
+<p>$$\begin{vmatrix}a &amp; b\<br>
+c &amp; d
+\end{vmatrix}=ad-bc$$</p>
+<h4 id="画">画</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sequenceDiagram
+    Alice-&gt;&gt;+John: Hello John, how are you?
+    Alice-&gt;&gt;+John: John, can you hear me?
+    John--&gt;&gt;-Alice: Hi Alice, I can hear you!
+    John--&gt;&gt;-Alice: I feel great!
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="添加脚注">添加脚注</h4>
+<p>论文引用<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<h4 id="query-查询">query 查询</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">tag: 只查找tag,其他同理
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">全局查找搜索条件
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="chart-图表">chart 图表</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">type: bar
+labels: [数值1]
+series:
+  - title: 柱型图1
+    data: [10]
+tension: 0.8
+width: 80%
+labelColors: true
+fill: true
+beginAtZero: true
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>哈哈 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>手动添加的 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>使用 /号生成 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2022-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/resource/ob/">Resource/Ob</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B-1/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">守护进程 1</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/nginx-muti-project-urlrewrite/">
+            <span class="next-text nav-default">nginx 配置多个 PHP 项目为二级目录</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

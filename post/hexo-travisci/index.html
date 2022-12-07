@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用travisCI自动部署hexo博客并使用国内外不同dns - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="自动化部署博客到github和coding 准备工作  需要环境:
+ 可正常使用域名一个 github新建一个与自己账号名同名的仓库,如 ayuayue.github.io,最好除master分支外新建一个hexo分支用来保存hexo的源码,因为源码配置文件会上传到github,所以才会使用下面的变量的方式配置,不然的话token暴露出来很危险 coding 中创建一个团队,继续创建一个devops仓库,仓库民跟自己的账号名相同,如 caoayu 进行coding管理员的认证, 在右上角团队管理中,进行团队管理员的认证 获取github和coding的token  coding中去个人账号,访问令牌中,新建一个令牌,名字为travis,只给第一个权限,然后生成一个token,记录下来,只有第一次可以看,刷新后就只能重新生成了,所以第一次最好保存一下token,github的token也是一样 github的token获取,右上角头像,settings,devoper setting /persional access token,生成一个token,gengrate new token,名字也设置为travis,生成后记得保存一下    " /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/hexo-travisci/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="使用travisCI自动部署hexo博客并使用国内外不同dns" />
+<meta property="og:description" content="自动化部署博客到github和coding
+准备工作
+
+需要环境:
+
+可正常使用域名一个
+github新建一个与自己账号名同名的仓库,如 ayuayue.github.io,最好除master分支外新建一个hexo分支用来保存hexo的源码,因为源码配置文件会上传到github,所以才会使用下面的变量的方式配置,不然的话token暴露出来很危险
+coding 中创建一个团队,继续创建一个devops仓库,仓库民跟自己的账号名相同,如 caoayu
+进行coding管理员的认证, 在右上角团队管理中,进行团队管理员的认证
+获取github和coding的token
+
+coding中去个人账号,访问令牌中,新建一个令牌,名字为travis,只给第一个权限,然后生成一个token,记录下来,只有第一次可以看,刷新后就只能重新生成了,所以第一次最好保存一下token,github的token也是一样
+github的token获取,右上角头像,settings,devoper setting /persional access token,生成一个token,gengrate new token,名字也设置为travis,生成后记得保存一下
+
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/hexo-travisci/" />
+<meta property="article:published_time" content="2020-05-01T17:17:42+08:00" />
+<meta property="article:modified_time" content="2020-05-01T17:17:42+08:00" />
+<meta itemprop="name" content="使用travisCI自动部署hexo博客并使用国内外不同dns">
+<meta itemprop="description" content="自动化部署博客到github和coding
+准备工作
+
+需要环境:
+
+可正常使用域名一个
+github新建一个与自己账号名同名的仓库,如 ayuayue.github.io,最好除master分支外新建一个hexo分支用来保存hexo的源码,因为源码配置文件会上传到github,所以才会使用下面的变量的方式配置,不然的话token暴露出来很危险
+coding 中创建一个团队,继续创建一个devops仓库,仓库民跟自己的账号名相同,如 caoayu
+进行coding管理员的认证, 在右上角团队管理中,进行团队管理员的认证
+获取github和coding的token
+
+coding中去个人账号,访问令牌中,新建一个令牌,名字为travis,只给第一个权限,然后生成一个token,记录下来,只有第一次可以看,刷新后就只能重新生成了,所以第一次最好保存一下token,github的token也是一样
+github的token获取,右上角头像,settings,devoper setting /persional access token,生成一个token,gengrate new token,名字也设置为travis,生成后记得保存一下
+
+
+
+">
+<meta itemprop="datePublished" content="2020-05-01T17:17:42&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-01T17:17:42&#43;08:00" />
+<meta itemprop="wordCount" content="1690">
+
+
+
+<meta itemprop="keywords" content="自动化部署," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用travisCI自动部署hexo博客并使用国内外不同dns"/>
+<meta name="twitter:description" content="自动化部署博客到github和coding
+准备工作
+
+需要环境:
+
+可正常使用域名一个
+github新建一个与自己账号名同名的仓库,如 ayuayue.github.io,最好除master分支外新建一个hexo分支用来保存hexo的源码,因为源码配置文件会上传到github,所以才会使用下面的变量的方式配置,不然的话token暴露出来很危险
+coding 中创建一个团队,继续创建一个devops仓库,仓库民跟自己的账号名相同,如 caoayu
+进行coding管理员的认证, 在右上角团队管理中,进行团队管理员的认证
+获取github和coding的token
+
+coding中去个人账号,访问令牌中,新建一个令牌,名字为travis,只给第一个权限,然后生成一个token,记录下来,只有第一次可以看,刷新后就只能重新生成了,所以第一次最好保存一下token,github的token也是一样
+github的token获取,右上角头像,settings,devoper setting /persional access token,生成一个token,gengrate new token,名字也设置为travis,生成后记得保存一下
+
+
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用travisCI自动部署hexo博客并使用国内外不同dns</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-05-01 </span>
+        <div class="post-category">
+            <a href="/categories/travisci/"> travisCI </a>
+            </div>
+          <span class="more-meta"> 约 1690 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#自动化部署博客到github和coding">自动化部署博客到github和coding</a>
+              <ul>
+                <li><a href="#准备工作">准备工作</a></li>
+              </ul>
+            </li>
+            <li><a href="#原理及运行过程">原理及运行过程</a></li>
+            <li><a href="#配置cname并且将域名国内访问使用国内的dns国外的使用境外的dns">配置cname并且将域名国内访问使用国内的dns,国外的使用境外的dns</a>
+              <ul>
+                <li><a href="#开始域名的操作">开始域名的操作</a></li>
+              </ul>
+            </li>
+            <li><a href="#启示">启示</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-05-01T17:17:42" title="May 1, 2020">May 1, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h3 id="自动化部署博客到github和coding">自动化部署博客到github和coding</h3>
+<h4 id="准备工作">准备工作</h4>
+<blockquote>
+<p>需要环境:</p>
+<ol>
+<li>可正常使用域名一个</li>
+<li>github新建一个与自己账号名同名的仓库,如 ayuayue.github.io,最好除master分支外新建一个hexo分支用来保存hexo的源码,因为源码配置文件会上传到github,所以才会使用下面的变量的方式配置,不然的话token暴露出来很危险</li>
+<li>coding 中创建一个团队,继续创建一个devops仓库,仓库民跟自己的账号名相同,如 caoayu</li>
+<li>进行coding管理员的认证, 在右上角团队管理中,进行团队管理员的认证</li>
+<li>获取github和coding的token
+<ol>
+<li>coding中去个人账号,访问令牌中,新建一个令牌,名字为travis,只给第一个权限,然后生成一个token,记录下来,只有第一次可以看,刷新后就只能重新生成了,所以第一次最好保存一下token,github的token也是一样</li>
+<li>github的token获取,右上角头像,settings,devoper setting /persional access token,生成一个token,gengrate new token,名字也设置为travis,生成后记得保存一下</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p>使用travisCI这个第三方平台进行自动化部署-<a href="https://travis-ci.com/">地址</a></p>
+<ol>
+<li>自动部署到github,coding</li>
+</ol>
+<p>首先注册一个账号,使用github账号登陆,授权github,让travis可以有权限访问你的github仓库,</p>
+<p>然后选择你<code>name.github.io</code>	的仓库 <img src="/images/hexo-travisci/1588325073762.png" alt=""></p>
+<p>点击more options 选择setting,进去配置环境便量</p>
+<p><img src="/images/hexo-travisci/1588325188064.png" alt=""></p>
+<p>第一栏是变量名,github的可以自己起一个名字,coding的是固定的再coding里可以看到,</p>
+<p>然后进去hexo的配置文件_config.yml</p>
+<p>添加部署的远程仓库</p>
+<p><img src="/images/hexo-travisci/1588325767307.png" alt="1588325767307"></p>
+<p>然后去配置主题文件夹下的 .travis.yml</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 指定语言环境
+language: node_js
+# 指定需要sudo权限
+sudo: required
+# 指定node_js版本
+node_js: 
+  - 10
+# 指定缓存模块，可选。缓存可加快编译速度。
+cache:
+  directories:
+    - node_modules
+
+# 指定博客源码分支，因人而异。hexo博客源码托管在独立repo则不用设置此项
+branches:
+  only:
+    - hexo 
+
+before_install:
+  - npm install -g hexo-cli
+
+# Start: Build Lifecycle
+install:
+  - npm install
+  - npm install hexo-deployer-git --save
+
+# 执行清缓存，生成网页操作
+script:
+  - hexo clean
+  # - hexo douban -bm
+  - hexo generate
+
+# 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
+after_script:
+  - git config user.name &#34;name&#34;
+  - git config user.email &#34;xxx@qq.com&#34;
+  # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！
+  - sed -i &#34;s/gh_token/${GIT_TOKEN}/g&#34; ./_config.yml
+  - sed -i &#34;s/cd_token/${WHnwvORRxx}/g&#34; ./_config.yml
+  - hexo deploy
+# End: Build LifeCycle
+
+</code></pre></td></tr></table>
+</div>
+</div><p>其中的变量名以及travis中的变量名修改为你自己的变量名</p>
+<h3 id="原理及运行过程">原理及运行过程</h3>
+<p>我们将hexo的源码放在github仓库的hexo分支下,当我们每次push时 .travis.yml中命令就会被运行,根据文件内容不难理解,push完成后会安装node,以及hexo-cli到github上,然后hexo clean清除public文件,hexo g 生成静态文件,hexo d 部署到我们配置的两个仓库的master分支中去,部署的过程我们可以在 travisCI官网中的个人仓库中里看到 build的过程及结果,如果有错误则会停止构建.最后将public 文件上传到github和coding仓库</p>
+<p>我们可以通过访问 <a href="http://name.github.io">http://name.github.io</a> 访问到我们github用户名为仓库的index文件,也就完成了网页的部署</p>
+<h3 id="配置cname并且将域名国内访问使用国内的dns国外的使用境外的dns">配置cname并且将域名国内访问使用国内的dns,国外的使用境外的dns</h3>
+<h4 id="开始域名的操作">开始域名的操作</h4>
+<p>首先解析域名:</p>
+<p><img src="/images/hexo-travisci/1588327654033.png" alt="1588327654033"></p>
+<p><code>coding</code></p>
+<p><img src="/images/hexo-travisci/1588327432709.png" alt="1588327432709"></p>
+<p><code>coding</code>部署完成会生成一个网址,我们也可以进入设置配置自己的域名进行访问</p>
+<p><code>github</code></p>
+<ol>
+<li>配置<code>github</code>,进入到仓库,选择仓库的设置项</li>
+</ol>
+<p><img src="/images/hexo-travisci/1588327292883.png" alt="1588327292883"></p>
+<ol start="2">
+<li>设置自定义域名</li>
+</ol>
+<p><img src="/images/hexo-travisci/1588327333329.png" alt="1588327333329"></p>
+<p>最后在source文件夹中新建一个 CNAME文件</p>
+<p>里面写上你的域名</p>
+<hr>
+<p>到这里你就可以试试使用 git add . / git commit / git push 进入到travis看看自动部署的过程及结果,如果有错误根据提示进行修改</p>
+<h3 id="启示">启示</h3>
+<p>使用travis可以实现博客的自动部署,那么一定也可以进行自动化的一些脚本,或者测试, 编写好测试脚本,每次push后就可以看到代码的准确性以及覆盖率,可以极大的提高开发的效率,也为后期调试打下了良好的基础.</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-05-01</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">自动化部署</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/edit-hexo-url/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">修改hexo生成的文件链接及图片资源链接</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/composer-source/">
+            <span class="next-text nav-default">composer改源</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

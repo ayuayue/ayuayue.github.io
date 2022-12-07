@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/Windows on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/windows/</link>
+    <description>Recent content in IT/Windows on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>wsl2</title>
+      <link>https://blog.caoayu.top/post/wsl2/</link>
+      <pubDate>Tue, 18 Oct 2022 19:43:16 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/wsl2/</guid>
+      <description>wsl2 抛弃，性能太差，虚拟机代替 官方文档 https://learn.microsoft.com/zh-cn/windows/wsl/ 开启 先卸载关闭 1 2 3 4 5 6 7 8 # 查看 wslconfig /l # 卸载 wslconfig /u # 关闭 wsl --shutdown windows 组件关闭 关闭后重启 打开 可以在控制面板里开</description>
+    </item>
+    
+    <item>
+      <title>wsl2</title>
+      <link>https://blog.caoayu.top/post/wsl2/</link>
+      <pubDate>Tue, 18 Oct 2022 19:43:16 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/wsl2/</guid>
+      <description>wsl2 抛弃，性能太差，虚拟机代替 官方文档 https://learn.microsoft.com/zh-cn/windows/wsl/ 开启 先卸载关闭 1 2 3 4 5 6 7 8 # 查看 wslconfig /l # 卸载 wslconfig /u # 关闭 wsl --shutdown windows 组件关闭 关闭后重启 打开 可以在控制面板里开</description>
+    </item>
+    
+    <item>
+      <title>wsl2安装配置</title>
+      <link>https://blog.caoayu.top/post/wsl2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Tue, 18 Oct 2022 19:43:16 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/wsl2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>wsl2安装配置 抛弃，性能太差，虚拟机代替 官方文档 https://learn.microsoft.com/zh-cn/windows/wsl/ 开启 先卸载关闭 1 2 3 4 5 6 7 8 # 查看 wslconfig /l # 卸载 wslconfig /u # 关闭 wsl --shutdown windows 组件关闭 关闭后重启 打开 可以</description>
+    </item>
+    
+    <item>
+      <title>wsl2安装配置</title>
+      <link>https://blog.caoayu.top/post/wsl2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Tue, 18 Oct 2022 19:43:16 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/wsl2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>wsl2安装配置 抛弃，性能太差，虚拟机代替 官方文档 https://learn.microsoft.com/zh-cn/windows/wsl/ 开启 先卸载关闭 1 2 3 4 5 6 7 8 # 查看 wslconfig /l # 卸载 wslconfig /u # 关闭 wsl --shutdown windows 组件关闭 关闭后重启 打开 可以</description>
+    </item>
+    
+    <item>
+      <title>Windows 问题</title>
+      <link>https://blog.caoayu.top/post/windows/</link>
+      <pubDate>Mon, 03 Oct 2022 20:59:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/windows/</guid>
+      <description>Windows 问题 无法粘贴复制 关闭有道词典 | 向日葵 等远程软件,系统粘贴板被占用 扩展屏幕时,打开软件屏幕范围内看不到 导致以为没有打开,其实任务栏是有图标,</description>
+    </item>
+    
+    <item>
+      <title>powershell</title>
+      <link>https://blog.caoayu.top/post/powershell/</link>
+      <pubDate>Mon, 03 Oct 2022 20:47:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/powershell/</guid>
+      <description>powershell 升级 1 2 3 Update-Module PowerShellGet Invoke-Expression &amp;#34;&amp;amp; { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI&amp;#34; oh-my-posh https://ohmyposh.dev/docs/installation/windows 1 scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json readline https://docs.microsoft.com/zh-cn/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2 1 2 Install-Module -Name PSReadLine -AllowClobber -Force show module 1 get-installedModule theme 1 Get-PoshThemes install module 1 2 3 4 5 6 7 8 9 10 11 12 13 Set-ExecutionPolicy Bypass Set-PSRepository -Name &amp;#39;PSGallery&amp;#39; -InstallationPolicy Trusted Install-Script -Name RefreshEnv -Force -Scope CurrentUser Install-Module oh-my-posh -Scope CurrentUser Install-Module</description>
+    </item>
+    
+    <item>
+      <title>windows oracle 安装使用</title>
+      <link>https://blog.caoayu.top/post/windows-oracle-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 03 Oct 2022 20:29:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/windows-oracle-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+      <description>windows oracle 安装使用 下载地址 https://www.oracle.com/cn/database/technologies/microsoft-windows.html 下载两个文件,将2的对应文件解压到同一个文件夹中 管理员打开 setup.exe 稍等一会,如果提示不满足最低要求 修改 stage\cvu\cvu_prereq.xml 对应位置添加 1 2 3 4</description>
+    </item>
+    
+    <item>
+      <title>scoop</title>
+      <link>https://blog.caoayu.top/post/scoop/</link>
+      <pubDate>Mon, 03 Oct 2022 20:05:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/scoop/</guid>
+      <description>scoop 安装到其他盘 1 2 3 4 5 6 7 8 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser $env:SCOOP=&amp;#39;D:\software\scoop&amp;#39; # 后手动加入到系统变量中 [Environment]::SetEnvironmentVariable(&amp;#39;SCOOP&amp;#39;, $env:SCOOP, &amp;#39;User&amp;#39;) iwr -useb get.scoop.sh | iex scoop config proxy 127.0.0.1:7890 bucket 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 Name Source Updated Manifests ---- ------</description>
+    </item>
+    
+  </channel>
+</rss>

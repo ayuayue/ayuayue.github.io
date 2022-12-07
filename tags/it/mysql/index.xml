@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/MySQL on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/mysql/</link>
+    <description>Recent content in IT/MySQL on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL安装配置及参数</title>
+      <link>https://blog.caoayu.top/post/mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Mon, 03 Oct 2022 20:57:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%8F%82%E6%95%B0/</guid>
+      <description>MySQL安装配置及参数 官方文档手册 https://dev.mysql.com/doc/refman/5.7/en/ 安装 安装及升级 https://dev.mysql.com/doc/refman/5.7/en/installing.html https://dev.mysql.com/doc/refman/5.7/en/binary-installation.html 配置文件 修改 prompt 提示符、添加一个默认的客户端登录、配置错误日志目录、时间格式及数据存放</description>
+    </item>
+    
+    <item>
+      <title>MySQL角色及密码SSL加密</title>
+      <link>https://blog.caoayu.top/post/mysql%E8%A7%92%E8%89%B2%E5%8F%8A%E5%AF%86%E7%A0%81ssl%E5%8A%A0%E5%AF%86/</link>
+      <pubDate>Mon, 03 Oct 2022 20:46:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/mysql%E8%A7%92%E8%89%B2%E5%8F%8A%E5%AF%86%E7%A0%81ssl%E5%8A%A0%E5%AF%86/</guid>
+      <description>MySQL角色及密码SSL加密 MySQL 8.0支持角色的授权。 SSL 使用status查看是否开启，show variables like &amp;lsquo;%ssl%&#39;; 开启SSL【仅对tcp/ip方式生效，s</description>
+    </item>
+    
+    <item>
+      <title>MySQL错误日志，通用日志，存储引擎</title>
+      <link>https://blog.caoayu.top/post/mysql%E9%94%99%E8%AF%AF%E6%97%A5%E5%BF%97%E9%80%9A%E7%94%A8%E6%97%A5%E5%BF%97%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/</link>
+      <pubDate>Mon, 03 Oct 2022 20:37:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/mysql%E9%94%99%E8%AF%AF%E6%97%A5%E5%BF%97%E9%80%9A%E7%94%A8%E6%97%A5%E5%BF%97%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/</guid>
+      <description>MySQL错误日志，通用日志，存储引擎 存储引擎都是以插件方式嵌入的，除innodb外的引擎不在开发。 数据库与数据库实例之间的关系就想是 类和对</description>
+    </item>
+    
+    <item>
+      <title>启动与关闭，多实例安装不同版本数据库</title>
+      <link>https://blog.caoayu.top/post/mysql%E5%90%AF%E5%8A%A8%E4%B8%8E%E5%85%B3%E9%97%AD%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%AE%89%E8%A3%85%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Mon, 03 Oct 2022 20:30:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/mysql%E5%90%AF%E5%8A%A8%E4%B8%8E%E5%85%B3%E9%97%AD%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%AE%89%E8%A3%85%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>启动与关闭，多实例安装不同版本数据库 启动 1 2 3 4 mysqld # 默认配置启动 mysqld --defaults-file=/etc/my.cnf # 自定义配置文件启动 mysqld --defaults-file=/etc/my.cnf &amp;amp; #后台 mysqld_safe # shell脚本,守护进程，会监听my</description>
+    </item>
+    
+    <item>
+      <title>杂项</title>
+      <link>https://blog.caoayu.top/post/mysql%E6%9D%82%E9%A1%B9/</link>
+      <pubDate>Mon, 03 Oct 2022 20:18:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/mysql%E6%9D%82%E9%A1%B9/</guid>
+      <description>杂项 关闭自动补全 1 2 [mysql] no-auto-rehash 自增值重溯【8.0才解决】 删除自增主键后，重启数据库，自增值会重塑，导致删除过的主键又回来了 场景，插入了n条数据，此</description>
+    </item>
+    
+    <item>
+      <title>数据类型</title>
+      <link>https://blog.caoayu.top/post/mysql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Mon, 03 Oct 2022 20:08:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/mysql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>数据类型 整型 int(10)，10 只是显示长度，可以存入大于10位显示长度的数据，取出来时只取出10位最大的值。 建议： 不要使用 unsigned 范围没有大的改</description>
+    </item>
+    
+    <item>
+      <title>MySQL多实例安装</title>
+      <link>https://blog.caoayu.top/post/mysql%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 03 Oct 2022 20:04:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/mysql%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%AE%89%E8%A3%85/</guid>
+      <description>MySQL多实例安装 一台服务器安装多个MySQL实例，充分利用硬件资源 通过 mysqld_multi程序即可 修改配置文件 1 2 3 4 5 6 7 8 9 10 11</description>
+    </item>
+    
+    <item>
+      <title>MySQL连接及授权</title>
+      <link>https://blog.caoayu.top/post/mysql%E8%BF%9E%E6%8E%A5%E5%8F%8A%E6%8E%88%E6%9D%83/</link>
+      <pubDate>Mon, 03 Oct 2022 20:03:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/mysql%E8%BF%9E%E6%8E%A5%E5%8F%8A%E6%8E%88%E6%9D%83/</guid>
+      <description>MySQL连接及授权 官方说明 https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html 用户权限管理 用户 → IP 库 → 表 → 列 连接 u 用户 h 主机地址 P 端口 p 密码 本地socket连接 1 2 3 show variables like &amp;#39;%socket%&amp;#39;; mysql -S /var/run/mysqld/mysqld.sock -uroot -p tc</description>
+    </item>
+    
+    <item>
+      <title>MySQL select</title>
+      <link>https://blog.caoayu.top/post/mysql-select/</link>
+      <pubDate>Mon, 03 Oct 2022 20:01:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/mysql-select/</guid>
+      <description>MySQL select order by 排序会影响执行效率，导致SQL变慢 更改参数可以优化 show variables like &#39;sort_buffer_size&#39;; 增大排序缓冲区 set sort_buffer_size = 32 x 1024 x 1024; 查看当前会话排序状态 show status like &#39;sort%&#39;; 查看所有会话排序</description>
+    </item>
+    
+  </channel>
+</rss>

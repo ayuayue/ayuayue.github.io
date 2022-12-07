@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/linux/</link>
+    <description>Recent content in linux on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 08 Mar 2021 17:55:06 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Scrcpy在Linux操控安卓</title>
+      <link>https://blog.caoayu.top/post/scrcpy/</link>
+      <pubDate>Mon, 08 Mar 2021 17:55:06 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/scrcpy/</guid>
+      <description>在 Windows 上系统自带了投屏功能，然而 deepin 也有 深度演示助手 ，不过我并没有在系统中找到。论坛中的反响都是在 15 版本，现在已经是 20.2 了。 寻找到了一个叫 QTScrcpy 的应用</description>
+    </item>
+    
+    <item>
+      <title>Linux Simple Terminal</title>
+      <link>https://blog.caoayu.top/post/st/</link>
+      <pubDate>Wed, 06 Jan 2021 20:53:11 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/st/</guid>
+      <description>Terminal linux 下有许多优秀的 Termainl，我在用的有deepin-terminal,alacritty,&amp;lsquo;simple terminal&amp;rsquo;.alacritty 是一款使用显卡</description>
+    </item>
+    
+    <item>
+      <title>Linux 下更改大写锁定键为ESC</title>
+      <link>https://blog.caoayu.top/post/linux-edit-map/</link>
+      <pubDate>Fri, 11 Dec 2020 20:37:12 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/linux-edit-map/</guid>
+      <description>Caps_Lock 大写锁定键，一般用的很少。但是它的位置又十分容易按到，而 esc 用的频率比较高，但是，位置却很尴尬。尤其在 vim 或一些终端之中，所以我们可以将键位进</description>
+    </item>
+    
+    <item>
+      <title>虚拟机安装Centos后的一些配置</title>
+      <link>https://blog.caoayu.top/post/vm-centos-config/</link>
+      <pubDate>Wed, 15 Jul 2020 21:35:42 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/vm-centos-config/</guid>
+      <description>VMware 安装 Centos 使用vmware安装了centos7，并去除了不必要的硬件，只保留了比用的几个，安装的是server with gui 安装完成后，又上角链接网络 更</description>
+    </item>
+    
+    <item>
+      <title>使用frp搭建内网穿透</title>
+      <link>https://blog.caoayu.top/post/frp/</link>
+      <pubDate>Wed, 15 Jul 2020 20:10:54 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/frp/</guid>
+      <description>什么是Frp frp 是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 tcp, http, https 等协议类型，并且 web 服务支持根据域名进行路由</description>
+    </item>
+    
+    <item>
+      <title>使用docker-compose 搭建 lnmp</title>
+      <link>https://blog.caoayu.top/post/docker-compose-lnmp/</link>
+      <pubDate>Mon, 13 Jul 2020 21:13:21 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/docker-compose-lnmp/</guid>
+      <description>Docker compose 简介 Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可</description>
+    </item>
+    
+    <item>
+      <title>Linux 文件隐藏权限</title>
+      <link>https://blog.caoayu.top/post/linux-attr/</link>
+      <pubDate>Sun, 05 Jul 2020 20:43:00 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/linux-attr/</guid>
+      <description>文件的隐藏权限 除了文件的读写,执行权限外,linux还有一种隐藏权限,设置隐藏权限可以防止一些其他用户的误操作或者恶意操作,当我们配置了ng</description>
+    </item>
+    
+    <item>
+      <title>linux 安装并配置zsh</title>
+      <link>https://blog.caoayu.top/post/linux-zsh/</link>
+      <pubDate>Sun, 21 Jun 2020 10:24:08 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/linux-zsh/</guid>
+      <description>linux 下 zsh 的安装及配置 安装 1 sudo apt-get install -y zsh 安装 oh-my-zsh 三种方式 1 2 3 4 5 sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;#34; sh -c &amp;#34;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&amp;#34; wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh 如果因为网络问题安装失败,可以使用代理,或者直接</description>
+    </item>
+    
+    <item>
+      <title>deepin安装googel-chrome</title>
+      <link>https://blog.caoayu.top/post/deepin-install-googel-chrome/</link>
+      <pubDate>Sun, 26 Apr 2020 11:05:54 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-install-googel-chrome/</guid>
+      <description>deepin自带的是开源的chromium,更换为谷歌chrmoe 下载 地址 双击安装,等待安装完成即可使用 更新,编辑 /etc/default/google-chrome 将第一行false改为t</description>
+    </item>
+    
+  </channel>
+</rss>

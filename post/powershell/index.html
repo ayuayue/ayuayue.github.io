@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>powershell - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="powershell 升级 1 2 3 Update-Module PowerShellGet Invoke-Expression &amp;#34;&amp;amp; { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI&amp;#34; oh-my-posh https://ohmyposh.dev/docs/installation/windows 1 scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json readline https://docs.microsoft.com/zh-cn/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2 1 2 Install-Module -Name PSReadLine -AllowClobber -Force show module 1 get-installedModule theme 1 Get-PoshThemes install module 1 2 3 4 5 6 7 8 9 10 11 12 13 Set-ExecutionPolicy Bypass Set-PSRepository -Name &amp;#39;PSGallery&amp;#39; -InstallationPolicy Trusted Install-Script -Name RefreshEnv -Force -Scope CurrentUser Install-Module oh-my-posh -Scope CurrentUser Install-Module" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/powershell/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="powershell" />
+<meta property="og:description" content="powershell 升级 1 2 3 Update-Module PowerShellGet Invoke-Expression &#34;&amp; { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI&#34; oh-my-posh https://ohmyposh.dev/docs/installation/windows 1 scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json readline https://docs.microsoft.com/zh-cn/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2 1 2 Install-Module -Name PSReadLine -AllowClobber -Force show module 1 get-installedModule theme 1 Get-PoshThemes install module 1 2 3 4 5 6 7 8 9 10 11 12 13 Set-ExecutionPolicy Bypass Set-PSRepository -Name &#39;PSGallery&#39; -InstallationPolicy Trusted Install-Script -Name RefreshEnv -Force -Scope CurrentUser Install-Module oh-my-posh -Scope CurrentUser Install-Module" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/powershell/" />
+<meta property="article:published_time" content="2022-10-03T20:47:46+00:00" />
+<meta property="article:modified_time" content="2022-10-25T08:07:53+00:00" />
+<meta itemprop="name" content="powershell">
+<meta itemprop="description" content="powershell 升级 1 2 3 Update-Module PowerShellGet Invoke-Expression &#34;&amp; { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI&#34; oh-my-posh https://ohmyposh.dev/docs/installation/windows 1 scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json readline https://docs.microsoft.com/zh-cn/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2 1 2 Install-Module -Name PSReadLine -AllowClobber -Force show module 1 get-installedModule theme 1 Get-PoshThemes install module 1 2 3 4 5 6 7 8 9 10 11 12 13 Set-ExecutionPolicy Bypass Set-PSRepository -Name &#39;PSGallery&#39; -InstallationPolicy Trusted Install-Script -Name RefreshEnv -Force -Scope CurrentUser Install-Module oh-my-posh -Scope CurrentUser Install-Module">
+<meta itemprop="datePublished" content="2022-10-03T20:47:46&#43;00:00" />
+<meta itemprop="dateModified" content="2022-10-25T08:07:53&#43;00:00" />
+<meta itemprop="wordCount" content="446">
+
+
+
+<meta itemprop="keywords" content="IT/Tools,IT/Windows," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="powershell"/>
+<meta name="twitter:description" content="powershell 升级 1 2 3 Update-Module PowerShellGet Invoke-Expression &#34;&amp; { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI&#34; oh-my-posh https://ohmyposh.dev/docs/installation/windows 1 scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json readline https://docs.microsoft.com/zh-cn/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2 1 2 Install-Module -Name PSReadLine -AllowClobber -Force show module 1 get-installedModule theme 1 Get-PoshThemes install module 1 2 3 4 5 6 7 8 9 10 11 12 13 Set-ExecutionPolicy Bypass Set-PSRepository -Name &#39;PSGallery&#39; -InstallationPolicy Trusted Install-Script -Name RefreshEnv -Force -Scope CurrentUser Install-Module oh-my-posh -Scope CurrentUser Install-Module"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">powershell</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-10-03 </span>
+        
+          <span class="more-meta"> 约 446 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#powershell">powershell</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#升级">升级</a></li>
+            <li><a href="#oh-my-posh">oh-my-posh</a></li>
+            <li><a href="#readline">readline</a></li>
+            <li><a href="#show-module">show module</a></li>
+            <li><a href="#theme">theme</a></li>
+            <li><a href="#install-module">install module</a></li>
+            <li><a href="#profile">profile</a></li>
+          </ul>
+        </li>
+        <li><a href="#只提示">只提示</a></li>
+        <li><a href="#安装-z-模块跳转">安装 z 模块跳转</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2022-10-25T08:07:53" title="October 25, 2022">October 25, 2022</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="powershell">powershell</h1>
+<h3 id="升级">升级</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">Update-Module PowerShellGet
+Invoke-Expression &#34;&amp; { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI&#34;
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="oh-my-posh">oh-my-posh</h3>
+<p><a href="https://ohmyposh.dev/docs/installation/windows">https://ohmyposh.dev/docs/installation/windows</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="readline">readline</h3>
+<p><a href="https://docs.microsoft.com/zh-cn/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2">https://docs.microsoft.com/zh-cn/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">Install-Module -Name PSReadLine -AllowClobber -Force
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="show-module">show module</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">get-installedModule
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="theme">theme</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text"> Get-PoshThemes
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="install-module">install module</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">Set-ExecutionPolicy Bypass
+Set-PSRepository -Name &#39;PSGallery&#39; -InstallationPolicy Trusted
+
+Install-Script -Name RefreshEnv -Force -Scope CurrentUser
+
+Install-Module oh-my-posh -Scope CurrentUser
+Install-Module posh-git -Scope CurrentUser
+Install-Module ZLocation -Scope CurrentUser; 
+Install-Module PSReadLine -AllowPrerelease -Force
+Install-Module -Name PSFzf -Scope CurrentUser
+Install-Module -Name PoshColor -Scope CurrentUser
+Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="profile">profile</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">Import-Module -Name Terminal-Icons
+Import-Module -Name PSWindowsUpdate
+Import-Module -Name PoshColor
+Import-Module -Name PSReadLine
+Import-Module posh-git
+Import-Module -Name ZLocation 
+
+oh-my-posh init pwsh --config &#34;$env:POSH_THEMES_PATH/powerlevel10k_lean.omp.json&#34; | Invoke-Expression
+
+#PSReadLine快捷键设置
+# 设置预测文本来源为历史记录
+Set-PSReadLineOption -PredictionSource History
+# alt在windows中有特殊用途，这里使用ctrl键代替
+Set-PSReadLineKeyHandler -Chord &#34;Ctrl+RightArrow&#34; -Function ForwardWord
+
+# 每次回溯输入历史，光标定位于输入内容末尾
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+# 设置 Tab 为菜单补全和 Intellisense
+Set-PSReadLineKeyHandler -Key &#34;Tab&#34; -Function MenuComplete
+Set-PSReadLineKeyHandler -Key &#34;Ctrl+u&#34; -Function DeleteLine
+Set-PSReadLineKeyHandler -Key &#34;Ctrl+d&#34; -Function ViExit
+
+
+Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+        [Console]::InputEncoding = [Console]::OutputEncoding = $OutputEncoding = [System.Text.Utf8Encoding]::new()
+        $Local:word = $wordToComplete.Replace(&#39;&#34;&#39;, &#39;&#34;&#34;&#39;)
+        $Local:ast = $commandAst.ToString().Replace(&#39;&#34;&#39;, &#39;&#34;&#34;&#39;)
+        winget complete --word=&#34;$Local:word&#34; --commandline &#34;$Local:ast&#34; --position $cursorPosition | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, &#39;ParameterValue&#39;, $_)
+        }
+}
+
+
+
+
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="只提示">只提示</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">
+Install-Module PSReadLine -RequiredVersion 2.1.0 -Scope CurrentUser
+Import-Module PSReadLine
+Set-PSReadLineOption -PredictionSource History
+</code></pre></td></tr></table>
+</div>
+</div><p>code $profile</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 每次回溯输入历史，光标定位于输入内容末尾
+
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+  
+
+# 设置 Tab 为菜单补全和 Intellisense
+
+Set-PSReadLineKeyHandler -Key &#34;Tab&#34; -Function MenuComplete
+
+Set-PSReadLineKeyHandler -Key &#34;Ctrl+u&#34; -Function DeleteLine
+
+Set-PSReadLineKeyHandler -Key &#34;Ctrl+d&#34; -Function ViExit
+
+
+Import-Module PSReadLine
+
+Set-PSReadLineOption -PredictionSource History
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="安装-z-模块跳转">安装 z 模块跳转</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">Install-Module -Name ZLocation
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2022-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/it/tools/">IT/Tools</a>
+          <a href="/tags/it/windows/">IT/Windows</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/git-bash%E9%85%8D%E7%BD%AE/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">git-bash配置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/umask%E7%B3%BB%E7%BB%9F%E5%B1%8F%E8%94%BD%E5%AD%97/">
+            <span class="next-text nav-default">umask 系统屏蔽字</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>manjaro on 个人内容记录</title>
+    <link>https://blog.caoayu.top/categories/manjaro/</link>
+    <description>Recent content in manjaro on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 21 Jun 2020 20:54:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/categories/manjaro/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Typora Picgo自动使用图床上传图片</title>
+      <link>https://blog.caoayu.top/post/typora-picgo/</link>
+      <pubDate>Sun, 21 Jun 2020 20:54:40 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/typora-picgo/</guid>
+      <description>博客图片改为图床 随着图片的增加，以及博客平台的不固定性，开始改用图床来保存图片，但是每个图片都要上传和替换链接就把使用图床的快捷优势全都丢掉</description>
+    </item>
+    
+  </channel>
+</rss>

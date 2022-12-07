@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Deepin 安装及使用Rime输入法--中州韵输入法 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="Deepin 安装及使用Rime输入法 -- 中州韵输入法" /><meta name="keywords" content="Deepin 安装及使用Rime输入法 -- 中州韵输入法" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/deepin-rime/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Deepin 安装及使用Rime输入法--中州韵输入法" />
+<meta property="og:description" content="Deepin 安装及使用Rime输入法 -- 中州韵输入法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/deepin-rime/" />
+<meta property="article:published_time" content="2020-12-04T19:42:43+08:00" />
+<meta property="article:modified_time" content="2020-12-04T19:42:43+08:00" />
+<meta itemprop="name" content="Deepin 安装及使用Rime输入法--中州韵输入法">
+<meta itemprop="description" content="Deepin 安装及使用Rime输入法 -- 中州韵输入法">
+<meta itemprop="datePublished" content="2020-12-04T19:42:43&#43;08:00" />
+<meta itemprop="dateModified" content="2020-12-04T19:42:43&#43;08:00" />
+<meta itemprop="wordCount" content="1331">
+
+
+
+<meta itemprop="keywords" content="deepin," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deepin 安装及使用Rime输入法--中州韵输入法"/>
+<meta name="twitter:description" content="Deepin 安装及使用Rime输入法 -- 中州韵输入法"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Deepin 安装及使用Rime输入法--中州韵输入法</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-12-04 </span>
+        <div class="post-category">
+            <a href="/categories/deepin/"> deepin </a>
+            </div>
+          <span class="more-meta"> 约 1331 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#中州韵">中州韵</a></li>
+            <li><a href="#为什么使用它">为什么使用它</a></li>
+            <li><a href="#首先当然是安装">首先当然是安装</a>
+              <ul>
+                <li><a href="#fcitx-or-ibus"><code>fcitx</code> or <code>ibus</code></a></li>
+              </ul>
+            </li>
+            <li><a href="#接下来就是配置了">接下来就是配置了</a>
+              <ul>
+                <li><a href="#配置增强包">配置增强包</a></li>
+              </ul>
+            </li>
+            <li><a href="#自定义配置">自定义配置</a>
+              <ul>
+                <li><a href="#小问题的解决">小问题的解决</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-12-04T19:42:43" title="December 4, 2020">December 4, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h3 id="中州韵">中州韵</h3>
+<p>聪明的输入法 &ndash; <a href="https://rime.im/">中州韵</a></p>
+<p>三个平台有三个不同的名字，但使用跟配置都相同。</p>
+<p><code>Windows</code> &ndash; 小狼毫</p>
+<p><code>Mac</code> &ndash; 鼠鬚管</p>
+<p><code>Linux</code> &ndash; 中州韵</p>
+<p>鬼知道为什么起这么多名字 「手动滑稽」😅</p>
+<h3 id="为什么使用它">为什么使用它</h3>
+<p>正如作者所说的那样，一个输入法不应该只是通过界面的点击就能够简单设置一些操作。而是应该可以根据每个人的使用习惯进行定制，包括每个按键、快捷键、符号。</p>
+<p>对于大多数人来说，一个简单的输入法，再加上在线的词库跟同步的用户词库和设置就足够使用。最多也就是寻求一些新鲜主题。但是对于特定场景的用户来说，如果能定制一个根据自己按键习惯的输入法，那么输入也将成为一种享受，更可以提升我们的效率，毕竟人生苦短。</p>
+<p>但是，正由于他是可配置的，并且配置文件及词库文件都是通用的，对于那些想要使用，但又不懂的配置的用户来说是一种福音。可以直接把配置好的常用设置跟词库拷贝下来就可以使用。</p>
+<h3 id="首先当然是安装">首先当然是安装</h3>
+<p><strong>所有安装环境均再 <code>Linux-deepin</code> 下进行，<code>Windows</code>，<code>Mac</code>请到官方文档查看<a href="https://rime.im/download/">下载地址</a></strong></p>
+<h4 id="fcitx-or-ibus"><code>fcitx</code> or <code>ibus</code></h4>
+<p>在 <code>deepin</code> 上，常见的有两种输入法管理工具，<code>ibus</code>、<code>fcitx</code> 。</p>
+<p><code>ibus-rime</code> 的安装地址 <a href="http://wiki.deepinos.org.cn/deepin%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%85%AD%E7%AB%A0/6.5.html">ibus-rime</a></p>
+<p><code>fcitx-rime</code> 安装地址 <a href="http://wiki.deepinos.org.cn/deepin%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%85%AD%E7%AB%A0/6.4.html">fcitx-rime</a></p>
+<p>安装后体验：</p>
+<blockquote>
+<ol>
+<li><code>ibus-rime</code> 的配置跟启动不太好（在我机器上），输入法切换状态栏没有提示（可能是跟ibus的配置冲突，以 <code>ibus</code> 的为最高优先级了）。致命问题，自带应用无法输入中文，<code>Chrome</code> 浏览器可以输入中文。所以被放弃了，本来是从 <code>fcitx</code> 过来的，结果&hellip;</li>
+<li><code>fcitx-rime</code> 用着还算可以，没什么大问题。只是没有找到更改主题跟字体大小的方法，每次更改字体大小，重启或注销后又会恢复原样。</li>
+</ol>
+</blockquote>
+<p><strong>推荐使用 <code>fcitx-rime</code></strong></p>
+<h3 id="接下来就是配置了">接下来就是配置了</h3>
+<p>用户目录在 ： <code>$USER/.config/fcitx/rime/</code></p>
+<p>里面存放自定义配置文件和部署后的数据文件</p>
+<h4 id="配置增强包">配置增强包</h4>
+<p>增强包包括了输入法配置文件跟词典文件与源配置文件，我们可以对比增强包的配置文件跟源文件，来修改为符合自己使用习惯的配置。还包括说明文件 增强包地址<a href="https://pan.baidu.com/s/1jI1a8eE">百度云</a> <a href="https://blog.caoayu.top/file/rime_pro.zip">在线下载</a></p>
+<p>将压缩包解压到 <code>$user/.cofig/fcitx/rime/</code> 里，重新部署一下就好了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20201204203021.png" alt=""></p>
+<p>如果是 <code>ibus</code> ，用户目录是 ： <code>/$user/.config/ibus/rime/</code></p>
+<h3 id="自定义配置">自定义配置</h3>
+<p>如果需要自定义配置，直接更改 用户目录下的 <code>$user/.config/fcitx//rime/default.costum.yaml</code> 文件。</p>
+<p>对比 <code>f-customize.txt</code> 文件来进行修改。<code>ori_default.yaml</code>是默认的配置文件，如果改坏了，可以把这个按照这个文件的内容更正回来</p>
+<p>官方的一些文档，十分详细明了。</p>
+<ul>
+<li><a href="https://github.com/rime/home/wiki/UserGuide">打字入门</a></li>
+<li><a href="https://github.com/rime/home/wiki/CustomizationGuide">定制指南</a></li>
+<li><a href="https://github.com/rime/home/wiki/RimeWithSchemata">方案设计</a></li>
+</ul>
+<h4 id="小问题的解决">小问题的解决</h4>
+<ol>
+<li>字体太小</li>
+</ol>
+<p>通过更改 <code>rime</code> 的配置文件发现每次重启或注销都会变回来。可以更改 <code>/$user/.config/fcitx/config/fcitx-classic-ui.config</code>文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>ClassicUI<span class="o">]</span>
+...
+<span class="c1"># 字体大小</span>
+<span class="nv">FontSize</span><span class="o">=</span><span class="m">16</span>
+...
+<span class="c1"># 皮肤名称</span>
+<span class="nv">SkinType</span><span class="o">=</span>classic
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>切换中英文，输入的中文不会自动上屏，而是消失</li>
+</ol>
+<p>这是因为 <code>rime</code> 配置的上屏规则被 <code>fcitx</code> 覆盖掉了。通过更改掉<code>fcitx</code> 的配置可以解决。</p>
+<p><code>rime</code>配置文件中的上屏规则</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"> ascii_composer:
+    good_old_caps_lock: <span class="nb">true</span>
+    switch_key:
+      Shift_L: commit_code <span class="c1"># 左 Shift 上屏，并更改中英文</span>
+      Shift_R: commit_code
+      Control_L: noop <span class="c1"># 左 Ctrl 禁用</span>
+      Control_R: noop
+      Caps_Lock: noop
+      Eisu_toggle: clear <span class="c1"># esc 清屏</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>更改 <code>fcitx </code> 配置</p>
+<p>首先打开配置，找到全局配置&gt; 额外的激活输入法快捷键，把 默认的 <code>Shift</code> 改掉，或直接禁用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20201204204759.png" alt=""></p>
+<p>这里也是可以更改字体大小的，不过我的环境重启会失效。</p>
+<ol start="3">
+<li>
+<p>无法更改皮肤</p>
+<p>只能使用 <code>fcitx</code> 默认的皮肤，这个目前没有办法，网上有制作的皮肤放到 <code>fcitx/skin/</code> 里的，但有反馈说并不能加载出来。需要自行实验</p>
+<p>推荐一个在线的皮肤定制工具，不需要自己写配置，只需要选择色彩搭配即可<a href="https://bennyyip.github.io/Rime-See-Me/">链接</a></p>
+</li>
+</ol>
+<p>如果有解决方法可以评论指教下，十分感谢。</p>
+<p>如果有疑问也可以联系我，互相帮助。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-12-04</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/deepin/">deepin</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/deepin-lnmp/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Deepin LNMP环境搭建</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/deepin-qv2ray/">
+            <span class="next-text nav-default">Deepin Qv2ray</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

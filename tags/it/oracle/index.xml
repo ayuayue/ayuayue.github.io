@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/Oracle on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/oracle/</link>
+    <description>Recent content in IT/Oracle on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/oracle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>oracle操作</title>
+      <link>https://blog.caoayu.top/post/oracle%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Mon, 03 Oct 2022 20:53:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/oracle%E6%93%8D%E4%BD%9C/</guid>
+      <description>oracle操作 查看数据库服务状态：lsnrctl status 启动监听：lsnrctl start 连接 远程 or 本地 1 sqlplus user_haut/thinks5567@127.0.0.1:1521/chemdb.thinks.net.cn 查询当前用户 1 2 show user select user from dual 查询所有用户 1</description>
+    </item>
+    
+    <item>
+      <title>sqldeveloper</title>
+      <link>https://blog.caoayu.top/post/sqldeveloper/</link>
+      <pubDate>Mon, 03 Oct 2022 20:41:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/sqldeveloper/</guid>
+      <description>sqldeveloper 下载 https://www.softpedia.com/get/Internet/Servers/Database-Utils/Oracle-SQL-Developer.shtml#download 长连接插件下载 https://github.com/scristalli/sql-developer-keepalive/releases 帮助 &amp;gt; 从本地安装 &amp;gt; 选择压缩包 不自动启动，需要手动点击按钮 打开新标签 工具 〉首选项 〉数据库 〉 对象查看器 〉 自动冻结对象查看</description>
+    </item>
+    
+    <item>
+      <title>linux 安装配置 oracle</title>
+      <link>https://blog.caoayu.top/post/linux-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE-oracle/</link>
+      <pubDate>Mon, 03 Oct 2022 20:32:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/linux-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE-oracle/</guid>
+      <description>linux 安装配置 oracle 11g 文档地址 https://docs.oracle.com/cd/E11882_01/nav/portal_11.htm 下载地址 https://www.oracle.com/cn/database/enterprise-edition/downloads/oracle-db11g-linux.html#license-lightbox 修改|新增服务名 先使用 dba 账号登录连接 oracle 1 2 3 show parameter name; alter system register; alter system set service_names=orcl,&amp;#39;chemdb.thinks.net.cn&amp;#39;; 重启 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19</description>
+    </item>
+    
+    <item>
+      <title>PHP配置Oracle并导出所有表</title>
+      <link>https://blog.caoayu.top/post/php%E9%85%8D%E7%BD%AEoracle%E5%B9%B6%E5%AF%BC%E5%87%BA%E6%89%80%E6%9C%89%E8%A1%A8/</link>
+      <pubDate>Mon, 03 Oct 2022 20:32:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php%E9%85%8D%E7%BD%AEoracle%E5%B9%B6%E5%AF%BC%E5%87%BA%E6%89%80%E6%9C%89%E8%A1%A8/</guid>
+      <description>PHP配置Oracle并导出所有表 首先下载 Oracle 的即时客户端，下载地址：https://www.oracle.com/database/tech</description>
+    </item>
+    
+    <item>
+      <title>windows oracle 安装使用</title>
+      <link>https://blog.caoayu.top/post/windows-oracle-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 03 Oct 2022 20:29:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/windows-oracle-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+      <description>windows oracle 安装使用 下载地址 https://www.oracle.com/cn/database/technologies/microsoft-windows.html 下载两个文件,将2的对应文件解压到同一个文件夹中 管理员打开 setup.exe 稍等一会,如果提示不满足最低要求 修改 stage\cvu\cvu_prereq.xml 对应位置添加 1 2 3 4</description>
+    </item>
+    
+  </channel>
+</rss>

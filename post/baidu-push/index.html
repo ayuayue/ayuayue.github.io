@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>百度站点收录 - 什么叫他妈的自动推送 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="百度收录问题 当自己搭建了一个个人网站或者是商业性质的网站时,我们通常希望在百度等搜索引擎上可以直接搜索到,提高网站的曝光率和流量.
+但是百度对个人网站的收录十分的缓慢,步骤繁多,不像谷歌,提交完后几天就可以搜索到,无论怎么花式搜索都可以搜索到,而百度就有意思了,怎么都搜不到,快则半个月,慢则后年马月.
+虽然百度会根据网址的流量及内容来判断审核,对原创内容的支持还是不错的,但是搜索引擎的算法上还是不如谷歌.
+那就我们自己动手来加速一下收录的时长吧.
+" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/baidu-push/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="百度站点收录 - 什么叫他妈的自动推送" />
+<meta property="og:description" content="百度收录问题
+当自己搭建了一个个人网站或者是商业性质的网站时,我们通常希望在百度等搜索引擎上可以直接搜索到,提高网站的曝光率和流量.
+但是百度对个人网站的收录十分的缓慢,步骤繁多,不像谷歌,提交完后几天就可以搜索到,无论怎么花式搜索都可以搜索到,而百度就有意思了,怎么都搜不到,快则半个月,慢则后年马月.
+虽然百度会根据网址的流量及内容来判断审核,对原创内容的支持还是不错的,但是搜索引擎的算法上还是不如谷歌.
+那就我们自己动手来加速一下收录的时长吧." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/baidu-push/" />
+<meta property="article:published_time" content="2020-05-25T18:36:07+08:00" />
+<meta property="article:modified_time" content="2020-05-25T18:36:07+08:00" />
+<meta itemprop="name" content="百度站点收录 - 什么叫他妈的自动推送">
+<meta itemprop="description" content="百度收录问题
+当自己搭建了一个个人网站或者是商业性质的网站时,我们通常希望在百度等搜索引擎上可以直接搜索到,提高网站的曝光率和流量.
+但是百度对个人网站的收录十分的缓慢,步骤繁多,不像谷歌,提交完后几天就可以搜索到,无论怎么花式搜索都可以搜索到,而百度就有意思了,怎么都搜不到,快则半个月,慢则后年马月.
+虽然百度会根据网址的流量及内容来判断审核,对原创内容的支持还是不错的,但是搜索引擎的算法上还是不如谷歌.
+那就我们自己动手来加速一下收录的时长吧.">
+<meta itemprop="datePublished" content="2020-05-25T18:36:07&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-25T18:36:07&#43;08:00" />
+<meta itemprop="wordCount" content="1356">
+
+
+
+<meta itemprop="keywords" content="hexo," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="百度站点收录 - 什么叫他妈的自动推送"/>
+<meta name="twitter:description" content="百度收录问题
+当自己搭建了一个个人网站或者是商业性质的网站时,我们通常希望在百度等搜索引擎上可以直接搜索到,提高网站的曝光率和流量.
+但是百度对个人网站的收录十分的缓慢,步骤繁多,不像谷歌,提交完后几天就可以搜索到,无论怎么花式搜索都可以搜索到,而百度就有意思了,怎么都搜不到,快则半个月,慢则后年马月.
+虽然百度会根据网址的流量及内容来判断审核,对原创内容的支持还是不错的,但是搜索引擎的算法上还是不如谷歌.
+那就我们自己动手来加速一下收录的时长吧."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">百度站点收录 - 什么叫他妈的自动推送</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-05-25 </span>
+        <div class="post-category">
+            <a href="/categories/hexo/"> hexo </a>
+            </div>
+          <span class="more-meta"> 约 1356 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li>
+                  <ul>
+                    <li><a href="#百度收录问题">百度收录问题</a></li>
+                    <li><a href="#验证工作">验证工作</a></li>
+                    <li><a href="#验证https">验证<code>https</code></a></li>
+                    <li><a href="#链接提交">链接提交</a></li>
+                    <li><a href="#主动推送的-php-实现">主动推送的 <code>php</code> 实现</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-05-25T18:36:07" title="May 25, 2020">May 25, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h5 id="百度收录问题">百度收录问题</h5>
+<p>当自己搭建了一个个人网站或者是商业性质的网站时,我们通常希望在百度等搜索引擎上可以直接搜索到,提高网站的曝光率和流量.</p>
+<p>但是百度对个人网站的收录十分的缓慢,步骤繁多,不像谷歌,提交完后几天就可以搜索到,无论怎么花式搜索都可以搜索到,而百度就有意思了,怎么都搜不到,快则半个月,慢则后年马月.</p>
+<p>虽然百度会根据网址的流量及内容来判断审核,对原创内容的支持还是不错的,但是搜索引擎的算法上还是不如谷歌.</p>
+<p>那就我们自己动手来加速一下收录的时长吧.</p>
+<p>对于网站的管理我们可以进入 <a href="https://ziyuan.baidu.com/linksubmit/index">百度搜索资源平台</a></p>
+<h5 id="验证工作">验证工作</h5>
+<p>首先我们需要新增一个网站,进行网站的验证</p>
+<p>网站的验证现在有三种方式</p>
+<ol>
+<li>文件验证 : 上传百度生成的验证文件到网站的根目录下,进行验证</li>
+<li><code>html</code> 验证 : 在 <code>html</code> 的 <code>head</code>标签中加入生成的 <code>meta</code> ,进行验证</li>
+<li><code>cname</code> 验证: 将自己的域名解析一个二级域名出来, 以<code>cname</code>的方式解析到百度生成的地址上,进行验证</li>
+</ol>
+<p><em>验证工作百度说明很详细,不在做赘述</em></p>
+<h5 id="验证https">验证<code>https</code></h5>
+<p>如果你的网站开启了 <code>https</code> ,可以在 <code>HTTPS</code> 一栏进行提交验证</p>
+<h5 id="链接提交">链接提交</h5>
+<p>收录一般由百度的爬虫来完成,但是网络资源丰富,而且内容参差不齐,爬虫还要进行一些过滤等操作,会造成时效的一些损失,我们也可以通过自己主动的提交自己的网站链接给百度,加快我们的收录速度</p>
+<p>链接提交的方式:</p>
+<ol>
+<li>主动推送 ,: 是有我们将 网站的一些链接主动的通过请求发送给百度,然后百度返回响应给我们,一般这种方式是最快的,百度也提供了很多的方式,这次我们使用 <code>php</code>来实现主动推送,推送实现在下面进行结算</li>
+<li>自动推送 :  在我们的网站上加入 <code>js</code>脚本 实现每次访问都自动推送到百度,比较省心,使用过后发现效率并不高,而且也动不动就在维护工具,不稳定</li>
+<li><code>sitemap</code> : 以站点地图的方式,将自己的站点所有连接生成到一个请求中,格式为 <code>txt 或 xml</code> ,<code>hexo</code>可以使用<code>npm</code>的一些包(如 <code>sitemap</code>)来生成自己站点的地图到一个链接上面,我们只需要将链接填进去,等待验证即可.</li>
+<li>手动提交 : 就是我们一个链接一个链接的填写,浪费时间,效率太低,不推荐</li>
+</ol>
+<h5 id="主动推送的-php-实现">主动推送的 <code>php</code> 实现</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="cm">/*
+</span><span class="cm"> * created_at 2020-05-25
+</span><span class="cm"> * created_by caoayu
+</span><span class="cm"> * myBlog https://blog.caoayu.top
+</span><span class="cm"> */</span>
+<span class="c1">//baidu push api
+</span><span class="c1">//https://ziyuan.baidu.com/linksubmit/index 这里提供的 api 接口,普通收录,主动提交,php代码
+</span><span class="c1"></span><span class="nv">$api</span> <span class="o">=</span> <span class="s1">&#39;http://data.zz.baidu.com/urls?site=https://blog.caoayu.top&amp;token=xxxxx&#39;</span><span class="p">;</span>
+
+
+<span class="c1">//get site urls
+</span><span class="c1"></span><span class="k">function</span> <span class="nf">GetUrls</span><span class="p">(</span><span class="nv">$api</span><span class="p">)</span><span class="o">:</span><span class="nx">string</span><span class="p">{</span>
+    <span class="nv">$site</span> <span class="o">=</span> <span class="s2">&#34;https://blog.caoayu.top/sitemap.xml&#34;</span><span class="p">;</span>
+    <span class="c1">//获取 xml 信息
+</span><span class="c1"></span>    <span class="nv">$XmlUrls</span> <span class="o">=</span> <span class="nx">curl</span><span class="p">(</span><span class="nv">$site</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
+    <span class="c1">//将 xml 转为数组
+</span><span class="c1"></span>    <span class="nv">$resource</span> <span class="o">=</span> <span class="nx">xml_parser_create</span><span class="p">();</span>
+    <span class="nx">xml_parse_into_struct</span><span class="p">(</span><span class="nv">$resource</span><span class="p">,</span><span class="nv">$XmlUrls</span><span class="p">,</span><span class="nv">$value</span><span class="p">,</span><span class="nv">$index</span><span class="p">);</span>
+    <span class="nx">xml_parser_free</span><span class="p">(</span><span class="nv">$resource</span><span class="p">);</span>
+    <span class="cm">/*
+</span><span class="cm">     * 打印输出后发现,所有连接的 tag 都为 LOC
+</span><span class="cm">     *      [tag] =&gt; LOC
+</span><span class="cm">            [type] =&gt; complete
+</span><span class="cm">            [level] =&gt; 3
+</span><span class="cm">            [value] =&gt; https://blog.caoayu.top/scp01/
+</span><span class="cm">       所以筛选出所有 tag = LOC 的 value 值 即为我们需要上传的 链接地址
+</span><span class="cm">     */</span>
+    <span class="c1">//$urlArr 即为接受所有 url 的数组
+</span><span class="c1"></span>    <span class="nv">$urlArr</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$value</span> <span class="k">as</span> <span class="nv">$content</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$content</span><span class="p">[</span><span class="s2">&#34;tag&#34;</span><span class="p">]</span> <span class="o">===</span> <span class="s2">&#34;LOC&#34;</span><span class="p">){</span>
+            <span class="nv">$urlArr</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$content</span><span class="p">[</span><span class="s2">&#34;value&#34;</span><span class="p">];</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+    <span class="c1">//开始上传
+</span><span class="c1"></span>    <span class="nv">$response</span> <span class="o">=</span> <span class="nx">curl</span><span class="p">(</span><span class="nv">$api</span><span class="p">,</span><span class="nv">$urlArr</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="c1">//将响应 json 转为 对象
+</span><span class="c1"></span>    <span class="nv">$result</span> <span class="o">=</span> <span class="nx">json_decode</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">success</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="k">return</span> <span class="s2">&#34;主动提交成功!&#34;</span><span class="p">;</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="k">return</span>  <span class="s2">&#34;主动提交失败!&#34;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="nf">curl</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span><span class="nv">$params</span><span class="p">,</span><span class="nv">$is_post</span> <span class="o">=</span> <span class="mi">0</span><span class="p">){</span>
+    <span class="nv">$ch</span> <span class="o">=</span> <span class="nx">curl_init</span><span class="p">();</span>
+
+    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_CONNECTTIMEOUT</span><span class="p">,</span><span class="mi">60</span><span class="p">);</span>
+    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_TIMEOUT</span><span class="p">,</span><span class="mi">60</span><span class="p">);</span>
+    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span><span class="k">true</span><span class="p">);</span>
+    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_FOLLOWLOCATION</span><span class="p">,</span><span class="k">true</span><span class="p">);</span>
+    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span><span class="k">false</span><span class="p">);</span><span class="c1">//禁止验证对等证书,默认为true
+</span><span class="c1"></span>    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span><span class="k">false</span><span class="p">);</span><span class="c1">//检查服务器SSL证书中是否存在一个公用名,值0|2,
+</span><span class="c1"></span>    <span class="k">if</span><span class="p">(</span><span class="nv">$is_post</span><span class="p">){</span>
+        <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_POST</span><span class="p">,</span><span class="k">true</span><span class="p">);</span>
+        <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>
+        <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_URL</span><span class="p">,</span><span class="nv">$url</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nv">$params</span><span class="p">){</span>
+            <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_URL</span><span class="p">,</span><span class="nv">$url</span><span class="o">.</span><span class="s1">&#39;?&#39;</span><span class="o">.</span><span class="nv">$params</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_URL</span><span class="p">,</span><span class="nv">$url</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nx">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">echo</span> <span class="nx">GetUrls</span><span class="p">(</span><span class="nv">$api</span><span class="p">);</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>注意每天可以上传的<code>url</code>限制数量是3000条</strong></p>
+<p><strong>我们可以将<code>php</code> 脚本上传到宝塔,设置一个定时任务,每天晚上自动的主动推送一次</strong></p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-05-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/hexo/">hexo</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/hugo-site-variables/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">hugo-站点变量</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/php-list/">
+            <span class="next-text nav-default">php List()函数及json_encode时无法转为数组的问题</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on 个人内容记录</title>
+    <link>https://blog.caoayu.top/about/</link>
+    <description>Recent content in Abouts on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 30 Jul 2020 20:50:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于我</title>
+      <link>https://blog.caoayu.top/about/call-me/</link>
+      <pubDate>Thu, 30 Jul 2020 20:50:19 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/about/call-me/</guid>
+      <description>GitHub 我的微信 我的 QQ pc 端 我的 QQ 移动端</description>
+    </item>
+    
+    <item>
+      <title>在线提供的服务</title>
+      <link>https://blog.caoayu.top/about/services/</link>
+      <pubDate>Thu, 30 Jul 2020 20:49:19 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/about/services/</guid>
+      <description>在线邮件系统 在线屏幕共享 gotour 官方 golang 教程</description>
+    </item>
+    
+    <item>
+      <title>其他链接</title>
+      <link>https://blog.caoayu.top/about/links/</link>
+      <pubDate>Thu, 30 Jul 2020 20:48:29 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/about/links/</guid>
+      <description>博客|论坛 名称 描述 极客兔兔 致力于分享有趣的技术实践 阮一峰的网络日志 阮一峰的网络日志 小游 二次元技术宅 酷壳 享受编程和技术所带来的快乐 – Coding Your Ambition 煎鱼</description>
+    </item>
+    
+  </channel>
+</rss>

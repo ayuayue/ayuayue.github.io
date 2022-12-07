@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/git/</link>
+    <description>Recent content in git on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 10 May 2020 15:41:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>杜绝重复-ssh-key</title>
+      <link>https://blog.caoayu.top/post/git-sshkey/</link>
+      <pubDate>Sun, 10 May 2020 15:41:43 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/git-sshkey/</guid>
+      <description>&lt;h3 id=&#34;复用ssh生成的公钥&#34;&gt;复用ssh生成的公钥&lt;/h3&gt;
+&lt;p&gt;每次换换进或者跟换系统的时候,如果要使用&lt;code&gt;git&lt;/code&gt;就要下载然后每次都要生成公钥并添加进&lt;code&gt;coding&lt;/code&gt;或者&lt;code&gt;github&lt;/code&gt;这样的代码托管平台.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resource/Ob on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/resource/ob/</link>
+    <description>Recent content in Resource/Ob on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/resource/ob/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Obsidian使用及标准</title>
+      <link>https://blog.caoayu.top/post/obsidian%E4%BD%BF%E7%94%A8%E5%8F%8A%E6%A0%87%E5%87%86/</link>
+      <pubDate>Fri, 23 Sep 2022 20:55:45 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/obsidian%E4%BD%BF%E7%94%A8%E5%8F%8A%E6%A0%87%E5%87%86/</guid>
+      <description>Obsidian使用及标准 标准 目录前缀 0x 只是为了方便排序。 目录外层结构遵循 IARP，但具体使用按实际个人情况来定。 尽可能少的使用插件，尽可能</description>
+    </item>
+    
+  </channel>
+</rss>

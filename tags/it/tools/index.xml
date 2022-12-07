@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/Tools on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/tools/</link>
+    <description>Recent content in IT/Tools on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>wsl2</title>
+      <link>https://blog.caoayu.top/post/wsl2/</link>
+      <pubDate>Tue, 18 Oct 2022 19:43:16 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/wsl2/</guid>
+      <description>wsl2 抛弃，性能太差，虚拟机代替 官方文档 https://learn.microsoft.com/zh-cn/windows/wsl/ 开启 先卸载关闭 1 2 3 4 5 6 7 8 # 查看 wslconfig /l # 卸载 wslconfig /u # 关闭 wsl --shutdown windows 组件关闭 关闭后重启 打开 可以在控制面板里开</description>
+    </item>
+    
+    <item>
+      <title>wsl2安装配置</title>
+      <link>https://blog.caoayu.top/post/wsl2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Tue, 18 Oct 2022 19:43:16 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/wsl2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>wsl2安装配置 抛弃，性能太差，虚拟机代替 官方文档 https://learn.microsoft.com/zh-cn/windows/wsl/ 开启 先卸载关闭 1 2 3 4 5 6 7 8 # 查看 wslconfig /l # 卸载 wslconfig /u # 关闭 wsl --shutdown windows 组件关闭 关闭后重启 打开 可以</description>
+    </item>
+    
+    <item>
+      <title>charles注册码</title>
+      <link>https://blog.caoayu.top/post/charles%E6%B3%A8%E5%86%8C%E7%A0%81/</link>
+      <pubDate>Mon, 03 Oct 2022 20:47:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/charles%E6%B3%A8%E5%86%8C%E7%A0%81/</guid>
+      <description>charles注册码 生成注册码地址:https://www.charles.ren/ Registered Name:https://zhile.io License Key: 48891cf209c6d32bf4</description>
+    </item>
+    
+    <item>
+      <title>git-bash配置</title>
+      <link>https://blog.caoayu.top/post/git-bash%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 03 Oct 2022 20:47:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/git-bash%E9%85%8D%E7%BD%AE/</guid>
+      <description>git-bash配置 配置好 git-bash 后可以代替绝大多数时候开发的需求.不需要额外折腾 powershell 等工具.大道至简👀 fish 将 fish 以 子进程的方式在 Git-bash 中运行,可以进行命令</description>
+    </item>
+    
+    <item>
+      <title>powershell</title>
+      <link>https://blog.caoayu.top/post/powershell/</link>
+      <pubDate>Mon, 03 Oct 2022 20:47:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/powershell/</guid>
+      <description>powershell 升级 1 2 3 Update-Module PowerShellGet Invoke-Expression &amp;#34;&amp;amp; { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI&amp;#34; oh-my-posh https://ohmyposh.dev/docs/installation/windows 1 scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json readline https://docs.microsoft.com/zh-cn/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2 1 2 Install-Module -Name PSReadLine -AllowClobber -Force show module 1 get-installedModule theme 1 Get-PoshThemes install module 1 2 3 4 5 6 7 8 9 10 11 12 13 Set-ExecutionPolicy Bypass Set-PSRepository -Name &amp;#39;PSGallery&amp;#39; -InstallationPolicy Trusted Install-Script -Name RefreshEnv -Force -Scope CurrentUser Install-Module oh-my-posh -Scope CurrentUser Install-Module</description>
+    </item>
+    
+    <item>
+      <title>Navicat无限试用</title>
+      <link>https://blog.caoayu.top/post/navicat%E6%97%A0%E9%99%90%E8%AF%95%E7%94%A8/</link>
+      <pubDate>Mon, 03 Oct 2022 20:44:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/navicat%E6%97%A0%E9%99%90%E8%AF%95%E7%94%A8/</guid>
+      <description>Navicat无限试用 windows手动 关闭Navicat Win + R，输入regedit回车 删除HKEY_CURRENT_USER\Softwa</description>
+    </item>
+    
+    <item>
+      <title>sqldeveloper</title>
+      <link>https://blog.caoayu.top/post/sqldeveloper/</link>
+      <pubDate>Mon, 03 Oct 2022 20:41:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/sqldeveloper/</guid>
+      <description>sqldeveloper 下载 https://www.softpedia.com/get/Internet/Servers/Database-Utils/Oracle-SQL-Developer.shtml#download 长连接插件下载 https://github.com/scristalli/sql-developer-keepalive/releases 帮助 &amp;gt; 从本地安装 &amp;gt; 选择压缩包 不自动启动，需要手动点击按钮 打开新标签 工具 〉首选项 〉数据库 〉 对象查看器 〉 自动冻结对象查看</description>
+    </item>
+    
+    <item>
+      <title>rime 配置 onedrive 同步</title>
+      <link>https://blog.caoayu.top/post/rime-%E9%85%8D%E7%BD%AE-onedrive-%E5%90%8C%E6%AD%A5/</link>
+      <pubDate>Mon, 03 Oct 2022 20:30:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/rime-%E9%85%8D%E7%BD%AE-onedrive-%E5%90%8C%E6%AD%A5/</guid>
+      <description>rime 配置 onedrive 同步 修改 installation.yaml 文件 installation_id 为设备 ID sync_dir 为 onedrive 路径 配置完成后点击同步即可上传到 onedrive ,只会同步合并不同设备的字典信息,配置信息手动复制到 rime 用户配置目录中</description>
+    </item>
+    
+    <item>
+      <title>rime配置 onedrive 同步</title>
+      <link>https://blog.caoayu.top/post/rime%E9%85%8D%E7%BD%AE-onedrive-%E5%90%8C%E6%AD%A5/</link>
+      <pubDate>Mon, 03 Oct 2022 20:30:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/rime%E9%85%8D%E7%BD%AE-onedrive-%E5%90%8C%E6%AD%A5/</guid>
+      <description>rime配置 onedrive 同步 修改 installation.yaml 文件 installation_id 为设备ID sync_dir 为 onedrive 路径 配置完成后点击同步即可上传到 onedrive ,只会同步合并不同设备的字典信息,配置信息手动复制到 rime 用户配</description>
+    </item>
+    
+    <item>
+      <title>小狼毫</title>
+      <link>https://blog.caoayu.top/post/%E5%B0%8F%E7%8B%BC%E6%AF%AB/</link>
+      <pubDate>Mon, 03 Oct 2022 20:14:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E5%B0%8F%E7%8B%BC%E6%AF%AB/</guid>
+      <description>小狼毫 ![[rime 配置 onedrive 同步]] 1 2 3 4 5 # weasel.custom.yaml patch: style/horizontal: true # 候选横排 style/inline_preedit: false # 内嵌编码（仅支持TSF） style/display_tray_icon: true # 显示托盘图标 1 2 3 4 5 6 7 8 # default.custom.yaml &amp;#34;menu/page_size&amp;#34;: 9 &amp;#34;switcher/hotkeys&amp;#34;: - &amp;#34;Control+grave&amp;#34; - &amp;#34;Control+shift+grave&amp;#34; - &amp;#34;F4&amp;#34; windows</description>
+    </item>
+    
+    <item>
+      <title>常用工具</title>
+      <link>https://blog.caoayu.top/post/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 03 Oct 2022 20:08:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/</guid>
+      <description>常用工具 终端软件 mycli perf top strace lsof ps pstree tcpdump ipcs ipcrm top tail kill valgrind psmisc net-tools 应用软件 apifox windterm another redis desktop manager powertoys snipaste rightmenumgr uninstalltool comnet lightproxy picgo utools neatreader</description>
+    </item>
+    
+    <item>
+      <title>scoop</title>
+      <link>https://blog.caoayu.top/post/scoop/</link>
+      <pubDate>Mon, 03 Oct 2022 20:05:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/scoop/</guid>
+      <description>scoop 安装到其他盘 1 2 3 4 5 6 7 8 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser $env:SCOOP=&amp;#39;D:\software\scoop&amp;#39; # 后手动加入到系统变量中 [Environment]::SetEnvironmentVariable(&amp;#39;SCOOP&amp;#39;, $env:SCOOP, &amp;#39;User&amp;#39;) iwr -useb get.scoop.sh | iex scoop config proxy 127.0.0.1:7890 bucket 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 Name Source Updated Manifests ---- ------</description>
+    </item>
+    
+    <item>
+      <title>7zip使用</title>
+      <link>https://blog.caoayu.top/post/7zip%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 03 Oct 2022 20:01:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/7zip%E4%BD%BF%E7%94%A8/</guid>
+      <description>7zip使用 压缩 1 2 7z.exe a test.7z ./test/ 7z.exe a tzip test.7z ./test/ 解压 1 2 7z.exe x test.7z 7x.exe x -otest/ test.7z</description>
+    </item>
+    
+    <item>
+      <title>vscode</title>
+      <link>https://blog.caoayu.top/post/vscode/</link>
+      <pubDate>Mon, 03 Oct 2022 20:00:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/vscode/</guid>
+      <description>vscode PHP Intelephense PHP Debug PHP DocBlocker PHP Namespace Resolver PHP Snippets from PHPStorm Project Manager Git Graph Git Blame Tabnine PHP PHP remote debug 远程debug php launch.json 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 { // 使用 IntelliSense 了解相关属性。 // 悬停以查看</description>
+    </item>
+    
+  </channel>
+</rss>

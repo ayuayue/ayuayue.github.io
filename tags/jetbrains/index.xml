@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jetbrains on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/jetbrains/</link>
+    <description>Recent content in Jetbrains on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 03 Mar 2021 14:23:12 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/jetbrains/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jetbrains 开源许可证</title>
+      <link>https://blog.caoayu.top/post/jetbrains-license/</link>
+      <pubDate>Wed, 03 Mar 2021 14:23:12 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/jetbrains-license/</guid>
+      <description>Jetbrains开源许可证 是对开源项目的核心贡献者提供的福利，可以免费给开发者提供一年的 jetbrains 产品的使用授权。 准备 github 开源项目。 github 邮箱设置为公开</description>
+    </item>
+    
+  </channel>
+</rss>

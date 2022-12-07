@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/Linux on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/linux/</link>
+    <description>Recent content in IT/Linux on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>编译安装php</title>
+      <link>https://blog.caoayu.top/post/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85php/</link>
+      <pubDate>Mon, 03 Oct 2022 20:57:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85php/</guid>
+      <description>编译安装php 视频连接: https://www.bilibili.com/video/BV1ry4y1G7E2?zw 在 linux 上，搭建新环境需要使用编译安装的方式，也有很多集成环境，或者编译好的源码包，但是我们并不了解整个组织的过程，所</description>
+    </item>
+    
+    <item>
+      <title>iptables</title>
+      <link>https://blog.caoayu.top/post/iptables/</link>
+      <pubDate>Mon, 03 Oct 2022 20:53:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/iptables/</guid>
+      <description>iptables ip + tables tables : mangle filter nat 清空规则链 先配置默认的规则链,否则清空后无法远程连接服务器 1 2 iptables -P INPUT ACCEPT # 默认运行 iptables -F # 清空 链 1 2 # root iptables -L -L 参数查询所有的链</description>
+    </item>
+    
+    <item>
+      <title>apache-php</title>
+      <link>https://blog.caoayu.top/post/apache-php/</link>
+      <pubDate>Mon, 03 Oct 2022 20:46:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/apache-php/</guid>
+      <description>apache-php 基础软件及apache 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 yum install wget -y # mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak # wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo yum makecache yum install epel-release \ yum install expat</description>
+    </item>
+    
+    <item>
+      <title>docker 开发环境</title>
+      <link>https://blog.caoayu.top/post/docker-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 03 Oct 2022 20:44:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/docker-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>docker 开发环境 命令 相关笔记 [[php56-fpm]] [[apache-php]] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 删除已退出的容器 docker rm `docker ps -q -f status=exited` # 空间占用 docker system df # 批量删除镜象 docker rmi $(docker images | grep image-b | grep -v &amp;#34;v1d0-7&amp;#34;</description>
+    </item>
+    
+    <item>
+      <title>编译安装 apache &#43; php</title>
+      <link>https://blog.caoayu.top/post/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-apache-&#43;-php/</link>
+      <pubDate>Mon, 03 Oct 2022 20:32:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-apache-&#43;-php/</guid>
+      <description>编译安装 apache + php 使用 apache + php 来作为服务器解析 php 脚本的话,需要 libph5 的一个库文件, 这个库文件需要编译安装 php 的时候 --with-apxs2=/usr/local/apache2/bin/apxs 将会在 apache 的 modules 目录中生成 libphp 的库文件并在</description>
+    </item>
+    
+  </channel>
+</rss>

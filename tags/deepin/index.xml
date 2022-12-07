@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deepin on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/deepin/</link>
+    <description>Recent content in deepin on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 09 Feb 2021 10:58:52 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/deepin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deepin 极简主义 -- dwm</title>
+      <link>https://blog.caoayu.top/post/deepin-dwm/</link>
+      <pubDate>Tue, 09 Feb 2021 10:58:52 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-dwm/</guid>
+      <description>dwm dwm 是X的动态窗口管理器。它管理平铺、单镜头和浮动布局的窗口。所有的布局都可以动态应用，优化了使用中的应用程序和执行的任务的环境。官网：ht</description>
+    </item>
+    
+    <item>
+      <title>deepin use Refind</title>
+      <link>https://blog.caoayu.top/post/unistall-refind/</link>
+      <pubDate>Mon, 08 Feb 2021 11:14:51 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/unistall-refind/</guid>
+      <description>安装 refind 1 sudo apt install refind 使用 refind 1 sudo refind-install 卸载 refind 1 2 3 4 5 6 7 8 9 10 sudo apt remove refind --purge cd /boot/efi/EFI sudo rm -r refind cd /boot/efi/EFI sudo apt autoremove refind cd /boot sudo rm -f refind_linux.conf cd /etc sudo rm -rf refind.d</description>
+    </item>
+    
+    <item>
+      <title>deepin Picgo 配置并配合 Typora 使用</title>
+      <link>https://blog.caoayu.top/post/linux-picgo/</link>
+      <pubDate>Sun, 07 Feb 2021 14:51:25 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/linux-picgo/</guid>
+      <description>deepin 下使用 picgo ，在 deepin 下，有 picgo 的 AppImage 程序，用了一段时间不太理想，而且本来就是个小工具，只需要配置一次就可以了，就放弃了 AppImage 这种可视化的操作。改用 node 做的</description>
+    </item>
+    
+    <item>
+      <title>Deepin LNMP环境搭建</title>
+      <link>https://blog.caoayu.top/post/deepin-lnmp/</link>
+      <pubDate>Sat, 05 Dec 2020 11:26:37 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-lnmp/</guid>
+      <description>LNMP lnmp 是一个常见的web开发的环境，尤其对于 phper 来说，基本是必须要使用的一套环境。但是在 Linux 下的安装和配置并不是那么容易，所以近些年涌现了不少的一</description>
+    </item>
+    
+    <item>
+      <title>Deepin 安装及使用Rime输入法--中州韵输入法</title>
+      <link>https://blog.caoayu.top/post/deepin-rime/</link>
+      <pubDate>Fri, 04 Dec 2020 19:42:43 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-rime/</guid>
+      <description>中州韵 聪明的输入法 &amp;ndash; 中州韵 三个平台有三个不同的名字，但使用跟配置都相同。 Windows &amp;ndash; 小狼毫 Mac &amp;ndash; 鼠鬚管 Linux &amp;ndash; 中州韵 鬼知道为什么起这么多名字 「手动滑稽」😅</description>
+    </item>
+    
+    <item>
+      <title>Deepin Qv2ray</title>
+      <link>https://blog.caoayu.top/post/deepin-qv2ray/</link>
+      <pubDate>Sun, 29 Nov 2020 18:46:45 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-qv2ray/</guid>
+      <description>下载 Qv2ray 从 release 发布页下载适合自己电脑架构的可执行文件 从 deepin 的星火应用商店下载 星火应用商店 ​ 配置 v2ray 核心 Qv2ray 并没有包含 v2ray 的核心软件包，所以需要自行下载，</description>
+    </item>
+    
+    <item>
+      <title>Deepin20安装docker</title>
+      <link>https://blog.caoayu.top/post/deepin-install-docker/</link>
+      <pubDate>Tue, 24 Nov 2020 17:34:56 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-install-docker/</guid>
+      <description>深度操作系统 Deepin deepin 属于 debain 系，跟 Ubuntu 相似，由国人开发。现在作为我的主力开发环境，使用下来还不错，虽不如 windows， mac 的整体流畅度，但是已经满足</description>
+    </item>
+    
+    <item>
+      <title>Linux 安装PicGo问题</title>
+      <link>https://blog.caoayu.top/post/deepin-install-picgo/</link>
+      <pubDate>Fri, 19 Jun 2020 22:14:22 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-install-picgo/</guid>
+      <description>使用deepin安装PicGo时，由于时制作的AppImage包,我们可以直接在终端加上执行权限后运行，但是运行的时候报错 1 2 3 4 [1827:0619/220927.597934:FATAL: setuid_sandbox_host.cc(157)] The SUID sandbox</description>
+    </item>
+    
+    <item>
+      <title>deepin下安装向日葵依赖问题</title>
+      <link>https://blog.caoayu.top/post/sunloginclent/</link>
+      <pubDate>Fri, 19 Jun 2020 19:28:10 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/sunloginclent/</guid>
+      <description>在deepin系统上安装linux的向日葵时，会提示依赖缺失，在官方网站上下载ubuntu|deepin的 向日葵 deb包，双击会显示依赖缺失</description>
+    </item>
+    
+    <item>
+      <title>deepin下状态栏无法显示问题</title>
+      <link>https://blog.caoayu.top/post/dde-dock/</link>
+      <pubDate>Thu, 18 Jun 2020 21:44:58 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/dde-dock/</guid>
+      <description>在deepin的使用中，如果使用了一些插件改变了状态栏，可能会使状态栏因配置更改而无法正常显示 自己设置了dde-dock栏为一直隐藏 解决方法</description>
+    </item>
+    
+    <item>
+      <title>deepin 任务栏消失问题</title>
+      <link>https://blog.caoayu.top/post/deepin-dock/</link>
+      <pubDate>Sat, 25 Apr 2020 19:34:49 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-dock/</guid>
+      <description>&lt;h3 id=&#34;deepin-dde-dock-任务栏消失问题&#34;&gt;deepin dde-dock 任务栏消失问题&lt;/h3&gt;
+&lt;p&gt;在使用了任务栏的一些插件后,如果卸载的话,可能会把dde-dock的一些依赖也卸载掉,所以会导致dock栏出现问题,在查看了很多帖子后无果,也重新安装了几次还是不行,解决方案:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;删除 ~/.config/dconf 下的缓存文件, 找到 /usr/lib/dde-dock/plugins/ 删除所有的插件 重启
+重启后只显示壁纸,使用快捷键 ctrl alt T 呼出终端
+安装dde-dock
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>deepin使用</title>
+      <link>https://blog.caoayu.top/post/deepin-use/</link>
+      <pubDate>Sat, 25 Apr 2020 18:49:45 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-use/</guid>
+      <description>&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;p&gt;下载官方镜像,使用官方镜像软件或者使用rufus,以dd的方式刻录,分区,主要分/,以及efi,其他分区可自定义,如 &lt;code&gt;home&lt;/code&gt; ,&lt;code&gt;opt&lt;/code&gt;,和交换分区,设置时区,键盘,用户,密码,等待安装&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

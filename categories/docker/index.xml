@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on 个人内容记录</title>
+    <link>https://blog.caoayu.top/categories/docker/</link>
+    <description>Recent content in docker on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 24 Nov 2020 23:44:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deepin 安装Postgresql</title>
+      <link>https://blog.caoayu.top/post/docker-install-postgres/</link>
+      <pubDate>Tue, 24 Nov 2020 23:44:35 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/docker-install-postgres/</guid>
+      <description>Postgres PostgreSQL: The World&#39;s Most Advanced Open Source Relational Database 使用 Deepin 本机安装 deepin20 官方仓库中默认的是 postgres11 版本 安装 postgres 1 2 3 4 5 # 首先卸载旧版本或配置错误的版本 sudo apt remove postgresql --purge # purge 连同配置文件一起删</description>
+    </item>
+    
+    <item>
+      <title>Deepin20安装docker</title>
+      <link>https://blog.caoayu.top/post/deepin-install-docker/</link>
+      <pubDate>Tue, 24 Nov 2020 17:34:56 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-install-docker/</guid>
+      <description>深度操作系统 Deepin deepin 属于 debain 系，跟 Ubuntu 相似，由国人开发。现在作为我的主力开发环境，使用下来还不错，虽不如 windows， mac 的整体流畅度，但是已经满足</description>
+    </item>
+    
+    <item>
+      <title>使用docker-compose 搭建 lnmp</title>
+      <link>https://blog.caoayu.top/post/docker-compose-lnmp/</link>
+      <pubDate>Mon, 13 Jul 2020 21:13:21 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/docker-compose-lnmp/</guid>
+      <description>Docker compose 简介 Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可</description>
+    </item>
+    
+  </channel>
+</rss>

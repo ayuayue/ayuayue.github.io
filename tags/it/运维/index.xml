@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/运维 on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/%E8%BF%90%E7%BB%B4/</link>
+    <description>Recent content in IT/运维 on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/%E8%BF%90%E7%BB%B4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iptables</title>
+      <link>https://blog.caoayu.top/post/iptables/</link>
+      <pubDate>Mon, 03 Oct 2022 20:53:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/iptables/</guid>
+      <description>iptables ip + tables tables : mangle filter nat 清空规则链 先配置默认的规则链,否则清空后无法远程连接服务器 1 2 iptables -P INPUT ACCEPT # 默认运行 iptables -F # 清空 链 1 2 # root iptables -L -L 参数查询所有的链</description>
+    </item>
+    
+  </channel>
+</rss>

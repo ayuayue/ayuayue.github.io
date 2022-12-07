@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Vscode进阶使用 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="Vscode基础配置及插件 基础介绍 这篇文章是对vscode的一些基础介绍跟推荐的插件 使用注意事项 有些快捷键不起作用,可能是跟某些软件冲突,可" /><meta name="keywords" content="vscode" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/vscode-keys/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Vscode进阶使用" />
+<meta property="og:description" content="Vscode基础配置及插件 基础介绍 这篇文章是对vscode的一些基础介绍跟推荐的插件 使用注意事项 有些快捷键不起作用,可能是跟某些软件冲突,可" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/vscode-keys/" />
+<meta property="article:published_time" content="2020-08-09T18:04:23+08:00" />
+<meta property="article:modified_time" content="2020-08-09T18:04:23+08:00" />
+<meta itemprop="name" content="Vscode进阶使用">
+<meta itemprop="description" content="Vscode基础配置及插件 基础介绍 这篇文章是对vscode的一些基础介绍跟推荐的插件 使用注意事项 有些快捷键不起作用,可能是跟某些软件冲突,可">
+<meta itemprop="datePublished" content="2020-08-09T18:04:23&#43;08:00" />
+<meta itemprop="dateModified" content="2020-08-09T18:04:23&#43;08:00" />
+<meta itemprop="wordCount" content="873">
+
+
+
+<meta itemprop="keywords" content="vscode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vscode进阶使用"/>
+<meta name="twitter:description" content="Vscode基础配置及插件 基础介绍 这篇文章是对vscode的一些基础介绍跟推荐的插件 使用注意事项 有些快捷键不起作用,可能是跟某些软件冲突,可"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Vscode进阶使用</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-08-09 </span>
+        <div class="post-category">
+            <a href="/categories/vscode/"> vscode </a>
+            </div>
+          <span class="more-meta"> 约 873 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#vscode基础配置及插件"><code>Vscode基础配置及插件</code></a></li>
+            <li><a href="#进阶使用">进阶使用</a>
+              <ul>
+                <li><a href="#基础设置">基础设置</a></li>
+                <li><a href="#常用及进阶快捷键">常用及进阶快捷键</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-08-09T18:04:23" title="August 9, 2020">August 9, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h3 id="vscode基础配置及插件"><code>Vscode基础配置及插件</code></h3>
+<p><strong><a href="https://learnku.com/articles/39575">基础介绍</a></strong>  这篇文章是对<code>vscode</code>的一些基础介绍跟推荐的插件</p>
+<p><strong>使用注意事项</strong></p>
+<ol>
+<li>有些快捷键不起作用,可能是跟某些软件冲突,可以把其他软件的设置不为全局,或者直接关闭</li>
+<li><code>ctrl + , </code> 无法使用快速修复,一般是输入法的问题,使用<code>win10</code>自带的是没问题的,其他输入法可能会有问题,如有问题可以使用 <code>CTRL + shift </code> 切换为系统默认英文键盘,就可以使用快速修复了,其他快捷键如果不能用也可以试试</li>
+<li>有时候安装或使用软件会报一些莫名奇妙的错误,可能是由于默认输入法与软件不兼容,可以切换到默认英文键盘或者其他键盘</li>
+</ol>
+<hr>
+<h3 id="进阶使用">进阶使用</h3>
+<p>对于基础的使用熟悉了之后我们可以接触一些高级的用法,比如快捷键,配置项,使用这些功能可以极大的提高我们的效率,包括搜索上的或者是使用体验上的.</p>
+<h4 id="基础设置">基础设置</h4>
+<ol>
+<li>
+<p>显示隐藏右侧代码地图</p>
+<p><code> ctrl + shift + p</code> 进入命令面板, 输入 <code>minimap</code> 回车即可打开/关闭右侧代码地图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200809183847.png" alt="image-20200809183846850"></p>
+</li>
+<li>
+<p>打开或关闭文件预览功能,<code>vscode</code> 默认的是双击文件才会固定再窗口上, 单机处于预览模式,如果想要关闭或者打开, <code>ctrl + , </code> 进入用户设置,输入<code>preview</code>, <code>workbench.editor</code>项打勾即为开启</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200809183820.png" alt="image-20200809183819244"></p>
+</li>
+</ol>
+<h4 id="常用及进阶快捷键">常用及进阶快捷键</h4>
+<ol>
+<li>
+<p><code>ctrl + , </code> : 进入用户设置</p>
+</li>
+<li>
+<p><code>ctrl + shift + P</code> : 全局的快捷键,呼出窗口可以全局查找配置项或文件</p>
+</li>
+<li>
+<p><code>ctrl + j</code> : 打开或关闭终端栏</p>
+</li>
+<li>
+<p><code>ctrl + B</code> : 打开或关闭左侧文件栏</p>
+</li>
+<li>
+<p><code>ctrl + F </code>: 在当前文件中查找</p>
+</li>
+<li>
+<p><code>ctrl + G</code> : 快速跳转到当前文件的<code>n</code>行</p>
+</li>
+<li>
+<p><code>ctrl + w </code> : 关闭窗口,没有窗口则关闭编辑器</p>
+</li>
+<li>
+<p><code>ctrl + R </code> : 查找并替换</p>
+</li>
+<li>
+<p><code>ctrl + T</code> : 查找变量或者方法名</p>
+</li>
+<li>
+<p><code>ctrl + N</code> : 新建文件</p>
+<hr>
+</li>
+<li>
+<p><code> ctrl + enter</code>:  当前光标下插入一行,不用再每次跳到行尾再回车了</p>
+</li>
+<li>
+<p><code> ctrl + shift + enter</code> : 当前光标上一行插入</p>
+</li>
+<li>
+<p><code>ctrl + tab</code>: 再打开的文件窗口中跳转</p>
+</li>
+<li>
+<p><code>alt + left</code> : 跳到上次修改的地方,有时候格式化文件后会定位到文件开头,使用设个快捷键可以快速跳回来</p>
+</li>
+<li>
+<p><code>alt + right</code> : 跳到下个修改的地方</p>
+</li>
+<li>
+<p><code>alt + up</code> : 当前行和上一行交换位置</p>
+</li>
+<li>
+<p><code>alt + down</code> : 当前行和下一行交换位置</p>
+</li>
+<li>
+<p><code>alt + click</code> : 可以将光标选中多个位置,同时进行文本的修改</p>
+</li>
+<li>
+<p><code>ctrl +alt + up/down</code> : 向上/下复制一行</p>
+</li>
+<li>
+<p><code>ctrl + end/home</code> : 移动到文件结尾/开头</p>
+</li>
+<li>
+<p><code>ctrl + z</code> : 撤销更改</p>
+</li>
+<li>
+<p><code>ctrl + shift +z </code> : 撤销撤销的更改</p>
+</li>
+</ol>
+<hr>
+<ol start="23">
+<li><code>ctrl + k + ctrl + 0 </code> : 闭合所有标签</li>
+<li><code>ctrl + k + ctrl + j </code> : 展开所有标签</li>
+</ol>
+<p>更多快捷键可以使用 <code>ctrl + k +ctrl + s</code> 查看</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-08-09</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/vscode/">vscode</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/disk-dilation/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Windows下给磁盘扩容</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/acme/">
+            <span class="next-text nav-default">使用 Acme 脚本申请 let&#39;s encrypt 证书配置 HTTPs</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

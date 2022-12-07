@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>vscode - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="vscode PHP Intelephense PHP Debug PHP DocBlocker PHP Namespace Resolver PHP Snippets from PHPStorm Project Manager Git Graph Git Blame Tabnine PHP PHP remote debug 远程debug php launch.json 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 { // 使用 IntelliSense 了解相关属性。 // 悬停以查看" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/vscode/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="vscode" />
+<meta property="og:description" content="vscode PHP Intelephense PHP Debug PHP DocBlocker PHP Namespace Resolver PHP Snippets from PHPStorm Project Manager Git Graph Git Blame Tabnine PHP PHP remote debug 远程debug php launch.json 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 { // 使用 IntelliSense 了解相关属性。 // 悬停以查看" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/vscode/" />
+<meta property="article:published_time" content="2022-10-03T20:00:47+00:00" />
+<meta property="article:modified_time" content="2022-10-25T08:08:55+00:00" />
+<meta itemprop="name" content="vscode">
+<meta itemprop="description" content="vscode PHP Intelephense PHP Debug PHP DocBlocker PHP Namespace Resolver PHP Snippets from PHPStorm Project Manager Git Graph Git Blame Tabnine PHP PHP remote debug 远程debug php launch.json 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 { // 使用 IntelliSense 了解相关属性。 // 悬停以查看">
+<meta itemprop="datePublished" content="2022-10-03T20:00:47&#43;00:00" />
+<meta itemprop="dateModified" content="2022-10-25T08:08:55&#43;00:00" />
+<meta itemprop="wordCount" content="1041">
+
+
+
+<meta itemprop="keywords" content="IT/Tools,IT/Vscode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="vscode"/>
+<meta name="twitter:description" content="vscode PHP Intelephense PHP Debug PHP DocBlocker PHP Namespace Resolver PHP Snippets from PHPStorm Project Manager Git Graph Git Blame Tabnine PHP PHP remote debug 远程debug php launch.json 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 { // 使用 IntelliSense 了解相关属性。 // 悬停以查看"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">vscode</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-10-03 </span>
+        
+          <span class="more-meta"> 约 1041 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#vscode">vscode</a>
+      <ul>
+        <li><a href="#php">PHP</a>
+          <ul>
+            <li><a href="#php-remote-debug">PHP remote debug</a></li>
+            <li><a href="#phpdocblacker">PHPDocBlacker</a></li>
+          </ul>
+        </li>
+        <li><a href="#sftp-配置完重启下">SFTP 配置完重启下</a></li>
+        <li><a href="#project-manager">project Manager</a></li>
+        <li><a href="#ngork">ngork</a></li>
+        <li><a href="#常用快捷键">常用快捷键</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2022-10-25T08:08:55" title="October 25, 2022">October 25, 2022</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="vscode">vscode</h1>
+<p>PHP Intelephense</p>
+<p>PHP Debug</p>
+<p>PHP DocBlocker</p>
+<p>PHP Namespace Resolver</p>
+<p>PHP Snippets from PHPStorm</p>
+<p>Project Manager</p>
+<p>Git Graph</p>
+<p>Git Blame</p>
+<p>Tabnine</p>
+<h2 id="php">PHP</h2>
+<h3 id="php-remote-debug">PHP remote debug</h3>
+<p>远程debug php launch.json</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    &#34;version&#34;: &#34;0.2.0&#34;,
+    &#34;configurations&#34;: [
+        {
+            &#34;name&#34;: &#34;Listen for Xdebug&#34;,
+            &#34;type&#34;: &#34;php&#34;,
+            &#34;request&#34;: &#34;launch&#34;,
+            &#34;port&#34;: 9004,
+            // 远程目录-&gt;本地目录 目录映射
+            &#34;pathMappings&#34;: {
+                &#34;/www/v3&#34;: &#34;${workspaceRoot}&#34;,
+            }
+        }
+    ]
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>双击选中 $</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="s2">&#34;editor.wordSeparators&#34;</span><span class="p">:</span> <span class="s2">&#34;`~!@#%^&amp;*()-=+[{]}\\|;:&#39;\&#34;</span><span class="p">,.</span><span class="o">&lt;&gt;/?</span><span class="s2">&#34;,
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="phpdocblacker">PHPDocBlacker</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL">  <span class="s2">&#34;php-docblocker.extra&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&#34;@DateTime $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE&#34;</span>
+  <span class="p">],</span>
+  <span class="s2">&#34;php-docblocker.functionTemplate&#34;</span><span class="p">:</span> <span class="err">{</span>
+    <span class="s2">&#34;message&#34;</span><span class="p">:</span> <span class="err">{</span>
+      <span class="s2">&#34;gapAfter&#34;</span><span class="p">:</span> <span class="k">true</span>
+    <span class="err">}</span><span class="p">,</span>
+    <span class="s2">&#34;extra&#34;</span><span class="p">:</span> <span class="err">{}</span><span class="p">,</span>
+    <span class="s2">&#34;param&#34;</span><span class="p">:</span> <span class="err">{</span>
+      <span class="s2">&#34;gapBefore&#34;</span><span class="p">:</span> <span class="k">true</span>
+    <span class="err">}</span><span class="p">,</span>
+    <span class="s2">&#34;return&#34;</span><span class="p">:</span> <span class="err">{}</span>
+  <span class="err">}</span><span class="p">,</span>
+  <span class="s2">&#34;php-docblocker.gap&#34;</span><span class="p">:</span> <span class="k">false</span><span class="p">,</span>
+  <span class="o">//</span> <span class="err">为类添加注释时添加命名空间</span>
+  <span class="s2">&#34;php-docblocker.qualifyClassNames&#34;</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+  <span class="s2">&#34;php-docblocker.returnGap&#34;</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+  <span class="s2">&#34;php-docblocker.useShortNames&#34;</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="sftp-配置完重启下">SFTP 配置完重启下</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="err">{</span>
+    <span class="s2">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;test&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;username&#34;</span><span class="p">:</span> <span class="s2">&#34;root&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;protocol&#34;</span><span class="p">:</span> <span class="s2">&#34;sftp&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;context&#34;</span><span class="p">:</span> <span class="s2">&#34;d:/test&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;ignore&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&#34;.vscode&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;.git&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;.DS_Store&#34;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s2">&#34;profiles&#34;</span><span class="p">:</span> <span class="err">{</span>
+        <span class="s2">&#34;1&#34;</span><span class="p">:</span> <span class="err">{</span>
+            <span class="s2">&#34;host&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;port&#34;</span><span class="p">:</span> <span class="p">,</span>
+            <span class="s2">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;remotePath&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;uploadOnSave&#34;</span><span class="p">:</span> <span class="k">false</span>
+        <span class="err">}</span><span class="p">,</span>
+        <span class="s2">&#34;2&#34;</span><span class="p">:</span> <span class="err">{</span>
+            <span class="s2">&#34;host&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;port&#34;</span><span class="p">:</span> <span class="p">,</span>
+            <span class="s2">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;remotePath&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;uploadOnSave&#34;</span><span class="p">:</span> <span class="k">false</span>
+        <span class="err">}</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+
+
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="project-manager">project Manager</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="p">[</span>
+  <span class="err">{</span>
+    <span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;my-docker&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;rootPath&#34;</span><span class="p">:</span> <span class="s2">&#34;/www/my-docker&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;paths&#34;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">&#34;tags&#34;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">&#34;enabled&#34;</span><span class="p">:</span> <span class="k">true</span>
+  <span class="err">}</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://www.wolai.com/k9eKrzvacRctR9w94iCouV">我的配置文件</a></p>
+<p><a href="https://www.wolai.com/wWVU3SJozoE9DQuBDDsTDz">idea keymap</a></p>
+<h2 id="ngork">ngork</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">authtoken: 2CgpZlLMCQyAhDnb0mCJxKliCxQ_73xkD1CHbZhsx13m3GyVt
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="常用快捷键">常用快捷键</h2>
+<p><strong>1、注释</strong>：</p>
+<p>　　a) 单行注释：[ctrl+k,ctrl+c] 或 ctrl+/</p>
+<p>　　b) 取消单行注释：[ctrl+k,ctrl+u] (按下ctrl不放，再按k + u)</p>
+<p>　　c) 多行注释：[alt+shift+A]</p>
+<p>　　d) 多行注释：/**</p>
+<p><strong>2、移动行</strong>：alt+up/down</p>
+<p><strong>3、显示/隐藏左侧目录栏</strong> ctrl + b</p>
+<p><strong>4、复制当前行</strong>：shift + alt +up/down</p>
+<p><strong>5、删除当前行</strong>：shift + ctrl + k</p>
+<p><strong>6、控制台终端显示与隐藏</strong>：ctrl + ~</p>
+<p><strong>7、查找文件/安装vs code</strong> <strong>插件地址</strong>：ctrl + p</p>
+<p><strong>8、代码格式化</strong>：shift + alt +f</p>
+<p><strong>9、新建一个窗口</strong> : ctrl + shift + n</p>
+<p><strong>10、行增加缩进:</strong> ctrl + [</p>
+<p><strong>11、行减少缩进:</strong> ctrl + ]</p>
+<p><strong>12、裁剪尾随空格(去掉一行的末尾那些没用的空格)</strong> : ctrl + shift + x</p>
+<p><strong>13、字体放大/缩小:</strong> ctrl + ( + 或 - )</p>
+<p><strong>14、拆分编辑器 :</strong> ctrl + 1/2/3</p>
+<p><strong>15、切换窗口</strong> : ctrl + shift + left/right</p>
+<p><strong>16、关闭编辑器窗口</strong> : ctrl + w</p>
+<p><strong>17、关闭所有窗口 :</strong> ctrl + k + w</p>
+<p><strong>18、切换全屏 :</strong> F11</p>
+<p><strong>19、自动换行</strong> : alt + z</p>
+<p><strong>20、显示git</strong> : ctrl + shift + g</p>
+<p>**21、全局查找文件：**ctrl + shift + f</p>
+<p><strong>22、显示相关插件的命令(如：git log)</strong>：ctrl + shift + p</p>
+<p><strong>23、选中文字</strong>：shift + left / right / up / down</p>
+<p><strong>24、折叠代码</strong>： ctrl + k + 0-9 (0是完全折叠)</p>
+<p><strong>25、展开代码</strong>： ctrl + k + j (完全展开代码)</p>
+<p><strong>26、删除行</strong> ： ctrl + shift + k</p>
+<p><strong>27、快速切换主题</strong>：ctrl + k / ctrl + t</p>
+<p><strong>28、快速回到顶部</strong> ： ctrl + home</p>
+<p><strong>29、快速回到底部</strong> : ctrl + end</p>
+<p><strong>30、格式化选定代码</strong> ：ctrl + k / ctrl +f</p>
+<p><strong>31、选中代码 ：</strong> shift + 鼠标左键</p>
+<p>**32、多行同时添加内容（光标） ：**ctrl + alt + up/down</p>
+<p>**33、全局替换：**ctrl + shift + h</p>
+<p>**34、当前文件替换：**ctrl + h</p>
+<p>**35、打开最近打开的文件：**ctrl + r</p>
+<p>**36、打开新的命令窗：**ctrl + shift + c</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2022-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/it/tools/">IT/Tools</a>
+          <a href="/tags/it/vscode/">IT/Vscode</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/git-%E6%93%8D%E4%BD%9C/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GIT 操作</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B-1/">
+            <span class="next-text nav-default">守护进程 1</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

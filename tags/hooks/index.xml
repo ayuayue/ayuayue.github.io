@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hooks on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/hooks/</link>
+    <description>Recent content in hooks on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 10 May 2020 11:38:45 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/hooks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用hooks自动监测git仓库更改并拉取</title>
+      <link>https://blog.caoayu.top/post/hexo-02/</link>
+      <pubDate>Sun, 10 May 2020 11:38:45 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/hexo-02/</guid>
+      <description>&lt;p&gt;我们在务器上使用宝塔进行操作,使用宝塔比较直接,可视化,各种操作和安装东西很方便(如果只是想安装一些东西,快速搭建),后面也会继续使用宝塔为网站安装&lt;code&gt;https&lt;/code&gt;证书,使用&lt;code&gt;Let&#39;s Encrypt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;申请免费的证书并配置&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

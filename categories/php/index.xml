@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>php on 个人内容记录</title>
+    <link>https://blog.caoayu.top/categories/php/</link>
+    <description>Recent content in php on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 01 Sep 2021 22:49:34 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PHP 程序</title>
+      <link>https://blog.caoayu.top/post/php-program/</link>
+      <pubDate>Wed, 01 Sep 2021 22:49:34 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-program/</guid>
+      <description>php 程序 程序 什么是程序？ 程序一般指可执行文件，在 linux 上按 ELF 格式进行存储，并不由后缀进行标识。可以使用 file 命令查看 ELF 文件 全称：Executable Linkable</description>
+    </item>
+    
+    <item>
+      <title>PHP 进程知识</title>
+      <link>https://blog.caoayu.top/post/php-process/</link>
+      <pubDate>Wed, 01 Sep 2021 22:48:50 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-process/</guid>
+      <description>php 操作进程知识 linux 手册 man7.org php pcntl ，posix扩展。封装了 linux 系统 api 可以操作进程。 php 内置函数 getmypid 获取当前进程的pid getmygid 获取当前进程组的id getmyuid 获取当前用户</description>
+    </item>
+    
+    <item>
+      <title>PHP 扩展管理</title>
+      <link>https://blog.caoayu.top/post/php-pear/</link>
+      <pubDate>Mon, 29 Mar 2021 17:49:22 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-pear/</guid>
+      <description>扩展安装方式 一般为 PHP 安装扩展有很多方式，比如直接编译安装，或者下载编译好的扩展库。但是还可以使用一些扩展管理的工具来管理，比如 pear，pe</description>
+    </item>
+    
+    <item>
+      <title>使用 Supervisor 管理进程</title>
+      <link>https://blog.caoayu.top/post/supervisor/</link>
+      <pubDate>Sun, 21 Mar 2021 18:30:31 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/supervisor/</guid>
+      <description>Linux 的后台程序运行有很多中方法，例如 nohub、screen 、tmux 等，但是有些业务对进程的要求比较严格，要成为守护进程，并且可以监控运行状</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（十）-- Session and Cookie</title>
+      <link>https://blog.caoayu.top/post/php-frame10/</link>
+      <pubDate>Sun, 28 Feb 2021 14:15:18 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-frame10/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（九）-- ORM</title>
+      <link>https://blog.caoayu.top/post/php-frame09/</link>
+      <pubDate>Thu, 25 Feb 2021 18:01:32 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-frame09/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（八）-- 配置中心</title>
+      <link>https://blog.caoayu.top/post/php-frame08/</link>
+      <pubDate>Wed, 24 Feb 2021 08:24:44 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-frame08/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（七）-- 路由及路径优化</title>
+      <link>https://blog.caoayu.top/post/php-frame07/</link>
+      <pubDate>Tue, 23 Feb 2021 11:07:36 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-frame07/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（六）-- 视图模板</title>
+      <link>https://blog.caoayu.top/post/php-frame06/</link>
+      <pubDate>Mon, 22 Feb 2021 09:30:09 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-frame06/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（五）-- 响应</title>
+      <link>https://blog.caoayu.top/post/php-frame05/</link>
+      <pubDate>Mon, 22 Feb 2021 08:56:18 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-frame05/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（四）-- 路由系统</title>
+      <link>https://blog.caoayu.top/post/php-frame04/</link>
+      <pubDate>Sun, 21 Feb 2021 15:47:56 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-frame04/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（三）-- 信息调试</title>
+      <link>https://blog.caoayu.top/post/php-frame03/</link>
+      <pubDate>Sun, 21 Feb 2021 15:36:48 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-frame03/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（二）-- 引入容器</title>
+      <link>https://blog.caoayu.top/post/php-frame02/</link>
+      <pubDate>Sun, 21 Feb 2021 08:44:20 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-frame02/</guid>
+      <description>项目地址：https://github.com/ayuayue/php-frame 制作一个PHP简易框架(一)&amp;ndash;准备工作 制作一个</description>
+    </item>
+    
+    <item>
+      <title>制作一个PHP简易框架（一）--准备工作</title>
+      <link>https://blog.caoayu.top/post/php-frame01/</link>
+      <pubDate>Sat, 20 Feb 2021 10:45:32 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-frame01/</guid>
+      <description>前言 制作一个极简版的 php 框架。串联一下 web 开发中需要注意的核心关键点，从零开始构建一个完整的系统，通过创建系统框架的过程，理解 web 开发中做核心的内</description>
+    </item>
+    
+    <item>
+      <title>PHP8.0 新特性</title>
+      <link>https://blog.caoayu.top/post/php-8/</link>
+      <pubDate>Wed, 04 Nov 2020 21:32:52 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-8/</guid>
+      <description>PHP8.0 目前php8.0还在测试阶段.正式版大概12月份出来.先来看一下新版本的改进或新特性. 1. 更方便的获取类名 之前的版本 1 2 3 4 5 6 7 8 class User { }</description>
+    </item>
+    
+    <item>
+      <title>php List()函数及json_encode时无法转为数组的问题</title>
+      <link>https://blog.caoayu.top/post/php-list/</link>
+      <pubDate>Mon, 25 May 2020 18:34:42 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/php-list/</guid>
+      <description>&lt;p&gt;​&lt;/p&gt;
+&lt;h5 id=&#34;list-函数实现-php中返回多个值list并不是一个真正的函数而是一种语言结构&#34;&gt;&lt;code&gt;list&lt;/code&gt; 函数实现 &lt;code&gt;PHP&lt;/code&gt;中返回多个值(list并不是一个真正的函数,而是一种语言结构)&lt;/h5&gt;
+&lt;p&gt;在众多的编程语言中,有很多都可以在函数中返回多个值,如 &lt;code&gt;java,golang&lt;/code&gt;, 但是&lt;code&gt;php&lt;/code&gt;却是不支持,虽然在 7.0 版本之后可以设置返回值的类型,但还是无法返回多个值,估计后面 &lt;code&gt;php&lt;/code&gt; 的升级中会考虑这个问题. 既然无法原生支持,那我们就自己实现,&lt;code&gt;php&lt;/code&gt;内置了大量的函数可以使用,这也是&lt;code&gt;php&lt;/code&gt;开发速度快的一个原因.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

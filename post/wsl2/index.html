@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>wsl2 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="wsl2 抛弃，性能太差，虚拟机代替 官方文档 https://learn.microsoft.com/zh-cn/windows/wsl/ 开启 先卸载关闭 1 2 3 4 5 6 7 8 # 查看 wslconfig /l # 卸载 wslconfig /u # 关闭 wsl --shutdown windows 组件关闭 关闭后重启 打开 可以在控制面板里开" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/wsl2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="wsl2" />
+<meta property="og:description" content="wsl2 抛弃，性能太差，虚拟机代替 官方文档 https://learn.microsoft.com/zh-cn/windows/wsl/ 开启 先卸载关闭 1 2 3 4 5 6 7 8 # 查看 wslconfig /l # 卸载 wslconfig /u # 关闭 wsl --shutdown windows 组件关闭 关闭后重启 打开 可以在控制面板里开" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/wsl2/" />
+<meta property="article:published_time" content="2022-10-18T19:43:16+00:00" />
+<meta property="article:modified_time" content="2022-10-25T08:50:55+00:00" />
+<meta itemprop="name" content="wsl2">
+<meta itemprop="description" content="wsl2 抛弃，性能太差，虚拟机代替 官方文档 https://learn.microsoft.com/zh-cn/windows/wsl/ 开启 先卸载关闭 1 2 3 4 5 6 7 8 # 查看 wslconfig /l # 卸载 wslconfig /u # 关闭 wsl --shutdown windows 组件关闭 关闭后重启 打开 可以在控制面板里开">
+<meta itemprop="datePublished" content="2022-10-18T19:43:16&#43;00:00" />
+<meta itemprop="dateModified" content="2022-10-25T08:50:55&#43;00:00" />
+<meta itemprop="wordCount" content="2832">
+
+
+
+<meta itemprop="keywords" content="IT/Tools,IT/Windows,IT/Windows/Wsl," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="wsl2"/>
+<meta name="twitter:description" content="wsl2 抛弃，性能太差，虚拟机代替 官方文档 https://learn.microsoft.com/zh-cn/windows/wsl/ 开启 先卸载关闭 1 2 3 4 5 6 7 8 # 查看 wslconfig /l # 卸载 wslconfig /u # 关闭 wsl --shutdown windows 组件关闭 关闭后重启 打开 可以在控制面板里开"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">wsl2</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-10-18 </span>
+        
+          <span class="more-meta"> 约 2832 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#wsl2">wsl2</a>
+      <ul>
+        <li><a href="#开启">开启</a>
+          <ul>
+            <li><a href="#先卸载关闭">先卸载关闭</a></li>
+            <li><a href="#windows-组件关闭">windows 组件关闭</a></li>
+            <li><a href="#打开">打开</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用-scoop-安装-lxrunoffline-来管理-wsl2">使用 scoop 安装 lxrunoffline 来管理 wsl2</a></li>
+        <li><a href="#安装-wsl2">安装 wsl2</a></li>
+        <li><a href="#wsl-ubuntu2004-配置">wsl ubuntu20.04 配置</a></li>
+        <li><a href="#修改源">修改源</a></li>
+        <li><a href="#安装常用软件">安装常用软件</a></li>
+        <li><a href="#字体配置">字体配置</a></li>
+        <li><a href="#配置别名及环境变量">配置别名及环境变量</a></li>
+        <li><a href="#去除-sudo-密码">去除 sudo 密码</a></li>
+        <li><a href="#如果忘记密码">如果忘记密码</a></li>
+        <li><a href="#打开-wsl2-中文件对应在-windwos-上的目录">打开 wsl2 中文件对应在 windwos 上的目录</a></li>
+        <li><a href="#在-windows-上使用-wsl2-工具">在 windows 上使用 wsl2 工具</a></li>
+        <li><a href="#fish-代替-zsh-等">fish 代替 zsh 等</a></li>
+        <li><a href="#oh-my-zsh">oh-my-zsh</a></li>
+        <li><a href="#systemd-服务">systemd 服务</a></li>
+        <li><a href="#git-配置">git 配置</a></li>
+        <li><a href="#sshd-配置">sshd 配置</a></li>
+        <li><a href="#固定-wsl2-与宿主机-的-ip-地址">固定 wsl2 与宿主机 的 IP 地址</a></li>
+        <li><a href="#代理">代理</a></li>
+        <li><a href="#重启-wsl2">重启 wsl2</a></li>
+        <li><a href="#设置语言">设置语言</a></li>
+        <li><a href="#安装-docker">安装 docker</a></li>
+        <li><a href="#完整的-wslconf">完整的 wsl.conf</a></li>
+        <li><a href="#问题">问题</a>
+          <ul>
+            <li><a href="#下载安装不了">下载安装不了</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2022-10-25T08:50:55" title="October 25, 2022">October 25, 2022</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="wsl2">wsl2</h1>
+<p>抛弃，性能太差，虚拟机代替
+官方文档
+<a href="https://learn.microsoft.com/zh-cn/windows/wsl/">https://learn.microsoft.com/zh-cn/windows/wsl/</a></p>
+<h2 id="开启">开启</h2>
+<h3 id="先卸载关闭">先卸载关闭</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">
+<span class="c1"># 查看</span>
+wslconfig /l 
+<span class="c1"># 卸载</span>
+wslconfig /u 
+<span class="c1"># 关闭</span>
+wsl --shutdown
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="windows-组件关闭">windows 组件关闭</h3>
+<p><img src="https://i0.hdslb.com/bfs/album/df24e7f074d8965dc0e6fccd1003c6fa5663db48.png" alt="">
+关闭后重启</p>
+<h3 id="打开">打开</h3>
+<p>可以在控制面板里开启， 也可以在终端中开启，下面在管理员身份打开的 powershell 中开启。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-powershell" data-lang="powershell">
+<span class="c"># 安装适用于 Linux 的 Windows 子系统 </span>
+
+<span class="n">dism</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">online</span> <span class="p">/</span><span class="nb">enable-feature</span> <span class="p">/</span><span class="n">featurename</span><span class="err">:</span><span class="n">Microsoft-Windows-Subsystem-Linux</span> <span class="p">/</span><span class="n">all</span> <span class="p">/</span><span class="n">norestart</span> 
+
+<span class="c"># 启用“虚拟机平台”可选组件 </span>
+<span class="n">dism</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">online</span> <span class="p">/</span><span class="nb">enable-feature</span> <span class="p">/</span><span class="n">featurename</span><span class="err">:</span><span class="n">VirtualMachinePlatform</span> <span class="p">/</span><span class="n">all</span> <span class="p">/</span><span class="n">norestart</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>启用后同样需要重启电脑。</p>
+<h2 id="使用-scoop-安装-lxrunoffline-来管理-wsl2">使用 scoop 安装 lxrunoffline 来管理 wsl2</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">scoop install lxrunoffline
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="安装-wsl2">安装 wsl2</h2>
+<ol>
+<li>
+<p>设置默认为 wsl2
+<code>wsl --set-default-version 2</code></p>
+</li>
+<li>
+<p>首先检查并更新系统，然后打开 windows 更新及接受其他产品的更新
+<img src="https://i0.hdslb.com/bfs/album/17a2567cb61d6dc3e10df53f5fac36ce2b892ba1.png" alt=""></p>
+</li>
+<li>
+<p>更新 wsl <code>wsl --update</code></p>
+<ol>
+<li>如果更新不了到网页下载更新 <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=wsl">https://www.catalog.update.microsoft.com/Search.aspx?q=wsl</a> 。版本要一致。 <code>wsl --status</code> 查看版本。</li>
+<li>然后下载 linux 内核安装 地址：https://github.com/microsoft/WSL2-Linux-Kernel/releases</li>
+</ol>
+</li>
+<li>
+<p>如果安装提示 This update only applies to machines with the Windows Subsytem for Linux 或者安装不了，使用 powershell 用管理员身份运行 <code>sudo .\wsl_update_x64.msi</code></p>
+</li>
+<li>
+<p>报错：安装过程中出现错误。分发名称: &lsquo;Ubuntu 20.04 LTS&rsquo; 错误代码: 0x80072efd</p>
+</li>
+<li>
+<p>列出所有在线的可用发行版
+<code>wsl --list --online</code></p>
+</li>
+<li>
+<p>到微软商店安装 linux 发行版 或者使用 wsl 命令
+<code>wsl --install -d Ubuntu-20.04</code></p>
+</li>
+<li>
+<p>如果安装不了，就下载 Ubuntu-20.04 的离线 appx 包，使用 <code>Add-AppPackage -Path .\Ubuntu_2004.2020.424.0_x64.appx</code> 安装</p>
+</li>
+</ol>
+<h2 id="wsl-ubuntu2004-配置">wsl ubuntu20.04 配置</h2>
+<p><del>开发用虚拟机，wsl 主要用来同步 windows 跟 linux 上的一些命令跟操作，比如终端提示。并不使用他来开发，作为一个工具使用。</del>
+首先更改 root 用户密码 <code>sudo passwd root</code></p>
+<h2 id="修改源">修改源</h2>
+<p>先更新 <code>sudo apt update</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+su root 
+
+cat  <span class="s">&lt;&lt; EOF &gt; /etc/apt/sources.list
+</span><span class="s">deb https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
+</span><span class="s">deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
+</span><span class="s">
+</span><span class="s">deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+</span><span class="s">deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+</span><span class="s">
+</span><span class="s">deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+</span><span class="s">deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+</span><span class="s">
+</span><span class="s">deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+</span><span class="s">deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+</span><span class="s">
+</span><span class="s">## Not recommended
+</span><span class="s"># deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
+</span><span class="s"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
+</span><span class="s">
+</span><span class="s">EOF</span>
+
+<span class="c1"># 更新</span>
+sudo apt upgrade -y
+sudo apt update -y
+
+</code></pre></td></tr></table>
+</div>
+</div><p>常用命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get update  更新源
+sudo apt-get install package 安装包
+sudo apt-get remove package 删除包
+sudo apt-cache search package 搜索软件包
+sudo apt-cache show package  获取包的相关信息，如说明、大小、版本等
+sudo apt-get install package --reinstall  重新安装包
+sudo apt-get -f install  修复安装
+sudo apt-get remove package --purge 删除包，包括配置文件等
+sudo apt-get build-dep package 安装相关的编译环境
+sudo apt-get upgrade 更新已安装的包
+sudo apt-get dist-upgrade 升级系统
+sudo apt-cache depends package 了解使用该包依赖那些包
+sudo apt-cache rdepends package 查看该包被哪些包依赖
+sudo apt-get <span class="nb">source</span> package  下载该包的源代码
+sudo apt-get clean <span class="o">&amp;&amp;</span> sudo apt-get autoclean 清理无用的包
+sudo apt-get check 检查是否有损坏的依赖
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="安装常用软件">安装常用软件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">sudo apt install -y gcc g++ vim lsof gdb autoconf automake  neofetch w3m net-tools git wget ca-certificates make zsh w3m
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="字体配置">字体配置</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install font-manager -y
+font-manager
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="配置别名及环境变量">配置别名及环境变量</h2>
+<p>将文件放到 /www/my-bash 目录中，在 .bashrc 中直接 source 引入</p>
+<h2 id="去除-sudo-密码">去除 sudo 密码</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo cp /etc/sudoers /etc/sudoers.old
+sudo chmod +w /etc/sudoers
+sudo vim /etc/sudoers
+<span class="c1"># 加上如下行</span>
+%caoayu <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> NOPASSWD:ALL
+
+sudo chmod u-w /etc/sudoers
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="如果忘记密码">如果忘记密码</h2>
+<p>使用 <code>wsl -u root</code> 命令进入并修改密码</p>
+<h2 id="打开-wsl2-中文件对应在-windwos-上的目录">打开 wsl2 中文件对应在 windwos 上的目录</h2>
+<p><code>explorer.exe .</code></p>
+<blockquote>
+<p>使用 Linux 文件系统根目录：\wsl$&lt;DistroName&gt;\home&lt;UserName&gt;\Project
+而不使用 Windows 文件系统根目录：C: \Users&lt;UserName&gt;\Project</p>
+</blockquote>
+<h2 id="在-windows-上使用-wsl2-工具">在 windows 上使用 wsl2 工具</h2>
+<p>从 Windows 命令行运行 Linux 工具：打开 PowerShell，通过输入以下内容使用 Linux ls -la 命令显示 C: \temp&gt; 的目录内容：wsl ls -la</p>
+<p>混合 Linux 和 Windows 命令：在此示例中，使用 Linux 命令 ls -la 列出目录中的文件，然后使用 PowerShell 命令 findstr 筛选包含“git”的单词的结果：wsl ls -la | findstr &ldquo;git&rdquo;。 这还可以通过混合使用 Windows dir 命令和 Linux grep 命令来实现：dir | wsl grep git。</p>
+<p>直接从 WSL 命令行运行 Windows 工具：xxx.exe。例如，若要打开 .bashrc 文件（启动 Linux 命令行时运行的 shell 脚本），请输入：notepad.exe .bashrc</p>
+<p>使用 Linux Grep 工具运行 Windows ipconfig.exe 工具：ipconfig.exe | grep IPv4 | cut -d: -f2。此示例演示了 Windows 文件系统上的 ipconfig 工具，该工具用于显示当前 TCP/IP 网络配置值，然后通过 Linux 工具 grep 被筛选为仅 IPv4 结果。</p>
+<h2 id="fish-代替-zsh-等">fish 代替 zsh 等</h2>
+<p>默认使用 bash，手动 fish 启用，需要执行脚本换回 bash</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">suto apt install fish
+fish-config
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="oh-my-zsh">oh-my-zsh</h2>
+<p>先安装 zsh，然后使用 gitee 上的脚本，github 服务器拉取太慢
+如果版本太低，先下载高版本，然后编译安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wget https://jaist.dl.sourceforge.net/project/zsh/zsh/5.8/zsh-5.8.tar.xz
+tar xvf zsh-5.8.tar.xz
+./configure
+make <span class="o">&amp;&amp;</span> make install
+<span class="nb">echo</span> /usr/local/bin/zsh &gt;&gt; /etc/shells
+chsh -s /usr/local/bin/zsh
+zsh --version
+</code></pre></td></tr></table>
+</div>
+</div><p>直接 apt 安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install zsh -y
+
+<span class="c1"># 1. 改仓库安装 oh-my-zsh</span>
+curl  https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh -o zsh-install.sh
+chmod a+x zsh-install.sh
+vim zsh-install.sh
+
+<span class="c1"># 2. 直接gitee 安装</span> 
+sh -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://gitee.com/Devkings/oh_my_zsh_install/raw/master/install.sh<span class="k">)</span><span class="s2">&#34;</span>
+
+<span class="c1"># autosuggestions</span>
+git clone https://gitee.com/skarner/zsh-autosuggestions.git <span class="nv">$ZSH_CUSTOM</span>/plugins/zsh-autosuggestions
+<span class="c1"># highlighting</span>
+git clone https://gitee.com/Annihilater/zsh-syntax-highlighting.git <span class="nv">$ZSH_CUSTOM</span>/plugins/zsh-syntax-highlighting
+
+<span class="c1"># 修改 .zshrc 文件，把这两个插件开启。</span>
+<span class="c1"># 安装后使用 omz命令操作</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果报错 zsh: corrupt history file /root/.bash_history
+删除 .zhistory 重建文件</p>
+<h2 id="systemd-服务">systemd 服务</h2>
+<p>查看所有运行的服务 <code>service --status-all</code>
+开启服务： <code>sudo service mongodb start</code></p>
+<p>wsl2 原生支持了 systemctl，编辑 /etc/wsl.conf</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>boot<span class="o">]</span> 
+<span class="nv">systemd</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>配置后需要重启 <code>wsl --shutdown</code>
+使用 <code>systemctl list-unit-files --type=service</code> 确认是否生效
+设置开机自启：<code>sudo systemctl enable ssh</code></p>
+<p>systemctl 命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git
+<span class="nb">cd</span> ubuntu-wsl2-systemd-script/
+bash ubuntu-wsl2-systemd-script.sh
+<span class="c1"># Enter your password and wait until the script has finished</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这个服务可能会导致 wsl 打不开</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wsl -e bash --norc
+sudo vim /usr/sbin/enter-systemd-namespace
+
+<span class="c1"># 替换下面内容</span>
+<span class="nv">USER_HOME</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>getent passwd <span class="p">|</span> awk -F: <span class="s1">&#39;$1==&#34;&#39;</span><span class="s2">&#34;</span><span class="nv">$SUDO_USER</span><span class="s2">&#34;</span><span class="s1">&#39;&#34; {print $6}&#39;</span><span class="k">)</span><span class="s2">&#34;</span>
+<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$SYSTEMD_PID</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SYSTEMD_PID</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;1&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;bash --login&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;/bin/bash --login&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nb">exec</span> /usr/bin/nsenter -t <span class="s2">&#34;</span><span class="nv">$SYSTEMD_PID</span><span class="s2">&#34;</span> -m -p <span class="se">\
+</span><span class="se"></span>            /usr/bin/sudo -H -u <span class="s2">&#34;</span><span class="nv">$SUDO_USER</span><span class="s2">&#34;</span> <span class="se">\
+</span><span class="se"></span>            /bin/bash -c <span class="s1">&#39;set -a; [ -f &#34;$HOME/.systemd-env&#34; ] &amp;&amp; source &#34;$HOME/.systemd-env&#34;; set +a; exec bash -c &#39;</span><span class="s2">&#34;</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&#34;%q&#34;</span> <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
+    <span class="k">else</span>
+        <span class="nb">exec</span> /usr/bin/nsenter -t <span class="s2">&#34;</span><span class="nv">$SYSTEMD_PID</span><span class="s2">&#34;</span> -m -p <span class="se">\
+</span><span class="se"></span>            /bin/login -p -f <span class="s2">&#34;</span><span class="nv">$SUDO_USER</span><span class="s2">&#34;</span> <span class="se">\
+</span><span class="se"></span>            <span class="k">$(</span><span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$USER_HOME</span><span class="s2">/.systemd-env&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> /bin/cat <span class="s2">&#34;</span><span class="nv">$USER_HOME</span><span class="s2">/.systemd-env&#34;</span> <span class="p">|</span> xargs <span class="nb">printf</span> <span class="s1">&#39; %q&#39;</span><span class="k">)</span>
+    <span class="k">fi</span>
+    <span class="nb">echo</span> <span class="s2">&#34;Existential crisis&#34;</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">fi</span>
+
+bash ubuntu-wsl2-systemd-script.sh --force
+</code></pre></td></tr></table>
+</div>
+</div><p>重启 wsl2 生效</p>
+<h2 id="git-配置">git 配置</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git config --global user.name <span class="s2">&#34;caoayu&#34;</span>
+git config --global user.email <span class="s2">&#34;1401262639@qq.com&#34;</span>
+git config --global core.autocrlf <span class="nb">true</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="sshd-配置">sshd 配置</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get purge openssh-server -y
+sudo apt-get install openssh-server -y
+sudo ssh-keygen -A
+</code></pre></td></tr></table>
+</div>
+</div><p>修改 <code>sudo vi /etc/ssh/sshd_config</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Port 22
+ListenAddress 0.0.0.0
+PermitRootLogin yes
+PasswordAuthentication yes
+
+</code></pre></td></tr></table>
+</div>
+</div><p><code>sudo service ssh restart</code></p>
+<h2 id="固定-wsl2-与宿主机-的-ip-地址">固定 wsl2 与宿主机 的 IP 地址</h2>
+<p>直接编写 bash 脚本，动态写到 win hosts 文件中，其他方式太麻烦。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/bash
+</span><span class="cp"></span><span class="c1"># 为 win 设置 wsl host</span>
+<span class="c1"># win hosts 文件路径</span>
+<span class="nv">win_hosts_path</span><span class="o">=</span><span class="s2">&#34;/mnt/c/Windows/System32/drivers/etc/hosts&#34;</span>
+<span class="c1"># 为 wsl2 设置的域名</span>
+<span class="nv">wsl_domain</span><span class="o">=</span><span class="s2">&#34;ubuntu ubuntu74 ubuntu71 ubuntu56 ubuntu80&#34;</span>
+<span class="c1"># 获取 wsl2 的 ip</span>
+<span class="nv">wsl_ip</span><span class="o">=</span><span class="k">$(</span>ifconfig eth0 <span class="p">|</span> grep -w inet <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+<span class="c1"># 判断是否已存在 wsl2 的域名，如果存在则修改，否则追加</span>
+<span class="k">if</span> grep -wq <span class="s2">&#34;</span><span class="nv">$wsl_domain</span><span class="s2">&#34;</span> <span class="nv">$win_hosts_path</span>
+<span class="k">then</span>
+    <span class="c1"># 此处因为权限问题没有直接用 sed 修改 hosts 文件</span>
+    <span class="nv">win_hosts</span><span class="o">=</span><span class="k">$(</span>sed -s <span class="s2">&#34;s/.* </span><span class="nv">$wsl_domain</span><span class="s2">/</span><span class="nv">$wsl_ip</span><span class="s2"> </span><span class="nv">$wsl_domain</span><span class="s2">/g&#34;</span> <span class="nv">$win_hosts_path</span><span class="k">)</span>
+    sudo <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$win_hosts</span><span class="s2">&#34;</span> &gt; <span class="nv">$win_hosts_path</span>
+<span class="k">else</span>
+    sudo <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$wsl_ip</span><span class="s2"> </span><span class="nv">$wsl_domain</span><span class="s2">&#34;</span> &gt;&gt; <span class="nv">$win_hosts_path</span>
+<span class="k">fi</span>
+sudo chmod <span class="m">666</span> /etc/hosts 
+<span class="c1"># 为 wsl 设置 win host</span>
+<span class="nv">wsl_hosts_path</span><span class="o">=</span><span class="s2">&#34;/etc/hosts&#34;</span>
+<span class="nv">win_domain</span><span class="o">=</span><span class="s2">&#34;win&#34;</span>
+<span class="nv">win_ip</span><span class="o">=</span><span class="k">$(</span>cat /etc/resolv.conf <span class="p">|</span> grep <span class="s2">&#34;nameserver&#34;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+<span class="k">if</span> grep -wq <span class="s2">&#34;</span><span class="nv">$win_domain</span><span class="s2">&#34;</span> <span class="nv">$wsl_hosts_path</span>
+<span class="k">then</span>
+    <span class="nv">wsl_hosts</span><span class="o">=</span><span class="k">$(</span>sed -s <span class="s2">&#34;s/.* </span><span class="nv">$win_domain</span><span class="s2">/</span><span class="nv">$win_ip</span><span class="s2"> </span><span class="nv">$win_domain</span><span class="s2">/g&#34;</span> <span class="nv">$wsl_hosts_path</span><span class="k">)</span>
+    sudo <span class="nb">echo</span> <span class="nv">$wsl_hosts</span> &gt; <span class="nv">$wsl_hosts_path</span>
+<span class="k">else</span>
+    sudo <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$win_ip</span><span class="s2"> </span><span class="nv">$win_domain</span><span class="s2">&#34;</span> &gt;&gt; <span class="nv">$wsl_hosts_path</span>
+<span class="k">fi</span>
+sudo chmod <span class="m">644</span> /etc/hosts 
+
+</code></pre></td></tr></table>
+</div>
+</div><p>下面的方式不使用了</p>
+<ol>
+<li>写到 windows 上的 bat 中，放到开机自启</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bat" data-lang="bat"># 给wsl2设置固定IP
+sudo wsl -d Ubuntu-20.04 -u root ip addr add 172.17.153.128/20 broadcast 172.17.159.255 dev eth0 label eth0:
+# 给宿主机设置固定IP
+netsh.exe interface ip add address <span class="s2">&#34;vEthernet (WSL)&#34;</span> 172.17.153.1 255.255.240.0
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>写到 wsl2 开机后的脚本中。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo ip addr add 172.17.153.128/20 broadcast 172.17.159.255 dev eth0 label eth0:
+netsh.exe interface ip add address <span class="s2">&#34;vEthernet (WSL)&#34;</span> 172.17.153.1 255.255.240.0
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>把 172.17.153.128 写到 win 的 hosts 文件中。
+<code>172.17.153.128   wsl2</code></li>
+</ol>
+<h2 id="代理">代理</h2>
+<p>使用 alias 来实现快速配置代理,把配置写到 .bashrc 文件中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">PROXY</span><span class="o">=</span><span class="s2">&#34;http://&#34;</span>
+<span class="nv">PROXY</span><span class="o">+=</span><span class="sb">`</span>route -n <span class="p">|</span> grep UG <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span> <span class="p">|</span> awk -F . <span class="s1">&#39;{print $1&#34;.&#34;$2&#34;.&#34;$3&#34;.1&#34;}&#39;</span><span class="sb">`</span>
+<span class="nv">PROXY</span><span class="o">+=</span><span class="s2">&#34;:7890&#34;</span>
+<span class="nb">alias</span> <span class="nv">proxy</span><span class="o">=</span><span class="s2">&#34;export http_proxy=</span><span class="nv">$PROXY</span><span class="s2"> &amp;&amp; export https_proxy=</span><span class="nv">$PROXY</span><span class="s2">&#34;</span>
+<span class="nb">alias</span> <span class="nv">unproxy</span><span class="o">=</span><span class="s2">&#34;unset http_proxy &amp;&amp; unset https_proxy&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="重启-wsl2">重启 wsl2</h2>
+<p><code>wsl --shutdown</code></p>
+<h2 id="设置语言">设置语言</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo update-locale <span class="nv">LANG</span><span class="o">=</span>zh_CN.utf8
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="安装-docker">安装 docker</h2>
+<p>sudo apt install docker.io -y
+sudo apt install docker-compose -y</p>
+<p>wls2 中的配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo mkdir -p /etc/docker 
+sudo tee /etc/docker/daemon.json <span class="s">&lt;&lt;-&#39;EOF&#39; 
+</span><span class="s">{ 
+</span><span class="s">    &#34;registry-mirrors&#34;: [&#34;https://muybs0me.mirror.aliyuncs.com&#34;] 
+</span><span class="s">} 
+</span><span class="s">EOF</span> 
+sudo service docker restart
+</code></pre></td></tr></table>
+</div>
+</div><p>![[../../0x02_Resource/docker 源]]</p>
+<h2 id="完整的-wslconf">完整的 wsl.conf</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[boot] 
+systemd=true
+command = service docker start
+command = service ssh start
+
+[automount]
+enabled = true
+options = &#34;metadata,uid=1000,gid=1000,umask=022,fmask=11&#34;
+
+mountFsTab = true
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="问题">问题</h2>
+<h3 id="下载安装不了">下载安装不了</h3>
+<p>开系统代理，或者改 hosts，github 项目 <a href="https://github.com/521xueweihan/GitHub520">https://github.com/521xueweihan/GitHub520</a>
+<code>cmd,powershell</code>,并且可以设置一些别名,更灵活</p>
+<p>子系统 <code>Linux</code> 下, 使用 <code>Windows Terminal</code> 来复用 <code>ubuntu</code>,将<code>Ubuntu</code> 设置为 <code>WindowsTerminal</code> 的默认终端,并且起始目录为用户家目录,打开 <code>WindowsTerminal</code> 的设置选项,在配置项中有文档地址,根据文档进行自定义</p>
+<p>这样就把开发环境隔离开,一个平台运行,一个平台访问,加上 <code>Vscode</code> 的 <code>Remote Wsl</code> 插件,直接连接就可以开发,十分方便清晰.</p>
+<p><strong>接下来贴下我的部分<code>WindowsTerminal</code> 的配置</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span>
+  <span class="s2">&#34;</span><span class="nv">$schema</span><span class="s2">&#34;</span>: <span class="s2">&#34;https://aka.ms/terminal-profiles-schema&#34;</span>,
+
+  <span class="s2">&#34;defaultProfile&#34;</span>: <span class="s2">&#34;{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}&#34;</span>, <span class="c1"># 默认终端id</span>
+
+  // custom start
+  <span class="s2">&#34;theme&#34;</span>: <span class="s2">&#34;light&#34;</span>,
+  <span class="s2">&#34;tabWidthMode&#34;</span>: <span class="s2">&#34;compact&#34;</span>,
+   <span class="s2">&#34;copyOnSelect&#34;</span>: true,
+
+  // If enabled, formatted data is also copied to your clipboard
+  <span class="s2">&#34;copyFormatting&#34;</span>: false,
+  <span class="s2">&#34;profiles&#34;</span>: <span class="o">{</span>
+    <span class="s2">&#34;defaults&#34;</span>: <span class="o">{</span>
+      // Put settings here that you want to apply to all profiles.
+    <span class="o">}</span>,
+    <span class="s2">&#34;list&#34;</span>: <span class="o">[</span>
+    <span class="o">{</span>
+    <span class="c1"># wsl 子系统</span>
+        <span class="s2">&#34;guid&#34;</span>: <span class="s2">&#34;{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}&#34;</span>,
+        <span class="s2">&#34;hidden&#34;</span>: false,
+        <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;Ubuntu-20.04&#34;</span>,
+        <span class="s2">&#34;source&#34;</span>: <span class="s2">&#34;Windows.Terminal.Wsl&#34;</span>,
+        <span class="s2">&#34;fontFace&#34;</span>: <span class="s2">&#34;Cascadia Code PL&#34;</span>,
+        <span class="s2">&#34;acrylicOpacity&#34;</span>: 0.8,
+        <span class="s2">&#34;alwaysShowTabs&#34;</span>: true,
+        <span class="s2">&#34;useAcrylic&#34;</span>: true,
+        <span class="s2">&#34;colorScheme&#34;</span>: <span class="s2">&#34;One Half Dark&#34;</span>,
+        <span class="s2">&#34;startingDirectory&#34;</span>: <span class="s2">&#34;//wsl</span>$<span class="s2">/Ubuntu-20.04/home/caoayu&#34;</span>,
+        <span class="s2">&#34;cursorShape&#34;</span>: <span class="s2">&#34;bar&#34;</span>,
+        <span class="s2">&#34;cursorColor&#34;</span>: <span class="s2">&#34;#fff&#34;</span>
+      <span class="o">}</span>,
+      <span class="o">{</span>
+      <span class="c1"># git-bash</span>
+        <span class="s2">&#34;acrylicOpacity&#34;</span>: 0.8,
+        <span class="s2">&#34;closeOnExit&#34;</span>: true,
+        <span class="s2">&#34;colorScheme&#34;</span>: <span class="s2">&#34;Campbell&#34;</span>,
+        <span class="s2">&#34;commandline&#34;</span>: <span class="s2">&#34;C:\\Users\\caoayu\\scoop\\apps\\git\\current\\bin\\bash.exe&#34;</span>,
+        <span class="s2">&#34;cursorColor&#34;</span>: <span class="s2">&#34;#FFFFFF&#34;</span>,
+        <span class="s2">&#34;cursorShape&#34;</span>: <span class="s2">&#34;bar&#34;</span>,
+        <span class="s2">&#34;fontFace&#34;</span>: <span class="s2">&#34;Cascadia Code PL&#34;</span>,
+        <span class="s2">&#34;fontSize&#34;</span>: 12,
+        <span class="s2">&#34;historySize&#34;</span>: 9001,
+        <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;bash&#34;</span>,
+        <span class="s2">&#34;snapOnInput&#34;</span>: true,
+        <span class="s2">&#34;startingDirectory&#34;</span>: <span class="s2">&#34;.&#34;</span>,
+        <span class="s2">&#34;useAcrylic&#34;</span>: <span class="nb">true</span>
+      <span class="o">}</span>,
+    <span class="o">]</span>
+  <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2022-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/it/tools/">IT/Tools</a>
+          <a href="/tags/it/windows/">IT/Windows</a>
+          <a href="/tags/it/windows/wsl/">IT/Windows/Wsl</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/php%E7%9F%A5%E8%AF%86/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">PHP知识</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/wsl2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">
+            <span class="next-text nav-default">wsl2安装配置</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

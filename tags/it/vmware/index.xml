@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/VmWare on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/vmware/</link>
+    <description>Recent content in IT/VmWare on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/vmware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>虚拟机VMWare</title>
+      <link>https://blog.caoayu.top/post/%E8%99%9A%E6%8B%9F%E6%9C%BAvmware/</link>
+      <pubDate>Mon, 03 Oct 2022 20:51:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E8%99%9A%E6%8B%9F%E6%9C%BAvmware/</guid>
+      <description>虚拟机VMWare centos下载地址 http://mirrors.aliyun.com/centos/7/isos/x86_64/ 16G机器,i5 10代 配置 2个cpu 4核 6G内存流畅运行 安装完成，配置静态ip (使用 NAT 方式) 可以使用</description>
+    </item>
+    
+  </channel>
+</rss>

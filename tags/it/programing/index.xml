@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/Programing on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/programing/</link>
+    <description>Recent content in IT/Programing on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/programing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GDB</title>
+      <link>https://blog.caoayu.top/post/gdb/</link>
+      <pubDate>Mon, 03 Oct 2022 20:14:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/gdb/</guid>
+      <description>GDB 是一个程序调试器。 启动方式 1 直接使用gdb 后跟一个ELF可执行文件 1 2 3 4 5 6 7 8 9 10 11 GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-120.el7 Copyright (C) 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &amp;lt;http://gnu.org/licenses/gpl.html&amp;gt; This</description>
+    </item>
+    
+  </channel>
+</rss>

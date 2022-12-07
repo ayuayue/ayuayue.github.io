@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Markdown简易教程 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="什么是Markdown,为什么用Markdown Markdown是一种标记语法,通过标记字符,给文章的内容增加样式,使用Markdown可以更方便的控制格式的同时专注于文章内容的编写,可以支持导出为pdf,html格式,排版内容可预见,避免写完文章后再去查看样式,修改样式,Markdown文件都是以.md为后缀,可以使用typora这款软件来编写,多个平台都有支持.
+" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/markdown-simple/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Markdown简易教程" />
+<meta property="og:description" content="什么是Markdown,为什么用Markdown
+Markdown是一种标记语法,通过标记字符,给文章的内容增加样式,使用Markdown可以更方便的控制格式的同时专注于文章内容的编写,可以支持导出为pdf,html格式,排版内容可预见,避免写完文章后再去查看样式,修改样式,Markdown文件都是以.md为后缀,可以使用typora这款软件来编写,多个平台都有支持." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/markdown-simple/" />
+<meta property="article:published_time" content="2020-05-16T22:24:08+08:00" />
+<meta property="article:modified_time" content="2020-05-16T22:24:08+08:00" />
+<meta itemprop="name" content="Markdown简易教程">
+<meta itemprop="description" content="什么是Markdown,为什么用Markdown
+Markdown是一种标记语法,通过标记字符,给文章的内容增加样式,使用Markdown可以更方便的控制格式的同时专注于文章内容的编写,可以支持导出为pdf,html格式,排版内容可预见,避免写完文章后再去查看样式,修改样式,Markdown文件都是以.md为后缀,可以使用typora这款软件来编写,多个平台都有支持.">
+<meta itemprop="datePublished" content="2020-05-16T22:24:08&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-16T22:24:08&#43;08:00" />
+<meta itemprop="wordCount" content="1268">
+
+
+
+<meta itemprop="keywords" content="Markdown," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Markdown简易教程"/>
+<meta name="twitter:description" content="什么是Markdown,为什么用Markdown
+Markdown是一种标记语法,通过标记字符,给文章的内容增加样式,使用Markdown可以更方便的控制格式的同时专注于文章内容的编写,可以支持导出为pdf,html格式,排版内容可预见,避免写完文章后再去查看样式,修改样式,Markdown文件都是以.md为后缀,可以使用typora这款软件来编写,多个平台都有支持."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Markdown简易教程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-05-16 </span>
+        <div class="post-category">
+            <a href="/categories/markdown/"> Markdown </a>
+            </div>
+          <span class="more-meta"> 约 1268 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#什么是markdown为什么用markdown">什么是<code>Markdown</code>,为什么用<code>Markdown</code></a></li>
+                <li><a href="#常用的一些基本标记格式">常用的一些基本标记格式</a>
+                  <ul>
+                    <li><a href="#段落和换行符">段落和换行符</a></li>
+                    <li><a href="#标题">标题</a></li>
+                    <li><a href="#引用">引用</a></li>
+                    <li><a href="#列表">列表</a></li>
+                    <li><a href="#任务列表">任务列表</a></li>
+                    <li><a href="#代码块">代码块</a></li>
+                    <li><a href="#表格">表格</a></li>
+                    <li><a href="#水平线--分割线">水平线 \ 分割线</a></li>
+                    <li><a href="#链接">链接</a></li>
+                    <li><a href="#插入图片">插入图片</a></li>
+                    <li><a href="#加粗">加粗</a></li>
+                    <li><a href="#斜体">斜体</a></li>
+                    <li><a href="#删除线">删除线</a></li>
+                    <li><a href="#字体样式嵌套">字体样式嵌套</a></li>
+                    <li><a href="#转义字符">转义字符</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-05-16T22:24:08" title="May 16, 2020">May 16, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h4 id="什么是markdown为什么用markdown">什么是<code>Markdown</code>,为什么用<code>Markdown</code></h4>
+<p><code>Markdown</code>是一种标记语法,通过标记字符,给文章的内容增加样式,使用<code>Markdown</code>可以更方便的控制格式的同时专注于文章内容的编写,可以支持导出为<code>pdf,html</code>格式,排版内容可预见,避免写完文章后再去查看样式,修改样式,<code>Markdown</code>文件都是以<code>.md</code>为后缀,可以使用<code>typora</code>这款软件来编写,多个平台都有支持.</p>
+<h4 id="常用的一些基本标记格式">常用的一些基本标记格式</h4>
+<p><strong>注意通用操作,一般一个标记后要带一个空格才能生效,如果不是会有说明,取消操作通常是使用两次回车即可退出到当前的标记之外.</strong></p>
+<h5 id="段落和换行符">段落和换行符</h5>
+<p>段落,通常是一行或多行连续的文 本,使用回车键可以完成段落分隔,有些编辑器会忽略换行,可以使用<code>shift + enter</code>代替</p>
+<h5 id="标题">标题</h5>
+<p>在文本的开头输入 1-6 个<code>#</code> 代表六个级别的标题,从 1-6 样式依次减小</p>
+<h5 id="引用">引用</h5>
+<p>在文章中引用其他文章的内容, 在文本开头加入 <code>&gt;  </code></p>
+<blockquote>
+<p>我不怕千万人阻挡,只怕自己投降		&mdash;  五月天 &laquo;倔强&raquo;</p>
+</blockquote>
+<h5 id="列表">列表</h5>
+<ol>
+<li>有序列表 : 使用 <code>1. </code>即可,回车自动调到第二条,想跳出继续回车即可</li>
+<li>无序列表: 使用 <code>* 或 + </code>跟有序列表一样的逻辑</li>
+</ol>
+<h5 id="任务列表">任务列表</h5>
+<p>常用来表示事件是否完成,表现在列表前加一个符号,并且是可以交互的,完成后可以使用鼠标选中或取消,效果如:</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> 未完成</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> 已完成</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">- [ ] //代办事项,注意中括号内空格
+- [x] //已办事项
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="代码块">代码块</h5>
+<ol>
+<li>第一种方式高亮显示 , 使用 <code>``</code>包裹即可 ,使用场景 &ndash; 某些单词或术语</li>
+<li>可自定义代码块语言,常用来表示一段代码 使用 <code>```</code> + 语言名 回车即可,结尾使用 <code>```</code> 包裹,一些编辑器会自动识别并包裹,注意要在行首</li>
+</ol>
+<p>比如:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+    <span class="k">echo</span> <span class="s2">&#34;php是世界最好的语言!&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="表格">表格</h5>
+<p>一般表格由,表头也就是标题,和内容组成,效果如 :</p>
+<table>
+<thead>
+<tr>
+<th>标题1</th>
+<th>标题2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内容1</td>
+<td>内容2</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">| 标题1 | 标题2 |
+| ---- | ---- |
+| 内容1 | 内容2 |
+//横线和空格缩进根据个人喜好来调整
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="水平线--分割线">水平线 \ 分割线</h5>
+<p>使用连续三个或三个以上的 <code>----</code> 或<code>****</code> 或 <code>____</code>加回车即可 如:</p>
+<hr>
+<h5 id="链接">链接</h5>
+<ol>
+<li>指向一个网址: 比如 <a href="https://github.com">github</a> , 使用方法: 相对路径和绝对路径修改链接地址为相应的地址即可</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">[链接说明文字](链接地址)
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>链接某一个标题,在小括号中 加上 <code># </code>和标题名即可,如 <a href="#%E6%A0%87%E9%A2%98">标题</a></li>
+<li>链接某一个文件的某一个标题,如 <a href="curl.md#curl%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C">curl常用命令</a></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">[文件描述](相对或绝对路径#标题名
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="插入图片">插入图片</h5>
+<p>图片是建立在链接之上的,在链接的前面加上 <code>!</code>即可表示图片,如</p>
+<p>​	<img src="markdown-simple/1589680325346.png" alt="1589680325346"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">![图片描述](地址)
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="加粗">加粗</h5>
+<p>在文字的两端加上 <code>** 或 __</code>可使包裹的文字加粗显示,注意不带空格,效果如 <strong>我粗了</strong>,<strong>我也粗了</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">**加粗文字** 
+__加粗文字__
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="斜体">斜体</h5>
+<p>在文字的两端加上 <code>* 或 _</code>,效果如 : <em>我斜了</em>,<em>我也斜了</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">*斜体文字*
+_斜体文字_
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="删除线">删除线</h5>
+<p>在文字的两端加上 <code>~~</code> 效果如 : <del>我被删了</del></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">~~删除文字~~
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="字体样式嵌套">字体样式嵌套</h5>
+<p>如 <del><strong>删除线+粗体</strong></del> ,<em><strong>斜体加粗体</strong></em> , <del><em>斜体加删除线</em></del></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">~~**删除线加粗体**~~
+***斜体加粗体***
+~~*斜体加删除线*~~
+//更多组合可以自己尝试一下
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="转义字符">转义字符</h5>
+<p>有时只是使用符号的原始表达,并不想要变为样式,使用转义符 <code>\</code></p>
+<p>可以被转义的字符</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th align="center">名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td align="center">反斜线</td>
+</tr>
+<tr>
+<td>`    | 反引号 |</td>
+<td></td>
+</tr>
+<tr>
+<td>*</td>
+<td align="center">星号</td>
+</tr>
+<tr>
+<td>_</td>
+<td align="center">下划线</td>
+</tr>
+<tr>
+<td>{}</td>
+<td align="center">大括号</td>
+</tr>
+<tr>
+<td>[]</td>
+<td align="center">中括号</td>
+</tr>
+<tr>
+<td>()</td>
+<td align="center">括号</td>
+</tr>
+<tr>
+<td>#</td>
+<td align="center">＃号</td>
+</tr>
+<tr>
+<td>+</td>
+<td align="center">+号</td>
+</tr>
+<tr>
+<td>-</td>
+<td align="center">减号</td>
+</tr>
+<tr>
+<td>.</td>
+<td align="center">点</td>
+</tr>
+<tr>
+<td>!</td>
+<td align="center">感叹号</td>
+</tr>
+<tr>
+<td>|</td>
+<td align="center">管道符</td>
+</tr>
+</tbody>
+</table>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-05-16</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/markdown/">Markdown</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/cmder01/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">从0打造属于自己的windows开发命令终端</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/hash-token/">
+            <span class="next-text nav-default">关于前端哈希加密密码的思考</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

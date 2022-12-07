@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>自定义短标签 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="Hugo无法渲染video标签 在markdown文件中可以使用video标签,来完成视频的内嵌,但是hugo无法将该标签渲染成为正常的h5的" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/custom-shortcode/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="自定义短标签" />
+<meta property="og:description" content="Hugo无法渲染video标签 在markdown文件中可以使用video标签,来完成视频的内嵌,但是hugo无法将该标签渲染成为正常的h5的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/custom-shortcode/" />
+<meta property="article:published_time" content="2020-07-14T22:23:23+08:00" />
+<meta property="article:modified_time" content="2020-07-14T22:23:23+08:00" />
+<meta itemprop="name" content="自定义短标签">
+<meta itemprop="description" content="Hugo无法渲染video标签 在markdown文件中可以使用video标签,来完成视频的内嵌,但是hugo无法将该标签渲染成为正常的h5的">
+<meta itemprop="datePublished" content="2020-07-14T22:23:23&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-14T22:23:23&#43;08:00" />
+<meta itemprop="wordCount" content="595">
+
+
+
+<meta itemprop="keywords" content="hugo," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="自定义短标签"/>
+<meta name="twitter:description" content="Hugo无法渲染video标签 在markdown文件中可以使用video标签,来完成视频的内嵌,但是hugo无法将该标签渲染成为正常的h5的"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">自定义短标签</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-07-14 </span>
+        <div class="post-category">
+            <a href="/categories/hugo/"> hugo </a>
+            </div>
+          <span class="more-meta"> 约 595 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#hugo无法渲染video标签"><code>Hugo</code>无法渲染<code>video</code>标签</a></li>
+            <li><a href="#使用shortcode-嵌入视频">使用<code>shortcode</code> 嵌入视频</a></li>
+            <li><a href="#自定义标签">自定义标签</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-07-14T22:23:23" title="July 14, 2020">July 14, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h3 id="hugo无法渲染video标签"><code>Hugo</code>无法渲染<code>video</code>标签</h3>
+<p>在<code>markdown</code>文件中可以使用<code>video</code>标签,来完成视频的内嵌,但是<code>hugo</code>无法将该标签渲染成为正常的<code>h5</code>的<code>video</code>标签</p>
+<h3 id="使用shortcode-嵌入视频">使用<code>shortcode</code> 嵌入视频</h3>
+<p><code>hugo</code>提供了短标签的形式,可以自定义标签内容,<code>even</code>主题自带了几个短标签,其中有 网易云音乐的短标签,使用效果如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">\{\{<span class="p">&lt;</span> <span class="nt">music</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;32507039&#34;</span> <span class="na">auto</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="p">&gt;</span>\}\}  # / 为了转义,不然会渲染
+</code></pre></td></tr></table>
+</div>
+</div>  <iframe style="max-width: 100%"
+      class="music163"
+      frameborder="no"
+      border="0"
+      marginwidth="0"
+      marginheight="0"
+      width="330"
+      height="86"
+      src="//music.163.com/outchain/player?type=2&id=32507039&auto=0&height=66">
+    </iframe>
+<p>定义文件, 在主题文件夹下 <code>even/layout/shortcodes/</code> 该目录下存放的都是短标签,文件名即为标签名</p>
+<p>看一下<code>music</code> 标签怎么实现的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  {{/*
+      ## Music 163
+  
+      ### Params:
+  
+      - `id`
+  
+        required param
+        you can extract from music url
+        url format &#34;http://music.163.com/#/song?id=3950552&#34;
+  
+      - Fiddle `auto`
+  
+        optional param
+        default value 0
+        you can overwrite it with 1
+  
+      ### Examples:
+  
+      - Simple
+  		### \为转义
+        \{\{<span class="p">&lt;</span> <span class="nt">music</span> <span class="err">&#34;</span><span class="na">3950552</span><span class="err">&#34;</span> <span class="p">&gt;</span>\}\}
+        \{\{<span class="p">&lt;</span> <span class="nt">music</span> <span class="err">&#34;</span><span class="na">3950552</span><span class="err">&#34;</span> <span class="err">&#34;</span><span class="na">1</span><span class="err">&#34;</span> <span class="p">&gt;</span>\}\}
+  
+      - Named Params
+  
+        \{\{<span class="p">&lt;</span> <span class="nt">music</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;3950552&#34;</span> <span class="p">&gt;</span>\}\}
+        \{\{<span class="p">&lt;</span> <span class="nt">music</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;3950552&#34;</span> <span class="na">auto</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="p">&gt;</span>\}\}
+  
+  */}}
+  
+  {{- /* DEFAULTS */ -}}
+  {{ $auto := &#34;0&#34; }}
+  
+  {{- if .IsNamedParams -}}
+  
+    <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;max-width: 100%&#34;</span>
+      <span class="na">class</span><span class="o">=</span><span class="s">&#34;music163&#34;</span>
+      <span class="na">frameborder</span><span class="o">=</span><span class="s">&#34;no&#34;</span>
+      <span class="na">border</span><span class="o">=</span><span class="s">&#34;0&#34;</span>
+      <span class="na">marginwidth</span><span class="o">=</span><span class="s">&#34;0&#34;</span>
+      <span class="na">marginheight</span><span class="o">=</span><span class="s">&#34;0&#34;</span>
+      <span class="na">width</span><span class="o">=</span><span class="s">&#34;330&#34;</span>
+      <span class="na">height</span><span class="o">=</span><span class="s">&#34;86&#34;</span>
+      <span class="na">src</span><span class="o">=</span><span class="s">&#34;//music.163.com/outchain/player?type=2&amp;id={{ .Get &#34;</span><span class="na">id</span><span class="err">&#34;</span> <span class="err">}}&amp;</span><span class="na">auto</span><span class="o">=</span><span class="s">{{</span> <span class="na">or</span> <span class="err">(.</span><span class="na">Get</span> <span class="err">&#34;</span><span class="na">auto</span><span class="err">&#34;)</span> <span class="err">$</span><span class="na">auto</span> <span class="err">}}&amp;</span><span class="na">height</span><span class="o">=</span><span class="s">66&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+  
+  {{- else -}}
+  
+    <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;max-width: 100%&#34;</span>
+      <span class="na">class</span><span class="o">=</span><span class="s">&#34;music163&#34;</span>
+      <span class="na">frameborder</span><span class="o">=</span><span class="s">&#34;no&#34;</span>
+      <span class="na">border</span><span class="o">=</span><span class="s">&#34;0&#34;</span>
+      <span class="na">marginwidth</span><span class="o">=</span><span class="s">&#34;0&#34;</span>
+      <span class="na">marginheight</span><span class="o">=</span><span class="s">&#34;0&#34;</span>
+      <span class="na">width</span><span class="o">=</span><span class="s">&#34;330&#34;</span>
+      <span class="na">height</span><span class="o">=</span><span class="s">&#34;86&#34;</span>
+      <span class="na">src</span><span class="o">=</span><span class="s">&#34;//music.163.com/outchain/player?type=2&amp;id={{ .Get 0 }}&amp;auto={{ if isset .Params 1 }}{{ .Get 1 }}{{ else }}{{ $auto }}{{ end }}&amp;height=66&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+  
+  {{- end -}}
+  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="自定义标签">自定义标签</h3>
+<p>自己写几个简单的短标签,可以有 b站,h5视频,音频,YouTube,YouTube好像官方支持.</p>
+<p>这里以<code>h5</code> 的视频标签为例</p>
+<ol>
+<li>
+<p>新建 <code>video.html</code></p>
+</li>
+<li>
+<p>编辑内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  {{/*
+      ## Video mp4 AVC
+     
+      ### Params:
+     
+      - `src`
+     
+        required param
+        you can extract from video url
+        url format &#34;https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/picgo-typora-1.mp4&#34;
+     
+      ### Examples:
+     
+      - Simple
+   
+    \{\{<span class="p">&lt;</span> <span class="nt">video</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;picgo-typora-1.mp4&#34;</span> <span class="p">&gt;</span>\}\}
+     
+  */}}
+   
+   
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ .Get &#34;</span><span class="na">src</span><span class="err">&#34;</span> <span class="err">}}&#34;</span>
+    <span class="na">scrolling</span><span class="o">=</span><span class="s">&#34;no&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;485px&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;930px&#34;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&#34;no&#34;</span> <span class="na">framespacing</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">allowfullscreen</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>使用 ,参数只需要一个<code>src</code>, 注释中也写出了用法.测试后是可以正常使用的,不过宽高需要自己调整</p>
+</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-07-14</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/hugo/">hugo</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/frp/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">使用frp搭建内网穿透</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/cdn-jsdelivr/">
+            <span class="next-text nav-default">使用 JsDelivr作为CDN 加速服务</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

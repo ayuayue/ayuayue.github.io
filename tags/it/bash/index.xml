@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/Bash on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/bash/</link>
+    <description>Recent content in IT/Bash on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>git-bash配置</title>
+      <link>https://blog.caoayu.top/post/git-bash%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 03 Oct 2022 20:47:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/git-bash%E9%85%8D%E7%BD%AE/</guid>
+      <description>git-bash配置 配置好 git-bash 后可以代替绝大多数时候开发的需求.不需要额外折腾 powershell 等工具.大道至简👀 fish 将 fish 以 子进程的方式在 Git-bash 中运行,可以进行命令</description>
+    </item>
+    
+    <item>
+      <title>bash键盘高级操作技巧</title>
+      <link>https://blog.caoayu.top/post/bash%E9%94%AE%E7%9B%98%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Mon, 03 Oct 2022 20:41:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/bash%E9%94%AE%E7%9B%98%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C%E6%8A%80%E5%B7%A7/</guid>
+      <description>bash键盘高级操作技巧 开玩笑地说，我经常把 Unix 描述为“这个操作系统是为喜欢敲键盘的人们服务的。” 当然，Unix 甚至还有一个命令行，这个事实是</description>
+    </item>
+    
+  </channel>
+</rss>

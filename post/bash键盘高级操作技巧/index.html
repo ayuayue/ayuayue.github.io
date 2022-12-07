@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>bash键盘高级操作技巧 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="bash键盘高级操作技巧 开玩笑地说，我经常把 Unix 描述为“这个操作系统是为喜欢敲键盘的人们服务的。” 当然，Unix 甚至还有一个命令行，这个事实是" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/bash%E9%94%AE%E7%9B%98%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C%E6%8A%80%E5%B7%A7/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="bash键盘高级操作技巧" />
+<meta property="og:description" content="bash键盘高级操作技巧 开玩笑地说，我经常把 Unix 描述为“这个操作系统是为喜欢敲键盘的人们服务的。” 当然，Unix 甚至还有一个命令行，这个事实是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/bash%E9%94%AE%E7%9B%98%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C%E6%8A%80%E5%B7%A7/" />
+<meta property="article:published_time" content="2022-10-03T20:41:46+00:00" />
+<meta property="article:modified_time" content="2022-10-25T08:16:47+00:00" />
+<meta itemprop="name" content="bash键盘高级操作技巧">
+<meta itemprop="description" content="bash键盘高级操作技巧 开玩笑地说，我经常把 Unix 描述为“这个操作系统是为喜欢敲键盘的人们服务的。” 当然，Unix 甚至还有一个命令行，这个事实是">
+<meta itemprop="datePublished" content="2022-10-03T20:41:46&#43;00:00" />
+<meta itemprop="dateModified" content="2022-10-25T08:16:47&#43;00:00" />
+<meta itemprop="wordCount" content="3916">
+
+
+
+<meta itemprop="keywords" content="IT/Bash," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="bash键盘高级操作技巧"/>
+<meta name="twitter:description" content="bash键盘高级操作技巧 开玩笑地说，我经常把 Unix 描述为“这个操作系统是为喜欢敲键盘的人们服务的。” 当然，Unix 甚至还有一个命令行，这个事实是"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">bash键盘高级操作技巧</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-10-03 </span>
+        
+          <span class="more-meta"> 约 3916 字 </span>
+          <span class="more-meta"> 预计阅读 8 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#bash键盘高级操作技巧">bash键盘高级操作技巧</a>
+      <ul>
+        <li><a href="#命令行编辑">命令行编辑</a></li>
+        <li><a href="#移动光标">移动光标</a></li>
+        <li><a href="#修改文本">修改文本</a></li>
+        <li><a href="#剪切和粘贴文本">剪切和粘贴文本</a></li>
+        <li><a href="#自动补全">自动补全</a></li>
+        <li><a href="#利用历史命令">利用历史命令</a></li>
+        <li><a href="#搜索历史命令">搜索历史命令</a></li>
+        <li><a href="#历史命令展开">历史命令展开</a></li>
+        <li><a href="#总结归纳">总结归纳</a></li>
+        <li><a href="#拓展阅读">拓展阅读</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2022-10-25T08:16:47" title="October 25, 2022">October 25, 2022</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="bash键盘高级操作技巧">bash键盘高级操作技巧</h1>
+<p>开玩笑地说，我经常把 Unix 描述为“这个操作系统是为喜欢敲键盘的人们服务的。” 当然，Unix 甚至还有一个命令行，这个事实是个确凿的证据，证明了我所说的话。 但是命令行用户不喜欢敲入那么多字。那又为什么如此多的命令会有这样简短的命令名，像 cp，ls，mv，和 rm？事实上，命令行最为珍视的目标之一就是懒惰；用最少的击键次数 来完成最多的工作。另一个目标是你的手指永远不必离开键盘，永不触摸鼠标。在这一 章节，我们将看一下 bash 特性，这些特性使键盘使用起来更加迅速，更加高效。</p>
+<p>以下命令将会露面：</p>
+<ul>
+<li>clear － 清空屏幕</li>
+<li>history － 显示历史列表内容</li>
+</ul>
+<h2 id="命令行编辑">命令行编辑</h2>
+<p>Bash 使用了一个名为 Readline 的库（共享的线程集合，可以被不同的程序使用）， 来实现命令行编辑。我们已经看到一些例子。我们知道，例如，箭头按键可以移动鼠标， 此外还有许多特性。想想这些额外的工具，我们可以在工作中使用。学会所有的特性 并不重要，但许多特性非常有帮助。选择自己需要的特性。</p>
+<p>注意：下面一些按键组合（尤其使用 Alt 键的组合），可能会被 GUI 拦截来触发其它的功能。 当使用虚拟控制台时，所有的按键组合都应该正确地工作。</p>
+<h2 id="移动光标">移动光标</h2>
+<p>下表列出了移动光标所使用的按键：</p>
+<p>按键</p>
+<p>行动</p>
+<p>Ctrl-a</p>
+<p>移动光标到行首。</p>
+<p>Ctrl-e</p>
+<p>移动光标到行尾。</p>
+<p>Ctrl-f</p>
+<p>光标前移一个字符；和右箭头作用一样。</p>
+<p>Ctrl-b</p>
+<p>光标后移一个字符；和左箭头作用一样。</p>
+<p>Alt-f</p>
+<p>光标前移一个字。</p>
+<p>Alt-b</p>
+<p>光标后移一个字。</p>
+<p>Ctrl-l</p>
+<p>清空屏幕，移动光标到左上角。clear 命令完成同样的工作。</p>
+<h2 id="修改文本">修改文本</h2>
+<p>表9－2列出了键盘命令，这些命令用来在命令行中编辑字符。</p>
+<p>按键</p>
+<p>行动</p>
+<p>Ctrl-d</p>
+<p>删除光标位置的字符。</p>
+<p>Ctrl-t</p>
+<p>光标位置的字符和光标前面的字符互换位置。</p>
+<p>Alt-t</p>
+<p>光标位置的字和其前面的字互换位置。</p>
+<p>Alt-l</p>
+<p>把从光标位置到字尾的字符转换成小写字母。</p>
+<p>Alt-u</p>
+<p>把从光标位置到字尾的字符转换成大写字母。</p>
+<h2 id="剪切和粘贴文本">剪切和粘贴文本</h2>
+<p>Readline 的文档使用术语 killing 和 yanking 来指我们平常所说的剪切和粘贴。 剪切下来的本文被存储在一个叫做剪切环(kill-ring)的缓冲区中。</p>
+<p>| | | | &mdash; | &mdash; |表9-3: 剪切和粘贴命令 | 按键 | 行动 | | Ctrl-k | 剪切从光标位置到行尾的文本。 | | Ctrl-u | 剪切从光标位置到行首的文本。 | | Alt-d | 剪切从光标位置到词尾的文本。 | | Alt-Backspace | 剪切从光标位置到词头的文本。如果光标在一个单词的开头，剪切前一个单词。 | | Ctrl-y | 把剪切环中的文本粘贴到光标位置。 |</p>
+<blockquote>
+<p>元键</p>
+</blockquote>
+<p>如果你冒险进入到 Readline 的文档中，你会在 bash 手册页的 READLINE 段落， 遇到一个术语&quot;元键&rdquo;（meta key）。在当今的键盘上，这个元键是指 Alt 键，但 并不总是这样。</p>
+<p>回到昏暗的年代（在 PC 之前 Unix 之后），并不是每个人都有他们自己的计算机。 他们可能有一个叫做终端的设备。一个终端是一种通信设备，它以一个文本显示 屏幕和一个键盘作为其特色，它里面有足够的电子器件来显示文本字符和移动光标。 它连接到（通常通过串行电缆）一个更大的计算机或者是一个大型计算机的通信 网络。有许多不同的终端产品商标，它们有着不同的键盘和特征显示集。因为它们 都倾向于至少能理解 ASCII，所以软件开发者想要符合最低标准的可移植的应用程序。 Unix 系统有一个非常精巧的方法来处理各种终端产品和它们不同的显示特征。因为 Readline 程序的开发者们，不能确定一个专用多余的控制键的存在，他们发明了一个 控制键，并把它叫做&quot;元&rdquo;（&ldquo;meta&rdquo;）。然而在现代的键盘上，Alt 键作为元键来服务。 如果你仍然在使用终端（在 Linux 中，你仍然可以得到一个终端），你也可以按下和 释放 Esc 键来得到如控制 Alt 键一样的效果。</p>
+<h2 id="自动补全">自动补全</h2>
+<p>shell 能帮助你的另一种方式是通过一种叫做自动补全的机制。当你敲入一个命令时， 按下 tab 键，自动补全就会发生。让我们看一下这是怎样工作的。给出一个看起来 像这样的家目录：</p>
+<p>[me@linuxbox ~]$ ls</p>
+<p>Desktop ls-output.txt Pictures Templates Videos</p>
+<p>&hellip;.</p>
+<p>试着输入下面的命令，但不要按下 Enter 键：</p>
+<p>[me@linuxbox ~]$ ls l</p>
+<p>现在按下 tab 键：</p>
+<p>[me@linuxbox ~]$ ls ls-output.txt</p>
+<p>看一下 shell 是怎样补全这一行的？让我们再试试另一个例子。这回，也 不要按下 Enter:</p>
+<p>[me@linuxbox ~]$ ls D</p>
+<p>按下 tab:</p>
+<p>[me@linuxbox ~]$ ls D</p>
+<p>没有补全，只是嘟嘟响。因为&quot;D&quot;不止匹配目录中的一个条目。为了自动补全执行成功， 你给它的&quot;线索&quot;必须不模棱两可。如果我们继续输入：</p>
+<p>[me@linuxbox ~]$ ls Do</p>
+<p>然后按下 tab：</p>
+<p>[me@linuxbox ~]$ ls Documents</p>
+<p>自动补全成功了。</p>
+<p>这个实例展示了路径名自动补全，这是最常用的形式。自动补全也能对变量起作用（如果 字的开头是一个&quot;$&rdquo;），用户名字（单词以&quot;~&quot;开始），命令（如果单词是一行的第一个单词）， 和主机名（如果单词的开头是&rdquo;@&quot;）。主机名自动补全只对包含在文件/etc/hosts 中的主机名有效。</p>
+<p>有一系列的控制和元键序列与自动补全相关联：</p>
+<p>| | | | &mdash; | &mdash; |表9-4: 自动补全命令 | 按键 | 行动 | | Alt-? | 显示可能的自动补全列表。在大多数系统中，你也可以完成这个通过按 两次 tab 键，这会更容易些。 | | Alt-* | 插入所有可能的自动补全。当你想要使用多个可能的匹配项时，这个很有帮助。 |</p>
+<blockquote>
+<p>可编程自动补全</p>
+</blockquote>
+<p>目前的 bash 版本有一个叫做可编程自动补全工具。可编程自动补全允许你（更可能是，你的 发行版提供商）来加入额外的自动补全规则。通常需要加入对特定应用程序的支持，来完成这个 任务。例如，有可能为一个命令的选项列表，或者一个应用程序支持的特殊文件类型加入自动补全。 默认情况下，Ubuntu 已经定义了一个相当大的规则集合。可编程自动补全是由 shell 函数实现的，shell 函数是一种小巧的 shell 脚本，我们会在后面的章节中讨论到。如果你感到好奇，试一下：</p>
+<p><em>set | less</em></p>
+<p>查看一下如果你能找到它们的话。默认情况下，并不是所有的发行版都包括它们。</p>
+<h2 id="利用历史命令">利用历史命令</h2>
+<p>正如我们在第二章中讨论到的，bash 维护着一个已经执行过的命令的历史列表。这个命令列表 被保存在你家目录下，一个叫做 .bash_history 的文件里。这个 history 工具是个有用资源， 因为它可以减少你敲键盘的次数，尤其当和命令行编辑联系起来时。</p>
+<h2 id="搜索历史命令">搜索历史命令</h2>
+<p>在任何时候，我们都可以浏览历史列表的内容，通过：</p>
+<p>[me@linuxbox ~]$ history | less</p>
+<p>在默认情况下，bash 会存储你所输入的最后 500 个命令。在随后的章节里，我们会知道 怎样调整这个数值。比方说我们想要找到列出目录 /usr/bin 内容的命令。一种方法，我们可以这样做：</p>
+<p>[me@linuxbox ~]$ history | grep /usr/bin</p>
+<p>比方说在我们的搜索结果之中，我们得到一行，包含了有趣的命令，像这样；</p>
+<p>88 ls -l /usr/bin &gt; ls-output.txt</p>
+<p>数字 &ldquo;88&rdquo; 是这个命令在历史列表中的行号。随后在使用另一种展开类型时，叫做 历史命令展开，我们会用到这个数字。我们可以这样做，来使用我们所发现的行：</p>
+<p>[me@linuxbox ~]$ !88</p>
+<p>bash 会把 &ldquo;!88&rdquo; 展开成为历史列表中88行的内容。还有其它的历史命令展开形式，我们一会儿 讨论它们。bash 也具有按递增顺序来搜索历史列表的能力。这意味着随着字符的输入，我们 可以告诉 bash 去搜索历史列表，每一个附加字符都进一步提炼我们的搜索。启动递增搜索， 输入 Ctrl-r，其后输入你要寻找的文本。当你找到它以后，你可以敲入 Enter 来执行命令， 或者输入 Ctrl-j，从历史列表中复制这一行到当前命令行。再次输入 Ctrl-r，来找到下一个 匹配项（向上移动历史列表）。输入 Ctrl-g 或者 Ctrl-c，退出搜索。实际来体验一下：</p>
+<p>[me@linuxbox ~]$</p>
+<p>首先输入 Ctrl-r:</p>
+<p>(reverse-i-search)`&rsquo;:</p>
+<p>提示符改变，显示我们正在执行反向递增搜索。搜索过程是&quot;反向的&rdquo;，因为我们按照从&quot;现在&quot;到过去 某个时间段的顺序来搜寻。下一步，我们开始输入要查找的文本。在这个例子里是 &ldquo;/usr/bin&rdquo;：</p>
+<p>(reverse-i-search)`/usr/bin&rsquo;: ls -l /usr/bin &gt; ls-output.txt</p>
+<p>即刻，搜索返回我们需要的结果。我们可以执行这个命令，按下 Enter 键，或者我们可以复制 这个命令到我们当前的命令行，来进一步编辑它，输入 Ctrl-j。复制它，输入 Ctrl-j：</p>
+<p>[me@linuxbox ~]$ ls -l /usr/bin &gt; ls-output.txt</p>
+<p>我们的 shell 提示符重新出现，命令行加载完毕，正准备行动！下表列出了一些按键组合， 这些按键用来操作历史列表：</p>
+<p>按键</p>
+<p>行为</p>
+<p>Ctrl-p</p>
+<p>移动到上一个历史条目。类似于上箭头按键。</p>
+<p>Ctrl-n</p>
+<p>移动到下一个历史条目。类似于下箭头按键。</p>
+<p>Alt-</p>
+<p>移动到历史列表开头。</p>
+<p>Alt-&gt;</p>
+<p>移动到历史列表结尾，即当前命令行。</p>
+<p>Ctrl-r</p>
+<p>反向递增搜索。从当前命令行开始，向上递增搜索。</p>
+<p>Alt-p</p>
+<p>反向搜索，不是递增顺序。输入要查找的字符串，然后按下 Enter，执行搜索。</p>
+<p>Alt-n</p>
+<p>向前搜索，非递增顺序。</p>
+<p>Ctrl-o</p>
+<p>执行历史列表中的当前项，并移到下一个。如果你想要执行历史列表中一系列的命令，这很方便。</p>
+<h2 id="历史命令展开">历史命令展开</h2>
+<p>通过使用 &ldquo;!&rdquo; 字符，shell 为历史列表中的命令，提供了一个特殊的展开类型。我们已经知道一个感叹号 ，其后再加上一个数字，可以把来自历史列表中的命令插入到命令行中。还有一些其它的展开特性：</p>
+<p>序列</p>
+<p>行为</p>
+<p>!!</p>
+<p>重复最后一次执行的命令。可能按下上箭头按键和 enter 键更容易些。</p>
+<p>!number</p>
+<p>重复历史列表中第 number 行的命令。</p>
+<p>!string</p>
+<p>重复最近历史列表中，以这个字符串开头的命令。</p>
+<p>!?string</p>
+<p>重复最近历史列表中，包含这个字符串的命令。</p>
+<p>应该小心谨慎地使用 &ldquo;!string&rdquo; 和 &ldquo;!?string&rdquo; 格式，除非你完全确信历史列表条目的内容。</p>
+<p>在历史展开机制中，还有许多可利用的特点，但是这个题目已经太晦涩难懂了， 如果我们再继续讨论的话，我们的头可能要爆炸了。bash 手册页的 HISTORY EXPANSION 部分详尽地讲述了所有要素。</p>
+<blockquote>
+<p>脚本</p>
+</blockquote>
+<p>除了 bash 中的命令历史特性，许多 Linux 发行版包括一个叫做 script 的程序， 这个程序可以记录整个 shell 会话，并把 shell 会话存在一个文件里面。这个命令的基本语法是：</p>
+<p><em>script [file]</em></p>
+<p>命令中的 file 是指用来存储 shell 会话记录的文件名。如果没有指定文件名，则使用文件 typescript。查看脚本的手册页，可以得到一个关于 script 程序选项和特点的完整列表。</p>
+<h2 id="总结归纳">总结归纳</h2>
+<p>在这一章中，我们已经讨论了一些由 shell 提供的键盘操作技巧，这些技巧是来帮助打字员减少工作量的。 随着时光流逝，你和命令行打交道越来越多，我猜想你会重新翻阅这一章的内容，学会更多的技巧。 目前，你就认为它们是可选的，潜在地有帮助的。</p>
+<h2 id="拓展阅读">拓展阅读</h2>
+<ul>
+<li>
+<p>Wikipedia 上有一篇关于计算机终端的好文章：</p>
+<p><a href="http://en.wikipedia.org/wiki/Computer_terminal">http://en.wikipedia.org/wiki/Computer_terminal</a></p>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2022-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/it/bash/">IT/Bash</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/3-1%E8%BF%9B%E7%A8%8B%E6%A0%87%E8%AF%86%E4%B8%8Efork/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">3-1进程标识与fork</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/sqldeveloper/">
+            <span class="next-text nav-default">sqldeveloper</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

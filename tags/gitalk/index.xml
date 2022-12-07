@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gitalk on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/gitalk/</link>
+    <description>Recent content in gitalk on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 07 May 2020 11:08:34 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/gitalk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gitalk 自动初始化</title>
+      <link>https://blog.caoayu.top/post/hexo-gitalk-init/</link>
+      <pubDate>Thu, 07 May 2020 11:08:34 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/hexo-gitalk-init/</guid>
+      <description>&lt;p&gt;​	前面有篇文章介绍了使用&lt;code&gt;hexo&lt;/code&gt;的评论系统&lt;code&gt;gitalk&lt;/code&gt;,但是使用过程中有一些小问题,每一篇文章都需要初始化一下&lt;code&gt;issues&lt;/code&gt;,不然是无法评论的,如果文章太多,一个一个初始化就太浪费时间和精力,所以借鉴了网上的一些资料完成一个自动化初始评论的需求&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

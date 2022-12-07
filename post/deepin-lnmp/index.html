@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Deepin LNMP环境搭建 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="Deepin LNMP环境搭建" /><meta name="keywords" content="Deepin LNMP环境搭建" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/deepin-lnmp/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Deepin LNMP环境搭建" />
+<meta property="og:description" content="Deepin LNMP环境搭建" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/deepin-lnmp/" />
+<meta property="article:published_time" content="2020-12-05T11:26:37+08:00" />
+<meta property="article:modified_time" content="2020-12-05T11:26:37+08:00" />
+<meta itemprop="name" content="Deepin LNMP环境搭建">
+<meta itemprop="description" content="Deepin LNMP环境搭建">
+<meta itemprop="datePublished" content="2020-12-05T11:26:37&#43;08:00" />
+<meta itemprop="dateModified" content="2020-12-05T11:26:37&#43;08:00" />
+<meta itemprop="wordCount" content="1345">
+
+
+
+<meta itemprop="keywords" content="Deepin," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deepin LNMP环境搭建"/>
+<meta name="twitter:description" content="Deepin LNMP环境搭建"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Deepin LNMP环境搭建</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-12-05 </span>
+        <div class="post-category">
+            <a href="/categories/deepin/"> Deepin </a>
+            </div>
+          <span class="more-meta"> 约 1345 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#lnmp"><code>LNMP</code></a></li>
+            <li><a href="#linux"><code>Linux</code></a></li>
+            <li><a href="#nginx"><code>Nginx</code></a></li>
+            <li><a href="#php"><code>PHP</code></a>
+              <ul>
+                <li><a href="#如果仓库中没有需要的版本">如果仓库中没有需要的版本</a></li>
+              </ul>
+            </li>
+            <li><a href="#mysql"><code>MYSQL</code></a></li>
+            <li><a href="#composer安装">composer安装</a></li>
+            <li><a href="#配置阿里云镜像源">配置阿里云镜像源</a></li>
+            <li><a href="#配置-nginx-与-php">配置 <code>nginx</code> 与 <code>php</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-12-05T11:26:37" title="December 5, 2020">December 5, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h3 id="lnmp"><code>LNMP</code></h3>
+<p><code>lnmp</code> 是一个常见的<code>web</code>开发的环境，尤其对于 <code>phper</code> 来说，基本是必须要使用的一套环境。但是在 <code>Linux</code> 下的安装和配置并不是那么容易，所以近些年涌现了不少的一键安装方案，比如 <code>lnmp</code>、宝塔等。基本满足了日常的使用，但是如果不自己动手打通每个软件直接的配置与关联，我们就无法深入的去理解各个软件之间是如何协作的。而且往往集成环境的各种细节也不太清楚，如果想要扩展或是有出现错误，有时也很难短时间的解决。所以独立安装会让我们更清晰的了解整个的流程，对于错误也更好的去分析是那个环节出现了问题。</p>
+<h3 id="linux"><code>Linux</code></h3>
+<p>本文基于 <code>deepin</code> 环境，所以不需要再安装配置 <code>linux</code> 环境。</p>
+<h3 id="nginx"><code>Nginx</code></h3>
+<p>仓库中的 <code>nginx</code> 就可以使用，一般 <code>nginx</code> 不需要安装太新的版本。</p>
+<p>如果安装过可以不用安装，或者卸载重新安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt remove nginx --purge #
+</code></pre></td></tr></table>
+</div>
+</div><p>安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install nginx
+nginx -v <span class="c1"># 验证是否安装成功</span>
+service nginx status <span class="c1"># 查看 nginx 的运行状态 stop停止 restart重启</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="php"><code>PHP</code></h3>
+<p>仓库中的 <code>php</code> 是 <code>7.3</code>版本，直接安装仓库中的 <code>php7.3-fpm</code></p>
+<p>同样，安装过想要重新安装可以先卸载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt remove php7.3-fpm --purge
+</code></pre></td></tr></table>
+</div>
+</div><p>安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install php7.3-fpm
+<span class="c1"># 安装扩展，有时运行项目提示没有扩展，需要使用下面命令安装</span>
+sudo apt install php7.3-xml php7.3-curl php7.3-mbstring php7.3-xml
+<span class="c1"># 如果还需要扩展可以使用 sudo apt install php7.3- 加Tab键自动提示所有的扩展，然后选择需要的扩展进行安装</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="如果仓库中没有需要的版本">如果仓库中没有需要的版本</h4>
+<ol>
+<li>首先更新下仓库</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt update
+sudo apt upgrade
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>添加存储仓库</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install software-properties-common 
+add-apt-repository ppa:ondrej/php
+sudo apt update
+</code></pre></td></tr></table>
+</div>
+</div><p>现在仓库中搜索就可以找到 <code>7.2</code> <code>7.3</code> 版本的 <code>php</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install php7.2  <span class="c1"># 安装同版本的模块使用 sudo apt install php7.2- tab键自动补全，根据提示安装扩展</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="mysql"><code>MYSQL</code></h3>
+<p><code>deepin</code> 环境中看到社区很多反映的就是 <code>mysql</code> 的安装问题，要不然是版本太低，要不然是配置失败</p>
+<p>其实这些软件，在官网都会有每个发行版，每个架构的安装和使用方法，只要耐心查看，安装和使用是没有问题的。</p>
+<p><a href="https://dev.mysql.com/downloads/">各个发行版下载页</a></p>
+<p>这里我们使用的是 <code>deepin</code> 所以选择 <code>mysql apt repository</code> 进入</p>
+<p>这里可以点击下载，使用 <code>No thinks</code> 那个选项下载，下载 <code>mysql</code> 的官方源 <code>deb</code> 包，也可以复制链接 使用 <code>wget</code> 下载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wget https://dev.mysql.com/get/mysql-apt-config_0.8.16-1_all.deb 
+</code></pre></td></tr></table>
+</div>
+</div><p>安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo dpkg -i mysql-apt-config_0.8.16-1_all.deb  <span class="c1"># 就会进入安装源的过程</span>
+<span class="c1"># 选择 mysql-server</span> 
+<span class="c1"># 版本 根据自己需要进行选择</span>
+<span class="c1"># 最后选择 ok</span>
+
+sudo apt update <span class="c1"># 更新 安装源成功就会看到有 mysql 的源输出</span>
+sudo apt install mysql-server <span class="c1"># 安装 mysql 服务</span>
+<span class="c1"># 输入 y</span>
+<span class="c1"># 会弹框提示输入密码，输入两次即可</span>
+<span class="c1"># 会让认证插件， 一般选择第二个，第一个可能兼容性不好。</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20201205122825.png" alt=""></p>
+<p>验证</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">mysql -uroot -p
+<span class="c1"># 输入密码</span>
+<span class="c1"># 成功进入mysql终端</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20201205122901.png" alt=""></p>
+<h3 id="composer安装">composer安装</h3>
+<p><a href="https://pkg.phpcomposer.com/#how-to-install-composer">官方安装</a></p>
+<p>安装完如果有问题，记得加入执行权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo chmod a+x /usr/bin/composer
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="配置阿里云镜像源">配置阿里云镜像源</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">composer config -g repo.packagist composer mirrors.aliyun.com/composer/
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="配置-nginx-与-php">配置 <code>nginx</code> 与 <code>php</code></h3>
+<p>新增 <code>nginx</code> 配置文件，默认配置文件在 <code>/etc/nginx/nginx.config</code></p>
+<p>可以看到默认配置文件的引入文件内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">include /etc/nginx/conf.d/*.conf<span class="p">;</span>
+include /etc/nginx/sites-enabled/*<span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>所以我们不需要更改默认的配置，只需要在者两个目录下新建配置文件就可以被加载进来，推荐将文件新建到 <code>/etc/nginx/sites-enabled/</code> ,可以看到有个默认的 <code>default</code> 文件，为了避免冲突，可以将这个文件的内容全部注释，或者将文件移动到其他不会加载的位置。推荐将文件名设置为 项目名，后缀为 <code>.conf</code> 即可。比如新建 <code>caoayu.xyz.conf</code> 内容如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">server <span class="o">{</span>
+    listen 80<span class="p">;</span>
+    server_name example.com<span class="p">;</span>
+    root /example.com/public<span class="p">;</span>
+
+    add_header X-Frame-Options <span class="s2">&#34;SAMEORIGIN&#34;</span><span class="p">;</span>
+    add_header X-XSS-Protection <span class="s2">&#34;1; mode=block&#34;</span><span class="p">;</span>
+    add_header X-Content-Type-Options <span class="s2">&#34;nosniff&#34;</span><span class="p">;</span>
+
+    index index.html index.htm index.php<span class="p">;</span>
+
+    charset utf-8<span class="p">;</span>
+
+    location / <span class="o">{</span>
+        try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ /index.php?<span class="nv">$query_string</span><span class="p">;</span>
+    <span class="o">}</span>
+
+    <span class="nv">location</span> <span class="o">=</span> /favicon.ico <span class="o">{</span> access_log off<span class="p">;</span> log_not_found off<span class="p">;</span> <span class="o">}</span>
+    <span class="nv">location</span> <span class="o">=</span> /robots.txt  <span class="o">{</span> access_log off<span class="p">;</span> log_not_found off<span class="p">;</span> <span class="o">}</span>
+
+    error_page <span class="m">404</span> /index.php<span class="p">;</span>
+
+    location ~ <span class="se">\.</span>php$ <span class="o">{</span>
+        fastcgi_split_path_info ^<span class="o">(</span>.+<span class="se">\.</span>php<span class="o">)(</span>/.+<span class="o">)</span>$<span class="p">;</span>
+        fastcgi_pass unix:/run/php/php7.3-fpm.sock<span class="p">;</span> <span class="c1"># fpm的sock地址</span>
+        fastcgi_index index.php<span class="p">;</span>
+        include fastcgi_params<span class="p">;</span>
+    <span class="o">}</span>
+
+    location ~ /<span class="se">\.</span><span class="o">(</span>?!well-known<span class="o">)</span>.* <span class="o">{</span>
+        deny all<span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>关于 <code>php-fpm</code> 的地址，也就是 <code>fastcgi_pass</code> 那一项的值，我们找到 <code>php-fmp</code> 的配置文件，在 <code>/etc/php/7.3/fpm/php-fpm.conf</code> ,可以看到 <code>sock</code> 的地址</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>global<span class="o">]</span>
+<span class="p">;</span> Pid file
+<span class="p">;</span> Note: the default prefix is /var
+<span class="p">;</span> Default Value: none
+<span class="nv">pid</span> <span class="o">=</span> /run/php/php7.3-fpm.pid
+</code></pre></td></tr></table>
+</div>
+</div><p>所以配置为 <code>fastcgi_pass unix:/run/php/php7.3-fpm.sock</code></p>
+<p>关于 <code>nginx</code> 与 <code>php</code> 的配置可参考 <a href="https://laravel.com/docs/5.5/deployment">laravel官方文档</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-12-05</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/deepin/">Deepin</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/linux-edit-map/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linux 下更改大写锁定键为ESC</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/deepin-rime/">
+            <span class="next-text nav-default">Deepin 安装及使用Rime输入法--中州韵输入法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

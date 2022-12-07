@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>composer (一) -- 依赖管理 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="Composer 依赖管理" /><meta name="keywords" content="Composer" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/composer/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="composer (一) -- 依赖管理" />
+<meta property="og:description" content="Composer 依赖管理" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/composer/" />
+<meta property="article:published_time" content="2021-01-02T22:18:17+08:00" />
+<meta property="article:modified_time" content="2021-01-02T22:18:17+08:00" />
+<meta itemprop="name" content="composer (一) -- 依赖管理">
+<meta itemprop="description" content="Composer 依赖管理">
+<meta itemprop="datePublished" content="2021-01-02T22:18:17&#43;08:00" />
+<meta itemprop="dateModified" content="2021-01-02T22:18:17&#43;08:00" />
+<meta itemprop="wordCount" content="1579">
+
+
+
+<meta itemprop="keywords" content="Composer," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="composer (一) -- 依赖管理"/>
+<meta name="twitter:description" content="Composer 依赖管理"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">composer (一) -- 依赖管理</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-02 </span>
+        <div class="post-category">
+            <a href="/categories/composer/"> Composer </a>
+            </div>
+          <span class="more-meta"> 约 1579 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#composer"><strong>composer</strong></a>
+          <ul>
+            <li><a href="#composer-init----初始化"><strong>composer init &ndash; 初始化</strong></a></li>
+            <li><a href="#composer-required----安装依赖"><strong>composer required &ndash; 安装依赖</strong></a></li>
+            <li><a href="#install-and-update-安装更新项目所有依赖"><strong>install and update 安装更新项目所有依赖</strong></a>
+              <ul>
+                <li><a href="#安装所有依赖"><strong>安装所有依赖</strong></a></li>
+                <li><a href="#更新依赖版本"><strong>更新依赖版本</strong></a></li>
+                <li><a href="#删除依赖"><strong>删除依赖</strong></a></li>
+                <li><a href="#composerlock-文件"><strong>composer.lock 文件</strong></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#开发环境和线上环境"><strong>开发环境和线上环境</strong></a>
+          <ul>
+            <li><a href="#开发模式才使用依赖"><strong>开发模式才使用依赖</strong></a></li>
+            <li><a href="#使用composer创建项目"><strong>使用composer创建项目</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#版本号"><strong>版本号</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2021-01-02T22:18:17" title="January 2, 2021">January 2, 2021</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h2 id="composer"><strong>composer</strong></h2>
+<p><code>composer</code> 是 <code>PHP</code> 用来管理依赖（<code>dependency</code>）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（<code>libraries</code>），<code>Composer</code> 会帮你安装这些依赖的库文件。类似于 <code>go</code> 的 <code>go mod</code>。</p>
+<h3 id="composer-init----初始化"><strong>composer init &ndash; 初始化</strong></h3>
+<p><code>composer init </code> : 初始化一个<code>composer</code>项目,根据提示进行创建包名及依赖信息。一路回车就可以创建一个没有什么依赖的 <code>composer.json</code> 文件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="err">#</span> <span class="err">composer.json</span>
+<span class="p">{</span>
+    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;caoayu/composer&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;composer&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;authors&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;ayuayue&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;1401262639@qq.com&#34;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&#34;require&#34;</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="composer-required----安装依赖"><strong>composer required &ndash; 安装依赖</strong></h3>
+<p><a href="https://packagist.org/">php依赖包仓库</a> ,一般找第三方扩展包都在这里，这里以 <code>illuminate/contracts</code> 包为例。<a href="https://packagist.org/packages/illuminate/contracts">illuminate/contracts 包地址</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/%E7%AE%80%E5%8D%95%E4%BF%A1%E6%81%AF%E4%BB%8B%E7%BB%8D.png" alt="简单信息介绍"></p>
+<p>根据所需运行环境选择一个最适合自己的版本安装，我这里是 <code>php7.3</code> 选择<code>v8.23.1</code>进行安装。通过包介绍中的命令进行安装 <code>composer require illuminate/contracts</code>
+通过输出可以看到，他也会自动去安装一些自己依赖的包，最后会重新生成自动加载文件。现在查看 <code>composer</code> 文件的更改。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;caoayu/composer&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;composer&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;authors&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;ayuayue&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;1401262639@qq.com&#34;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&#34;require&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;illuminate/contracts&#34;</span><span class="p">:</span> <span class="s2">&#34;^8.23&#34;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>并且生成了一个 <code>composer.lock</code> 文件及 <code>vendor</code> 目录。打开 <code>vendor</code> 目录，其中是项目依赖的包及包依赖的其他包的源码，还有一个自动加载文件 &ndash; <code>autoload.php</code></p>
+<h3 id="install-and-update-安装更新项目所有依赖"><strong>install and update 安装更新项目所有依赖</strong></h3>
+<p>并不是每个项目都是新创建的项目，在平常的开发中，往往会更换机器或者对项目进行部署，通常都是使用代码版本管理工具，如 <code>git、svn</code> 等。通过对项目进行拉取，往往都含有一个<code>composer.json composer.lock</code> 文件，这是为了保证每个开发人员都有同样的环境及依赖，更加的规范与合理。
+对于一个刚刚拉取下来的项目，一般会把 <code>verder</code> 目录设置为忽略上传的目录，所以我们需要安装所有的依赖，由于 <code>composer.json</code> 文件已经包含了所有依赖的信息，我们再使用 <code>composer require</code> 的方式是不行的。</p>
+<h4 id="安装所有依赖"><strong>安装所有依赖</strong></h4>
+<p><code>composer install</code></p>
+<p>存在 <code>composer.lock</code> 文件，安装依赖会以这个文件为依据，如果不存在，以 <code>composer.json</code> 文件为依据。</p>
+<h4 id="更新依赖版本"><strong>更新依赖版本</strong></h4>
+<p><code>composer update</code> 会根据当前 <code>composer.json</code> 文件来更新依赖，并生成新的 <code>composer.lock</code> 文件。通常用来更新依赖包的版本或增加了新的依赖时使用</p>
+<h4 id="删除依赖"><strong>删除依赖</strong></h4>
+<p>只需要修改 <code>composer.json</code> 文件的 <code>require</code> 中的包键值对，再进行 <code>composer update</code>即可删除依赖。</p>
+<p>命令删除</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">composer remove packageName <span class="c1"># packageName 为要删除的包名</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="composerlock-文件"><strong>composer.lock 文件</strong></h4>
+<p><code>composer.lock</code> 是通过 <code>composer</code> 进行安装或更新依赖后生成的一个文件，会记录上次操作的记录，如果改动了 <code>composer.json</code> 文件直接安装并不会生效，还会根据<code>composer.lock</code> 文件来安装，所以在第一次执行 <code>composer install</code> 后，如果更改了 <code>composer.json</code> 文件，需要使用 <code>composer update</code> 来更新 <code>composer.lock</code> 文件，才可以达到更新包依赖的目的</p>
+<h2 id="开发环境和线上环境"><strong>开发环境和线上环境</strong></h2>
+<h3 id="开发模式才使用依赖"><strong>开发模式才使用依赖</strong></h3>
+<p>有些依赖包我们并不是任何时候都要使用，比如 测试包，debug的包，在生产环境是不需要安装的，并且 debug包有时候还会有些漏洞，最近 <code>laravel</code> 就 爆出一个 <code>debug</code> 包的漏洞，所以尽量对包进行区分。</p>
+<p>当我们确定了包的使用范围时：可以使用 &ndash;dev 来标识为开发模式专用。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">composer require --dev phpunit/phpunit 
+</code></pre></td></tr></table>
+</div>
+</div><p>此时，在 <code>composer.json</code> 中会多出这样的内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json">	<span class="s2">&#34;require-dev&#34;</span><span class="err">:</span> <span class="p">{</span>
+		<span class="nt">&#34;phpunit/phpunit&#34;</span><span class="p">:</span> <span class="s2">&#34;^9.5&#34;</span>
+	<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>require-dev</code> 就是一个标识，用来标记该包在 <code>dev</code> 模式下使用。</p>
+<p>仅仅这样是无法进行区分的，还需要配合 <code>--no-dev</code> 来使用</p>
+<p>在线上的项目中进行更新依赖</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">composer install --no-dev 
+<span class="c1"># or</span>
+composer update --no-dev
+</code></pre></td></tr></table>
+</div>
+</div><p>这样就会忽略 <code>require-dev</code> 中的包，从而达到分离不同环境的作用。</p>
+<h3 id="使用composer创建项目"><strong>使用composer创建项目</strong></h3>
+<p>如果没有配置 <code>composer</code> 的国内源，安装依赖会比较慢，<a href="https://blog.caoayu.top/post/composer-source/">配置阿里云源</a></p>
+<p>使用 <code>composer init</code> 只会初始化出一个 <code>composer.json</code> 文件，并不会创建文件及项目。使用<code>composer</code> 也可以直接创建一个项目，如 <code>laravel tp</code> 等框架现在大部分都支持。</p>
+<p><code>composer create-project -h</code> 可以输出所有的创建项目参数及帮助信息</p>
+<p>以 <code>laravel</code> 项目为例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 最基础的参数</span>
+composer create-project laravel/laravel blog <span class="c1"># blog 为项目名，默认创建最新的laravel框架</span>
+<span class="c1"># 指定版本</span>
+composer create-project --prefer-dist laravel/laravel blog <span class="s2">&#34;5.5.*&#34;</span> <span class="c1">#将会创建5.5最新的laravel框架</span>
+
+<span class="c1"># --prefer-dist 首先下载压缩包并解压到缓存到本地，下次安装会首先从本地缓存安装，速度较快</span>
+<span class="c1"># --prefer-source 直接下载源码包括项目的版本管理信息，如 .git 目录跟分支信息。比较慢，适合直接修改源码时使用。</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="版本号"><strong>版本号</strong></h2>
+<p>常见的版本号通常有：<code>^ ~</code> 。</p>
+<blockquote>
+<p>^  :  代表当前大版本的最新版本。如 <code>^5.2.0</code> , 则会下载 <code>5.7.27</code>, 也就是<code>5</code>版本最新的一个版本。</p>
+<p>~ :  代表大于当前版本号最后的那位。 如 <code>~5.2.1</code> ,则会下载 <code>5.2.12</code>，不会超过 <code>5.2.2</code></p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2021-01-02</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/composer/">Composer</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/st/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linux Simple Terminal</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/switcher-z/">
+            <span class="next-text nav-default">Windows 切换同窗口应用及git-bash的一些小工具</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on 个人内容记录</title>
+    <link>https://blog.caoayu.top/categories/linux/</link>
+    <description>Recent content in linux on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 08 Mar 2021 17:55:06 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Scrcpy在Linux操控安卓</title>
+      <link>https://blog.caoayu.top/post/scrcpy/</link>
+      <pubDate>Mon, 08 Mar 2021 17:55:06 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/scrcpy/</guid>
+      <description>在 Windows 上系统自带了投屏功能，然而 deepin 也有 深度演示助手 ，不过我并没有在系统中找到。论坛中的反响都是在 15 版本，现在已经是 20.2 了。 寻找到了一个叫 QTScrcpy 的应用</description>
+    </item>
+    
+    <item>
+      <title>Linux Simple Terminal</title>
+      <link>https://blog.caoayu.top/post/st/</link>
+      <pubDate>Wed, 06 Jan 2021 20:53:11 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/st/</guid>
+      <description>Terminal linux 下有许多优秀的 Termainl，我在用的有deepin-terminal,alacritty,&amp;lsquo;simple terminal&amp;rsquo;.alacritty 是一款使用显卡</description>
+    </item>
+    
+    <item>
+      <title>Linux 下更改大写锁定键为ESC</title>
+      <link>https://blog.caoayu.top/post/linux-edit-map/</link>
+      <pubDate>Fri, 11 Dec 2020 20:37:12 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/linux-edit-map/</guid>
+      <description>Caps_Lock 大写锁定键，一般用的很少。但是它的位置又十分容易按到，而 esc 用的频率比较高，但是，位置却很尴尬。尤其在 vim 或一些终端之中，所以我们可以将键位进</description>
+    </item>
+    
+    <item>
+      <title>虚拟机安装Centos后的一些配置</title>
+      <link>https://blog.caoayu.top/post/vm-centos-config/</link>
+      <pubDate>Wed, 15 Jul 2020 21:35:42 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/vm-centos-config/</guid>
+      <description>VMware 安装 Centos 使用vmware安装了centos7，并去除了不必要的硬件，只保留了比用的几个，安装的是server with gui 安装完成后，又上角链接网络 更</description>
+    </item>
+    
+    <item>
+      <title>使用frp搭建内网穿透</title>
+      <link>https://blog.caoayu.top/post/frp/</link>
+      <pubDate>Wed, 15 Jul 2020 20:10:54 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/frp/</guid>
+      <description>什么是Frp frp 是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 tcp, http, https 等协议类型，并且 web 服务支持根据域名进行路由</description>
+    </item>
+    
+    <item>
+      <title>Linux 文件隐藏权限</title>
+      <link>https://blog.caoayu.top/post/linux-attr/</link>
+      <pubDate>Sun, 05 Jul 2020 20:43:00 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/linux-attr/</guid>
+      <description>文件的隐藏权限 除了文件的读写,执行权限外,linux还有一种隐藏权限,设置隐藏权限可以防止一些其他用户的误操作或者恶意操作,当我们配置了ng</description>
+    </item>
+    
+    <item>
+      <title>linux 安装并配置zsh</title>
+      <link>https://blog.caoayu.top/post/linux-zsh/</link>
+      <pubDate>Sun, 21 Jun 2020 10:24:08 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/linux-zsh/</guid>
+      <description>linux 下 zsh 的安装及配置 安装 1 sudo apt-get install -y zsh 安装 oh-my-zsh 三种方式 1 2 3 4 5 sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;#34; sh -c &amp;#34;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&amp;#34; wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh 如果因为网络问题安装失败,可以使用代理,或者直接</description>
+    </item>
+    
+    <item>
+      <title>Linux 安装PicGo问题</title>
+      <link>https://blog.caoayu.top/post/deepin-install-picgo/</link>
+      <pubDate>Fri, 19 Jun 2020 22:14:22 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-install-picgo/</guid>
+      <description>使用deepin安装PicGo时，由于时制作的AppImage包,我们可以直接在终端加上执行权限后运行，但是运行的时候报错 1 2 3 4 [1827:0619/220927.597934:FATAL: setuid_sandbox_host.cc(157)] The SUID sandbox</description>
+    </item>
+    
+    <item>
+      <title>使用scp进行与服务器的文件交互(上传和下载)</title>
+      <link>https://blog.caoayu.top/post/scp01/</link>
+      <pubDate>Fri, 22 May 2020 19:33:59 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/scp01/</guid>
+      <description>&lt;p&gt;​	通常我们上传或下载文件会使用一些软件,如&lt;code&gt;xftp,winscp, finalshell&lt;/code&gt;,前面几篇文章已经介绍了如何搭一个命令行环境以及使用命令行去连接服务器,进行交互,这次我们使用命令行来进行文件的上传和下载,通常当我们想要上传文件到服务器时,不是通过软件就是&lt;code&gt;ftp&lt;/code&gt;,比较的繁琐,而且底层使用的原理都是一样的,这次介绍使用&lt;code&gt;scp&lt;/code&gt;命令进行命令行端的文件操作,无需再打开软件,找到文件,拖进去或者其他比较费时的操作&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>配置ssh免密登陆,并使用命令行与服务器交互</title>
+      <link>https://blog.caoayu.top/post/ssh-auth/</link>
+      <pubDate>Fri, 22 May 2020 19:33:42 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/ssh-auth/</guid>
+      <description>&lt;p&gt;对于经常要连接服务器进行交互的人来说,有很多种方式,最多的就是使用一些比较成熟的应用,如&lt;code&gt;xshell,finalshell,xftp&lt;/code&gt;等.在上一篇文章中我们搭建了一个新的终端,这次来使用终端来进行服务器的交互,包括访问以及文件的上传和下载.&lt;/p&gt;
+&lt;h3 id=&#34;命令&#34;&gt;命令&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;ssh-copy-id -i ~/.ssh/id_rsa.pub root@vm.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>deepin使用时的一些小问题</title>
+      <link>https://blog.caoayu.top/post/deepin-problem/</link>
+      <pubDate>Sat, 25 Apr 2020 19:45:33 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-problem/</guid>
+      <description>&lt;h3 id=&#34;关于linux发行版使用的一些小问题&#34;&gt;关于linux发行版使用的一些小问题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;安装软件时报错,大部分是需要依赖,而依赖并没有安装,看终端输出进行手动安装\&lt;/li&gt;
+&lt;li&gt;使用安装包,如deb安装失败,看失败详情,一般都是依赖问题,终端运行 sudo apt install &amp;ndash;fix-broken即可自动修复&lt;/li&gt;
+&lt;li&gt;命令忘记或不知道怎么用,使用帮助,linux man 或者 使用软件的-h &amp;ndash;help查看参数详情及解释&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>deepin使用</title>
+      <link>https://blog.caoayu.top/post/deepin-use/</link>
+      <pubDate>Sat, 25 Apr 2020 18:49:45 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-use/</guid>
+      <description>&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;p&gt;下载官方镜像,使用官方镜像软件或者使用rufus,以dd的方式刻录,分区,主要分/,以及efi,其他分区可自定义,如 &lt;code&gt;home&lt;/code&gt; ,&lt;code&gt;opt&lt;/code&gt;,和交换分区,设置时区,键盘,用户,密码,等待安装&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

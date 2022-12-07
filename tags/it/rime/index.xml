@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/Rime on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/rime/</link>
+    <description>Recent content in IT/Rime on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/rime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>rime 配置 onedrive 同步</title>
+      <link>https://blog.caoayu.top/post/rime-%E9%85%8D%E7%BD%AE-onedrive-%E5%90%8C%E6%AD%A5/</link>
+      <pubDate>Mon, 03 Oct 2022 20:30:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/rime-%E9%85%8D%E7%BD%AE-onedrive-%E5%90%8C%E6%AD%A5/</guid>
+      <description>rime 配置 onedrive 同步 修改 installation.yaml 文件 installation_id 为设备 ID sync_dir 为 onedrive 路径 配置完成后点击同步即可上传到 onedrive ,只会同步合并不同设备的字典信息,配置信息手动复制到 rime 用户配置目录中</description>
+    </item>
+    
+    <item>
+      <title>rime配置 onedrive 同步</title>
+      <link>https://blog.caoayu.top/post/rime%E9%85%8D%E7%BD%AE-onedrive-%E5%90%8C%E6%AD%A5/</link>
+      <pubDate>Mon, 03 Oct 2022 20:30:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/rime%E9%85%8D%E7%BD%AE-onedrive-%E5%90%8C%E6%AD%A5/</guid>
+      <description>rime配置 onedrive 同步 修改 installation.yaml 文件 installation_id 为设备ID sync_dir 为 onedrive 路径 配置完成后点击同步即可上传到 onedrive ,只会同步合并不同设备的字典信息,配置信息手动复制到 rime 用户配</description>
+    </item>
+    
+    <item>
+      <title>小狼毫</title>
+      <link>https://blog.caoayu.top/post/%E5%B0%8F%E7%8B%BC%E6%AF%AB/</link>
+      <pubDate>Mon, 03 Oct 2022 20:14:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E5%B0%8F%E7%8B%BC%E6%AF%AB/</guid>
+      <description>小狼毫 ![[rime 配置 onedrive 同步]] 1 2 3 4 5 # weasel.custom.yaml patch: style/horizontal: true # 候选横排 style/inline_preedit: false # 内嵌编码（仅支持TSF） style/display_tray_icon: true # 显示托盘图标 1 2 3 4 5 6 7 8 # default.custom.yaml &amp;#34;menu/page_size&amp;#34;: 9 &amp;#34;switcher/hotkeys&amp;#34;: - &amp;#34;Control+grave&amp;#34; - &amp;#34;Control+shift+grave&amp;#34; - &amp;#34;F4&amp;#34; windows</description>
+    </item>
+    
+  </channel>
+</rss>

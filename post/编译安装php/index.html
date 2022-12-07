@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>编译安装php - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="编译安装php 视频连接: https://www.bilibili.com/video/BV1ry4y1G7E2?zw 在 linux 上，搭建新环境需要使用编译安装的方式，也有很多集成环境，或者编译好的源码包，但是我们并不了解整个组织的过程，所" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85php/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="编译安装php" />
+<meta property="og:description" content="编译安装php 视频连接: https://www.bilibili.com/video/BV1ry4y1G7E2?zw 在 linux 上，搭建新环境需要使用编译安装的方式，也有很多集成环境，或者编译好的源码包，但是我们并不了解整个组织的过程，所" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85php/" />
+<meta property="article:published_time" content="2022-10-03T20:57:46+00:00" />
+<meta property="article:modified_time" content="2022-10-25T00:08:53+00:00" />
+<meta itemprop="name" content="编译安装php">
+<meta itemprop="description" content="编译安装php 视频连接: https://www.bilibili.com/video/BV1ry4y1G7E2?zw 在 linux 上，搭建新环境需要使用编译安装的方式，也有很多集成环境，或者编译好的源码包，但是我们并不了解整个组织的过程，所">
+<meta itemprop="datePublished" content="2022-10-03T20:57:46&#43;00:00" />
+<meta itemprop="dateModified" content="2022-10-25T00:08:53&#43;00:00" />
+<meta itemprop="wordCount" content="1937">
+
+
+
+<meta itemprop="keywords" content="IT/PHP,IT/Centos,IT/Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="编译安装php"/>
+<meta name="twitter:description" content="编译安装php 视频连接: https://www.bilibili.com/video/BV1ry4y1G7E2?zw 在 linux 上，搭建新环境需要使用编译安装的方式，也有很多集成环境，或者编译好的源码包，但是我们并不了解整个组织的过程，所"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">编译安装php</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-10-03 </span>
+        
+          <span class="more-meta"> 约 1937 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#编译安装php">编译安装php</a>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li>
+                  <ul>
+                    <li>
+                      <ul>
+                        <li><a href="#安装源码中的扩展">安装源码中的扩展</a></li>
+                        <li><a href="#编译安装下载的扩展">编译安装下载的扩展</a></li>
+                        <li><a href="#多版本共存">多版本共存</a></li>
+                        <li><a href="#扩展问题">扩展问题</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#vi-etcldsoconf">vi /etc/ld.so.conf</a>
+          <ul>
+            <li>
+              <ul>
+                <li>
+                  <ul>
+                    <li>
+                      <ul>
+                        <li><a href="#安装-pecl">安装 pecl</a></li>
+                        <li><a href="#php74扩展安装">php7.4扩展安装</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2022-10-25T00:08:53" title="October 25, 2022">October 25, 2022</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="编译安装php">编译安装php</h1>
+<p>视频连接: <a href="https://www.bilibili.com/video/BV1ry4y1G7E2?zw">https://www.bilibili.com/video/BV1ry4y1G7E2?zw</a></p>
+<p>在 linux 上，搭建新环境需要使用编译安装的方式，也有很多集成环境，或者编译好的源码包，但是我们并不了解整个组织的过程，所以最好自己手动去编译安装一下，并且可以将编译好的 php 及扩展进行打包，可以到不同的机器上直接使用，更方便快捷。</p>
+<p>首先下载要安装版本的 php， 可以到官网去下载，<a href="https://php.net">php官网</a>，下载好之后 使用 tar 命令解压并进入目录中。</p>
+<p>开始编译配置，使用命令 ./configure 跟 &ndash;prefix &ndash;enable &ndash;with命令来配置安装路径跟扩展。具体命令说明可以百度，使用 &ndash;prefix 等命令时，使用 tab 键会有补全提示，可以根据提示来选择想要安装的扩展，这个就比较方便了。下面是命令的演示。可以在源码的 ext 目录中查看默认的扩展，可以使用 &ndash;enable 开启，或者编译安装后在 php.ini 中配置开启，对于没有的扩展，则需要手动编译源码安装配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">./configure \
+--prefix=/home/caoayu/software/php74 \
+--with-config-file-path=/home/caoayu/software/php74/etc
+</code></pre></td></tr></table>
+</div>
+</div><p>这里只是配置了 php 安装的路径及配置文件所在的路径</p>
+<p>安装完成后会在指定的文件夹中生成 php 的可执行文件，包括其他一些辅助应用。在 bin 目录中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## tree ~/caoayu/software/php74/bin
+bin
+├── phar -&gt; phar.phar
+├── phar.phar
+├── php
+├── php-cgi
+├── php-config
+├── phpdbg
+└── phpize
+</code></pre></td></tr></table>
+</div>
+</div><p>查看 php 的默认配置及开启扩展</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">php -i // 输出 phpinfo() 的内容
+php -m // 输出 php 开启的扩展
+php --ini // 输出 php 的配置文件及加载情况
+</code></pre></td></tr></table>
+</div>
+</div><p>在安装了 php 后，我并没有发现 php.ini 配置文件，版本为 php7.4 。那就手动到 php 源码目录将 php.ini.dev&hellip; 或者 <a href="http://php.ini.pro">php.ini.pro</a>&hellip; 移动到设置的 php 配置文件目录，并改名为 php.ini ，重新执行 php &ndash;ini 便会发现已经有文件加载了出来。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## php --ini
+Configuration File (php.ini) Path: /home/caoayu/software/php74/etc
+Loaded Configuration File:         /home/caoayu/software/php74/etc/php.ini
+Scan for additional .ini files in: (none)
+Additional .ini files parsed:      (none)
+</code></pre></td></tr></table>
+</div>
+</div><h6 id="安装源码中的扩展">安装源码中的扩展</h6>
+<p>由于安装时没有指定要开启的扩展，所以安装完成后默认开启一些扩展，可以使用 php -m 查看开启的扩展列表，php &ndash;ri 查看扩展的信息。安装完成后可以使用 php -i 查看扩展目录，以便后面自己手动安装扩展的时候直接放到这个目录。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">php -i | grep extension ## 查看扩展目录
+php -m ## 查看开启的扩展
+php --ri curl ## 查看 curl 扩展的信息
+</code></pre></td></tr></table>
+</div>
+</div><p>可以发现，默认只装了部分扩展，那么我们需要开启其他的一些扩展，可以先到源码的 ext 目录中查找，如果有的话就不需要在下载了。</p>
+<p>php 源码 ext 目录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20210828233311.png" alt=""></p>
+<p>我们发现默认的扩展里没有开启 curl ，那么我们就来手动添加</p>
+<p>进入到 ext/curl 目录下，使用 phpize 命令进行生成 configure 文件，代替我们手动的 ./configure &hellip;</p>
+<p>然后就可以使用 make &amp;&amp; make install 命令编译扩展了，等待编译完成会在当前的 modules 目录下生成一个 .so 的扩展库文件，将这个文件移动到 php 的扩展目录即可，然后修改 php.ini 增加 extension=curl; 即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd ext
+phpize
+make &amp;&amp; make install
+cp modules/curl.so ~/software/php74/lib/php/no..../
+
+## vim php.ini
+extention=curl
+## write and quit
+
+php -m 
+php --ri curl
+</code></pre></td></tr></table>
+</div>
+</div><p>最终使用 php -m , php &ndash;ri curl 查看扩展信息。</p>
+<h6 id="编译安装下载的扩展">编译安装下载的扩展</h6>
+<p><strong>&ndash;with-php-config 当安装有多个php版本时使用,可以根据 php-config程序来安装到对应的PHP版本中</strong>,<strong>编译扩展时最好指定</strong></p>
+<p><strong>make distclean 清空生成的 configure 及编译文件,在编译失败或者配置错误时可以使用</strong></p>
+<p>如果需要的扩展不再源码包中，可以去官方扩展库下载，比如 xdebug，下载的源码跟上面 ext里的扩展源码没有区别，可以使用相同的方式进行安装并开启。</p>
+<h6 id="多版本共存">多版本共存</h6>
+<p>有时候我们开发多个项目，需要使用不同版本的 php，可以使用软链接的方式来指定版本，或者直接使用不同的版本目录来区别。如下：</p>
+<p>在我的 ~/software 目录下，设置了 php/bin 目录为 php 的可执行程序目录，也就是把这个目录设置进了环境变量中，而我编译安装的是在 php74/bin 目录下，此时，使用 ln -s 生成一个链接，就可以直接使用 php 命令，并且如果有其他版本，比如 php56/bin，将这个目录链接到 php 中即可改变 当前环境的 php 版本，对于使用 nginx 或者 apache 来启动的 php 来说，是可以为每个项目配置单独的 php 解释器的。</p>
+<p>目录结构</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## ~/software/
+
+❯ tree -L 1
+.
+├── node
+├── php -&gt; /home/caoayu/software/php74
+└── php74
+
+</code></pre></td></tr></table>
+</div>
+</div><h6 id="扩展问题">扩展问题</h6>
+<p>######## mcrypt</p>
+<ol>
+<li>configure: error: mcrypt.h not found. Please reinstall libmcrypt.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">wget ftp://mcrypt.hellug.gr/pub/crypto/mcrypt/attic/libmcrypt/libmcrypt-2.5.7.tar.gz
+tar -zxvf libmcrypt...
+<span class="nb">cd</span> libm...
+./configure --prefix<span class="o">=</span>/usr/local
+make <span class="o">&amp;&amp;</span> make install
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="c1">## cd php ext/mcrypt</span>
+phpize
+
+./configure --with-php-config<span class="o">=</span>/usr/local/php56/bin/php-config <span class="se">\
+</span><span class="se"></span>--with-libmcrypt<span class="o">=</span>/usr/local/libmcrypt
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>&ndash;with-php-config 当安装有多个php版本时使用,可以根据 php-config程序来安装到对应的PHP版本中</strong></p>
+<p>######## pdo-oci</p>
+<p><a href="https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html">https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html</a></p>
+<p>下载如下两个文件（下载文件需注册哦）：</p>
+<p><code>oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm</code></p>
+<p><code>oracle-instantclient11.2-devel-11.2.0.3.0-1.x86_64.rpm</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">rpm -ivh ..rpm
+rpm -qa <span class="p">|</span> grep <span class="c1">## 查询安装</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>修改/etc/ld.so.conf 或在ld.so.conf.d文件夹下添加oracle-x86_64.conf文件,写入安装oracle客户端的lib路径:</p>
+<h2 id="vi-etcldsoconf">vi /etc/ld.so.conf</h2>
+<p><code>/usr/lib/oracle/11.2/client64/lib/</code> //加入此行，保存退出<br>
+或者</p>
+<p><code>echo '/usr/lib/oracle/11.2/client64/lib/' &gt; /etc/ld.so.conf.d/oracle-x86_64.conf</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">ln -s /usr/lib/oracle/11.2/client64 /usr/lib/oracle/11.2/client  
+ln -s /usr/include/oracle/11.2/client64 /usr/include/oracle/11.2/client
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="nb">export</span> <span class="nv">ORACLE_HOME</span><span class="o">=</span>/usr/lib/oracle/11.2/client64/  
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/lib/oracle/11.2/client64:<span class="nv">$LD_LIBRARY_PATH</span>  
+<span class="nb">export</span> <span class="nv">NLS_LANG</span><span class="o">=</span><span class="s2">&#34;AMERICAN_AMERICA.AL32UTF8&#34;</span>  
+</code></pre></td></tr></table>
+</div>
+</div><p>先安装 oci8 , 在 php7版本的php-oci 安装时会提示安装 oci8</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="nb">cd</span> oci8
+/usr/local/php56/bin/phpize
+
+./configure --with-php-config<span class="o">=</span>/usr/local/php56/bin/php-config --with-oci8<span class="o">=</span>shared,instantclient,/usr/lib/
+oracle/11.2/client/lib
+
+make <span class="o">&amp;&amp;</span> make install
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="nb">cd</span> pdo_oci
+/usr/local/php56/bin/phpize
+
+./configure --with-php-config<span class="o">=</span>/usr/local/php56/bin/php-config <span class="se">\
+</span><span class="se"></span> --with-pdo-oci<span class="o">=</span>instantclient,/usr,11.2
+ <span class="c1">## 或者下面的</span>
+
+./configure --with-php-config<span class="o">=</span>/usr/local/php56/bin/php-config --with-pdo-oci<span class="o">=</span>/usr/lib/
+oracle/11.2/client/lib 
+</code></pre></td></tr></table>
+</div>
+</div><p>######## 可直接编译源码扩展目录安装</p>
+<ol>
+<li>zip</li>
+<li>mbstring</li>
+<li>soap</li>
+</ol>
+<p>######## 安装 pear</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">wget  http://pear.php.net/go-pear.phar 
+/usr/local/php56/bin/php go-pear.phar
+</code></pre></td></tr></table>
+</div>
+</div><h6 id="安装-pecl">安装 pecl</h6>
+<p>安装 pear 后会安装 pecl,但是可能会生成一个 pear_old 的文件而不是 pear,所以需要复制一份重命名为 pear 到 /usr/local/php56/bin</p>
+<h6 id="php74扩展安装">php7.4扩展安装</h6>
+<ol>
+<li>
+<p>zip</p>
+<p>configure: error: Package requirements (libzip &gt;= 0.11 libzip != 1.3.1 libzip != 1.7.0) were not met:</p>
+<p>yum remove libzip</p>
+<p>yum remove libzip-devel</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">wget https://libzip.org/download/libzip-1.3.2.tar.gz
+tar -zxvf li...
+<span class="nb">cd</span> libz...
+./configure
+make <span class="o">&amp;&amp;</span> make install
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">使用 php7 的程序跟配置编译
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">/usr/loca/php74/bin/phpize
+
+./configure --with-php-config<span class="o">=</span>/usr/local/php74/bin/php-config
+make <span class="o">&amp;&amp;</span> make install
+
+cp modules/zip.so /usr/...php/exte.../
+vim .../php.ini  
+<span class="nv">extension</span><span class="o">=</span>zip.so
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>
+<p>mbstring</p>
+<p>No package &lsquo;oniguruma&rsquo; found</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">wget https://github.com/kkos/oniguruma/archive/v6.9.4.tar.gz -O oniguruma-6.9.4.tar.gz 
+tar -zxvf oniguruma-6.9.4.tar.gz
+<span class="nb">cd</span> oniguruma-6.9.4/
+./autogen.sh
+./configure
+make
+
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>pdo_oci</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2022-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/it/php/">IT/PHP</a>
+          <a href="/tags/it/centos/">IT/Centos</a>
+          <a href="/tags/it/linux/">IT/Linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/nginx%E9%85%8D%E7%BD%AE/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">nginx配置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2-1%E7%A8%8B%E5%BA%8F%E4%B8%8E%E8%BF%9B%E7%A8%8B/">
+            <span class="next-text nav-default">2-1程序与进程</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

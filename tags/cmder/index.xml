@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cmder on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/cmder/</link>
+    <description>Recent content in cmder on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 22 May 2020 18:35:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/cmder/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>从0打造属于自己的windows开发命令终端</title>
+      <link>https://blog.caoayu.top/post/cmder01/</link>
+      <pubDate>Fri, 22 May 2020 18:35:25 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/cmder01/</guid>
+      <description>&lt;h5 id=&#34;抛出问题&#34;&gt;抛出问题&lt;/h5&gt;
+&lt;p&gt;无论是&lt;code&gt;web&lt;/code&gt;开发还是做系统运维,都离不开命令行,然而对于大多数人来说还是在使用&lt;code&gt;windows&lt;/code&gt;进行开发,但是&lt;code&gt;windows&lt;/code&gt;的终端一直被人们诟病,从开始的&lt;code&gt;cmd&lt;/code&gt;,许多命令无法执行,或者是必须使用管理员权限,在这里不得不提一下&lt;code&gt;windows&lt;/code&gt;的权限做的挺糟糕的,虽然微软有陆续推出了&lt;code&gt;powershell&lt;/code&gt;以及现在的&lt;code&gt;terminal&lt;/code&gt;还有后面要推出的&lt;code&gt;wls2&lt;/code&gt;,可以看到微软也在努力的去解决这个问题,也希望微软可以早日解决这个问题,造福广大开发者.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/Book on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/book/</link>
+    <description>Recent content in IT/Book on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/book/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>书籍</title>
+      <link>https://blog.caoayu.top/post/%E4%B9%A6%E7%B1%8D/</link>
+      <pubDate>Mon, 03 Oct 2022 20:17:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/%E4%B9%A6%E7%B1%8D/</guid>
+      <description>书籍 计算机网络 图解http 图解tcp/ip 网络是怎么连接的 https://www.bilibili.com/video/BV1c4411d7jb?p=1 计算机网络自顶向下 TCP/IP 详解 卷一：协议 The TCP/IP GUIDE http://www.tcpipguide.com/free/t_TCPSlidingWindowAcknowledgmentSystemForDataTranspo-6.htm</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/termux on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/termux/</link>
+    <description>Recent content in IT/termux on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/termux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>termux安卓</title>
+      <link>https://blog.caoayu.top/post/termux%E5%AE%89%E5%8D%93/</link>
+      <pubDate>Tue, 04 Oct 2022 21:10:22 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/termux%E5%AE%89%E5%8D%93/</guid>
+      <description>termux安卓 Termux 换源 1 2 3 4 5 sed -i &amp;#39;s@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main@&amp;#39; $PREFIX/etc/apt/sources.list sed -i &amp;#39;s@^\(deb.*games stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/game-packages-24 games stable@&amp;#39; $PREFIX/etc/apt/sources.list.d/game.list sed -i &amp;#39;s@^\(deb.*science stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/science-packages-24 science stable@&amp;#39; $PREFIX/etc/apt/sources.list.d/science.list apt update &amp;amp;&amp;amp; apt upgrade 安装，卸载，搜索软件 1 2 3 pkg install git openssh pkg uninstall git pkg search git 其余</description>
+    </item>
+    
+  </channel>
+</rss>

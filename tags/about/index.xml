@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>about on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/about/</link>
+    <description>Recent content in about on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 01 Aug 2020 13:40:02 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于页更改并加入一些在线服务</title>
+      <link>https://blog.caoayu.top/post/about-change/</link>
+      <pubDate>Sat, 01 Aug 2020 13:40:02 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/about-change/</guid>
+      <description>更改关于页面 先前的关于页面比较单一,本打算用hugo做一个下拉的子菜单显示一些更多的信息,但是无奈查询了文档和谷歌都没查到很好的先例,因此就</description>
+    </item>
+    
+  </channel>
+</rss>

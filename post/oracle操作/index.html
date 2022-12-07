@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>oracle操作 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="oracle操作 查看数据库服务状态：lsnrctl status 启动监听：lsnrctl start 连接 远程 or 本地 1 sqlplus user_haut/thinks5567@127.0.0.1:1521/chemdb.thinks.net.cn 查询当前用户 1 2 show user select user from dual 查询所有用户 1" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/oracle%E6%93%8D%E4%BD%9C/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="oracle操作" />
+<meta property="og:description" content="oracle操作 查看数据库服务状态：lsnrctl status 启动监听：lsnrctl start 连接 远程 or 本地 1 sqlplus user_haut/thinks5567@127.0.0.1:1521/chemdb.thinks.net.cn 查询当前用户 1 2 show user select user from dual 查询所有用户 1" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/oracle%E6%93%8D%E4%BD%9C/" />
+<meta property="article:published_time" content="2022-10-03T20:53:46+00:00" />
+<meta property="article:modified_time" content="2022-10-25T08:39:50+00:00" />
+<meta itemprop="name" content="oracle操作">
+<meta itemprop="description" content="oracle操作 查看数据库服务状态：lsnrctl status 启动监听：lsnrctl start 连接 远程 or 本地 1 sqlplus user_haut/thinks5567@127.0.0.1:1521/chemdb.thinks.net.cn 查询当前用户 1 2 show user select user from dual 查询所有用户 1">
+<meta itemprop="datePublished" content="2022-10-03T20:53:46&#43;00:00" />
+<meta itemprop="dateModified" content="2022-10-25T08:39:50&#43;00:00" />
+<meta itemprop="wordCount" content="3684">
+
+
+
+<meta itemprop="keywords" content="IT/Oracle," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="oracle操作"/>
+<meta name="twitter:description" content="oracle操作 查看数据库服务状态：lsnrctl status 启动监听：lsnrctl start 连接 远程 or 本地 1 sqlplus user_haut/thinks5567@127.0.0.1:1521/chemdb.thinks.net.cn 查询当前用户 1 2 show user select user from dual 查询所有用户 1"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">oracle操作</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-10-03 </span>
+        
+          <span class="more-meta"> 约 3684 字 </span>
+          <span class="more-meta"> 预计阅读 8 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#oracle操作">oracle操作</a>
+      <ul>
+        <li><a href="#查看数据库服务状态lsnrctl-status">查看数据库服务状态：<code>lsnrctl status</code></a></li>
+        <li><a href="#连接-远程-or-本地">连接 远程 or 本地</a></li>
+        <li><a href="#创建用户">创建用户</a></li>
+        <li><a href="#用户授权">用户授权</a></li>
+        <li><a href="#导出表">导出表</a></li>
+        <li><a href="#创建序列用户隔离不能操作其他用户的序列管理员可以">创建序列，用户隔离，不能操作其他用户的序列，管理员可以</a></li>
+        <li><a href="#日期转字符串">日期转字符串</a></li>
+        <li><a href="#使用-impdp-导入表到新用户需要在同一台设备操作">使用 impdp 导入表到新用户(需要在同一台设备操作)</a></li>
+        <li><a href="#使用-expdp-导出表需要在同一台设备操作">使用 expdp 导出表(需要在同一台设备操作)</a></li>
+        <li><a href="#定时任务存储过程">定时任务，存储过程</a></li>
+        <li><a href="#安装配置重启关机新增服务名导入导出">安装配置,重启关机,新增服务名,导入导出</a></li>
+        <li><a href="#查询当前用户的统计信息">查询当前用户的统计信息</a></li>
+        <li><a href="#rownum-分页">rownum 分页</a></li>
+        <li><a href="#oracle-数据库用户密码到期去除限制或者再次修改为原来的密码限制还在">oracle 数据库用户密码到期(去除限制,或者再次修改为原来的密码,限制还在)</a></li>
+        <li><a href="#查看某一张表或视图的某一列的属性">查看某一张表或视图的某一列的属性</a></li>
+        <li><a href="#number-小数查询转字符串小数点前的-0-丢失问题">number 小数查询转字符串,小数点前的 0 丢失问题</a></li>
+        <li><a href="#pdo-查询过长-oracle-字段长导致截断报错">PDO 查询过长 oracle 字段长导致截断报错</a></li>
+        <li><a href="#关联更新">关联更新</a></li>
+        <li><a href="#删除重复数据并保留一条">删除重复数据,并保留一条</a></li>
+        <li><a href="#查询表中所有重复数据并保留一个使用-row_number-函数">查询表中所有重复数据,并保留一个,使用 row_number 函数</a></li>
+        <li><a href="#查询数据库中被锁定的表信息">查询数据库中被锁定的表信息</a></li>
+        <li><a href="#查询会话正在执行的-sql-语句">查询会话正在执行的 SQL 语句</a></li>
+        <li><a href="#查询当前会话-id">查询当前会话 ID</a></li>
+        <li><a href="#使用管理员身份解除表锁">使用管理员身份解除表锁</a></li>
+        <li><a href="#查询-psid-然后-kill">查询 PSID 然后 kill</a></li>
+        <li><a href="#表锁模式">表锁模式</a></li>
+        <li><a href="#查询包含中文值得记录不包含-not-in-过滤">查询包含中文值得记录,不包含 not in 过滤</a></li>
+        <li><a href="#修改表字段类型">修改表字段类型</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2022-10-25T08:39:50" title="October 25, 2022">October 25, 2022</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="oracle操作">oracle操作</h1>
+<h2 id="查看数据库服务状态lsnrctl-status">查看数据库服务状态：<code>lsnrctl status</code></h2>
+<p>启动监听：<code>lsnrctl start</code></p>
+<h2 id="连接-远程-or-本地">连接 远程 or 本地</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sqlplus user_haut/thinks5567@127.0.0.1:1521/chemdb.thinks.net.cn
+</code></pre></td></tr></table>
+</div>
+</div><p>查询当前用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">show user
+select user from dual
+</code></pre></td></tr></table>
+</div>
+</div><p>查询所有用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">select * from all_users
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="创建用户">创建用户</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">create user username
+  identified by &#34;password&#34;
+  [default tablespace ts_name]
+  [temporary tablespace tempname|tempgroupname]
+  [quota n size|unlimited on ts_name]
+  [profile DEFAULT/profilename]
+  [account lock|unlock]
+  [password expire];
+eg：create user caoayu identified by &#34;123456&#34;;
+</code></pre></td></tr></table>
+</div>
+</div><p>编辑用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">alter user username
+  identified by &#34;password&#34;
+  [default tablespace ts_name]
+  [temporary tablespace tempname|tempgroupname]
+  [quota n size|unlimited on ts_name]
+  [profile DEFAULT/profilename]
+  [account lock|unlock]
+  [password expire];
+eg：alter user caoayu identified by &#39;123456&#39;;
+</code></pre></td></tr></table>
+</div>
+</div><p>删除用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">drop user username cascade;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="用户授权">用户授权</h2>
+<p>授予系统权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">grant system_privilege|all privileges to user|role
+[with admin option]
+system_privilege:授予的权限名称，all privileges：指授予所有系统权限。
+user|role：授予权限给用户还是角色
+[with admin option]：指的是当前被授权的用户具有授权给其它用户系统权限的权利。
+eg：grant create session to TEACHER;
+</code></pre></td></tr></table>
+</div>
+</div><p>查询用户授权</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">select * from dba_sys_privs t where t.GRANTEE=&#39;TEACHER&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>授予对象权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">grant obj_privilege|all 
+on obj_name  to user|role
+[with grant option]
+grant obj_privilege|all：给指定用户授予对象权限，all：指的是授予全部对象权限。
+on obj_name to user|role：指的是把对象obj_name的权限授予给用户user或者角色role。
+with grant option：指定是当前被授权的用户具有授权给其它用户该对象权限的权利。这里with grant option对应对象的授权是级联，而对于上面系统权限的with admin option的授权不是级联的，回收该用户的权限，不会把授予给别人的权限收回，而级联授权的就会把对应的权限都收回。
+eg：grant select on student.stuinfo to teacher with grant ooption; 把 stuinfo 信息表授权给 teacher 用户
+</code></pre></td></tr></table>
+</div>
+</div><p>查询对象权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">select * from dba_tab_privs t where t.GRANTEE=&#39;TEACHER&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>注意：给用户授权时，要注意自己是不能为自己授权的，要么利用第三方具有该对象授权权限的用户进行授权，或者利用具有 DBA 权限的用户授权。</p>
+<p>撤销权限</p>
+<p>撤销系统权限 &ndash; 只用拥有 dba 权限的用户才可以</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">revoke system_privilege from user|role;
+</code></pre></td></tr></table>
+</div>
+</div><p>system_privilege：指的是撤销的系统权限的名称，撤销系统权限时，必须是该用户具有了该系统权限，假如不存在系统权限是不能进行撤销的。</p>
+<p>user|role：指的是撤销权限的对象是用户还是角色。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">eg：revoke create session from teacher;
+</code></pre></td></tr></table>
+</div>
+</div><p>撤销对象权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">revoke obj_privilege|all 
+on object 
+from  user|role;
+obj_privilege|all：指的是对应的数据库对象的操作权限，all表示把所有的操作权限都撤销。
+eg：revoke delete on student.stuinfo trom teacher; 撤销删除权限
+</code></pre></td></tr></table>
+</div>
+</div><p>注意：在进行撤销权限时，系统权限的撤销和对象权限的撤销是不一样的，通过上一章 Oracle 权限授权管理中知道，系统权限的授权不是级联的，对象权限的授权是级联的。</p>
+<p>在撤销权限时也是一样的，在撤销对象权限时，那么该用户授予给其它用户的对象权限也要跟着收回。而撤销系统权限就不会收回其它用户的权限</p>
+<p>连接 打开 sqlplus 输入用户名密码即可</p>
+<p>连接到别的服务器</p>
+<p>打开 sqlplus 输入 用户名/密码@地址：端口/服务名（sid）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">eg：caoayu/123456@localhost:1521/orcl
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="导出表">导出表</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">exp 用户/密码@地址：端口/服务吗（sid）
+eg：
+exp caoayu/123456@localhost:1521/test_users file=d:\thinks\test\user.dmp tables=users buffer=30720 log=d:\thinks\test\user.log 
+exp scut/123456@192.168.31.96:1521/xe file=d:\thinks\test\scut.dmp buffer=30720 owner=(scut) log=d:\thinks\test\scut.log
+导出用户的所有表
+exp caoayu/123456@localhost:1521/test_users file=d:\thinks\test\user.dmp  buffer=30720 log=d:\thinks\test\user.log  owner=(caoayu)
+导入表
+imp caoayu/123456@localhost/test_users file=d:\thinks\test\user.dmp tables=(users)
+导入用户所有表（需要创建用户并授予 dba 的权限）
+imp wzu/thinks5567@localhost:1521/test_users file=d:\thinks\test\wzu.dmp full=y
+</code></pre></td></tr></table>
+</div>
+</div><p>查看当然用户所有表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">select table_name from user_tables;
+select table_name from dba_tables where owner=&#39;用户名&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>查用户序列，必须管理员</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">select SEQUENCE_OWNER,SEQUENCE_NAME from dba_sequences where sequence_owner=&#39;用户名&#39;;
+查看序列是否存在
+select * from user_sequences where sequence_name = &#39;NLDP_LGIR_BASE_SEQUENCE&#39;;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="创建序列用户隔离不能操作其他用户的序列管理员可以">创建序列，用户隔离，不能操作其他用户的序列，管理员可以</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">CREATE SEQUENCE 序列名
+　　[INCREMENT BY n] 
+　　[START WITH n]
+　　[{MAXVALUE/ MINVALUE n| NOMAXVALUE}]
+　　[{CYCLE|NOCYCLE}]
+　　[{CACHE n| NOCACHE}];
+</code></pre></td></tr></table>
+</div>
+</div><p>删除序列</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">drop sequence name
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="日期转字符串">日期转字符串</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">to_char(usergrant.grant_end_validate,&#39;yyyy-mm-dd hh24:mi:ss&#39;)
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="使用-impdp-导入表到新用户需要在同一台设备操作">使用 impdp 导入表到新用户(需要在同一台设备操作)</h2>
+<ol>
+<li>先创建逻辑目录</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">create directory dpdata1  as &#39;/data/oracle/oradata/mydata&#39;
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>查看目录是否创建成功</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">select * from dba_directories
+</code></pre></td></tr></table>
+</div>
+</div><p>导入表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">impdp caoayu/123456 directory=dpdata1 dumpfile=0508hiananu.dmp tables=hainanu.c2_chem_dict_chem remap_schema=hainanu:caoayu
+
+导入用户的表 impdp ZJUT/thinks5567 directory=dpdata1 dumpfile=zjut202106.dmp REMAP_SCHEMA=ZJUT:ZJUT EXCLUDE=USER
+
+使用系统帐号导入用户表并生成跟导入用户帐号密码一致的新用户（如果用户不存在） impdp system/Abc123456 directory=dpdata1 dumpfile=zjut202106.dmp REMAP_SCHEMA=zjuttest:zjuttest
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="使用-expdp-导出表需要在同一台设备操作">使用 expdp 导出表(需要在同一台设备操作)</h2>
+<ol>
+<li><code>select * from dba_directories</code> 查目录</li>
+<li>使用 system 创建一个目录</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">create directory dpdata1  as &#39;/data/oracle/oradata/mydata&#39;
+expdp scott/tiger@orcl schemas=scott dumpfile=expdp.dmp DIRECTORY=dpdata1;
+expdp scott/tiger@orcl TABLES=emp,dept dumpfile=expdp.dmp DIRECTORY=dpdata1;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="定时任务存储过程">定时任务，存储过程</h2>
+<p>第一步：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">/* Formatted on 2019/3/19 11:58:18 (QP5 v5.256.13226.35538) */
+CREATE OR REPLACE PROCEDURE WZU.reset_sequence (
+   seq_name     IN VARCHAR2,
+   startvalue   IN NUMBER)
+AS
+   cval     INTEGER;
+   inc_by   VARCHAR2 (25);
+BEGIN
+   EXECUTE IMMEDIATE &#39;ALTER SEQUENCE &#39; || seq_name || &#39; MINVALUE 0&#39;;
+   EXECUTE IMMEDIATE &#39;SELECT &#39; || seq_name || &#39;.NEXTVAL FROM dual&#39; INTO cval;
+   cval := cval - startvalue;
+   IF cval &lt; 0
+   THEN
+      inc_by := &#39; INCREMENT BY &#39;;
+      cval := ABS (cval);
+   ELSE
+      inc_by := &#39; INCREMENT BY -&#39;;
+   END IF;
+   EXECUTE IMMEDIATE &#39;ALTER SEQUENCE &#39; || seq_name || inc_by || cval;
+   EXECUTE IMMEDIATE &#39;SELECT &#39; || seq_name || &#39;.NEXTVAL FROM dual&#39; INTO cval;
+   EXECUTE IMMEDIATE &#39;ALTER SEQUENCE &#39; || seq_name || &#39; INCREMENT BY 1&#39;;
+END reset_sequence;
+/
+</code></pre></td></tr></table>
+</div>
+</div><p>第二步：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">DECLARE
+  X NUMBER;
+BEGIN
+    SYS.DBMS_JOB.SUBMIT
+    ( job       =&gt; X 
+     ,what      =&gt; &#39;RESET_SEQUENCE
+  (&#39;&#39;SEQ_CHEM_ORDERFORM&#39;&#39; ,to_number(to_char(to_date(sysdate),&#39;&#39;yyyymmdd&#39;&#39;) || &#39;&#39;0000&#39;&#39; ));&#39;
+     ,next_date =&gt; to_date(&#39;20/03/2019 00:00:00&#39;,&#39;dd/mm/yyyy hh24:mi:ss&#39;)
+     ,interval  =&gt; &#39;TRUNC(SYSDATE+1)&#39;
+     ,no_parse  =&gt; FALSE
+    );
+    SYS.DBMS_OUTPUT.PUT_LINE(&#39;Job Number is: &#39; || to_char(x));
+  COMMIT;
+END;
+/
+</code></pre></td></tr></table>
+</div>
+</div><p>查询定时任务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">select * from user_jobs;
+</code></pre></td></tr></table>
+</div>
+</div><p>执行任务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">begin
+  DBMS_JOB.RUN(40); /*40 job的id*/
+end;
+</code></pre></td></tr></table>
+</div>
+</div><p>删除任务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">begin
+  /*删除自动执行的job*/
+  dbms_job.remove(40);
+end;
+</code></pre></td></tr></table>
+</div>
+</div><p>停止任务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">dbms.broken(job，broken，nextdate);   
+dbms_job.broken(v_job,true,next_date);       
+/*停止一个job,里面参数true也可是false，next_date（某一时刻停止）也可是sysdate（立刻停止）。   */
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="安装配置重启关机新增服务名导入导出">安装配置,重启关机,新增服务名,导入导出</h2>
+<p>linux 安装配置 oracle</p>
+<h2 id="查询当前用户的统计信息">查询当前用户的统计信息</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">select &#39;analyze table &#39;||table_name||&#39; compute statistics;&#39; from user_tables;  
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="rownum-分页">rownum 分页</h2>
+<p>由于 rownum 从 1 开始赋值给每条结果集，所以不能从大于 1 的值开始查。</p>
+<p>需要将所有的 rownum 结果存在子查询中，生成一张临时表，将 rownum 字段变成表的普通字段，就可以正常查询范围了。</p>
+<p>首先查询出所有的结果，外部嵌套一层查找 rownum 的字段，再嵌套一层</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">SELECT
+    temp1.*
+FROM
+    (
+        SELECT
+            temp.*,
+            ROWNUM rn
+        FROM
+            (
+                SELECT
+                    a.c_sale_no,
+                    c_product_name,
+                    es_mark,
+                    es_id
+                FROM
+                    qg_v_sale_chem a
+                    INNER JOIN (
+                        SELECT
+                            c_sale_no
+                        FROM
+                            qg_v_sale_chem
+                        WHERE
+                            ROWNUM &lt; 10000
+                        ORDER BY
+                            c_sale_no
+                    ) b ON a.c_sale_no = b.c_sale_no
+            ) temp
+    ) temp1
+WHERE
+    temp1.rn &gt;= 0
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="oracle-数据库用户密码到期去除限制或者再次修改为原来的密码限制还在">oracle 数据库用户密码到期(去除限制,或者再次修改为原来的密码,限制还在)</h2>
+<p>查询所有用户的 profile</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">SELECT username,profile FROM dba_users;
+</code></pre></td></tr></table>
+</div>
+</div><p>默认是 default , 查询 default 的密码限制时间</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">SELECT * FROM dba_profiles s WHERE s.profile=&#39;DEFAULT&#39; AND resource_name=&#39;PASSWORD_LIFE_TIME&#39;;
+</code></pre></td></tr></table>
+</div>
+</div><p>修改密码为不限制</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED; 
+</code></pre></td></tr></table>
+</div>
+</div><p>如果已经提示快要到期,需要重新修改用户密码(设置为不限制后)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">alter user caoayu identified by 123456;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查看某一张表或视图的某一列的属性">查看某一张表或视图的某一列的属性</h2>
+<p>表名列名 都要大写</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">SELECT * FROM USER_TAB_COLUMNS where table_name=&#39;CHEM_V_INHLS_VIEW&#39; AND COLUMN_NAME=&#39;VALUME&#39;;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="number-小数查询转字符串小数点前的-0-丢失问题">number 小数查询转字符串,小数点前的 0 丢失问题</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">to_char(valume,&#39;FM9999990.99999999&#39;)
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="pdo-查询过长-oracle-字段长导致截断报错">PDO 查询过长 oracle 字段长导致截断报错</h2>
+<p><code>PDOStatement:: fetchAll(): column 0 data was too large for buffer and was truncated to fit it</code></p>
+<ol>
+<li>修改表结构,增加长度</li>
+<li>转换 cast( Lab.LAB_NAME AS varchar2(512) ) as LAB_NAME</li>
+</ol>
+<h2 id="关联更新">关联更新</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="k">UPDATE</span> <span class="n">EMPLOYEE</span> <span class="n">E</span> <span class="k">SET</span> <span class="n">AGE</span> <span class="o">=</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">U</span><span class="p">.</span><span class="n">AGE</span> <span class="k">FROM</span> <span class="n">T_USER</span> <span class="n">U</span> <span class="k">WHERE</span> <span class="n">E</span><span class="p">.</span><span class="n">ID</span><span class="o">=</span><span class="n">U</span><span class="p">.</span><span class="n">ID</span> <span class="p">)</span> 
+<span class="k">WHERE</span> <span class="k">EXISTS</span> <span class="p">(</span><span class="k">SELECT</span> <span class="mi">1</span> <span class="k">FROM</span> <span class="n">T_USER</span> <span class="n">U</span> <span class="k">WHERE</span> <span class="n">E</span><span class="p">.</span><span class="n">ID</span><span class="o">=</span><span class="n">U</span><span class="p">.</span><span class="n">ID</span> <span class="k">AND</span> <span class="n">E</span><span class="p">.</span><span class="n">AGE</span> <span class="k">IS</span> <span class="k">NULL</span>  <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="n">MERGE</span> <span class="k">INTO</span> <span class="n">C2_CHEM_ORDERFORM</span> <span class="n">E</span> <span class="k">USING</span> <span class="n">C2_BASE_DICT_LABROOM</span> <span class="n">U</span>
+ <span class="k">ON</span> <span class="p">(</span><span class="n">E</span><span class="p">.</span><span class="n">ROOM_NO</span><span class="o">=</span><span class="n">U</span><span class="p">.</span><span class="n">LABROOM_ID</span> <span class="p">)</span> <span class="k">WHEN</span> <span class="n">MATCHED</span> <span class="k">THEN</span> <span class="k">UPDATE</span> <span class="k">SET</span> <span class="n">E</span><span class="p">.</span><span class="n">ROOM_NAME</span><span class="o">=</span><span class="n">U</span><span class="p">.</span><span class="n">NAME</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="删除重复数据并保留一条">删除重复数据,并保留一条</h2>
+<ol>
+<li>分组查出所有 count 大于 1 的,在查询所有大于 1 的行号,只保留最小的行号那一条记录,较慢</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="k">Delete</span>
+<span class="k">From</span> <span class="n">ZJNU_HXPGL</span><span class="p">.</span><span class="n">CHEM_DICT_CHEM</span> <span class="n">t</span>
+<span class="k">Where</span> <span class="p">(</span><span class="n">chem_id</span><span class="p">)</span> <span class="k">In</span>
+      <span class="p">(</span> <span class="c1">-- 重复数据
+</span><span class="c1"></span>      <span class="k">Select</span> <span class="n">chem_id</span>
+       <span class="k">From</span> <span class="n">ZJNU_HXPGL</span><span class="p">.</span><span class="n">CHEM_DICT_CHEM</span>
+       <span class="k">Group</span> <span class="k">By</span> <span class="n">chem_id</span>
+       <span class="k">Having</span> <span class="k">Count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="k">And</span> <span class="n">Rowid</span> <span class="k">Not</span> <span class="k">In</span> <span class="p">(</span>
+  <span class="c1">-- 重复中最小的行号
+</span><span class="c1"></span>  <span class="k">Select</span> <span class="k">Min</span><span class="p">(</span><span class="n">Rowid</span><span class="p">)</span>
+                    <span class="k">From</span> <span class="n">ZJNU_HXPGL</span><span class="p">.</span><span class="n">CHEM_DICT_CHEM</span>
+                    <span class="k">Group</span> <span class="k">By</span> <span class="n">chem_id</span>
+                    <span class="k">Having</span> <span class="k">Count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>直接查出 rowid,用 not in 判断,较慢</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">ZJNU_HXPGL</span><span class="p">.</span><span class="n">CHEM_DICT_CHEM</span>
+<span class="k">WHERE</span> <span class="n">ROWID</span> <span class="k">IN</span> <span class="p">(</span>
+                 <span class="k">SELECT</span> <span class="n">ROWID</span>
+                 <span class="k">FROM</span> <span class="p">(</span>
+                        <span class="k">SELECT</span> <span class="n">chem_id</span><span class="p">,</span>
+                               <span class="n">ROWID</span><span class="p">,</span>
+                               <span class="n">ROW_NUMBER</span><span class="p">()</span> <span class="n">OVER</span><span class="p">(</span><span class="n">PARTITION</span> <span class="k">BY</span> <span class="n">chem_id</span> <span class="k">order</span> <span class="k">by</span> <span class="n">chem_id</span><span class="p">)</span> <span class="k">AS</span> <span class="n">staff_row</span> <span class="c1">--按照保留的唯一字段进行分区，取row_number
+</span><span class="c1"></span>                               <span class="k">FROM</span> <span class="n">ZJNU_HXPGL</span><span class="p">.</span><span class="n">CHEM_DICT_CHEM</span>
+                      <span class="p">)</span>
+                 <span class="k">WHERE</span> <span class="n">staff_row</span> <span class="o">&gt;</span> <span class="mi">1</span>
+               <span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>查询不在分组最小行号的,较慢</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">ZJNU_HXPGL</span><span class="p">.</span><span class="n">CHEM_DICT_CHEM</span> <span class="n">t1</span>
+<span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">ROWID</span> <span class="k">NOT</span> <span class="k">IN</span> <span class="p">(</span>
+                       <span class="k">SELECT</span> <span class="k">MIN</span><span class="p">(</span><span class="n">t2</span><span class="p">.</span><span class="n">ROWID</span><span class="p">)</span>
+                       <span class="k">FROM</span> <span class="n">ZJNU_HXPGL</span><span class="p">.</span><span class="n">CHEM_DICT_CHEM</span> <span class="n">t2</span>
+                       <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">t2</span><span class="p">.</span><span class="n">chem_id</span> <span class="c1">--按照想要唯一保留的字段进行分组
+</span><span class="c1"></span>                      <span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>通过连接查询,最后删除大于最小行号的</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">ZJNU_HXPGL</span><span class="p">.</span><span class="n">CHEM_DICT_CHEM</span> <span class="n">t1</span>
+<span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">rowid</span> <span class="o">&gt;</span> <span class="p">(</span>
+                   <span class="k">SELECT</span> <span class="k">MIN</span><span class="p">(</span><span class="n">t2</span><span class="p">.</span><span class="n">rowid</span><span class="p">)</span>
+                   <span class="k">FROM</span> <span class="n">ZJNU_HXPGL</span><span class="p">.</span><span class="n">CHEM_DICT_CHEM</span> <span class="n">t2</span>
+                   <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">chem_id</span> <span class="o">=</span> <span class="n">t2</span><span class="p">.</span><span class="n">chem_id</span> <span class="c1">--按照想要唯一保留的字段进行匹配
+</span><span class="c1"></span>                 <span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查询表中所有重复数据并保留一个使用-row_number-函数">查询表中所有重复数据,并保留一个,使用 row_number 函数</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="c1">-- 重复数据的行号会从小到大按顺序排,可以过滤重复的 &gt;1 或只保留一个 &lt; 2
+</span><span class="c1"></span><span class="k">select</span> <span class="n">t</span><span class="p">.</span><span class="o">*</span><span class="p">,</span>
+       <span class="n">row_number</span><span class="p">()</span> <span class="n">over</span><span class="p">(</span><span class="n">partition</span> <span class="k">by</span> <span class="n">chem_id</span> <span class="k">order</span> <span class="k">by</span> <span class="n">t</span><span class="p">.</span><span class="n">chem_id</span><span class="p">)</span> <span class="n">num</span>
+  <span class="k">from</span> <span class="n">zjnu_hxpgl</span><span class="p">.</span><span class="n">chem_dict_chem</span> <span class="n">t</span> <span class="k">where</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">2</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查询数据库中被锁定的表信息">查询数据库中被锁定的表信息</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="k">select</span> <span class="n">t2</span><span class="p">.</span><span class="n">username</span><span class="p">,</span>
+       <span class="n">t2</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span>
+       <span class="n">t2</span><span class="p">.</span><span class="nb">serial</span><span class="o">#</span><span class="p">,</span>
+       <span class="n">t3</span><span class="p">.</span><span class="n">object_name</span><span class="p">,</span>
+       <span class="n">t2</span><span class="p">.</span><span class="n">OSUSER</span><span class="p">,</span>
+       <span class="n">t2</span><span class="p">.</span><span class="n">MACHINE</span><span class="p">,</span>
+       <span class="n">t2</span><span class="p">.</span><span class="n">PROGRAM</span><span class="p">,</span>
+       <span class="n">t2</span><span class="p">.</span><span class="n">LOGON_TIME</span><span class="p">,</span>
+       <span class="n">t2</span><span class="p">.</span><span class="n">COMMAND</span><span class="p">,</span>
+       <span class="n">t2</span><span class="p">.</span><span class="n">LOCKWAIT</span><span class="p">,</span>
+       <span class="n">t2</span><span class="p">.</span><span class="n">SADDR</span><span class="p">,</span>
+       <span class="n">t2</span><span class="p">.</span><span class="n">PADDR</span><span class="p">,</span>
+       <span class="n">t2</span><span class="p">.</span><span class="n">TADDR</span><span class="p">,</span>
+       <span class="n">t2</span><span class="p">.</span><span class="n">SQL_ADDRESS</span><span class="p">,</span>
+       <span class="n">t1</span><span class="p">.</span><span class="n">LOCKED_MODE</span>
+  <span class="k">from</span> <span class="n">v$locked_object</span> <span class="n">t1</span><span class="p">,</span> <span class="n">v$session</span> <span class="n">t2</span><span class="p">,</span> <span class="n">dba_objects</span> <span class="n">t3</span>
+ <span class="k">where</span> <span class="n">t1</span><span class="p">.</span><span class="n">session_id</span> <span class="o">=</span> <span class="n">t2</span><span class="p">.</span><span class="n">sid</span>
+   <span class="k">and</span> <span class="n">t1</span><span class="p">.</span><span class="n">object_id</span> <span class="o">=</span> <span class="n">t3</span><span class="p">.</span><span class="n">object_id</span>
+ <span class="k">order</span> <span class="k">by</span> <span class="n">t2</span><span class="p">.</span><span class="n">logon_time</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查询会话正在执行的-sql-语句">查询会话正在执行的 SQL 语句</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="k">SELECT</span> <span class="cm">/*+ ORDERED */</span> 
+ <span class="n">sql_text</span>
+  <span class="k">FROM</span> <span class="n">v$sqltext</span> <span class="n">a</span>
+ <span class="k">WHERE</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">hash_value</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">address</span><span class="p">)</span> <span class="k">IN</span>
+       <span class="p">(</span><span class="k">SELECT</span> <span class="n">DECODE</span><span class="p">(</span><span class="n">sql_hash_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">prev_hash_value</span><span class="p">,</span> <span class="n">sql_hash_value</span><span class="p">),</span>
+               <span class="n">DECODE</span><span class="p">(</span><span class="n">sql_hash_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">prev_sql_addr</span><span class="p">,</span> <span class="n">sql_address</span><span class="p">)</span>
+          <span class="k">FROM</span> <span class="n">v$session</span> <span class="n">b</span>
+         <span class="k">WHERE</span> <span class="n">b</span><span class="p">.</span><span class="n">sid</span> <span class="o">=</span> <span class="s1">&#39;67&#39;</span><span class="p">)</span>  <span class="cm">/* 此处67 为SID*/</span>
+ <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">piece</span> <span class="k">ASC</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查询当前会话-id">查询当前会话 ID</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="k">select</span> <span class="n">sid</span> <span class="k">from</span> <span class="n">v$mystat</span> <span class="k">where</span> <span class="n">rownum</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="使用管理员身份解除表锁">使用管理员身份解除表锁</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="k">alter</span> <span class="k">system</span> <span class="n">kill</span> <span class="k">session</span> <span class="s1">&#39;sid,seial#&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查询-psid-然后-kill">查询 PSID 然后 kill</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">select s.sid, s.serial#, s.LOGON_TIME, s.machine, p.spid, p.terminal
+from v$session s, v$process p
+ where s.paddr = p.addr
+ and s.sid = 42
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="表锁模式">表锁模式</h2>
+<p>^9f47fd</p>
+<p>0：none
+1：null 空
+2：Row-S 行共享(RS)：共享表锁，sub share
+3：Row-X 行独占(RX)：用于行的修改，sub exclusive
+4：Share 共享锁(S)：阻止其他 DML 操作，share
+5：S/Row-X 共享行独占(SRX)：阻止其他事务操作，share/sub exclusive
+6：exclusive 独占(X)：独立访问使用，exclusive</p>
+<p>数字越大锁级别越高, 影响的操作越多。</p>
+<p>1 级锁有：Select，有时会在 v$locked_object 出现。
+2 级锁有：Select for update,Lock For Update,Lock Row Share
+select for update 当对话使用 for update 子串打开一个游标时，所有返回集中的数据行都将处于行级(Row-X)独占式锁定，其他对象只能查询这些数据行，不能进行 update、delete 或 select for update 操作。
+3 级锁有：Insert, Update, Delete, Lock Row Exclusive
+没有 commit 之前插入同样的一条记录会没有反应, 因为后一个 3 的锁会一直等待上一个 3 的锁, 我们必须释放掉上一个才能继续工作。
+4 级锁有：Create Index, Lock Share
+locked_mode 为 2,3,4 不影响 DML(insert,delete,update,select)操作, 但 DDL(alter,drop 等)操作会提示 ora-00054 错误。
+00054,00000, “resource busy and acquire with NOWAIT specified”
+// *Cause: Resource interested is busy.
+// *Action: Retry if necessary.
+5 级锁有：Lock Share Row Exclusive
+具体来讲有主外键约束时 update / delete … ; 可能会产生 4,5 的锁。
+6 级锁有：Alter table, Drop table, Drop Index, Truncate table, Lock Exclusive</p>
+<h2 id="查询包含中文值得记录不包含-not-in-过滤">查询包含中文值得记录,不包含 not in 过滤</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="k">select</span> <span class="n">chem_id</span> <span class="k">from</span> <span class="n">CHEM_DICT_CHEM</span> <span class="k">where</span> <span class="n">REGEXP_LIKE</span><span class="p">(</span><span class="n">CHEM_NAME</span><span class="p">,</span><span class="s1">&#39;[&#39;</span> <span class="o">||</span> <span class="n">unistr</span><span class="p">(</span><span class="s1">&#39;\0391&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="s1">&#39;-&#39;</span> <span class="o">||</span> <span class="n">unistr</span><span class="p">(</span><span class="s1">&#39;\9fa5&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="s1">&#39;]&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="修改表字段类型">修改表字段类型</h2>
+<p>通过建临时字段完成</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">alter</span> <span class="k">table</span> <span class="n">CHEM_DICT_LABROOM_TEST</span> <span class="k">rename</span> <span class="k">column</span> <span class="n">LABROOM_ID</span> <span class="k">to</span> <span class="n">LABROOM_ID_TMP</span><span class="p">;</span>  
+<span class="k">alter</span> <span class="k">table</span> <span class="n">CHEM_DICT_LABROOM_TEST</span> <span class="k">add</span> <span class="n">LABROOM_ID</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">512</span><span class="p">);</span>  
+<span class="k">update</span> <span class="n">CHEM_DICT_LABROOM_TEST</span> <span class="k">set</span> <span class="n">LABROOM_ID</span> <span class="o">=</span> <span class="k">trim</span><span class="p">(</span><span class="n">LABROOM_ID_TMP</span><span class="p">);</span>  
+<span class="k">alter</span> <span class="k">table</span> <span class="n">CHEM_DICT_LABROOM_TEST</span> <span class="k">add</span> <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">LABROOM_ID</span><span class="p">);</span>  
+<span class="k">alter</span> <span class="k">table</span> <span class="n">CHEM_DICT_LABROOM_TEST</span> <span class="k">drop</span> <span class="k">column</span> <span class="n">LABROOM_ID_TMP</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2022-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/it/oracle/">IT/Oracle</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/iptables/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">iptables</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E8%99%9A%E6%8B%9F%E6%9C%BAvmware/">
+            <span class="next-text nav-default">虚拟机VMWare</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

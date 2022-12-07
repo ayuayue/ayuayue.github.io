@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>制作一个PHP简易框架（八）-- 配置中心 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="制作一个PHP简易框架" /><meta name="keywords" content="制作一个PHP简易框架" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/php-frame08/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="制作一个PHP简易框架（八）-- 配置中心" />
+<meta property="og:description" content="制作一个PHP简易框架" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/php-frame08/" />
+<meta property="article:published_time" content="2021-02-24T08:24:44+08:00" />
+<meta property="article:modified_time" content="2021-02-24T08:24:44+08:00" />
+<meta itemprop="name" content="制作一个PHP简易框架（八）-- 配置中心">
+<meta itemprop="description" content="制作一个PHP简易框架">
+<meta itemprop="datePublished" content="2021-02-24T08:24:44&#43;08:00" />
+<meta itemprop="dateModified" content="2021-02-24T08:24:44&#43;08:00" />
+<meta itemprop="wordCount" content="1612">
+
+
+
+<meta itemprop="keywords" content="php," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="制作一个PHP简易框架（八）-- 配置中心"/>
+<meta name="twitter:description" content="制作一个PHP简易框架"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">制作一个PHP简易框架（八）-- 配置中心</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-02-24 </span>
+        <div class="post-category">
+            <a href="/categories/php/"> php </a>
+            </div>
+          <span class="more-meta"> 约 1612 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#配置中心">配置中心</a></li>
+            <li><a href="#安装">安装</a></li>
+            <li><a href="#使用">使用</a>
+              <ul>
+                <li><a href="#定义缓存助手函数更方便的获取配置信息">定义缓存助手函数更方便的获取配置信息</a></li>
+                <li><a href="#自定义是否使用页面缓存">自定义是否使用页面缓存</a></li>
+              </ul>
+            </li>
+            <li><a href="#对容器内的服务使用配置方式注册">对容器内的服务使用配置方式注册</a></li>
+            <li><a href="#配置信息的隐私问题--引入env">配置信息的隐私问题&ndash;引入<code>ENV</code></a>
+              <ul>
+                <li><a href="#安装开发包">安装开发包</a></li>
+                <li><a href="#使用-1">使用</a></li>
+                <li><a href="#定义助手函数来方便定义默认值">定义助手函数来方便定义默认值</a></li>
+                <li><a href="#调用">调用</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2021-02-24T08:24:44" title="February 24, 2021">February 24, 2021</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <p><img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="code"></p>
+<hr>
+<p>项目地址：https://github.com/ayuayue/php-frame</p>
+<p><a href="https://blog.caoayu.top/post/php-frame01">制作一个PHP简易框架(一)&ndash;准备工作</a></p>
+<p><a href="https://blog.caoayu.top/post/php-frame02">制作一个PHP简易框架(二)&ndash; 引入容器</a></p>
+<p><a href="https://blog.caoayu.top/post/php-frame03">制作一个PHP简易框架(三)&ndash; 信息调试</a></p>
+<p><a href="https://blog.caoayu.top/post/php-frame04">制作一个PHP简易框架(四)&ndash; 路由系统</a></p>
+<p><a href="https://blog.caoayu.top/post/php-frame05">制作一个PHP简易框架（五）&ndash; 响应</a></p>
+<p><a href="https://blog.caoayu.top/post/php-frame06">制作一个PHP简易框架（六）&ndash; 视图模板</a></p>
+<p><a href="https://blog.caoayu.top/post/php-frame07">制作一个PHP简易框架（七）&ndash; 路由及路径优化</a></p>
+<p><a href="https://blog.caoayu.top/post/php-frame08">制作一个PHP简易框架（八）&ndash; 配置中心</a></p>
+<p><a href="https://blog.caoayu.top/post/php-frame09">制作一个PHP简易框架（九）&ndash; ORM</a></p>
+<p><a href="https://blog.caoayu.top/post/php-frame10">制作一个PHP简易框架（十）&ndash; Session and Cookie</a></p>
+<hr>
+<h3 id="配置中心">配置中心</h3>
+<p>对于一个需要灵活更改配置的项目来说，配置中心是必不可缺的一个功能。它可以帮我们统一管理配置项，降低了更改配置时对系统造成误操作的风险。</p>
+<h3 id="安装">安装</h3>
+<p>同样使用开发包来集成这个服务。项目地址：https://github.com/hassankhan/config</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">composer require hassankhan/config
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="使用">使用</h3>
+<p>首先将配置服务注册到容器中，方便我们使用容器来管理。创建 <code>CacheServiceProvider.php</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># app/Providers/CacheServiceProvider.php
+<span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Providers</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">League\Container\ServiceProvider\AbstractServiceProvider</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Noodlehaus\Config</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">ConfigServiceProvider</span> <span class="k">extends</span> <span class="nx">AbstractServiceProvider</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$provides</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;config&#39;</span>
+    <span class="p">];</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">register</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$container</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getContainer</span><span class="p">();</span>
+        <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span><span class="k">new</span> <span class="nx">Config</span><span class="p">(</span><span class="nx">base_path</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">)));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>添加到容器中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># bootstrap/core/container.php
+$container-&gt;addServiceProvider(new \App\Providers\ConfigServiceProvider());
+</code></pre></td></tr></table>
+</div>
+</div><p>新建配置目录及配置文件，来测试配置是否开启成功</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># config/app.php
+<span class="cp">&lt;?php</span>
+
+<span class="k">return</span> <span class="p">[</span>
+    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;caoayu&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;debug&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
+<span class="p">];</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># config/cache.php
+<span class="cp">&lt;?php</span>
+
+<span class="k">return</span> <span class="p">[</span>
+    <span class="s1">&#39;enable&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+    <span class="s1">&#39;twig&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;cache_enable&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+
+    <span class="p">]</span>
+<span class="p">];</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>对配置信息的引用，测试使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># app/Controllers/HomeController.php
+<span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">HomeController</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">(</span><span class="nv">$request</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$name</span> <span class="o">=</span> <span class="nx">app</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;index.twig&#39;</span><span class="p">,</span> <span class="nx">compact</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>打开浏览器，<code>app.php</code> 中配置的 <code>name</code> 渲染成功说明流程没有问题</p>
+<h4 id="定义缓存助手函数更方便的获取配置信息">定义缓存助手函数更方便的获取配置信息</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># helpers.php
+if (!function_exists(&#39;config&#39;)) {
+    function config($key = &#39;&#39;)
+    {
+        return app(&#39;config&#39;)-&gt;get($key);
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="自定义是否使用页面缓存">自定义是否使用页面缓存</h4>
+<p>修改视图的服务提供者</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># app/Providers/ViewServiceProvider.php
+<span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Providers</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">League\Container\ServiceProvider\AbstractServiceProvider</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">ViewServiceProvider</span> <span class="k">extends</span> <span class="nx">AbstractServiceProvider</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$viewPath</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$cachePath</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$provides</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;twig&#39;</span>
+    <span class="p">];</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">viewPath</span> <span class="o">=</span> <span class="nx">base_path</span><span class="p">(</span><span class="s1">&#39;resources/views&#39;</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cachePath</span> <span class="o">=</span> <span class="nx">base_path</span><span class="p">(</span><span class="s1">&#39;storage/views&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">register</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$container</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getContainer</span><span class="p">();</span>
+        <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;twig&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nv">$loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Twig\Loader\FilesystemLoader</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">viewPath</span><span class="p">);</span>
+
+            <span class="nv">$twig</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Twig\Environment</span><span class="p">(</span><span class="nv">$loader</span><span class="p">,</span> <span class="p">[</span>
+                <span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="nx">config</span><span class="p">(</span><span class="s1">&#39;twig.cache_enable&#39;</span><span class="p">)</span> <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cachePath</span> <span class="o">:</span> <span class="k">false</span><span class="p">,</span> <span class="c1"># 使用注册的全局助手函数获取配置信息
+</span><span class="c1"></span>            <span class="p">]);</span>
+            <span class="k">return</span> <span class="nv">$twig</span><span class="p">;</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在 <code>register</code> 中的 <code>cache</code> 中判断是否配置开启了缓存服务。</p>
+<p>修改视图文件，如果没有改变则说明已经被缓存成功。第一次访问时由于开启缓存并且找不到缓存，是会发生更改，当缓存文件生成后在修改就不会看到更改了，缓存文件会生成在 <code>storage/view</code> 目录中。</p>
+<h3 id="对容器内的服务使用配置方式注册">对容器内的服务使用配置方式注册</h3>
+<p>如果每次添加一个服务提供者，我们都要更改 <code>container.php</code> 的内容，那么对于不熟悉这个模块的开发者来说可能会误操作引起系统的崩溃，所以，将这块加入配置中，来减少外部对容器服务的更改是非常有必要的。</p>
+<p>首先在 <code>config/app.php</code> 中定义所有要注册的服务。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># config/app.php
+&#39;providers&#39; =&gt; [
+        App\Providers\AppServiceProvider::class,
+        App\Providers\ViewServiceProvider::class
+    ]
+</code></pre></td></tr></table>
+</div>
+</div><p>在 <code>container.php</code> 文件中遍历所有的服务并注册进去</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># bootstrap/core/container.php
+<span class="cp">&lt;?php</span>
+
+<span class="nv">$container</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">League\Container\Container</span><span class="p">;</span>
+
+<span class="nv">$container</span><span class="o">-&gt;</span><span class="na">addServiceProvider</span><span class="p">(</span><span class="k">new</span> <span class="nx">App\Providers\ConfigServiceProvider</span><span class="p">());</span>
+
+<span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;container&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$container</span><span class="p">;</span>
+
+<span class="k">foreach</span><span class="p">(</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;providers&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$provider</span><span class="p">){</span>
+    <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">addServiceProvider</span><span class="p">(</span><span class="nv">$provider</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="配置信息的隐私问题--引入env">配置信息的隐私问题&ndash;引入<code>ENV</code></h3>
+<p>在项目中，有些配置是私人的，比如密钥。或者一些配置是动态更改的，每个人的环境可能不同，所以就需要使用一个另外的方式来保存配置，这个方式我们使用 <code>.env</code> 文件来做。类似与使用每个机器的环境变量。这个文件一般在代码的版本管理中是被忽略上传的。如 <code>git svn coding gitee</code> 等。</p>
+<h4 id="安装开发包">安装开发包</h4>
+<p>项目地址：https://github.com/vlucas/phpdotenv</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">composer require vlucas/phpdotenv
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="使用-1">使用</h4>
+<p>创建 <code>env</code> 服务。在 <code>bootstrap/core</code> 下创建 <code>env.php</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># bootstrap/core/env.php
+<span class="cp">&lt;?php</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$dotenv</span> <span class="o">=</span> <span class="nx">Dotenv\Dotenv</span><span class="o">::</span><span class="na">createUnsafeImmutable</span><span class="p">(</span><span class="nx">base_path</span><span class="p">());</span>
+    <span class="nv">$dotenv</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">();</span>
+<span class="p">}</span><span class="k">catch</span> <span class="p">(</span><span class="nx">\Dotenv\Exception\InvalidPathException</span> <span class="nv">$exception</span><span class="p">){</span>
+    <span class="nx">dump</span><span class="p">(</span><span class="s1">&#39;env path invaild&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在 <code>bootstrap/app.php</code> 中引用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># bootstrap/app.php
+require_once base_path(&#39;bootstrap/core/env.php&#39;); # 注意这个引用要防止自动加载文件之下，也就是自动加载后第一个加载的文件，防止 env 服务未初始化完成就调用
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="定义助手函数来方便定义默认值">定义助手函数来方便定义默认值</h4>
+<p>由于 <code>env</code> 中的值都会解析为字符串，所以进行转换，并去除两边的引号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># helpers.php
+if (!function_exists(&#39;env&#39;)) {
+    function env($key, $default = null)
+    {
+        $value = getenv($key,true)?:getenv($key);
+        switch ($value) {
+            case &#34;true&#34;:
+                return true;
+            case &#34;false&#34;:
+                return false;
+            case &#34;&#34;:
+                return $default;
+            case &#34;null&#34;:
+                return null;
+            default :
+                $valueLength = strlen($value);
+                if (strlen($value) &gt; 1 <span class="err">&amp;&amp;</span> $value[0] === &#39;&#34;&#39; <span class="err">&amp;&amp;</span> $value[$valueLength - 1] === &#39;&#34;&#39;) {
+                    return substr($value, 1, -1);
+                }
+                return $value;
+        }
+
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="调用">调用</h4>
+<p>例如在 <code>conifg/cache.php</code> 中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"># config/cache.php
+<span class="cp">&lt;?php</span>
+
+<span class="k">return</span> <span class="p">[</span>
+    <span class="s1">&#39;enable&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+    <span class="s1">&#39;twig&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;cache_enable&#39;</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">&#39;APP_CACHE&#39;</span><span class="p">,</span><span class="k">false</span><span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这样将配置分为两层可以更灵活的控制配置的值，也更加隔离，减少不必要的更改。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2021-02-24</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/php/">php</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/kugou/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">酷狗音乐爬虫</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/php-frame07/">
+            <span class="next-text nav-default">制作一个PHP简易框架（七）-- 路由及路径优化</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

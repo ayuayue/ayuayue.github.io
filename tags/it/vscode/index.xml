@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/Vscode on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/vscode/</link>
+    <description>Recent content in IT/Vscode on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/vscode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>vscode</title>
+      <link>https://blog.caoayu.top/post/vscode/</link>
+      <pubDate>Mon, 03 Oct 2022 20:00:47 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/vscode/</guid>
+      <description>vscode PHP Intelephense PHP Debug PHP DocBlocker PHP Namespace Resolver PHP Snippets from PHPStorm Project Manager Git Graph Git Blame Tabnine PHP PHP remote debug 远程debug php launch.json 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 { // 使用 IntelliSense 了解相关属性。 // 悬停以查看</description>
+    </item>
+    
+  </channel>
+</rss>

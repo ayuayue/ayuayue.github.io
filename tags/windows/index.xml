@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/windows/</link>
+    <description>Recent content in windows on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 01 Jan 2021 12:19:21 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows 切换同窗口应用及git-bash的一些小工具</title>
+      <link>https://blog.caoayu.top/post/switcher-z/</link>
+      <pubDate>Fri, 01 Jan 2021 12:19:21 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/switcher-z/</guid>
+      <description>窗口切换 Windows 上切换窗口以及任务桌面的快捷键非常多，而且触摸板支持手势切换最近应用，但是缺少一个像 Linux 上面的那种切换同一个应用的不同窗口快捷键，在</description>
+    </item>
+    
+    <item>
+      <title>解决开启代理无法访问微软商店的问题</title>
+      <link>https://blog.caoayu.top/post/store-net-error/</link>
+      <pubDate>Wed, 18 Nov 2020 19:54:05 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/store-net-error/</guid>
+      <description>以前对于 Windows store 使用的不多,没发现这个问题,最近使用商店后发现无法进行网络连接.原因是开启了代理.将代理关闭之后久可以正常的使用了.但是每次都手</description>
+    </item>
+    
+    <item>
+      <title>使用Cygwin在windows下运行linux的一些工具</title>
+      <link>https://blog.caoayu.top/post/cygwin/</link>
+      <pubDate>Sat, 07 Nov 2020 14:37:16 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/cygwin/</guid>
+      <description>windows 终端 对于开发者而言,windwos下的终端实在是不如linux,macos下的效率更高,速度更快.虽然Windows下也有一些不错的第三方</description>
+    </item>
+    
+    <item>
+      <title>Windows家庭版安装Docker</title>
+      <link>https://blog.caoayu.top/post/windows-install-docker/</link>
+      <pubDate>Sun, 13 Sep 2020 15:42:09 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/windows-install-docker/</guid>
+      <description>Docker在Windows上使用 目前,docker还只能在专业版或者企业版的windows中安装使用.在家庭版中进行安装的过程中会提示 我们</description>
+    </item>
+    
+    <item>
+      <title>Windows 查找被占用端口并结束程序</title>
+      <link>https://blog.caoayu.top/post/windows-kill/</link>
+      <pubDate>Wed, 09 Sep 2020 23:06:26 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/windows-kill/</guid>
+      <description>Windows!!! 常常由于开启某项服务而端口已经被其他服务或者同服务的应用所占用,导致我们无法再成功开启一个应用服务.在linux中对进程的查找以及&amp;quo</description>
+    </item>
+    
+    <item>
+      <title>Windows下新建和更改分区</title>
+      <link>https://blog.caoayu.top/post/win-disk-manage/</link>
+      <pubDate>Wed, 19 Aug 2020 21:43:56 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/win-disk-manage/</guid>
+      <description>分区 分区只是逻辑上的概念,实际都是在一块硬盘上.分区可以使文件存放更规范也可以分离一些系统级别的概念,防止用户操作系统分区导致系统出现问题 如</description>
+    </item>
+    
+    <item>
+      <title>Windows下给磁盘扩容</title>
+      <link>https://blog.caoayu.top/post/disk-dilation/</link>
+      <pubDate>Wed, 19 Aug 2020 21:16:14 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/disk-dilation/</guid>
+      <description>磁盘分区太小? 当我们新买的电脑或者硬盘进行分区安装系统后发现 c盘或者其他盘的空间太小,不够我们使用,或者有强迫症,那么这个时候我们就要考虑给</description>
+    </item>
+    
+    <item>
+      <title>把笔记本触摸板用起来</title>
+      <link>https://blog.caoayu.top/post/use-windowns-touch/</link>
+      <pubDate>Sat, 18 Jul 2020 14:31:51 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/use-windowns-touch/</guid>
+      <description>还在让你的触摸板吃土? 大部分的笔记本用户对于触摸板都是当作没有鼠标时的一个替代品，但是现在的windows触摸板內置了不少的快捷功能，比自己</description>
+    </item>
+    
+    <item>
+      <title>windows 右键菜单的添加和移除</title>
+      <link>https://blog.caoayu.top/post/add-right-menu/</link>
+      <pubDate>Thu, 25 Jun 2020 19:10:22 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/add-right-menu/</guid>
+      <description>关于注册表 windows下所有系统及部分软件的配置都在注册表中,注册表相当于是一个windows系统的数据库.我们想要增加或更改一些功能可以</description>
+    </item>
+    
+  </channel>
+</rss>

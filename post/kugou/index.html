@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>酷狗音乐爬虫 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="酷狗音乐爬虫" /><meta name="keywords" content="酷狗音乐爬虫" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/kugou/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="酷狗音乐爬虫" />
+<meta property="og:description" content="酷狗音乐爬虫" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/kugou/" />
+<meta property="article:published_time" content="2021-02-24T14:08:30+08:00" />
+<meta property="article:modified_time" content="2021-02-24T14:08:30+08:00" />
+<meta itemprop="name" content="酷狗音乐爬虫">
+<meta itemprop="description" content="酷狗音乐爬虫">
+<meta itemprop="datePublished" content="2021-02-24T14:08:30&#43;08:00" />
+<meta itemprop="dateModified" content="2021-02-24T14:08:30&#43;08:00" />
+<meta itemprop="wordCount" content="1819">
+
+
+
+<meta itemprop="keywords" content="go," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="酷狗音乐爬虫"/>
+<meta name="twitter:description" content="酷狗音乐爬虫"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">酷狗音乐爬虫</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-02-24 </span>
+        <div class="post-category">
+            <a href="/categories/go/"> go </a>
+            </div>
+          <span class="more-meta"> 约 1819 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#music">music</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2021-02-24T14:08:30" title="February 24, 2021">February 24, 2021</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <p><img src="https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="code"></p>
+<h3 id="music">music</h3>
+<p>最近很少用 <code>deepin</code> 在线或者使用客户段听音乐了，喜欢下载到本地听那些熟悉的歌曲。</p>
+<p>很多歌不是这个平台没版权就是那个要付费。也是顾虑到网易云9级用户的面子，不经常去其他平台听歌，在 <code>GitHub</code> 上有个项目，项目地址：https://github.com/nondanee/UnblockNeteaseMusic。可以只使用网易云的客户端听大部分平台的音乐，对于没有版权的歌曲会使用其他平台的 <code>api</code> 来播放。用着总算有个解决方案了。但是在 <code>linux</code> 客户端上，网易云程序没有设置代理的功能，而<code>linux</code> 上又要弄证书什么的，一个客户端就懒的折腾了，主要是折腾了几天没有很好的解决方案，就一直搁置了。</p>
+<p>也是经常使用 <code>you-get</code> 的缘故，会经常把电影或视频下载下来，同时也支持很多国内视频与音乐平台，you-get 项目地址：https://github.com/soimort/you-get</p>
+<p><code>you-get</code> 使用起来也比较简单，将链接放进去就好了，但是国内如果不使用代理，速度十分的慢。关于代理的使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">you-get -x 127.0.0.1:7890 <span class="s1">&#39;https://www.youtube.com/watch?v=jNQXAC9IVRw&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>对于视频来说每次找到一个视频，复制链接，下载。还算可以接受，但是对于音乐，只有短短的几分钟，每次要下新的歌曲都要进行打开浏览器搜索，复制链接。干脆自己写一个程序。</p>
+<p>由于是打算做命令行程序，就是用 <code>Go</code> 来写吧，一个小程序，就不使用 <code>go mod</code> 来做了，直接一个 <code>main</code> 搞定。此项目地址：https://github.com/ayuayue/kugou</p>
+<p>本来打算通过命令行来查询歌曲，返回歌曲的链接，然后配合 <code>you-get</code> 来进行下载，这样就多了一步，类似于使用管道符的方式。</p>
+<p>又打算直接通过 <code>go</code> 来调用 <code>you-get</code> 来下载，但是这样前提需要安装 <code>you-get</code> 并且代理不好在程序中配置，只好配置临时或全局的终端代理。</p>
+<p>最后打算直接在程序中完成歌曲的搜索，歌词及歌曲下载。这样就不依赖于外部的东西。</p>
+<p>对于歌曲下载<code>api</code> 的获取，使用 <code>you-get</code> 是通过 <code>-d</code> 参数，开启调试。会显示出请求的地址以及音乐的地址，由此可以的到歌曲详情的 <code>api</code></p>
+<p>Api</p>
+<ol>
+<li>
+<p>查询歌曲   <a href="http://msearchcdn.kugou.com/api/v3/search/song">http://msearchcdn.kugou.com/api/v3/search/song</a></p>
+<p>eg: <a href="http://msearchcdn.kugou.com/api/v3/search/song?keyword=">http://msearchcdn.kugou.com/api/v3/search/song?keyword=</a>花海</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>值类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keyword</td>
+<td>字符串</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>歌曲详情   <a href="https://www.kugou.com/yy/index.php?r=play/getdata">https://www.kugou.com/yy/index.php?r=play/getdata</a></p>
+<p>eg: <a href="https://www.kugou.com/yy/index.php?r=play/getdata?hash=xxxx&amp;album_id=xxx&amp;mid=123">https://www.kugou.com/yy/index.php?r=play/getdata?hash=xxxx&amp;album_id=xxx&amp;mid=123</a></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>值类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hash</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>album_id</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>123</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>有了这两个 <code>API</code> 剩下的就简单了。</p>
+<p>开始编码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;encoding/json&#34;</span>
+	<span class="s">&#34;flag&#34;</span>
+	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;io&#34;</span>
+	<span class="s">&#34;io/ioutil&#34;</span>
+	<span class="s">&#34;net/http&#34;</span>
+	<span class="s">&#34;net/url&#34;</span>
+	<span class="s">&#34;os&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">type</span> <span class="nx">Req</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">Status</span>  <span class="kt">int</span>    <span class="s">`json:&#34;status&#34;`</span>
+	<span class="nx">Error</span>   <span class="kt">string</span> <span class="s">`json:&#34;error&#34;`</span>
+	<span class="nx">Data</span>    <span class="nx">Data</span>   <span class="s">`json:&#34;data&#34;`</span>
+	<span class="nx">Errcode</span> <span class="kt">int</span>    <span class="s">`json:&#34;errcode&#34;`</span>
+<span class="p">}</span>
+<span class="kd">type</span> <span class="nx">Data</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">Info</span> <span class="p">[]</span><span class="nx">Info</span> <span class="s">`json:&#34;info&#34;`</span>
+<span class="p">}</span>
+<span class="kd">type</span> <span class="nx">Info</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">Hash</span>       <span class="kt">string</span> <span class="s">`json:&#34;hash&#34;`</span>
+	<span class="nx">AlbumID</span>    <span class="kt">string</span> <span class="s">`json:&#34;album_id&#34;`</span>
+	<span class="nx">SingerName</span> <span class="kt">string</span> <span class="s">`josn:&#34;singername&#34;`</span>
+	<span class="nx">SongName</span>   <span class="kt">string</span> <span class="s">`json:&#34;songname&#34;`</span>
+<span class="p">}</span>
+<span class="kd">type</span> <span class="nx">Song</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">Status</span>  <span class="kt">int</span>      <span class="s">`json:&#34;status&#34;`</span>
+	<span class="nx">ErrCode</span> <span class="kt">int</span>      <span class="s">`json:&#34;err_code&#34;`</span>
+	<span class="nx">Data</span>    <span class="nx">SongData</span> <span class="s">`json:&#34;data&#34;`</span>
+<span class="p">}</span>
+<span class="kd">type</span> <span class="nx">SongData</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">AudioName</span> <span class="kt">string</span> <span class="s">`json:&#34;audio_name&#34;`</span>
+	<span class="nx">Lyrics</span>    <span class="kt">string</span> <span class="s">`json:&#34;lyrics&#34;`</span>
+	<span class="nx">PlayURL</span>   <span class="kt">string</span> <span class="s">`json:&#34;play_url&#34;`</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">SearchApi</span> <span class="p">=</span> <span class="s">&#34;http://msearchcdn.kugou.com/api/v3/search/song&#34;</span>
+<span class="kd">var</span> <span class="nx">SongApi</span> <span class="p">=</span> <span class="s">&#34;https://www.kugou.com/yy/index.php?r=play&#34;</span>
+
+<span class="kd">func</span> <span class="nf">query</span><span class="p">()</span> <span class="nx">Req</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">name</span> <span class="kt">string</span>
+	<span class="nx">flag</span><span class="p">.</span><span class="nf">StringVar</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">name</span><span class="p">,</span> <span class="s">&#34;name&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="s">&#34;歌曲名&#34;</span><span class="p">)</span>
+	<span class="nx">flag</span><span class="p">.</span><span class="nf">Parse</span><span class="p">()</span>
+	<span class="c1">//fmt.Println(name)
+</span><span class="c1"></span>	<span class="nx">client</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewRequest</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">MethodGet</span><span class="p">,</span> <span class="nx">SearchApi</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="s">&#34;请求失败&#34;</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">params</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="nx">url</span><span class="p">.</span><span class="nx">Values</span><span class="p">)</span>
+	<span class="nx">params</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">&#34;keyword&#34;</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span>
+	<span class="nx">client</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nx">RawQuery</span> <span class="p">=</span> <span class="nx">params</span><span class="p">.</span><span class="nf">Encode</span><span class="p">()</span>
+	<span class="c1">//fmt.Println(client)
+</span><span class="c1"></span>	<span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">DefaultClient</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span>
+
+	<span class="k">defer</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nx">req</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+	<span class="p">}()</span>
+	<span class="k">if</span> <span class="nx">req</span><span class="p">.</span><span class="nx">StatusCode</span> <span class="o">!=</span> <span class="mi">200</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="s">&#34;返回错误响应&#34;</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">body</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+	<span class="nx">r</span> <span class="o">:=</span> <span class="nx">Req</span><span class="p">{}</span>
+	<span class="nx">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="nx">body</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">r</span><span class="p">)</span>
+	<span class="c1">//fmt.Printf(&#34;%#v&#34;,r)
+</span><span class="c1"></span>	<span class="k">return</span> <span class="nx">r</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">Req</span><span class="p">)</span> <span class="nf">List</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">Status</span> <span class="o">!=</span> <span class="mi">1</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Error</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">songs</span> <span class="o">:=</span> <span class="nx">r</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Info</span>
+	<span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">song</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">songs</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">song</span><span class="p">.</span><span class="nx">SongName</span><span class="p">,</span> <span class="s">&#34;--&#34;</span><span class="p">,</span> <span class="nx">song</span><span class="p">.</span><span class="nx">SingerName</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">Req</span><span class="p">)</span> <span class="nf">GetLink</span><span class="p">(</span><span class="nx">num</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">string</span> <span class="p">{</span>
+	<span class="nx">songApi</span> <span class="o">:=</span> <span class="s">&#34;https://www.kugou.com/song&#34;</span>
+	<span class="nx">songs</span> <span class="o">:=</span> <span class="nx">r</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Info</span>
+	<span class="nx">hash</span> <span class="o">:=</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">num</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nx">Hash</span>
+	<span class="nx">album_id</span> <span class="o">:=</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">num</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nx">AlbumID</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;在线播放链接：%s/#hash=%s&amp;album_id=%s\n&#34;</span><span class="p">,</span> <span class="nx">songApi</span><span class="p">,</span> <span class="nx">hash</span><span class="p">,</span> <span class="nx">album_id</span><span class="p">)</span>
+	<span class="k">return</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span>
+		<span class="nx">hash</span><span class="p">,</span> <span class="nx">album_id</span><span class="p">,</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">Song</span><span class="p">)</span> <span class="nf">Download</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Status</span> <span class="o">!=</span> <span class="mi">1</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="s">&#34;获取歌曲信息失败&#34;</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">lyrics</span> <span class="o">:=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Lyrics</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;开始下载歌词&#34;</span><span class="p">)</span>
+	<span class="nx">lrcFileName</span> <span class="o">:=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%s.lrc&#34;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">AudioName</span><span class="p">)</span>
+	<span class="nx">songName</span> <span class="o">:=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%s.mp3&#34;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">AudioName</span><span class="p">)</span>
+	<span class="nx">lf</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="nx">lrcFileName</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="k">defer</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">lf</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span> <span class="p">}()</span>
+	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">lf</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">lyrics</span><span class="p">))</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;下载歌词完成&#34;</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;开始下载歌曲&#34;</span><span class="p">)</span>
+	<span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">PlayURL</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="s">&#34;请求失败&#34;</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="k">defer</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nx">req</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+	<span class="p">}()</span>
+	<span class="k">if</span> <span class="nx">req</span><span class="p">.</span><span class="nx">StatusCode</span> <span class="o">!=</span> <span class="mi">200</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="s">&#34;返回错误响应&#34;</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">sf</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="nx">songName</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="k">defer</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">sf</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span> <span class="p">}()</span>
+	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">Copy</span><span class="p">(</span><span class="nx">sf</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">num</span> <span class="kt">int</span>
+	<span class="nx">req</span> <span class="o">:=</span> <span class="nf">query</span><span class="p">()</span>
+	<span class="nx">req</span><span class="p">.</span><span class="nf">List</span><span class="p">()</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;请输入要选择的歌曲链接的序号：&#34;</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Scanln</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">num</span><span class="p">)</span>
+	<span class="nx">params</span> <span class="o">:=</span> <span class="nx">req</span><span class="p">.</span><span class="nf">GetLink</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span>
+	<span class="nx">song</span> <span class="o">:=</span> <span class="nf">GetSong</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span>
+	<span class="nx">song</span><span class="p">.</span><span class="nf">Download</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">GetSong</span><span class="p">(</span><span class="nx">params</span> <span class="p">[]</span><span class="kt">string</span><span class="p">)</span> <span class="nx">Song</span> <span class="p">{</span>
+	<span class="nx">url</span> <span class="o">:=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%s/getdata&amp;hash=%s&amp;album_id=%s&amp;mid=123&#34;</span><span class="p">,</span> <span class="nx">SongApi</span><span class="p">,</span> <span class="nx">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">params</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+	<span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="s">&#34;请求失败&#34;</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="k">defer</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nx">req</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+	<span class="p">}()</span>
+	<span class="k">if</span> <span class="nx">req</span><span class="p">.</span><span class="nx">StatusCode</span> <span class="o">!=</span> <span class="mi">200</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="s">&#34;返回错误响应&#34;</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">body</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+	<span class="nx">song</span> <span class="o">:=</span> <span class="nx">Song</span><span class="p">{}</span>
+	<span class="nx">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="nx">body</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">song</span><span class="p">)</span>
+	<span class="k">return</span> <span class="nx">song</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>编译(我本地是 linux 环境)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># linux</span>
+go build -o path ./main.go <span class="c1">#path 路径</span>
+<span class="c1"># windows</span> 
+<span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span> <span class="nv">GOOS</span><span class="o">=</span>windows <span class="nv">GOARCH</span><span class="o">=</span>amd64 go build -o path main.go
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2021-02-24</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/go/">go</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/php-frame09/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">制作一个PHP简易框架（九）-- ORM</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/php-frame08/">
+            <span class="next-text nav-default">制作一个PHP简易框架（八）-- 配置中心</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

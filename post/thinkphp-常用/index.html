@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>thinkphp 常用 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="thinkphp 常用 配置 nginx 路由重定向 nginx 配置中 1 2 3 4 5 6 location / { index index.php index.html error/index.html; if (!-e $request_filename) { rewrite ^(.*)$ /index.php?s=$1 last; break; } 配置nginx&#43;thinkphp 二级目录 1 2 3 4 5 6 7 8 9 10 11 12" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/thinkphp-%E5%B8%B8%E7%94%A8/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="thinkphp 常用" />
+<meta property="og:description" content="thinkphp 常用 配置 nginx 路由重定向 nginx 配置中 1 2 3 4 5 6 location / { index index.php index.html error/index.html; if (!-e $request_filename) { rewrite ^(.*)$ /index.php?s=$1 last; break; } 配置nginx&#43;thinkphp 二级目录 1 2 3 4 5 6 7 8 9 10 11 12" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/thinkphp-%E5%B8%B8%E7%94%A8/" />
+<meta property="article:published_time" content="2022-10-03T20:43:46+00:00" />
+<meta property="article:modified_time" content="2022-10-25T08:41:54+00:00" />
+<meta itemprop="name" content="thinkphp 常用">
+<meta itemprop="description" content="thinkphp 常用 配置 nginx 路由重定向 nginx 配置中 1 2 3 4 5 6 location / { index index.php index.html error/index.html; if (!-e $request_filename) { rewrite ^(.*)$ /index.php?s=$1 last; break; } 配置nginx&#43;thinkphp 二级目录 1 2 3 4 5 6 7 8 9 10 11 12">
+<meta itemprop="datePublished" content="2022-10-03T20:43:46&#43;00:00" />
+<meta itemprop="dateModified" content="2022-10-25T08:41:54&#43;00:00" />
+<meta itemprop="wordCount" content="1509">
+
+
+
+<meta itemprop="keywords" content="IT/PHP,IT/PHP/ThinkPHP," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="thinkphp 常用"/>
+<meta name="twitter:description" content="thinkphp 常用 配置 nginx 路由重定向 nginx 配置中 1 2 3 4 5 6 location / { index index.php index.html error/index.html; if (!-e $request_filename) { rewrite ^(.*)$ /index.php?s=$1 last; break; } 配置nginx&#43;thinkphp 二级目录 1 2 3 4 5 6 7 8 9 10 11 12"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">thinkphp 常用</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-10-03 </span>
+        
+          <span class="more-meta"> 约 1509 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#thinkphp-常用">thinkphp 常用</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#配置-nginx-路由重定向">配置 nginx 路由重定向</a></li>
+            <li><a href="#配置nginxthinkphp-二级目录">配置nginx+thinkphp 二级目录</a></li>
+            <li><a href="#多项目-apache-htaccess-配置">多项目 apache .htaccess 配置</a></li>
+            <li><a href="#apache-项目路由重写">apache 项目路由重写</a></li>
+            <li><a href="#模型条件">模型条件</a></li>
+            <li><a href="#模型关联">模型关联</a>
+              <ul>
+                <li><a href="#模型关联模型转数组">模型关联模型转数组</a></li>
+                <li><a href="#预加载模型加where条件">预加载模型加where条件</a></li>
+                <li><a href="#关联预加载多个表">关联预加载多个表</a></li>
+              </ul>
+            </li>
+            <li><a href="#oracle-clob获取类型错误">Oracle clob获取类型错误</a></li>
+            <li><a href="#更新和插入-clob-类型数据">更新和插入 clob 类型数据</a></li>
+            <li><a href="#自定义模板路径常量-public原理字符串替换">自定义模板路径常量 <strong>PUBLIC</strong>，原理字符串替换</a></li>
+            <li><a href="#apache-配置路由重写">apache 配置路由重写</a></li>
+            <li><a href="#tcpdf-打印-png-图片太慢">tcpdf 打印 png 图片太慢</a></li>
+            <li><a href="#模型查询方法">模型查询方法</a></li>
+            <li><a href="#tp-路由生成模板及控制器">tp 路由生成,模板及控制器</a>
+              <ul>
+                <li><a href="#url-助手函数">url 助手函数</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2022-10-25T08:41:54" title="October 25, 2022">October 25, 2022</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="thinkphp-常用">thinkphp 常用</h1>
+<h3 id="配置-nginx-路由重定向">配置 nginx 路由重定向</h3>
+<p>nginx 配置中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">location / {
+            index index.php index.html error/index.html;
+            if (!-e $request_filename) {
+                rewrite ^(.*)$ /index.php?s=$1 last;
+            break;
+        }
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="配置nginxthinkphp-二级目录">配置nginx+thinkphp 二级目录</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">    location / <span class="o">{</span>
+        try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ /index.php?<span class="nv">$query_string</span><span class="p">;</span>
+        index index.html index.htm index.php<span class="p">;</span>
+        <span class="k">if</span> <span class="o">(</span>!-e <span class="nv">$request_filename</span><span class="o">)</span> <span class="o">{</span>
+            rewrite ^/index.php<span class="o">(</span>.*<span class="o">)</span>$ /index.php?s<span class="o">=</span><span class="nv">$1</span> last<span class="p">;</span>
+            rewrite ^/fjnu/public/<span class="o">(</span>.*<span class="o">)</span>$ /fjnu/public/index.php?s<span class="o">=</span><span class="nv">$1</span> last<span class="p">;</span>
+            rewrite ^/jou/public/<span class="o">(</span>.*<span class="o">)</span>$ /fjnu/public/index.php?s<span class="o">=</span><span class="nv">$1</span> last<span class="p">;</span>
+            rewrite ^/zheda/public/<span class="o">(</span>.*<span class="o">)</span>$ /fjnu/public/index.php?s<span class="o">=</span><span class="nv">$1</span> last<span class="p">;</span>
+
+
+            rewrite ^<span class="o">(</span>.*<span class="o">)</span>$ /index.php?s<span class="o">=</span><span class="nv">$1</span> last<span class="p">;</span>
+            rewrite ^/fjnu/<span class="o">(</span>.*<span class="o">)</span>$  /fjnu/public/index.php?s<span class="o">=</span>/<span class="nv">$1</span> last<span class="p">;</span>
+            rewrite ^/jou/<span class="o">(</span>.*<span class="o">)</span>$  /fjnu/public/index.php?s<span class="o">=</span>/<span class="nv">$1</span> last<span class="p">;</span>
+            rewrite ^/zheda/<span class="o">(</span>.*<span class="o">)</span>$  /fjnu/public/index.php?s<span class="o">=</span>/<span class="nv">$1</span> last<span class="p">;</span>
+            break<span class="p">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="多项目-apache-htaccess-配置">多项目 apache .htaccess 配置</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index<span class="se">\.</span>php$ - <span class="o">[</span>L<span class="o">]</span>
+RewriteCond %<span class="o">{</span>ENV:REDIRECT_STATUS<span class="o">}</span> ^$
+RewriteCond %<span class="o">{</span>REQUEST_FILENAME<span class="o">}</span> !-f
+RewriteCond %<span class="o">{</span>REQUEST_FILENAME<span class="o">}</span> !-d
+RewriteRule . /index.php <span class="o">[</span>L<span class="o">]</span>
+&lt;/IfModule&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="apache-项目路由重写">apache 项目路由重写</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">&lt;IfModule mod_rewrite.c&gt;
+  Options +FollowSymlinks -Multiviews
+  RewriteEngine On
+
+  RewriteCond %<span class="o">{</span>REQUEST_FILENAME<span class="o">}</span> !-d
+  RewriteCond %<span class="o">{</span>REQUEST_FILENAME<span class="o">}</span> !-f
+  RewriteRule ^<span class="o">(</span>.*<span class="o">)</span>$ index.php <span class="o">[</span>L,E<span class="o">=</span>PATH_INFO:<span class="nv">$1</span><span class="o">]</span>
+&lt;/IfModule&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>获取最后一条SQL</p>
+<p><code>model-&gt;getLastSql();</code></p>
+<p><code>db()-&gt;getLastSql();</code></p>
+<p>获取所有请求参数 <code>input('get.') input('post.')</code></p>
+<p>数组合并 array_merge</p>
+<p>多维数组中获取子数组 array_column</p>
+<h3 id="模型条件">模型条件</h3>
+<ol>
+<li>多字段 OR 。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">user_id = &#39;1&#39; or apply_user_id = &#39;1&#39;
+where([&#39;user_id|apply_user_id&#39; =&gt; &#39;1&#39;])
+sql where ( user_id = &#39;1&#39; or apply_user_id = &#39;1&#39;)
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>多字段 AND 。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">user_id = &#39;1&#39; and title = &#39;aa&#39;。&amp; 和 | 不能同时使用
+where([&#39;user_id&amp;title&#39; =&gt; [&#39;1&#39;,&#39;aa&#39;]])
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>exp</li>
+</ol>
+<p>表达式，使用函数时使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">update(&#39;create_time&#39;,[&#39;exp&#39;,&#39;sysdate&#39;]) // update create_time = sysdate
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="模型关联">模型关联</h3>
+<p>模型关联预加载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$inhouse = ChemInHouseLedgersModel::get($condition,&#39;ChemUseLedgers&#39;);
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="模型关联模型转数组">模型关联模型转数组</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">collection($inhouse-&gt;toArray())-&gt;toArray()
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="预加载模型加where条件">预加载模型加where条件</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$inhouse = ChemInHouseLedgersModel::get($condition,[&#39;ChemUseLedgers&#39; =&gt; function($query){
+    $query-&gt;where(&#39;USE_LEDGERS_NO&#39;,&#39;10983&#39;);
+}]);
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="关联预加载多个表">关联预加载多个表</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$inhouse = ChemInHouseLedgersModel::get($condition,[&#39;ChemUseLedgers&#39;,&#39;Chem&#39;]);
+</code></pre></td></tr></table>
+</div>
+</div><p>获取多个 hasMany，单个 hasOne</p>
+<p>foreach 插入时，可以先生成所有的数据，insertAll 一次插入。</p>
+<p>token</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;input type=&#34;hidden&#34; name=&#34;__token__&#34; value=&#34;{$Request.token}&#34; /&gt;
+验证
+protected $rule = [
+        &#39;name&#39;  =&gt;  &#39;require|max:25|token&#39;,
+        &#39;email&#39; =&gt;  &#39;email&#39;,
+    ];
+获取请求的微秒：`$_SERVER[&#39;REQUEST_TIME_FLOAT&#39;];`
+设置为 token的值并 hash，存到 session
+每次请求都先删除旧的，生成一个新的
+request()-&gt;token() // 生成一个 token
+ajax 验证csrf
+function getToken(){
+    var token = &#39;&#39;;
+    $.ajax({
+        url: UrlArgent.CreateUrl(&#39;api/Csrf/getToken&#39;),
+        type: &#39;get&#39;,
+        async:false,
+        success: function (res){
+            token = res.data.token;
+        }
+    })
+    return token;
+}
+每次请求前先生成 token 再发送过去验证
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="oracle-clob获取类型错误">Oracle clob获取类型错误</h3>
+<p>由于没有处理，返回的是一个 resource。还需要进行 <code>stream_get_contents</code>进行处理。直接修改驱动文件</p>
+<p><code>vendor/topthink/think-oracle/src/Connection.php</code></p>
+<p>加入下面两个方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">/**
+ * 获得数据集数组
+ * @access protected
+ * @param bool   $pdo 是否返回PDOStatement
+ * @param bool   $procedure 是否存储过程
+ * @return PDOStatement|array
+ */
+protected function getResult($pdo = false, $procedure = false)
+{
+    if ($pdo) {
+        // 返回PDOStatement对象处理
+        return $this-&gt;PDOStatement;
+    }
+    if ($procedure) {
+        // 存储过程返回结果
+        return $this-&gt;procedure();
+    }
+    $result=[];
+    while ($row = $this-&gt;PDOStatement-&gt;fetch($this-&gt;fetchType)){
+        self::res2str($row);
+        $result[]= $row;
+    }
+    $this-&gt;numRows = count($result);
+    return $result;
+}
+private static function res2str(&amp;$res){
+    if(is_array($res)){
+        foreach ($res as $key=&gt;&amp;$value) {
+            self::res2str($value);
+        }
+    }else if(is_resource($res)){
+        $res=stream_get_contents($res);
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="更新和插入-clob-类型数据">更新和插入 clob 类型数据</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$chunkArr = $this-&gt;mbStrSplit($tmpArr,2000); # 先将字符串分割成数组，再使用 || 进行拼接，因为 Oracle 对一次处理字符串的长度有限制，分成多个字符串进行拼接。
+        $detail = implode(&#39;\&#39;||\&#39;&#39;,$chunkArr);
+        $no = $NoticeService-&gt;getNextVal(&#39;c2_base_web_notice&#39;);
+        $sql = &lt;&lt;&lt;SQL
+declare
+cntent clob := &#39;{$detail}&#39;;
+begin
+INSERT INTO c2_base_web_notice (NOTICE_NO, TITLE, NOTICE_DETAIL, NOTICE_TIME, TOP_MARK) values(&#39;{$no}&#39;, &#39;{$data[&#39;TITLE&#39;]}&#39;, to_clob(cntent), to_date(&#39;{$data[&#39;NOTICE_TIME&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;), &#39;{$data[&#39;TOP_MARK&#39;]}&#39;);
+end;
+SQL;
+        $result = Db::execute($sql);
+# update
+$sql = &lt;&lt;&lt;SQL
+declare
+cntent clob := &#39;{$detail}&#39;;
+begin
+UPDATE c2_base_web_notice SET TITLE=&#39;{$data[&#39;TITLE&#39;]}&#39;,TOP_MARK=&#39;{$data[&#39;TOP_MARK&#39;]}&#39;,NOTICE_DETAIL=cntent,notice_time=to_date(&#39;{$data[&#39;NOTICE_TIME&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) WHERE ( NOTICE_NO=&#39;{$NoticeInfo[&#39;NOTICE_NO&#39;]}&#39;);
+end;
+SQL;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="自定义模板路径常量-public原理字符串替换">自定义模板路径常量 <strong>PUBLIC</strong>，原理字符串替换</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">修改配置文件
+    // 视图输出字符串内容替换
+    &#39;view_replace_str&#39;       =&gt; [
+        &#39;__PUBLIC__&#39;=&gt; $_SERVER[&#39;REQUEST_SCHEME&#39;] .&#39;://&#39; . $_SERVER[&#39;HTTP_HOST&#39;]. str_replace(&#39;/index.php&#39; ,&#39;&#39; ,$_SERVER[&#39;SCRIPT_NAME&#39;])
+    ],
+模板中直接使用 
+&lt;a class=&#34;btn btn-sm btn-warning &#34; href=&#34;__PUBLIC__/download/lab_import.xlsx&#34;&gt;&lt;i class=&#34;fa fa-upload&#34;&gt;&lt;/i&gt; 下载导入模板&lt;/a&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="apache-配置路由重写">apache 配置路由重写</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="tcpdf-打印-png-图片太慢">tcpdf 打印 png 图片太慢</h3>
+<p>每张图片要打印十秒</p>
+<p>解决：设置 resize = true 并且 dpi = 100</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$pdf-&gt;Image($user_info[&#39;SIGN_PIC&#39;], $i, $j, 50, 50,&#39;&#39;,&#39;&#39;,&#39;&#39;,true,&#39;100&#39;);
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="模型查询方法">模型查询方法</h3>
+<ol>
+<li>get 底层调用 find</li>
+<li>update 底层调用 model−&gt;isUpdate(true)−&gt;save(model-&gt;isUpdate(true)-&gt;save(model−&gt;isUpdate(true)−&gt;save(data,$where); 返回 int false ,使用empty可以判断</li>
+<li>all 底层调用 select</li>
+</ol>
+<h3 id="tp-路由生成模板及控制器">tp 路由生成,模板及控制器</h3>
+<h4 id="url-助手函数">url 助手函数</h4>
+<p>参数:</p>
+<ol>
+<li>路由路径</li>
+<li>参数变量</li>
+<li>后缀</li>
+<li>域名</li>
+</ol>
+<p>模板中使用 <code>{:url(&quot;&quot;)}</code> 生成URL 地址</p>
+<p>如果在配置文件中配置了 url 的后缀为 html ,那么再生成 url 时,使用第三个参数 false ,可以去除配置的 html 后缀</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&#34;{:url(&#39;/download/&#39;,&#39;&#39;,false)}&#34;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>控制器中可以使用 <code>url</code> 助手函数生成url 地址.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$url = url(&#39;/download/&#39;,&#39;&#39;,false);
+</code></pre></td></tr></table>
+</div>
+</div><p>生成的 URL 以当前服务器域名为主域名. 适用于一个域名对应一个或多个项目的情况</p>
+<p>第四个参数为 二级域名, 如果配置了 第四个参数,那么会在主域名前生成一个二级域名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$url = url(&#39;/download/&#39;,&#39;&#39;,false,&#39;blog&#39;);
+// 当前项目地址为 http://caoayu.xyz/project
+// 生成 url 为 http://blog.caoayu.xuz/project/download
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2022-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/it/php/">IT/PHP</a>
+          <a href="/tags/it/php/thinkphp/">IT/PHP/ThinkPHP</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/strace_%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">strace系统调用</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2-2%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E4%B8%8E%E7%8E%AF%E5%A2%83%E8%A1%A8/">
+            <span class="next-text nav-default">2-2命令行参数与环境表</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

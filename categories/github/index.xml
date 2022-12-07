@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on 个人内容记录</title>
+    <link>https://blog.caoayu.top/categories/github/</link>
+    <description>Recent content in Github on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 20 Feb 2021 15:25:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/categories/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Github 小技巧</title>
+      <link>https://blog.caoayu.top/post/github-skill/</link>
+      <pubDate>Sat, 20 Feb 2021 15:25:05 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/github-skill/</guid>
+      <description>用 vscode 的风格来查看 github 上的代码。 这个方法只能用来查看代码，无法编辑，适合用来看源码。不需要安装额外的插件。 使用方法： 在 GitHub 的顶级域名后加入 1s，寓</description>
+    </item>
+    
+    <item>
+      <title>加速Github的访问及下载速度</title>
+      <link>https://blog.caoayu.top/post/github-fast/</link>
+      <pubDate>Sun, 23 Aug 2020 15:57:54 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/github-fast/</guid>
+      <description>Github的痛 国内访问github的速度一直被广大网友及开发者所诟病,为了缓解这一现象,本文介绍几种方式加速,由于中国开发者人群越来越大,</description>
+    </item>
+    
+  </channel>
+</rss>

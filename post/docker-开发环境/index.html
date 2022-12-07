@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>docker 开发环境 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="docker 开发环境 命令 相关笔记 [[php56-fpm]] [[apache-php]] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 删除已退出的容器 docker rm `docker ps -q -f status=exited` # 空间占用 docker system df # 批量删除镜象 docker rmi $(docker images | grep image-b | grep -v &amp;#34;v1d0-7&amp;#34;" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/docker-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="docker 开发环境" />
+<meta property="og:description" content="docker 开发环境 命令 相关笔记 [[php56-fpm]] [[apache-php]] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 删除已退出的容器 docker rm `docker ps -q -f status=exited` # 空间占用 docker system df # 批量删除镜象 docker rmi $(docker images | grep image-b | grep -v &#34;v1d0-7&#34;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/docker-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" />
+<meta property="article:published_time" content="2022-10-03T20:44:46+00:00" />
+<meta property="article:modified_time" content="2022-10-25T08:44:47+00:00" />
+<meta itemprop="name" content="docker 开发环境">
+<meta itemprop="description" content="docker 开发环境 命令 相关笔记 [[php56-fpm]] [[apache-php]] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 删除已退出的容器 docker rm `docker ps -q -f status=exited` # 空间占用 docker system df # 批量删除镜象 docker rmi $(docker images | grep image-b | grep -v &#34;v1d0-7&#34;">
+<meta itemprop="datePublished" content="2022-10-03T20:44:46&#43;00:00" />
+<meta itemprop="dateModified" content="2022-10-25T08:44:47&#43;00:00" />
+<meta itemprop="wordCount" content="905">
+
+
+
+<meta itemprop="keywords" content="IT/Docker,IT/Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="docker 开发环境"/>
+<meta name="twitter:description" content="docker 开发环境 命令 相关笔记 [[php56-fpm]] [[apache-php]] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 删除已退出的容器 docker rm `docker ps -q -f status=exited` # 空间占用 docker system df # 批量删除镜象 docker rmi $(docker images | grep image-b | grep -v &#34;v1d0-7&#34;"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">docker 开发环境</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-10-03 </span>
+        
+          <span class="more-meta"> 约 905 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#docker-开发环境">docker 开发环境</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#命令">命令</a></li>
+            <li><a href="#安装-oracle11g">安装 oracle11g</a></li>
+          </ul>
+        </li>
+        <li><a href="#安装oracle-11g">安装oracle 11g</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#下载oracle-11g安装文件">下载oracle 11g安装文件</a></li>
+                <li><a href="#配置">配置</a></li>
+                <li><a href="#创建用户并授予所有权限">创建用户并授予所有权限</a></li>
+              </ul>
+            </li>
+            <li><a href="#更改导入导出目录">更改导入导出目录</a></li>
+            <li><a href="#导入导出命令">导入导出命令</a></li>
+            <li><a href="#php-扩展-pdo_ocioci8">PHP 扩展 pdo_oci,oci8</a></li>
+            <li><a href="#使用-alpine-镜像配置一个-php56-的镜象包含源码包">使用 alpine 镜像配置一个 php5.6 的镜象,包含源码包</a></li>
+            <li><a href="#docker生成自己的镜象">docker生成自己的镜象</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2022-10-25T08:44:47" title="October 25, 2022">October 25, 2022</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="docker-开发环境">docker 开发环境</h1>
+<h3 id="命令">命令</h3>
+<p>相关笔记</p>
+<p>[[php56-fpm]]
+[[apache-php]]</p>
+<hr>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="c1"># 删除已退出的容器</span>
+docker rm <span class="sb">`</span>docker ps -q -f <span class="nv">status</span><span class="o">=</span>exited<span class="sb">`</span>
+<span class="c1"># 空间占用</span>
+docker system df
+<span class="c1"># 批量删除镜象</span>
+docker rmi <span class="k">$(</span>docker images <span class="p">|</span> grep image-b <span class="p">|</span> grep -v <span class="s2">&#34;v1d0-7&#34;</span> <span class="p">|</span> awk  <span class="s1">&#39;{print $3}&#39;</span><span class="k">)</span>
+docker rmi <span class="k">$(</span>docker images -f <span class="s2">&#34;dangling=true&#34;</span> -q<span class="k">)</span>
+<span class="c1"># 查看容器ip</span>
+docker inspect nginx <span class="p">|</span> grep <span class="s2">&#34;IPAddress&#34;</span>
+<span class="c1"># 查看所有容器ip</span>
+docker inspect --format<span class="o">=</span><span class="s1">&#39;{{.Name}} -- {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39;</span> <span class="k">$(</span>docker ps -aq<span class="k">)</span>
+
+<span class="c1"># 开启/关闭自动启动</span>
+docker update --restart always<span class="p">|</span>none chemweb2
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="安装-oracle11g">安装 oracle11g</h3>
+<h2 id="安装oracle-11g">安装oracle 11g</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">docker pull jaspeen/oracle-11g
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="下载oracle-11g安装文件">下载oracle 11g安装文件</h4>
+<p>11g 文档地址 <a href="https://docs.oracle.com/cd/E11882_01/nav/portal_11.htm">https://docs.oracle.com/cd/E11882_01/nav/portal_11.htm</a></p>
+<p>下载地址 <a href="https://www.oracle.com/cn/database/enterprise-edition/downloads/oracle-db11g-linux.html#license-lightbox">https://www.oracle.com/cn/database/enterprise-edition/downloads/oracle-db11g-linux.html#license-lightbox</a></p>
+<p>从oracle 官网 下载所需要的安装包，这里我们以oracle 11g 为例子，分别下载 linux.x64_11gR2_database_1of2.zip 和 linux.x64_11gR2_database_2of2.zip两个压缩包，下载完成后解压到home目录(如下目录结构)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">    home
+    └─database
+        ├─doc
+        ├─install
+        ├─response
+        ├─rpm
+        ├─sshsetup
+        ├─stage
+        ├─runInstaller
+        └─welcome.html
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">
+mkdir /home/data/oracle/dbdump -p
+docker run -d --privileged --name oracle11g -p 1521:1521 -v /home:/install -v /home/data/oracle/dbdump:/opt/oracle/dpdump jaspeen/oracle-11g
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="配置">配置</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">
+docker <span class="nb">exec</span> -it oracle11g /bin/bash
+
+su - oracle
+
+mkdir /opt/oracle/dpdump
+
+sqlplus / as sysdba
+alter user scott account unlock<span class="p">;</span>
+commit<span class="p">;</span>
+conn scott/tiger
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="创建用户并授予所有权限">创建用户并授予所有权限</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">user</span> <span class="n">caoayu</span>  <span class="n">identified</span> <span class="k">by</span> <span class="s2">&#34;caoayu&#34;</span><span class="p">;</span>
+  
+<span class="k">alter</span> <span class="k">user</span> <span class="s2">&#34;CAOAYU&#34;</span> <span class="n">account</span> <span class="n">unlock</span><span class="p">;</span>
+
+<span class="k">grant</span> <span class="k">all</span> <span class="k">privileges</span> <span class="k">to</span> <span class="n">CAOAYU</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="更改导入导出目录">更改导入导出目录</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">create or replace directory data_dump_dir as <span class="s1">&#39;/opt/oracle/dpdump&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="导入导出命令">导入导出命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">docker <span class="nb">exec</span> -it oracle11g impdp ..
+docker <span class="nb">exec</span> -it oracle11g expdp ..
+
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">impdp system/oracle <span class="nv">directory</span><span class="o">=</span>DATA_PUMP_DIR <span class="nv">dumpfile</span><span class="o">=</span>FJNU0918.DMP <span class="nv">REMAP_SCHEMA</span><span class="o">=</span>fjnu:fjnu
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="php-扩展-pdo_ocioci8">PHP 扩展 pdo_oci,oci8</h3>
+<p>将 linux 的 base ,sdk 解压并配置软链接,</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">  mv instantclient_11_2/ /usr/local/
+  ln -s /usr/local/instantclient_11_2/ /usr/local/instantclient <span class="se">\
+</span><span class="se"></span>  ln -s /usr/local/instantclient_11_2/libclntsh.so.11.1 /usr/local/instantclient/libclntsh.so <span class="se">\
+</span><span class="se"></span>  ln -s /usr/local/instantclient_11_2/libocci.so.11.1 /usr/local/instantclient/libocci.so
+
+ln /usr/local//instantclient_11_2/libclntsh.so.11.1 /usr/lib/libclntsh.so <span class="o">&amp;&amp;</span> <span class="se">\
+</span><span class="se"></span>ln /usr/local/instantclient_11_2/libocci.so.11.1 /usr/lib/libocci.so <span class="o">&amp;&amp;</span> <span class="se">\
+</span><span class="se"></span>ln /usr/local/instantclient_11_2/libociei.so /usr/lib/libociei.so <span class="o">&amp;&amp;</span> <span class="se">\
+</span><span class="se"></span>ln /usr/local/instantclient_11_2/libnnz11.so /usr/lib/libnnz11.so
+
+  vi /etc/profile
+    <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&#34;/usr/local/instantclient_11_2&#34;</span>
+    <span class="nb">export</span> <span class="nv">ORACLE_BASE</span><span class="o">=</span><span class="s2">&#34;/usr/local/instantclient_11_2&#34;</span>
+    <span class="nb">export</span> <span class="nv">ORACLE_HOME</span><span class="o">=</span><span class="s2">&#34;/usr/local/instantclient_11_2&#34;</span>
+    <span class="nb">export</span> <span class="nv">TNS_ADMIN</span><span class="o">=</span><span class="s2">&#34;/usr/local/instantclient_11_2&#34;</span>
+
+ 
+ <span class="nb">source</span> /etc/profile 
+apk add libnsl libnsl-dev libaio libaio-dev file
+wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
+wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.28-r0/glibc-2.28-r0.apk
+apk add glibc-2.28-r0.apk
+
+docker-php-source extract
+docker-php-ext-configure oci8 --with-oci8<span class="o">=</span>share,instantclient,/usr/local/instantclient <span class="o">&amp;&amp;</span> docker-php-ext-install -j<span class="k">$(</span>nproc<span class="k">)</span> oci8
+docker-php-ext-configure pdo_oci --with-pdo-oci<span class="o">=</span>instantclient,/usr/local/instantclient,11.2 <span class="o">&amp;&amp;</span> docker-php-ext-install -j<span class="k">$(</span>nproc<span class="k">)</span> pdo_oci 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="使用-alpine-镜像配置一个-php56-的镜象包含源码包">使用 alpine 镜像配置一个 php5.6 的镜象,包含源码包</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="c1"># 拉</span>
+docker pull alpine:3.13 <span class="se">\
+</span><span class="se"></span><span class="c1"># run</span>
+docker run --name alpine -it alpine:3.13 <span class="se">\
+</span><span class="se"></span><span class="c1"># 改源</span>
+cp /etc/apk/repositories /etc/apk/repositories.bak <span class="se">\
+</span><span class="se"></span>sed -i <span class="s2">&#34;s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g&#34;</span> /etc/apk/repositories <span class="se">\
+</span><span class="se"></span><span class="c1"># 装软件</span>
+apk add autoconf make gcc g++ libxml2-dev pkgconf tzdata
+apk add libaio libnsl libc6-compat
+vi /etc/apk/keys/sgerrand.rsa.pub
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApZ2u1KJKUu/fW4A25y9m
+y70AGEa/J3Wi5ibNVGNn1gT1r0VfgeWd0pUybS4UmcHdiNzxJPgoWQhV2SSW1JYu
+tOqKZF5QSN6X937PTUpNBjUvLtTQ1ve1fp39uf/lEXPpFpOPL88LKnDBgbh7wkCp
+m2KzLVGChf83MS0ShL6G9EQIAUxLm99VpgRjwqTQ/KfzGtpke1wqws4au0Ab4qPY
+KXvMLSPLUp7cfulWvhmZSegr5AdhNw5KNizPqCJT8ZrGvgHypXyiFvvAH5YRtSsc
+Zvo9GI2e2MaZyo9/lvb+LbLEJZKEQckqRj4P26gmASrZEPStwc+yqy1ShHLA0j6m
+1QIDAQAB
+-----END PUBLIC KEY-----
+
+
+
+
+wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-2.30-r0.apk <span class="o">&amp;&amp;</span> <span class="se">\
+</span><span class="se"></span>apk add  glibc-2.30-r0.apk <span class="o">&amp;&amp;</span> <span class="se">\
+</span><span class="se"></span>rm -rf glibc-2.30-r0.apk
+<span class="c1"># 改时区</span>
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+<span class="nb">echo</span> <span class="s2">&#34;Asia/Shanghai&#34;</span> &gt; /etc/timezone
+<span class="c1"># 下载PHP源码并编译安装</span>
+mkdir /usr/src/php -p <span class="se">\
+</span><span class="se"></span><span class="nb">cd</span> /usr/src/php <span class="se">\
+</span><span class="se"></span>wget https://www.php.net/distributions/php-5.6.40.tar.gz <span class="se">\
+</span><span class="se"></span>tar -xzvf php-5.6.40.tar.gz <span class="se">\
+</span><span class="se"></span><span class="nb">cd</span> php-5.6.40/ <span class="se">\
+</span><span class="se"></span>
+./configure --prefix<span class="o">=</span>/usr/local/php56 --with-config-file-path<span class="o">=</span>/usr/local/php56/etc <span class="se">\
+</span><span class="se"></span>--enable-fpm <span class="se">\
+</span><span class="se"></span>make distclean <span class="se">\ </span>
+make <span class="o">&amp;&amp;</span> make install <span class="se">\
+</span><span class="se"></span>cp php.ini-development /usr/local/php56/etc/php.ini <span class="se">\
+</span><span class="se"></span><span class="c1"># 配置软链接,环境变量</span>
+ln -s /usr/local/php56 /usr/local/php <span class="se">\
+</span><span class="se"></span><span class="nb">echo</span> <span class="s2">&#34;export PHP=/usr/local/php \n export PATH=</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$PHP</span><span class="s2">/bin&#34;</span> &gt;&gt; /etc/profile <span class="se">\
+</span><span class="se"></span><span class="c1"># 刷新配置</span>
+<span class="nb">source</span> /etc/profile <span class="se">\
+</span><span class="se"></span><span class="c1"># 输出信息</span>
+php -v <span class="o">&amp;&amp;</span> php -m <span class="o">&amp;&amp;</span> php --ini <span class="o">&amp;&amp;</span> php -i <span class="p">|</span> grep extension <span class="se">\
+</span><span class="se"></span>
+
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="docker生成自己的镜象">docker生成自己的镜象</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">docker commit -a <span class="s2">&#34;caoayu&#34;</span> alpine php56-alpine
+
+
+
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://www.wolai.com/pqnojXFq6yJdbQeN3n8p3F">apache-php</a></p>
+<p>[<a href="php56-fpm.md">php56-fpm</a>](<a href="https://www.wolai.com/sQC7KCsBCBzTRcoReV2vWP">https://www.wolai.com/sQC7KCsBCBzTRcoReV2vWP</a>)</p>
+<p>docker update &ndash;restart always chemweb2</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2022-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/it/docker/">IT/Docker</a>
+          <a href="/tags/it/linux/">IT/Linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/3-5suid%E7%89%B9%E6%9D%83%E8%BF%9B%E7%A8%8B/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">3-5SUID特权进程</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/navicat%E6%97%A0%E9%99%90%E8%AF%95%E7%94%A8/">
+            <span class="next-text nav-default">Navicat无限试用</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

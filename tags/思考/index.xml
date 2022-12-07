@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>思考 on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/%E6%80%9D%E8%80%83/</link>
+    <description>Recent content in 思考 on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 11 May 2020 21:47:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/%E6%80%9D%E8%80%83/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于前端哈希加密密码的思考</title>
+      <link>https://blog.caoayu.top/post/hash-token/</link>
+      <pubDate>Mon, 11 May 2020 21:47:33 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/hash-token/</guid>
+      <description>&lt;h4 id=&#34;在前端哈希密码是否是个不错的方案&#34;&gt;在前端哈希密码是否是个不错的方案?&lt;/h4&gt;
+&lt;p&gt;为了防止用户或者管理员的密码泄漏或者数据库信息泄漏出去,web应用普遍采用了在后端将密码哈希以后存储在数据库中,前端提供密码,由后端进行哈希后与数据库进行对比,既然最终需要对比的是哈希过得密码,那么为什么不直接在前端将密码哈希直接交给后端存储在数据库呢?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

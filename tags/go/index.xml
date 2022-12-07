@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/go/</link>
+    <description>Recent content in go on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 24 Feb 2021 14:08:30 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>酷狗音乐爬虫</title>
+      <link>https://blog.caoayu.top/post/kugou/</link>
+      <pubDate>Wed, 24 Feb 2021 14:08:30 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/kugou/</guid>
+      <description>music 最近很少用 deepin 在线或者使用客户段听音乐了，喜欢下载到本地听那些熟悉的歌曲。 很多歌不是这个平台没版权就是那个要付费。也是顾虑到网易云9级用户的</description>
+    </item>
+    
+    <item>
+      <title>加入在线服务--在线多人共享屏幕</title>
+      <link>https://blog.caoayu.top/post/add-screego/</link>
+      <pubDate>Fri, 16 Oct 2020 15:06:59 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/add-screego/</guid>
+      <description>Screego Screego 是一个共享屏幕的应用.使用golang进行开发,在readme中作者吐槽了微软等公司的延迟问题,然后就开源了这个项目.👍 这个支持多人共享</description>
+    </item>
+    
+    <item>
+      <title>Go各时间字符串的解析</title>
+      <link>https://blog.caoayu.top/post/go-parse-time/</link>
+      <pubDate>Tue, 21 Jul 2020 10:02:01 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/go-parse-time/</guid>
+      <description>Go 中时间格式化的模板 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 const ( ANSIC = &amp;#34;Mon Jan _2 15:04:05 2006&amp;#34; UnixDate = &amp;#34;Mon Jan _2 15:04:05 MST 2006&amp;#34; RubyDate = &amp;#34;Mon Jan 02 15:04:05 -0700 2006&amp;#34; RFC822 = &amp;#34;02 Jan 06 15:04 MST&amp;#34; RFC822Z = &amp;#34;02 Jan 06 15:04 -0700&amp;#34; // RFC822 with</description>
+    </item>
+    
+  </channel>
+</rss>

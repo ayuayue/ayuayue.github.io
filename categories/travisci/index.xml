@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>travisCI on 个人内容记录</title>
+    <link>https://blog.caoayu.top/categories/travisci/</link>
+    <description>Recent content in travisCI on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 01 May 2020 17:17:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/categories/travisci/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用travisCI自动部署hexo博客并使用国内外不同dns</title>
+      <link>https://blog.caoayu.top/post/hexo-travisci/</link>
+      <pubDate>Fri, 01 May 2020 17:17:42 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/hexo-travisci/</guid>
+      <description>&lt;h3 id=&#34;自动化部署博客到github和coding&#34;&gt;自动化部署博客到github和coding&lt;/h3&gt;
+&lt;h4 id=&#34;准备工作&#34;&gt;准备工作&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;需要环境:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;可正常使用域名一个&lt;/li&gt;
+&lt;li&gt;github新建一个与自己账号名同名的仓库,如 ayuayue.github.io,最好除master分支外新建一个hexo分支用来保存hexo的源码,因为源码配置文件会上传到github,所以才会使用下面的变量的方式配置,不然的话token暴露出来很危险&lt;/li&gt;
+&lt;li&gt;coding 中创建一个团队,继续创建一个devops仓库,仓库民跟自己的账号名相同,如 caoayu&lt;/li&gt;
+&lt;li&gt;进行coding管理员的认证, 在右上角团队管理中,进行团队管理员的认证&lt;/li&gt;
+&lt;li&gt;获取github和coding的token
+&lt;ol&gt;
+&lt;li&gt;coding中去个人账号,访问令牌中,新建一个令牌,名字为travis,只给第一个权限,然后生成一个token,记录下来,只有第一次可以看,刷新后就只能重新生成了,所以第一次最好保存一下token,github的token也是一样&lt;/li&gt;
+&lt;li&gt;github的token获取,右上角头像,settings,devoper setting /persional access token,生成一个token,gengrate new token,名字也设置为travis,生成后记得保存一下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

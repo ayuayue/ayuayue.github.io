@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PHP网络编程 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="PHP网络编程 [[../../计算机基础【字节序，内存，补码】]] [[../../监听socket，连接socket]] [[../../粘包" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/php%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="PHP网络编程" />
+<meta property="og:description" content="PHP网络编程 [[../../计算机基础【字节序，内存，补码】]] [[../../监听socket，连接socket]] [[../../粘包" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/php%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" />
+<meta property="article:published_time" content="2022-10-03T20:58:46+00:00" />
+<meta property="article:modified_time" content="2022-10-25T08:30:51+00:00" />
+<meta itemprop="name" content="PHP网络编程">
+<meta itemprop="description" content="PHP网络编程 [[../../计算机基础【字节序，内存，补码】]] [[../../监听socket，连接socket]] [[../../粘包">
+<meta itemprop="datePublished" content="2022-10-03T20:58:46&#43;00:00" />
+<meta itemprop="dateModified" content="2022-10-25T08:30:51&#43;00:00" />
+<meta itemprop="wordCount" content="993">
+
+
+
+<meta itemprop="keywords" content="IT/PHP,IT/PHP/多进程," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP网络编程"/>
+<meta name="twitter:description" content="PHP网络编程 [[../../计算机基础【字节序，内存，补码】]] [[../../监听socket，连接socket]] [[../../粘包"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">PHP网络编程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-10-03 </span>
+        
+          <span class="more-meta"> 约 993 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#php网络编程">PHP网络编程</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#tcpip协议簇">tcp/ip协议簇</a>
+              <ul>
+                <li><a href="#数据链路层">数据链路层：</a></li>
+                <li><a href="#网络层">网络层：</a></li>
+                <li><a href="#传输层">传输层</a></li>
+                <li><a href="#应用层">应用层</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2022-10-25T08:30:51" title="October 25, 2022">October 25, 2022</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="php网络编程">PHP网络编程</h1>
+<p>[[../../计算机基础【字节序，内存，补码】]]
+[[../../监听socket，连接socket]]
+[[../../粘包【封包-拆包】pack函数]]</p>
+<h3 id="tcpip协议簇">tcp/ip协议簇</h3>
+<h4 id="数据链路层">数据链路层：</h4>
+<p>接收到上层传来的数据，首先先拿到IP，再使用ARP程序发起一个请求，他会把IP包括自己的IP，自己的MAC地址进行封装后发送出去</p>
+<p>网络上的主机接收到ARP请求时，判断IP是不是自己的，然后进行相应，把自己的IP，MAC发给对方。</p>
+<p>然后把数据，MAC地址进行封装为数据帧 iframe 【 目的物理地址，源物理地址，数据。。。】</p>
+<h4 id="网络层">网络层：</h4>
+<p>ICMP：ping，iptables</p>
+<p>接收数据时，判断数据是不是发给自己的，如果是，会传递到传输层，最终传递到应用层某个具体进程【进程具有数据读写能力。如果不是发给自己，会进行转发，ip_forward【LVS】</p>
+<p>发送数据时：他会进行封装为IP数据报，传递到数据链路层</p>
+<h4 id="传输层">传输层</h4>
+<p>TCP/UDP</p>
+<p>tcp：基于流stream的服务，特点：要进行连接，是双向的全双工，数据可靠，有序，超时重传</p>
+<p>应用程序在收发数据时需要自己去判断数据的边界，会涉及到数据粘包和少报问题</p>
+<p>udp：数据报服务，传输数据是固定的，但是不可靠，发送放发送一次，接收方必须及时接受，否则数据丢弃recvfrom</p>
+<h4 id="应用层">应用层</h4>
+<p>HTTP，MQTT，WEBSOCKET</p>
+<p>应用层在实现的时候是调用操作系统提供的系统调用函数，socket api。</p>
+<p>抓包：tcpdump工具</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">-bash_4.2#&gt; tcpdump -i ens33 port <span class="m">80</span>
+tcpdump: verbose output suppressed, use -v or -vv <span class="k">for</span> full protocol decode
+listening on ens33, link-type EN10MB <span class="o">(</span>Ethernet<span class="o">)</span>, capture size <span class="m">262144</span> bytes
+22:57:44.252852 IP 192.168.190.1.7804 &gt; 192.168.190.128.http: Flags <span class="o">[</span>S<span class="o">]</span>, seq 2853597369, win 64240, options <span class="o">[</span>mss 1460,nop,wscale 8,sackOK,TS val <span class="m">1341016658</span> ecr 0<span class="o">]</span>, length <span class="m">0</span>
+22:57:44.254039 IP 192.168.190.128.http &gt; 192.168.190.1.7804: Flags <span class="o">[</span>S.<span class="o">]</span>, seq 2954183642, ack 2853597370, win 28960, options <span class="o">[</span>mss 1460,sackOK,TS val <span class="m">325271560</span> ecr 1341016658,nop,wscale 7<span class="o">]</span>, length <span class="m">0</span>
+22:57:44.254290 IP 192.168.190.1.7804 &gt; 192.168.190.128.http: Flags <span class="o">[</span>.<span class="o">]</span>, ack 1, win 514, options <span class="o">[</span>nop,nop,TS val <span class="m">1341016660</span> ecr 325271560<span class="o">]</span>, length <span class="m">0</span>
+22:57:44.254640 IP 192.168.190.1.7804 &gt; 192.168.190.128.http: Flags <span class="o">[</span>P.<span class="o">]</span>, seq 1:436, ack 1, win 514, options <span class="o">[</span>nop,nop,TS val <span class="m">1341016660</span> ecr 325271560<span class="o">]</span>, length 435: HTTP: GET / HTTP/1.1
+22:57:44.254685 IP 192.168.190.128.http &gt; 192.168.190.1.7804: Flags <span class="o">[</span>.<span class="o">]</span>, ack 436, win 235, options <span class="o">[</span>nop,nop,TS val <span class="m">325271561</span> ecr 1341016660<span class="o">]</span>, length <span class="m">0</span>
+22:57:44.258058 IP 192.168.190.128.http &gt; 192.168.190.1.7804: Flags <span class="o">[</span>P.<span class="o">]</span>, seq 1:970, ack 436, win 235, options <span class="o">[</span>nop,nop,TS val <span class="m">325271564</span> ecr 1341016660<span class="o">]</span>, length 969: HTTP: HTTP/1.1 <span class="m">200</span> OK
+22:57:44.302716 IP 192.168.190.1.7804 &gt; 192.168.190.128.http: Flags <span class="o">[</span>.<span class="o">]</span>, ack 970, win 510, options <span class="o">[</span>nop,nop,TS val <span class="m">1341016706</span> ecr 325271564<span class="o">]</span>, length <span class="m">0</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>TCP报文结构</p>
+<p>【S】 SYN 同步报文【连接报文】</p>
+<p>【seq】 ISN序号值</p>
+<p>【ack】确认报文</p>
+<p>【P】</p>
+<p>【FIN】结束报文</p>
+<p>三次握手</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-PHP" data-lang="PHP">22:57:44.252852 IP 192.168.190.1.7804 &gt; 192.168.190.128.http: Flags [S], seq 2853597369, win 64240, options [mss 1460,nop,wscale 8,sackOK,TS val 1341016658 ecr 0], length 0
+
+22:57:44.254039 IP 192.168.190.128.http &gt; 192.168.190.1.7804: Flags [S.], seq 2954183642, ack 2853597370, win 28960, options [mss 1460,sackOK,TS val 325271560 ecr 1341016658,nop,wscale 7], length 0
+
+22:57:44.254290 IP 192.168.190.1.7804 &gt; 192.168.190.128.http: Flags [.], ack 1, win 514, options [nop,nop,TS val 1341016660 ecr 325271560], length 0
+
+</code></pre></td></tr></table>
+</div>
+</div><p>服务端调用LISTEN函数处于listen状态</p>
+<p>客户端调用connect函数发送SYN同步报文</p>
+<p>服务器使用ACK确认报文，双方就处于ESTABLEISH状态</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2022-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/it/php/">IT/PHP</a>
+          <a href="/tags/it/php/%E5%A4%9A%E8%BF%9B%E7%A8%8B/">IT/PHP/多进程</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ipc%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">IPC消息队列</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%8F%82%E6%95%B0/">
+            <span class="next-text nav-default">MySQL安装配置及参数</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

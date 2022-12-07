@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>npm on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/npm/</link>
+    <description>Recent content in npm on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 19 Apr 2020 20:50:59 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/npm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>npm 使用问题</title>
+      <link>https://blog.caoayu.top/post/npm-network/</link>
+      <pubDate>Sun, 19 Apr 2020 20:50:59 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/npm-network/</guid>
+      <description>node npm 安装 linux 可以使用二进制安装或者源码安装,还可以使用包管理器,我的安装方式 1 sudo apt install npm //会同时安装npm node 安装完成后可能使用的时候因为版本太</description>
+    </item>
+    
+  </channel>
+</rss>

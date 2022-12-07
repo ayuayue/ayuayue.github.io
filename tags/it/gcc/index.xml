@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/GCC on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/gcc/</link>
+    <description>Recent content in IT/GCC on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/gcc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GCC编译过程</title>
+      <link>https://blog.caoayu.top/post/gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Mon, 03 Oct 2022 20:59:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</guid>
+      <description>GCC编译过程 参考 https://www.runoob.com/w3cnote/gcc-parameter-detail.html gcc 与 g++ 分别是 gnu 的 c &amp;amp; c++ 编译器 gcc/g++ 在执行编译工作的时候，总共需要4步： 1、预处理,生成 .i 的文件[预处理器cpp] 2、将预处理</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on 个人内容记录</title>
+    <link>https://blog.caoayu.top/categories/web/</link>
+    <description>Recent content in web on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 09 Aug 2020 17:23:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 Acme 脚本申请 let&#39;s encrypt 证书配置 HTTPs</title>
+      <link>https://blog.caoayu.top/post/acme/</link>
+      <pubDate>Sun, 09 Aug 2020 17:23:42 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/acme/</guid>
+      <description>宝塔申请let&#39;s encrypt 给hexo申请证书并设置https 在上面这篇文章中介绍了使用宝塔快速给网站申请https证书并布置到网站上面,但是证书只</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chrome on 个人内容记录</title>
+    <link>https://blog.caoayu.top/categories/chrome/</link>
+    <description>Recent content in chrome on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 15 Mar 2021 19:01:31 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/categories/chrome/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chrome 原生截长图</title>
+      <link>https://blog.caoayu.top/post/chrome-screen/</link>
+      <pubDate>Mon, 15 Mar 2021 19:01:31 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/chrome-screen/</guid>
+      <description>有时候有在网页上截长图的需求，有很多的浏览器扩展和第三方软件提供了这个功能，今天介绍下使用 Chrome 自带的功能，理论所有 Chrome 内核的浏览器都能使用。 打开</description>
+    </item>
+    
+    <item>
+      <title>自定义Chrome等浏览器搜索引擎</title>
+      <link>https://blog.caoayu.top/post/chrome-engine/</link>
+      <pubDate>Fri, 24 Jul 2020 21:19:33 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/chrome-engine/</guid>
+      <description>自定义搜索引擎 如图: 经常想打开一个使用频率不高不低的网站时,如果没有加入书签,或者浏览器的扩展和一些设置页面,每次都要去手动的一个选项的去找</description>
+    </item>
+    
+    <item>
+      <title>deepin安装googel-chrome</title>
+      <link>https://blog.caoayu.top/post/deepin-install-googel-chrome/</link>
+      <pubDate>Sun, 26 Apr 2020 11:05:54 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-install-googel-chrome/</guid>
+      <description>deepin自带的是开源的chromium,更换为谷歌chrmoe 下载 地址 双击安装,等待安装完成即可使用 更新,编辑 /etc/default/google-chrome 将第一行false改为t</description>
+    </item>
+    
+  </channel>
+</rss>

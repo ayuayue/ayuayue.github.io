@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/Nginx on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/nginx/</link>
+    <description>Recent content in IT/Nginx on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>nginx配置</title>
+      <link>https://blog.caoayu.top/post/nginx%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 03 Oct 2022 20:57:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/nginx%E9%85%8D%E7%BD%AE/</guid>
+      <description>nginx配置 二级目录反向代理 例如：easyswoole 1 2 3 4 5 6 7 8 location /easyapi/ { rewrite ^/easyapi/(.*)$ /$1 break; proxy_pass http://82.157.131.35:9501/; # 反向代理至http://127.0.0.1:95</description>
+    </item>
+    
+  </channel>
+</rss>

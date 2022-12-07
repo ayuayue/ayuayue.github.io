@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deepin 升级后蓝牙消失问题 on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/deepin-%E5%8D%87%E7%BA%A7%E5%90%8E%E8%93%9D%E7%89%99%E6%B6%88%E5%A4%B1%E9%97%AE%E9%A2%98/</link>
+    <description>Recent content in Deepin 升级后蓝牙消失问题 on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 07 Feb 2021 17:06:38 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/deepin-%E5%8D%87%E7%BA%A7%E5%90%8E%E8%93%9D%E7%89%99%E6%B6%88%E5%A4%B1%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deepin 升级后蓝牙消失问题</title>
+      <link>https://blog.caoayu.top/post/deepin-bluetooth/</link>
+      <pubDate>Sun, 07 Feb 2021 17:06:38 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/deepin-bluetooth/</guid>
+      <description>在一开始使用 deepin 时确认过蓝牙是正常的，但是在最近的更新后却发现设置中找不到了蓝牙，任务栏也没了这个图标，版本是 20.01，内核为 5.10.5。</description>
+    </item>
+    
+  </channel>
+</rss>

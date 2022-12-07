@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Vmware Centos7 安装配置 - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="安装完成，配置静态ip (使用 NAT 方式) 可以使用 gui 自带的桌面网络管理器配置，也可以更改配置文件 网段要跟 Windows vmnet8 相同 修改 /etc/sysconfig/network-script/ 网卡 1 2 3 4 5 6 7 8 9 10 11 12" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/vmware-centos7/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Vmware Centos7 安装配置" />
+<meta property="og:description" content="安装完成，配置静态ip (使用 NAT 方式) 可以使用 gui 自带的桌面网络管理器配置，也可以更改配置文件 网段要跟 Windows vmnet8 相同 修改 /etc/sysconfig/network-script/ 网卡 1 2 3 4 5 6 7 8 9 10 11 12" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/vmware-centos7/" />
+<meta property="article:published_time" content="2021-09-12T10:39:04+08:00" />
+<meta property="article:modified_time" content="2021-09-12T10:39:04+08:00" />
+<meta itemprop="name" content="Vmware Centos7 安装配置">
+<meta itemprop="description" content="安装完成，配置静态ip (使用 NAT 方式) 可以使用 gui 自带的桌面网络管理器配置，也可以更改配置文件 网段要跟 Windows vmnet8 相同 修改 /etc/sysconfig/network-script/ 网卡 1 2 3 4 5 6 7 8 9 10 11 12">
+<meta itemprop="datePublished" content="2021-09-12T10:39:04&#43;08:00" />
+<meta itemprop="dateModified" content="2021-09-12T10:39:04&#43;08:00" />
+<meta itemprop="wordCount" content="1091">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vmware Centos7 安装配置"/>
+<meta name="twitter:description" content="安装完成，配置静态ip (使用 NAT 方式) 可以使用 gui 自带的桌面网络管理器配置，也可以更改配置文件 网段要跟 Windows vmnet8 相同 修改 /etc/sysconfig/network-script/ 网卡 1 2 3 4 5 6 7 8 9 10 11 12"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Vmware Centos7 安装配置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-12 </span>
+        
+          <span class="more-meta"> 约 1091 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安装完成配置静态ip-使用-nat-方式">安装完成，配置静态ip (使用 NAT 方式)</a></li>
+        <li><a href="#互相-ping-看是否联通">互相 ping 看是否联通</a>
+          <ul>
+            <li><a href="#安装-vmware-tool-配置共享目录">安装 vmware tool 配置共享目录</a>
+              <ul>
+                <li><a href="#共享目录每次重启都失效">共享目录每次重启都失效</a></li>
+                <li><a href="#设置永久挂载">设置永久挂载</a></li>
+                <li><a href="#看看没有的话在最末行添加命令">看看没有的话在最末行添加命令</a></li>
+                <li><a href="#查看共享目录名">查看共享目录名</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#查看所有systemctl-管理的服务">查看所有systemctl 管理的服务</a></li>
+        <li><a href="#yum软件包管理">yum软件包管理</a></li>
+        <li><a href="#安装-fish">安装 fish</a>
+          <ul>
+            <li><a href="#安装-go-g版本管理工具">安装 go g版本管理工具</a></li>
+            <li><a href="#配置代理">配置代理</a></li>
+            <li><a href="#安装-hugo">安装 hugo</a></li>
+            <li><a href="#关闭-firewalld-开启-iptables">关闭 firewalld 开启 iptables</a></li>
+          </ul>
+        </li>
+        <li><a href="#创建服务">创建服务</a></li>
+        <li><a href="#虚拟机扩容">虚拟机扩容</a></li>
+        <li><a href="#常用软件及库">常用软件及库</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2021-09-12T10:39:04" title="September 12, 2021">September 12, 2021</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h2 id="安装完成配置静态ip-使用-nat-方式">安装完成，配置静态ip (使用 NAT 方式)</h2>
+<p>可以使用 gui 自带的桌面网络管理器配置，也可以更改配置文件</p>
+<ol>
+<li>网段要跟 Windows vmnet8 相同</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/202109121041554.png" alt="image-20210912104117460"></p>
+<ol>
+<li>修改 /etc/sysconfig/network-script/ 网卡</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="nv">TYPE</span><span class="o">=</span><span class="s2">&#34;Ethernet&#34;</span>
+<span class="nv">PROXY_METHOD</span><span class="o">=</span><span class="s2">&#34;none&#34;</span>
+<span class="nv">BROWSER_ONLY</span><span class="o">=</span><span class="s2">&#34;no&#34;</span>
+<span class="nv">BOOTPROTO</span><span class="o">=</span><span class="s2">&#34;none&#34;</span>
+<span class="nv">DEFROUTE</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV4_FAILURE_FATAL</span><span class="o">=</span><span class="s2">&#34;no&#34;</span>
+<span class="nv">IPV6INIT</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_AUTOCONF</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_DEFROUTE</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_FAILURE_FATAL</span><span class="o">=</span><span class="s2">&#34;no&#34;</span>
+<span class="nv">IPV6_ADDR_GEN_MODE</span><span class="o">=</span><span class="s2">&#34;stable-privacy&#34;</span>
+<span class="nv">NAME</span><span class="o">=</span><span class="s2">&#34;ens33&#34;</span>
+<span class="nv">UUID</span><span class="o">=</span><span class="s2">&#34;25a4bc4a-91ba-4a19-8bbd-ec06c181a1f1&#34;</span>
+<span class="nv">DEVICE</span><span class="o">=</span><span class="s2">&#34;ens33&#34;</span>
+<span class="nv">ONBOOT</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPADDR</span><span class="o">=</span><span class="s2">&#34;192.168.190.128&#34;</span>
+<span class="nv">PREFIX</span><span class="o">=</span><span class="s2">&#34;24&#34;</span>
+<span class="nv">GATEWAY</span><span class="o">=</span><span class="s2">&#34;192.168.190.2&#34;</span>
+<span class="nv">DNS1</span><span class="o">=</span><span class="s2">&#34;8.8.8.8&#34;</span>
+<span class="nv">IPV6_PRIVACY</span><span class="o">=</span><span class="s2">&#34;no&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="互相-ping-看是否联通">互相 ping 看是否联通</h2>
+<ol>
+<li>虚拟机 ping 不通 宿主机</li>
+</ol>
+<p>网络配置是否为 NAT ,更改网络配置文件后要重启电脑,或者重启网络服务.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> systemctl restart network
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>虚拟机 ping 不通 <a href="http://www.baidu.com">www.baidu.com</a> 等域名</li>
+</ol>
+<p>看是否配置 DNS 服务器</p>
+<ol>
+<li>宿主机 ping 不通 虚拟机</li>
+</ol>
+<p>看宿主机防火墙是否拦截, 虚拟机防火墙是否拦截</p>
+<p>临时关闭虚拟机防火墙  <code>systemctl stop firewalld</code>  ||  <code>systemctl stop iptables</code></p>
+<p>禁止开机自启防火墙   <code>systemctl disable firewalld</code></p>
+<p>开机自启防火墙   <code>systemctl enable firewalld</code></p>
+<h3 id="安装-vmware-tool-配置共享目录">安装 vmware tool 配置共享目录</h3>
+<p>要使用共享目录,必须要安装 vmware, 有时候虚拟机的 安装 vmware tool 是灰色的.无法安装</p>
+<p>关机重启虚拟机, 进入虚拟机还未开机时 会发现是可以 重新安装的了. 剩下的就是 解压 安装了.</p>
+<h4 id="共享目录每次重启都失效">共享目录每次重启都失效</h4>
+<h4 id="设置永久挂载">设置永久挂载</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">vi /etc/fstab
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="看看没有的话在最末行添加命令">看看没有的话在最末行添加命令</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">.host:/ `**`/mnt/hgfs`**` fuse.vmhgfs-fuse allow_other 0 0
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="查看共享目录名">查看共享目录名</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">vmware-hgfsclient
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查看所有systemctl-管理的服务">查看所有systemctl 管理的服务</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">systemctl list-unit-files
+</code></pre></td></tr></table>
+</div>
+</div><p>这里的服务都可以使用上面的方式管理启动,停止,禁止自启,开机自启.</p>
+<h2 id="yum软件包管理">yum软件包管理</h2>
+<ol>
+<li>安装 yum install -y</li>
+<li>卸载 yum erase    |  yum -e</li>
+<li>检查更新  yum update</li>
+</ol>
+<h2 id="安装-fish">安装 fish</h2>
+<p>简单不需要配置, 但不兼容 bash 脚本,在执行 bash 脚本时使用 bash 来运行. 平时用来做命令提示</p>
+<p>centos 7</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="nb">cd</span> /etc/yum.repos.d/
+wget https://download.opensuse.org/repositories/shells🐟release:3/CentOS_7/shells🐟release:3.repo
+yum install fish -y
+</code></pre></td></tr></table>
+</div>
+</div><p>使用 fish 命令开启,可以使用 <code>chsh -s</code> 来配置成默认终端 shell ,但不推荐</p>
+<h3 id="安装-go-g版本管理工具">安装 go g版本管理工具</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh <span class="p">|</span> bash
+$ <span class="nb">echo</span> <span class="s2">&#34;unalias g&#34;</span> &gt;&gt; ~/.bashrc <span class="c1"># 可选。若其他程序（如&#39;git&#39;）使用了&#39;g&#39;作为别名。</span>
+$ <span class="nb">source</span> ~/.bashrc <span class="c1"># 或者 source ~/.zshrc</span>
+
+$ vim  ~/.bashrc <span class="c1"># append</span> 
+<span class="nb">export</span> <span class="nv">GOROOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.g/go&#34;</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.g/go/bin:</span><span class="nv">$PATH</span><span class="s2">&#34;</span>
+<span class="nb">export</span> <span class="nv">G_MIRROR</span><span class="o">=</span>https://golang.google.cn/dl/
+
+
+<span class="nb">source</span> ~/.bashrc <span class="c1"># 或source ~/.zshrc</span>
+
+go env -w <span class="nv">GOPROXY</span><span class="o">=</span>https://goproxy.cn,direct <span class="c1"># proxy</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="配置代理">配置代理</h3>
+<p>使用 宿主机的代理</p>
+<ol>
+<li>配置宿主机的ip host 映射</li>
+</ol>
+<p>vim /etc/hosts</p>
+<p>192.168.190.1  <a href="http://host.com">host.com</a></p>
+<ol>
+<li>使用 export 配置临时代理</li>
+</ol>
+<p>export http_proxy=http://host.com:7890</p>
+<p>export https_proxy=$http_proxy</p>
+<ol>
+<li>写入到 .bashrc 中,使用别名,并不直接设置,好清空</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">alias</span> <span class="nv">proxy</span><span class="o">=</span><span class="s2">&#34;export http_proxy=http://192.168.190.1:7890 &amp;&amp; export https_proxy=</span><span class="nv">$http_proxy</span><span class="s2">&#34;</span>
+<span class="nb">alias</span> <span class="nv">unproxy</span><span class="o">=</span><span class="s2">&#34;unset http_proxy &amp;&amp; unset https_proxy&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>source ~/.bashrc</p>
+<h3 id="安装-hugo">安装 hugo</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">mkdir <span class="nv">$HOME</span>/src
+<span class="nb">cd</span> <span class="nv">$HOME</span>/src
+git clone https://github.com/gohugoio/hugo.git
+<span class="nb">cd</span> hugo
+go install
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="关闭-firewalld-开启-iptables">关闭 firewalld 开启 iptables</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">systemctl stop firewalld
+
+systemctl disable firewalld
+
+yum search iptables-services
+
+systemctl start iptables
+
+systemctl <span class="nb">enable</span> iptables
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="创建服务">创建服务</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">vim /usr/lib/systemd/system/frps.service
+
+<span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>frps
+<span class="nv">After</span><span class="o">=</span>network.target
+ 
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">TimeoutStartSec</span><span class="o">=</span><span class="m">30</span>
+<span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/frps -c /etc/frp/frps.ini
+<span class="nv">ExecStop</span><span class="o">=</span>/bin/kill <span class="nv">$MAINPID</span>
+ 
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+
+
+systemctl <span class="nb">enable</span> frps
+systemctl start frps
+systemctl status frps
+
+<span class="c1"># systemctl enable frps.service</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="虚拟机扩容">虚拟机扩容</h2>
+<ol>
+<li>vmware 扩容</li>
+</ol>
+<p>需要删除所有快照</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/202109211704330.png" alt="img"></p>
+<ol>
+<li>进入linux 查看磁盘信息</li>
+</ol>
+<p>df -h 查看磁盘信息</p>
+<p>ls /dev/  查看设备信息 | fdisk -l</p>
+<ol>
+<li>对磁盘进行分区</li>
+</ol>
+<p>fdisk /dev/sda</p>
+<p>n 新建</p>
+<p>p 主分区</p>
+<p>完成后 w 保存 ,重启</p>
+<ol>
+<li>扩容</li>
+</ol>
+<p>查看磁盘信息 fdisk -l</p>
+<p>查看卷信息   vgdisplay</p>
+<p>创建物理卷    pvcreate /dev/sda3</p>
+<p>扩展到物理卷    vgextend centos_caoayu /dev/sda3</p>
+<p>再次查看卷信息,发现有 free 空间</p>
+<p>扩展    lvextend -L +50G /dev/mapper/centos_caoayu-root</p>
+<p>查看 pvdisplay  发现多出一个</p>
+<ol>
+<li>扩容文件系统</li>
+</ol>
+<p>resize2fs /dev/mapper/centos_caoayu-root</p>
+<ol>
+<li>使用 df-h  查看容量是否扩容成功</li>
+</ol>
+<h2 id="常用软件及库">常用软件及库</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">yum install tree -y <span class="se">\
+</span><span class="se"></span>yum install 
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2021-09-12</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/docker-oracle11g/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Docker 安装 Oracle11g</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/gitbash-conf/">
+            <span class="next-text nav-default">Gitbash 配置</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

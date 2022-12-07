@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chrome 小技巧 on 个人内容记录</title>
+    <link>https://blog.caoayu.top/categories/chrome-%E5%B0%8F%E6%8A%80%E5%B7%A7/</link>
+    <description>Recent content in Chrome 小技巧 on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 15 Sep 2020 23:49:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/categories/chrome-%E5%B0%8F%E6%8A%80%E5%B7%A7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chrome 小技巧</title>
+      <link>https://blog.caoayu.top/post/chrome-skill/</link>
+      <pubDate>Tue, 15 Sep 2020 23:49:15 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/chrome-skill/</guid>
+      <description>记录log中的值到一个临时变量中 通常我们在chrome的devtools的工具中使用console.log来打印一些值,有时候是一个对象.但</description>
+    </item>
+    
+  </channel>
+</rss>

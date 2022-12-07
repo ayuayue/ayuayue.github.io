@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/PHP/ThinkPHP on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/php/thinkphp/</link>
+    <description>Recent content in IT/PHP/ThinkPHP on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/php/thinkphp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>thinkphp 常用</title>
+      <link>https://blog.caoayu.top/post/thinkphp-%E5%B8%B8%E7%94%A8/</link>
+      <pubDate>Mon, 03 Oct 2022 20:43:46 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/thinkphp-%E5%B8%B8%E7%94%A8/</guid>
+      <description>thinkphp 常用 配置 nginx 路由重定向 nginx 配置中 1 2 3 4 5 6 location / { index index.php index.html error/index.html; if (!-e $request_filename) { rewrite ^(.*)$ /index.php?s=$1 last; break; } 配置nginx+thinkphp 二级目录 1 2 3 4 5 6 7 8 9 10 11 12</description>
+    </item>
+    
+  </channel>
+</rss>

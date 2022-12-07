@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT/Windows/Wsl on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/it/windows/wsl/</link>
+    <description>Recent content in IT/Windows/Wsl on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    
+	<atom:link href="https://blog.caoayu.top/tags/it/windows/wsl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>wsl2</title>
+      <link>https://blog.caoayu.top/post/wsl2/</link>
+      <pubDate>Tue, 18 Oct 2022 19:43:16 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/wsl2/</guid>
+      <description>wsl2 抛弃，性能太差，虚拟机代替 官方文档 https://learn.microsoft.com/zh-cn/windows/wsl/ 开启 先卸载关闭 1 2 3 4 5 6 7 8 # 查看 wslconfig /l # 卸载 wslconfig /u # 关闭 wsl --shutdown windows 组件关闭 关闭后重启 打开 可以在控制面板里开</description>
+    </item>
+    
+    <item>
+      <title>wsl2安装配置</title>
+      <link>https://blog.caoayu.top/post/wsl2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Tue, 18 Oct 2022 19:43:16 +0000</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/wsl2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>wsl2安装配置 抛弃，性能太差，虚拟机代替 官方文档 https://learn.microsoft.com/zh-cn/windows/wsl/ 开启 先卸载关闭 1 2 3 4 5 6 7 8 # 查看 wslconfig /l # 卸载 wslconfig /u # 关闭 wsl --shutdown windows 组件关闭 关闭后重启 打开 可以</description>
+    </item>
+    
+  </channel>
+</rss>

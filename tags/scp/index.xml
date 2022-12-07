@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scp on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/scp/</link>
+    <description>Recent content in scp on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 22 May 2020 19:33:59 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/scp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用scp进行与服务器的文件交互(上传和下载)</title>
+      <link>https://blog.caoayu.top/post/scp01/</link>
+      <pubDate>Fri, 22 May 2020 19:33:59 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/scp01/</guid>
+      <description>&lt;p&gt;​	通常我们上传或下载文件会使用一些软件,如&lt;code&gt;xftp,winscp, finalshell&lt;/code&gt;,前面几篇文章已经介绍了如何搭一个命令行环境以及使用命令行去连接服务器,进行交互,这次我们使用命令行来进行文件的上传和下载,通常当我们想要上传文件到服务器时,不是通过软件就是&lt;code&gt;ftp&lt;/code&gt;,比较的繁琐,而且底层使用的原理都是一样的,这次介绍使用&lt;code&gt;scp&lt;/code&gt;命令进行命令行端的文件操作,无需再打开软件,找到文件,拖进去或者其他比较费时的操作&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

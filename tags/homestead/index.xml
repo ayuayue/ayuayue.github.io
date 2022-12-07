@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homestead on 个人内容记录</title>
+    <link>https://blog.caoayu.top/tags/homestead/</link>
+    <description>Recent content in Homestead on 个人内容记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#39;https://beian.miit.gov.cn&#39; target=&#39;_blank&#39;&gt;豫ICP备19012822号-3&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 27 Dec 2020 17:44:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.caoayu.top/tags/homestead/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows 安装使用Homestead 遇到的问题总结</title>
+      <link>https://blog.caoayu.top/post/homestead/</link>
+      <pubDate>Sun, 27 Dec 2020 17:44:18 +0800</pubDate>
+      
+      <guid>https://blog.caoayu.top/post/homestead/</guid>
+      <description>安装 本环境使用 VirtualBox6.1 Vagrant2.2 首先下载并安装这两个应用. 添加 homestead 1 vagrant box add laravel/homestead 根据提示,选择 VirtualBox 的选项,由于国内的大多网络环境,无法进行快速的下载.我们可以根据</description>
+    </item>
+    
+  </channel>
+</rss>

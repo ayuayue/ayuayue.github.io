@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>进程池实例（使用消息队列通信） - 个人内容记录</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Caoayu" /><meta name="description" content="进程池实例（使用消息队列通信） 主要是解决动态创建进程时的效率问题，动态创建进程的消息很大 fork一个进程，就要复制正文段【代码】&#43;数据段 初始" /><meta name="keywords" content="php, golang, linux, windows" />
+
+
+<meta name="baidu-site-verification" content="WE21SS2cy5" />
+
+
+
+<meta name="generator" content="Hugo 0.72.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.caoayu.top/post/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%AE%9E%E4%BE%8B%E4%BD%BF%E7%94%A8%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E9%80%9A%E4%BF%A1/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/code.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/code.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/code.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c499e4ce.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="进程池实例（使用消息队列通信）" />
+<meta property="og:description" content="进程池实例（使用消息队列通信） 主要是解决动态创建进程时的效率问题，动态创建进程的消息很大 fork一个进程，就要复制正文段【代码】&#43;数据段 初始" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.caoayu.top/post/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%AE%9E%E4%BE%8B%E4%BD%BF%E7%94%A8%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E9%80%9A%E4%BF%A1/" />
+<meta property="article:published_time" content="2022-10-03T20:36:46+00:00" />
+<meta property="article:modified_time" content="2022-10-25T00:03:58+00:00" />
+<meta itemprop="name" content="进程池实例（使用消息队列通信）">
+<meta itemprop="description" content="进程池实例（使用消息队列通信） 主要是解决动态创建进程时的效率问题，动态创建进程的消息很大 fork一个进程，就要复制正文段【代码】&#43;数据段 初始">
+<meta itemprop="datePublished" content="2022-10-03T20:36:46&#43;00:00" />
+<meta itemprop="dateModified" content="2022-10-25T00:03:58&#43;00:00" />
+<meta itemprop="wordCount" content="808">
+
+
+
+<meta itemprop="keywords" content="IT/PHP,IT/PHP/多进程," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="进程池实例（使用消息队列通信）"/>
+<meta name="twitter:description" content="进程池实例（使用消息队列通信） 主要是解决动态创建进程时的效率问题，动态创建进程的消息很大 fork一个进程，就要复制正文段【代码】&#43;数据段 初始"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">个人内容记录</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">其他</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo"><img src="/images/jay.jpg" class="logo-img" alt="logo-img">
+    个人内容记录</a>
+</div>
+
+<nav class="site-navbar">
+  <div class="dropdown">
+    <a href="/" class="menu">主页</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/post/" class="menu">归档</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/tags/" class="menu">标签</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/categories/" class="menu">分类</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/about" class="menu">其他</a>
+    <div class="dropdown-content">
+      
+      
+      <a href="/about/services" class="menu-item">在线服务</a>
+      
+      <a href="/about/call-me" class="menu-item">关于我</a>
+      
+      <a href="/about/links" class="menu-item">其他链接</a>
+      
+      
+    </div>
+  </div><div class="dropdown">
+    <a href="/search/" class="menu">搜索</a>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+</nav>
+    </header>
+    <div id="hitokoto" style="text-align: right;" class="header">
+      <span id="jinrishici-sentence" style="border-bottom: 2px solid #16982b;">正在加载今日诗词....</span>
+    </div>
+    <div class="clear"></div>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">进程池实例（使用消息队列通信）</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-10-03 </span>
+        
+          <span class="more-meta"> 约 808 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#进程池实例使用消息队列通信">进程池实例（使用消息队列通信）</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2022-10-25T00:03:58" title="October 25, 2022">October 25, 2022</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="进程池实例使用消息队列通信">进程池实例（使用消息队列通信）</h1>
+<p>主要是解决动态创建进程时的效率问题，动态创建进程的消息很大</p>
+<p>fork一个进程，就要复制正文段【代码】+数据段</p>
+<ol>
+<li>初始化一个主进程</li>
+<li>主进程创建多个子进程，并且创建多个消息队列。保存每个子进程的消息队列id</li>
+<li>每一个子进程执行从该进程绑定的消息队列中读取数据</li>
+<li>创建socket，绑定socket文件，监听socket连接</li>
+<li>事件循环，监听是否有客户端连接，有连接则读取数据</li>
+<li>写入数据到连接socket 【conn socket]，并关闭连接socket 【conn socket】</li>
+<li>处理中断信号，接收终端信号，并发送消息到每个子进程</li>
+<li>等待子进程回收，回收完成后删除进程关联的消息队列，删除socket文件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-PHP" data-lang="PHP"><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">MsqServer</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Process</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$_pid</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$_msgid</span><span class="p">;</span>
+
+<span class="p">}</span>
+<span class="k">class</span> <span class="nc">Server</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$_socketFile</span> <span class="o">=</span> <span class="s2">&#34;pool.sock&#34;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$_processNum</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$_keyFile</span> <span class="o">=</span> <span class="no">__FILE__</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$_process</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">public</span> <span class="nv">$_idx</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$_sockfd</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$_roll</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$_run</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$num</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_processNum</span> <span class="o">=</span> <span class="nv">$num</span><span class="p">;</span>
+        <span class="nx">pcntl_signal</span><span class="p">(</span><span class="nx">SIGINT</span><span class="p">,</span> <span class="p">[</span><span class="nv">$this</span><span class="p">,</span><span class="s2">&#34;sigHandler&#34;</span><span class="p">]);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forkWorker</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Listen</span><span class="p">();</span>
+        <span class="nv">$exitPid</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+            <span class="nv">$pid</span> <span class="o">=</span> <span class="nx">pcntl_wait</span><span class="p">(</span><span class="nv">$status</span><span class="p">);</span>
+            <span class="k">if</span><span class="p">(</span><span class="nv">$pid</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="nv">$exitPid</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$pid</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">count</span><span class="p">(</span><span class="nv">$exitPid</span><span class="p">)</span> <span class="o">==</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_processNum</span><span class="p">){</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_process</span> <span class="k">as</span> <span class="nv">$p</span><span class="p">){</span>
+            <span class="sd">/** @var Process $p */</span>
+            <span class="nx">msg_remove_queue</span><span class="p">(</span><span class="nv">$p</span><span class="o">-&gt;</span><span class="na">_msgid</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s2">&#34;master shutdown</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">);</span>
+        <span class="nx">unlink</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_socketFile</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">sigHandler</span><span class="p">(</span><span class="nv">$signo</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_run</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">forkWorker</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$processObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Process</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_processNum</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
+            <span class="nv">$key</span> <span class="o">=</span> <span class="nx">ftok</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_keyFile</span><span class="p">,</span> <span class="nv">$i</span><span class="p">);</span>
+            <span class="nv">$msg_id</span> <span class="o">=</span> <span class="nx">msg_get_queue</span><span class="p">(</span><span class="nv">$key</span><span class="p">);</span>
+
+            <span class="nv">$process</span> <span class="o">=</span> <span class="k">clone</span> <span class="nv">$processObj</span><span class="p">;</span>
+            <span class="nv">$process</span><span class="o">-&gt;</span><span class="na">_msgid</span> <span class="o">=</span> <span class="nv">$msg_id</span><span class="p">;</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_process</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$process</span><span class="p">;</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_idx</span> <span class="o">=</span> <span class="nv">$i</span><span class="p">;</span>
+
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_process</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">_pid</span> <span class="o">=</span> <span class="nx">pcntl_fork</span><span class="p">();</span>
+            <span class="k">if</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_process</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">_pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">worker</span><span class="p">();</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">Listen</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_sockfd</span> <span class="o">=</span> <span class="nx">socket_create</span><span class="p">(</span><span class="nx">AF_UNIX</span><span class="p">,</span> <span class="nx">SOCK_STREAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">is_resource</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_sockfd</span><span class="p">)){</span>
+            <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s2">&#34;socket create fail %s</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">socket_strerror</span><span class="p">(</span><span class="nx">socket_last_error</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_sockfd</span><span class="p">)));</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">socket_bind</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_sockfd</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_socketFile</span><span class="p">)){</span>
+            <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s2">&#34;socket bind fail %s</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">socket_strerror</span><span class="p">(</span><span class="nx">socket_last_error</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_sockfd</span><span class="p">)));</span>
+        <span class="p">}</span>
+        <span class="nx">socket_listen</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_sockfd</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventLoop</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">worker</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s2">&#34;child pid %d start </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">posix_getpid</span><span class="p">());</span>
+        <span class="sd">/** @var Process $process */</span>
+        <span class="nv">$process</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_process</span><span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_idx</span><span class="p">];</span>
+        <span class="nv">$msgid</span> <span class="o">=</span> <span class="nv">$process</span><span class="o">-&gt;</span><span class="na">_msgid</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">msg_receive</span><span class="p">(</span><span class="nv">$msgid</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$msgType</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="nv">$message</span><span class="p">)){</span>
+                <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s2">&#34;child pid %d recv %s</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">posix_getpid</span><span class="p">(),</span><span class="nv">$message</span><span class="p">);</span>
+                <span class="k">if</span><span class="p">(</span><span class="nx">strncasecmp</span><span class="p">(</span><span class="nv">$message</span><span class="p">,</span> <span class="s2">&#34;quit&#34;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s2">&#34;child pid %d shutdown </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="nx">posix_getpid</span><span class="p">());</span>
+        <span class="k">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">selectWorker</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="sd">/** @var Process $process */</span>
+        <span class="nv">$process</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_process</span><span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_roll</span><span class="o">++%</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_processNum</span><span class="p">];</span>
+        <span class="nv">$msgid</span> <span class="o">=</span> <span class="nv">$process</span><span class="o">-&gt;</span><span class="na">_msgid</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">msg_send</span><span class="p">(</span><span class="nv">$msgid</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span><span class="k">true</span><span class="p">,</span><span class="k">false</span><span class="p">)){</span>
+            <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s2">&#34;master send ok</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">eventLoop</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$readFds</span> <span class="o">=</span> <span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_sockfd</span><span class="p">];</span>
+        <span class="nv">$writeFds</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="nv">$expFds</span> <span class="o">=</span> <span class="p">[];</span>
+
+        <span class="k">while</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_run</span><span class="p">){</span>
+            <span class="nx">pcntl_signal_dispatch</span><span class="p">();</span>
+            <span class="nv">$ret</span> <span class="o">=</span> <span class="nx">socket_select</span><span class="p">(</span><span class="nv">$readFds</span><span class="p">,</span> <span class="nv">$writeFds</span><span class="p">,</span> <span class="nv">$expFds</span><span class="p">,</span><span class="k">NULL</span><span class="p">);</span>
+            <span class="k">if</span><span class="p">(</span><span class="nv">$ret</span> <span class="o">===</span> <span class="k">false</span><span class="p">){</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$ret</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">if</span><span class="p">(</span><span class="nv">$readFds</span><span class="p">){</span>
+                <span class="k">foreach</span> <span class="p">(</span><span class="nv">$readFds</span> <span class="k">as</span> <span class="nv">$fd</span><span class="p">){</span>
+                    <span class="k">if</span><span class="p">(</span><span class="nv">$fd</span> <span class="o">===</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_sockfd</span><span class="p">){</span>
+                        <span class="nv">$connfd</span> <span class="o">=</span> <span class="nx">socket_accept</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_sockfd</span><span class="p">);</span>
+                        <span class="nv">$data</span> <span class="o">=</span> <span class="nx">socket_read</span><span class="p">(</span><span class="nv">$connfd</span><span class="p">,</span> <span class="mi">1024</span><span class="p">);</span>
+                        <span class="k">if</span><span class="p">(</span><span class="nv">$data</span><span class="p">){</span>
+                            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">selectWorker</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+                        <span class="p">}</span>
+                        <span class="nx">socket_write</span><span class="p">(</span><span class="nv">$connfd</span><span class="p">,</span> <span class="s2">&#34;ok&#34;</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+                        <span class="nx">socket_close</span><span class="p">(</span><span class="nv">$connfd</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="nx">socket_close</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_sockfd</span><span class="p">);</span>
+
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_process</span> <span class="k">as</span> <span class="nv">$p</span><span class="p">){</span>
+
+            <span class="sd">/** @var \MsqServer\Process  $p **/</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">msg_send</span><span class="p">(</span><span class="nv">$p</span><span class="o">-&gt;</span><span class="na">_msgid</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&#34;quit&#34;</span><span class="p">)){</span>
+                <span class="nx">fprintf</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s2">&#34;master send quit ok</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">(</span><span class="k">new</span> <span class="nx">Server</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>客户端连接</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-PHP" data-lang="PHP"><span class="cp">&lt;?php</span>
+
+<span class="nv">$sockFile</span> <span class="o">=</span> <span class="s2">&#34;pool.sock&#34;</span><span class="p">;</span>
+<span class="nv">$sockfd</span> <span class="o">=</span> <span class="nx">socket_create</span><span class="p">(</span><span class="nx">AF_UNIX</span><span class="p">,</span> <span class="nx">SOCK_STREAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">socket_connect</span><span class="p">(</span><span class="nv">$sockfd</span><span class="p">,</span> <span class="nv">$sockFile</span><span class="p">)){</span>
+
+    <span class="k">echo</span> <span class="nx">socket_write</span><span class="p">(</span><span class="nv">$sockfd</span><span class="p">,</span> <span class="s2">&#34;i am client&#34;</span><span class="p">,</span><span class="mi">11</span><span class="p">);</span>
+
+    <span class="k">echo</span> <span class="nx">socket_read</span><span class="p">(</span><span class="nv">$sockfd</span><span class="p">,</span> <span class="mi">1024</span><span class="p">);</span>
+
+<span class="p">}</span>
+<span class="nx">socket_close</span><span class="p">(</span><span class="nv">$sockfd</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Caoayu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2022-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat_pay.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/ali_pay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/it/php/">IT/PHP</a>
+          <a href="/tags/it/php/%E5%A4%9A%E8%BF%9B%E7%A8%8B/">IT/PHP/多进程</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E7%B2%98%E5%8C%85%E5%B0%81%E5%8C%85-%E6%8B%86%E5%8C%85pack%E5%87%BD%E6%95%B0/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">粘包【封包-拆包】pack函数</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/systemv-ipc-%E5%85%B1%E4%BA%AB%E5%AD%98%E5%82%A8/">
+            <span class="next-text nav-default">SystemV IPC 共享存储</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1401262639@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ayuayue" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/109011082" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://blog.caoayu.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+<script>
+  <!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) 
+  -->
+  var
+  languageCode
+  =
+  {
+    {
+      .Site.LanguageCode
+    }
+  }.replace(/-/g,
+  '_').replace(/_(.*)/,
+  function
+  ($0,
+  $1)
+  {
+    return
+  $0.replace($1,
+  $1.toUpperCase());
+  });
+  timeago().render(document.querySelectorAll('.timeago'),
+  languageCode);
+  timeago.cancel();
+  
+  stop
+  update
+</script>
+<script type="text/javascript" src="/dist/even.b1a09a32.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-163761428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script");
+    hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?ec96ec1b989c5792bfb08b0ae452d1a6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function () {
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script');
+    bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>
